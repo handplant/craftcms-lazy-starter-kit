@@ -5,8 +5,8 @@
 <nav
   class="fixed inset-x-0 top-0 z-30 h-16 bg-white/90 layout"
   data-class="{ 'bg-stone-200/90': $navOpen, 'bg-white/90': !$navOpen }"
-  data-on-keydown="if (event.key === 'Escape') $navOpen = false, $searchOpen = false"
-  data-on-click__outside="$navOpen = false, $dropdownOpen = false"
+  data-on:keydown="if (event.key === 'Escape') $navOpen = false, $searchOpen = false"
+  data-on:click__outside="$navOpen = false, $dropdownOpen = false"
 >
   <div class="flex items-center justify-between gap-3 w-full layout__feature ">
     <div class="flex items-center shrink-0 mr-auto">
@@ -18,7 +18,7 @@
 
     {% if navItems %}
       <button
-        data-on-click="$navOpen = !$navOpen; $searchOpen = false"
+        data-on:click="$navOpen = !$navOpen; $searchOpen = false"
         data-attr="{ 'aria-label': $navOpen ? 'Close navigation' : 'Open navigation' }"
         class="block text-black cursor-pointer switch:hidden hover:text-primary focus:text-black focus:outline-none rounded-none"
         type="button"
@@ -45,7 +45,7 @@
       <button
         class="flex items-center cursor-pointer hover:text-primary {{ isSearchPage ? 'text-primary pointer-events-none' : '' }}"
         {% if not isSearchPage %}
-          data-on-click="$searchOpen = !$searchOpen; $navOpen = false"
+          data-on:click="$searchOpen = !$searchOpen; $navOpen = false"
           data-attr="{ 'aria-label': $searchOpen ? 'Close search' : 'Open search' }"
         {% endif %}
         {{ isSearchPage ? 'aria-disabled="true"' }}

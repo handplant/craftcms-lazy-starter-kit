@@ -8,8 +8,8 @@
     placeholder="Type to search..."
     aria-label="Search"
     data-indicator-fetching
-    data-bind-search
-    data-on-input__debounce.300ms="{{ datastar.get('_datastar/search.twig', {
+    data-bind:search
+    data-on:input__debounce.300ms="{{ datastar.get('_datastar/search.twig', {
       type: type
     }) }}"
   />

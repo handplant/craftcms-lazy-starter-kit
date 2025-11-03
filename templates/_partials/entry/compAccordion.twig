@@ -1,9 +1,9 @@
 {% set isOpen = entry.switchOpen ? 1 : 0 %}
-<div data-signals-open{{ entry.id }}="{{ isOpen }}" data-animate="fade-in">
+<div data-signals:open{{ entry.id }}="{{ isOpen }}" data-animate="fade-in">
   <div id="accordion-heading-{{ entry.id }}">
     <button type="button"
             class="flex items-center justify-between w-full gap-3 p-5 text-left bg-white ui-bold flex-nowrap hover:bg-stone-100 cursor-pointer rounded-md"
-            data-on-click__viewtransition="$open{{ entry.id }} = !$open{{ entry.id }}"
+            data-on:click__viewtransition="$open{{ entry.id }} = !$open{{ entry.id }}"
             data-aria-expanded="$open{{ entry.id }}"
             aria-controls="accordion-body-{{ entry.id }}">
       <span class="flex items-center">

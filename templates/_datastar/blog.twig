@@ -35,7 +35,7 @@
   {% if hasMore %}
     {% patchelements %}
       <div id="loadmore" class="mt-6">
-        <button data-on-click="{{ datastar.get('_datastar/blog.twig', {offset: offset + limit}) }}" class="ui-btn ui-btn--lg">{{ 'Load more'|t }}</button>
+        <button data-on:click="{{ datastar.get('_datastar/blog.twig', {offset: offset + limit}) }}" class="ui-btn ui-btn--lg">{{ 'Load more'|t }}</button>
       </div>
     {% endpatchelements %}
   {% else %}

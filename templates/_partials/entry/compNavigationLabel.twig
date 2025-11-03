@@ -16,7 +16,7 @@
     class="{{ _class }} flex gap-1 group"
     aria-haspopup="true"
     aria-controls="dropdown-{{ entry.id }}"
-    data-on-click="$dropdownOpen = $dropdownOpen === {{ entry.id }} ? false : {{ entry.id }}"
+    data-on:click="$dropdownOpen = $dropdownOpen === {{ entry.id }} ? false : {{ entry.id }}"
     data-attr="{ 'aria-expanded': $dropdownOpen === '{{ entry.id }}' ? 'true' : 'false' }"
   >
     <span>{{ entry.title }}</span>
