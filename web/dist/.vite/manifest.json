@@ -1,15 +1,15 @@
 {
   "src/js/app.js": {
-    "file": "assets/app-DuBFvgLE.js",
+    "file": "assets/app-C2bfVgl1.js",
     "name": "app",
     "src": "src/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-D48pgSf_.css"
+      "assets/app-DNx_pj6H.css"
     ]
   },
   "src/vue/webcomponents/blog-list.ce.ts": {
-    "file": "assets/blog-list-D8MRTSBu.js",
+    "file": "assets/blog-list-JrJK7r7G.js",
     "name": "blog-list",
     "src": "src/vue/webcomponents/blog-list.ce.ts",
     "isEntry": true
