@@ -1,4 +1,4 @@
-dateModified: 1761128768
+dateModified: 1762259792
 elementSources:
   craft\elements\Entry:
     -
@@ -108,6 +108,7 @@ meta:
     0a5600e8-07a6-4292-bc21-d0e142d9dc22: 'Matrix - Builder' # Matrix - Builder
     0b6dd59c-982a-43fa-908f-143e8ef509f2: Date # Date
     2cec4e62-8325-4329-b76c-d5c7ae7af576: Buttons # Buttons
+    3a4f56a8-1fc9-4301-ad83-4379be0d602a: Lat/Long # Lat/Long
     3fc916d4-15ce-4a6b-b91c-c80649f001bd: 'Matrix - Accordion' # Matrix - Accordion
     04ac80ab-5fc1-41b5-bdbb-932462b5392d: 'Accordion Entry' # Accordion Entry
     04c7059c-00d6-416e-a590-757fea296201: Blog # Blog
@@ -132,10 +133,12 @@ meta:
     163e2603-df59-49f9-a112-13791fe431d2: 'Public Schema' # Public Schema
     177e5629-be0d-45a5-8751-ee4a081d01d0: 'Switch - Off' # Switch - Off
     521c2fd7-5f4f-42d2-8d89-e0818c2781ba: 'Navigation / Link' # Navigation / Link
+    550d279b-74c8-4f54-beb2-b29d0d2592dd: Settings # Settings
     767f97e3-a9dc-4be7-9c72-296ba3cfb077: Builder # Builder
     916e0660-c1f0-4d74-adbd-e0b797d79894: 'Page / Matrix Builder' # Page / Matrix Builder
     6243b5f2-9474-47a0-99f2-24d5a6cc5832: 'Rich Text - Rich' # Rich Text - Rich
     6686f777-cfa0-442a-964f-76aeefb81ba6: Categories # Categories
+    8088e42b-90d5-443c-a48e-1dac9ddeb72a: Settings # Settings
     8596f203-6a19-4f0b-a499-4d70fbe9584f: thumbnail # thumbnail
     9800e5de-6b70-4e9a-a491-54ef32087d74: 'Page / Blog Datastar' # Page / Blog Datastar
     998295c3-03ea-4a83-b787-ba1d5a930248: 'Craft 5' # Craft 5
@@ -150,11 +153,14 @@ meta:
     c2078d68-c6cf-42ee-ad68-931b8a4b5cdb: 'Link - Native' # Link - Native
     ca8ca091-579e-4b7b-8367-c496ca94f94a: Search # Search
     ceb614ca-f066-47cb-8d5e-647c282b69db: Button # Button
+    d1ed338f-b444-4944-a816-0690f2ec7948: 'JSON-LD Schema' # JSON-LD Schema
     d2c185ad-8cc0-4ff6-bae6-f4f27e1c256c: 'Page / Blog Vue' # Page / Blog Vue
     d6ccb54a-08e3-4b74-b2d0-b0b7d04be82b: Home # Home
     d55a22f5-2f99-4c7c-822f-eb8623035eeb: Navigation # Navigation
     d55b1175-f5cd-4977-8625-4333d431a8f6: Files # Files
+    d69fb3a1-5af9-4749-8524-6a9c8115a827: 'Table Links' # Table Links
     dbbb65c3-5ee4-438d-8436-b6e57e74daf5: 'Relation - Categories' # Relation - Categories
+    e56e581b-b43d-49b9-9807-65d135a12ecd: Email # Email
     e350ba4f-78d8-4850-b773-09f4d8d9a9b5: Common # Common
     e695ec0b-5690-4d85-a2bc-cab65554571d: 'Page / Blog' # Page / Blog
     e2850ac0-af58-4d32-9596-b15239d9567e: Image # Image

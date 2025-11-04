@@ -1,0 +1,522 @@
+columnSuffix: null
+handle: jsonLd
+instructions: null
+name: 'JSON-LD Schema'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - efeda63f-80cd-4933-9f31-46cfc676a94b
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - de971295-ca07-48dd-831d-d4fe1b39fc79
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - Organisation
+                            -
+                              - dateAdded
+                              - '2025-11-04T12:03:49+00:00'
+                            -
+                              - uid
+                              - 2663cd2e-3245-4d01-b4fd-5185cdcbe867
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaName
+                            2:
+                              - label
+                              - Name
+                            6:
+                              - required
+                              - true
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:36:51+00:00'
+                            11:
+                              - uid
+                              - c30258f0-80db-4f56-a46c-20abbb382822
+                            14:
+                              - fieldUid
+                              - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaLogo
+                            2:
+                              - label
+                              - Logo
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:47:01+00:00'
+                            11:
+                              - uid
+                              - 271df806-e3b8-4e3c-afab-24af38f444b2
+                            14:
+                              - fieldUid
+                              - e2850ac0-af58-4d32-9596-b15239d9567e # Image
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaDescription
+                            2:
+                              - label
+                              - Description
+                            6:
+                              - required
+                              - true
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:36:51+00:00'
+                            11:
+                              - uid
+                              - 5d3da07e-e648-4676-bf10-9805389a009b
+                            14:
+                              - fieldUid
+                              - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - Contact
+                            -
+                              - dateAdded
+                              - '2025-11-04T11:41:48+00:00'
+                            -
+                              - uid
+                              - 3676ed08-0e49-4b9c-9050-56aff5bfa5f1
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaContactType
+                            2:
+                              - label
+                              - Type
+                            3:
+                              - instructions
+                              - 'e.g. support, sales, billing, press, general'
+                            6:
+                              - required
+                              - true
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:47:01+00:00'
+                            11:
+                              - uid
+                              - 6fe48157-c613-405c-b893-51016e5ed895
+                            14:
+                              - fieldUid
+                              - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaEmail
+                            6:
+                              - required
+                              - true
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:36:51+00:00'
+                            11:
+                              - uid
+                              - 034dd95b-b0cf-4622-9004-907b70cee996
+                            14:
+                              - fieldUid
+                              - e56e581b-b43d-49b9-9807-65d135a12ecd # Email
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaPhone
+                            2:
+                              - label
+                              - Phone
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:36:51+00:00'
+                            11:
+                              - uid
+                              - 73ac4d61-c081-4cd4-a7ef-650e6ea625ee
+                            14:
+                              - fieldUid
+                              - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - Address
+                            -
+                              - dateAdded
+                              - '2025-11-04T11:41:48+00:00'
+                            -
+                              - uid
+                              - ee88b055-501d-45a6-8e32-c9b2522f140a
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaStreet
+                            2:
+                              - label
+                              - Street
+                            6:
+                              - required
+                              - true
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:36:51+00:00'
+                            11:
+                              - uid
+                              - 826d94bd-11da-4eb8-9679-3a092dcf0ed7
+                            14:
+                              - fieldUid
+                              - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaCity
+                            2:
+                              - label
+                              - City
+                            6:
+                              - required
+                              - true
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:36:51+00:00'
+                            11:
+                              - uid
+                              - 573949db-4cce-401b-a630-641b5ba73a38
+                            14:
+                              - fieldUid
+                              - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaPostalCode
+                            2:
+                              - label
+                              - 'Postal Code'
+                            6:
+                              - required
+                              - true
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:36:51+00:00'
+                            11:
+                              - uid
+                              - df989b7c-6150-43af-aa7c-d73f0ea46af7
+                            14:
+                              - fieldUid
+                              - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaCountry
+                            2:
+                              - label
+                              - 'Country Code (ISO)'
+                            3:
+                              - instructions
+                              - 'Country (ISO code), e.g. DE, CH, AT.'
+                            6:
+                              - required
+                              - true
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:36:51+00:00'
+                            11:
+                              - uid
+                              - 8ab21210-ef69-4ec5-8613-633866478191
+                            14:
+                              - fieldUid
+                              - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - Coordinates
+                            -
+                              - dateAdded
+                              - '2025-11-04T11:41:48+00:00'
+                            -
+                              - uid
+                              - e216e738-8f1e-45af-bd6a-b9d749891618
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaLatitude
+                            2:
+                              - label
+                              - Latitude
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:40:07+00:00'
+                            11:
+                              - uid
+                              - f4eaca3f-c178-4f3a-ad9f-af609574f83e
+                            14:
+                              - fieldUid
+                              - 3a4f56a8-1fc9-4301-ad83-4379be0d602a # Lat/Long
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaLongitude
+                            2:
+                              - label
+                              - Longitude
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:40:07+00:00'
+                            11:
+                              - uid
+                              - de5a3830-005d-4dcf-91dc-382a14da7843
+                            14:
+                              - fieldUid
+                              - 3a4f56a8-1fc9-4301-ad83-4379be0d602a # Lat/Long
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - Social
+                            -
+                              - dateAdded
+                              - '2025-11-04T11:47:01+00:00'
+                            -
+                              - uid
+                              - 5c0f008d-3a13-48c0-a4be-16d795ce58de
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaLinks
+                            2:
+                              - label
+                              - Links
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-11-04T11:48:57+00:00'
+                            11:
+                              - uid
+                              - 529465a4-6109-4134-bccf-d5755a065313
+                            14:
+                              - fieldUid
+                              - d69fb3a1-5af9-4749-8524-6a9c8115a827 # Table Links
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: pane
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

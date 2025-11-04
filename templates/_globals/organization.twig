@@ -1,0 +1,66 @@
+{% if settings.enableJsonLd %}
+  {% set schema = craft.schema %}
+  {% set data = settings.jsonLd %}
+  {% set logo = data.orgaLogo.one() ?? null %}
+
+  {# Social Links sammeln #}
+  {% set socials = [] %}
+  {% if data.orgaLinks %}
+    {% for row in data.orgaLinks %}
+      {% if row.url %}
+        {% set socials = socials|merge([row.url]) %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% set org = schema.organization %}
+
+  {# Pflichtfelder #}
+  {% do org.name(data.orgaName) %}
+  {% do org.url(siteUrl) %}
+
+  {# Optionale Felder checken #}
+  {% if data.orgaDescription %}
+    {% do org.description(data.orgaDescription) %}
+  {% endif %}
+
+  {% if logo %}
+    {% do org.logo(logo.getUrl()) %}
+  {% endif %}
+
+  {% if socials|length %}
+    {% do org.sameAs(socials) %}
+  {% endif %}
+
+  {# Address #}
+  {% if data.orgaStreet or data.orgaCity or data.orgaPostalCode or data.orgaCountry %}
+    {% do org.postalAddress({
+      "@type": "PostalAddress",
+      "streetAddress": data.orgaStreet ?? null,
+      "addressLocality": data.orgaCity ?? null,
+      "postalCode": data.orgaPostalCode ?? null,
+      "addressCountry": data.orgaCountry ?? null,
+    }) %}
+  {% endif %}
+
+  {# Optional Geo #}
+  {% if data.orgaLatitude and data.orgaLongitude %}
+    {% do org.geo({
+      "@type": "GeoCoordinates",
+      "latitude": data.orgaLatitude,
+      "longitude": data.orgaLongitude
+    }) %}
+  {% endif %}
+
+  {# Contact Point #}
+  {% if data.orgaContactType or data.orgaEmail or data.orgaPhone %}
+    {% do org.contactPoint({
+      "@type": "ContactPoint",
+      "contactType": data.orgaContactType ?? null,
+      "email": data.orgaEmail ?? null,
+      "telephone": data.orgaPhone ?? null,
+    }) %}
+  {% endif %}
+
+  {{ org|raw }}
+{% endif %}

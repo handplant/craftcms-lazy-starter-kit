@@ -1,0 +1,16 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 550d279b-74c8-4f54-beb2-b29d0d2592dd # Settings
+handle: settings
+maxAuthors: 1
+name: Settings
+propagationMethod: all
+siteSettings:
+  6eab4b84-63fb-4382-bdd7-d2bee959aafb: # $SITE_NAME
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

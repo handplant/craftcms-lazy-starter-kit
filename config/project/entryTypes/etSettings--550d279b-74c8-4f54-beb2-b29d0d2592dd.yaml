@@ -1,0 +1,67 @@
+color: null
+description: null
+fieldLayouts:
+  d16e60d4-5904-4f4a-8c59-561f4bcdbfe7:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-04T12:16:37+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 177e5629-be0d-45a5-8751-ee4a081d01d0 # Switch - Off
+            handle: enableJsonLd
+            includeInCards: false
+            instructions: 'Outputs structured data (JSON-LD) for this page to help search engines understand and rank your content better.'
+            label: 'Enable JSON-LD Schema'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cc03c0b1-fb56-4377-bfce-efb01d49d93a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-04T11:30:24+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 177e5629-be0d-45a5-8751-ee4a081d01d0 # Switch - Off
+                  layoutElementUid: cc03c0b1-fb56-4377-bfce-efb01d49d93a
+                  uid: 54b0b8c5-25aa-4fa1-9ee3-f106c9f0e90e
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: d1ed338f-b444-4944-a816-0690f2ec7948 # JSON-LD Schema
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f811a177-9e62-49ad-82b9-8b37f8a2e746
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: d1fa4c3c-f757-4429-8e03-379c25df7e3b
+        userCondition: null
+handle: etSettings
+hasTitleField: false
+icon: sliders
+name: Settings
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

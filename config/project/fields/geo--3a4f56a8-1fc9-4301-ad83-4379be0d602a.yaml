@@ -1,0 +1,19 @@
+columnSuffix: null
+handle: geo
+instructions: null
+name: Lat/Long
+searchable: false
+settings:
+  decimals: 6
+  defaultValue: null
+  max: null
+  min: 0
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  step: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

@@ -29,6 +29,8 @@ and **developers** who want a production-ready foundation for new Craft projects
 - 🎨 **Tailwind CSS v4** – utility-first styling with CSS variables
 - 🎞️ **Anime.js** – smooth element animations and scroll-based transitions
 - 🗃️ **Craft eagerly() + render()** – optimized queries, automatic block templates, and smart caching
+- 🧾 **SEO-Ready JSON-LD Organization Schema** – structured data for Google Rich Results
+- 🔍 **SEO Meta, Open Graph & Sitemap** – via SEOMate
 - 🔌 **Plugins:** CKEditor, Datastar, Image Resizer, SEOMate, Vite
 
 ---
