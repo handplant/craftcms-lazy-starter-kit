@@ -1,11 +1,30 @@
 {
+  "__commonjsHelpers-CqkleIqs.js": {
+    "file": "assets/_commonjsHelpers-CqkleIqs.js",
+    "name": "_commonjsHelpers"
+  },
   "src/js/app.js": {
-    "file": "assets/app-C2bfVgl1.js",
+    "file": "assets/app-BZQ_Jis0.js",
     "name": "app",
     "src": "src/js/app.js",
     "isEntry": true,
+    "imports": [
+      "__commonjsHelpers-CqkleIqs.js"
+    ],
     "css": [
-      "assets/app-DNx_pj6H.css"
+      "assets/app-00fy15LF.css"
+    ]
+  },
+  "src/js/map.js": {
+    "file": "assets/map-DFuGjfhX.js",
+    "name": "map",
+    "src": "src/js/map.js",
+    "isEntry": true,
+    "imports": [
+      "__commonjsHelpers-CqkleIqs.js"
+    ],
+    "css": [
+      "assets/map-9Hbp8J6b.css"
     ]
   },
   "src/vue/webcomponents/blog-list.ce.ts": {
