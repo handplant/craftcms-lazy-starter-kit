@@ -38,7 +38,7 @@
                   data-bind:filter
                   data-indicator:fetching
                   data-attr-disabled="$fetching"
-                  data-on:change="{{ datastar.post('_datastar/map.twig') }}"
+                  data-on:change="{{ datastar.get('_datastar/map.twig') }}"
                 >
                   <option value="">{{ 'Show all'|t }}</option>
                   {% for item in categories %}
