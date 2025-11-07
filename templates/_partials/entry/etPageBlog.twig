@@ -1,10 +1,13 @@
 {% set image = entry.card.image.eagerly().one() ?? null %}
 {% set category = entry.relationCategories.one() ?? null %}
 {% set date = entry.date|date('d.m.Y') %}
+{% set type = type ?? null %}
 
 <div class="ui-card relative">
   {% if category %}
-    <span class="absolute py-1 px-2 shadow ui-bold -top-3 right-5 bg-black/50 backdrop-blur-sm text-base text-white rounded-sm">{{ category }}</span>
+    <span class="absolute py-1 px-2 shadow ui-bold -top-3 right-5 text-base text-white rounded-sm"
+          style="background: {{ category.color.getHex() ?? '#000' }}"
+    >{{ category }}</span>
   {% endif %}
   {% if image %}
     <div class="aspect-video">
@@ -29,9 +32,21 @@
         {{ entry.card.teaser }}
       </div>
     {% endif %}
-    {% include '_components/button.twig' with {
-      label: "Read more"|t,
-      url: entry.url
-    } %}
+    <div class="flex justify-between">
+      {% include '_components/button.twig' with {
+        label: "Read more"|t,
+        url: entry.url
+      } %}
+      {% if type == 'map' %}
+        <button class="ui-btn"
+                data-on:click="focusMarker({{ entry.id }})"
+                title="Show on map">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+          </svg>
+        </button>
+      {% endif %}
+    </div>
   </div>
 </div>

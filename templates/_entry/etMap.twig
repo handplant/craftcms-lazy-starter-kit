@@ -1,0 +1,66 @@
+{% extends '_layouts/base' %}
+
+{% set categories = craft.entries.section('categories').all() ?? null %}
+
+{% block main %}
+  {% cache using key 'entry__' ~ craft.app.request.pathInfo %}
+    <section class="blocks blocks--map">
+      <div class="blocks__full pt-0">
+        <div class="flex flex-col lg:flex-row lg:h-full relative max-w-[2600px] mx-auto"
+             data-signals:locations='[]'
+             data-effect="
+                  if ($locations) {
+                    updateMarkers($locations)
+                  }
+              "
+        >
+          <div data-show="$fetching" class="absolute right-3 top-3 z-[999]">
+            <svg class="size-6 animate-spin text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </div>
+          <div class="w-full lg:w-1/3 xl:w-1/2">
+            <div class="sticky top-16 z-20">
+              <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 pt-3 px-5 mb-4 lg:mb-0">
+                <input
+                  type="text"
+                  class="ui-input w-full"
+                  placeholder="Type to search..."
+                  aria-label="Search"
+                  data-indicator:fetching
+                  data-bind:search
+                  data-on:input__debounce.300ms="{{ datastar.get('_datastar/map.twig') }}"
+                />
+                <select
+                  class="ui-select"
+                  aria-label="filter result"
+                  data-bind:filter
+                  data-indicator:fetching
+                  data-attr-disabled="$fetching"
+                  data-on:change="{{ datastar.post('_datastar/map.twig') }}"
+                >
+                  <option value="">{{ 'Show all'|t }}</option>
+                  {% for item in categories %}
+                    <option value="{{ item.slug }}" data-selected="$filter == {{ item.slug }}">{{ item.title }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div id="map-result"></div>
+          </div>
+          <div class="w-full lg:w-2/3 xl:w-1/2 h-[60vh] lg:h-[calc(100vh-64px)] lg:sticky lg:top-16"
+               data-init="initMap(); {{ datastar.get('_datastar/map.twig') }}">
+            <div id="map" class="lg:absolute lg:inset-0 h-full"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="blocks blocks--text">
+      <div class="blocks__content prose md:prose-lg lg:prose-xl">
+        {{ entry.builder }}
+      </div>
+    </section>
+    {{ craft.vite.script('src/js/map.js', false) }}
+  {% endcache %}
+{% endblock %}

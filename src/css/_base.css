@@ -1,6 +1,6 @@
 @layer base {
   body {
-    @apply overflow-x-hidden text-black font-sans md:text-lg lg:text-xl antialiased pt-24;
+    @apply overflow-x-hidden text-black font-sans md:text-lg lg:text-xl antialiased pt-16;
   }
 
   img {

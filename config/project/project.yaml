@@ -1,4 +1,4 @@
-dateModified: 1762259792
+dateModified: 1762510225
 elementSources:
   craft\elements\Entry:
     -
@@ -130,6 +130,7 @@ meta:
     85ac7a39-7c84-4707-9ebc-e0f0666d6023: Simple # Simple
     87b770e6-4e90-42b9-bee3-ce94aba9b182: 'Matrix - Cards' # Matrix - Cards
     94ef075b-ba6b-4c18-9200-1ed39a0e1d1e: Code # Code
+    109a65da-74da-4562-8779-896a6a9d07f6: Map # Map
     163e2603-df59-49f9-a112-13791fe431d2: 'Public Schema' # Public Schema
     177e5629-be0d-45a5-8751-ee4a081d01d0: 'Switch - Off' # Switch - Off
     521c2fd7-5f4f-42d2-8d89-e0818c2781ba: 'Navigation / Link' # Navigation / Link
@@ -141,13 +142,16 @@ meta:
     8088e42b-90d5-443c-a48e-1dac9ddeb72a: Settings # Settings
     8596f203-6a19-4f0b-a499-4d70fbe9584f: thumbnail # thumbnail
     9800e5de-6b70-4e9a-a491-54ef32087d74: 'Page / Blog Datastar' # Page / Blog Datastar
+    978112b6-b2ea-4430-bdc5-2144a4734cf5: Color # Color
     998295c3-03ea-4a83-b787-ba1d5a930248: 'Craft 5' # Craft 5
     76206244-6c91-4de1-b3d0-68c5d6a77369: CTA # CTA
     a0e826d1-b07d-436b-a836-517709848314: Text # Text
     a3f63eae-3ce5-48bf-8d1f-7f98792227d6: Category # Category
+    a9a428eb-cbae-455e-876a-3cef2b1fef95: Map # Map
     a44cd88c-10a5-4ee3-b9e4-795e2f4f208c: Code # Code
     a359a358-f5ae-4b0b-a21a-9fdaadb38180: 'Navigation / Label' # Navigation / Label
     b049044a-c809-41e6-9e27-43e22b6c394b: Accordion # Accordion
+    b176366b-d2cd-4172-bbb5-f64769af3719: Map # Map
     c05cf09b-1380-4613-8fd9-1e1a72af0e79: 'Text - Single' # Text - Single
     c07bd68f-efab-420f-ad23-7131c2b59410: Grid # Grid
     c2078d68-c6cf-42ee-ad68-931b8a4b5cdb: 'Link - Native' # Link - Native
@@ -188,6 +192,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  simplemap:
+    edition: lite
+    enabled: true
+    schemaVersion: 3.4.2
   vite:
     edition: standard
     enabled: true

@@ -1,0 +1,59 @@
+{% set search = signals.search ?? "" %}
+{% set filter = signals.filter ?? "" %}
+{% set locations = craft.entries().section('blog').eagerly() %}
+
+{% if filter %}
+  {% set filterEntry = craft.entries.section('categories').slug(filter).one() %}
+  {% set locations = locations.andRelatedTo(filterEntry) %}
+{% endif %}
+{% if search %}
+  {% set locations = locations.search(search) %}
+{% endif %}
+{% set locations = locations.all() %}
+{% set locations = locations|filter(e =>
+  e.map
+  and e.map.lat is defined and e.map.lng is defined
+  and e.map.lat is not empty and e.map.lng is not empty
+) %}
+
+{% set points = [] %}
+{% for e in locations %}
+  {% set cat = e.relationCategories.one() %}
+  {% set img = e.card.image.one() %}
+  {% set imgUrl = img ? img.getUrl({
+    width: 200,
+    height: 100,
+    mode: 'crop',
+    format: 'webp'
+  }) : null %}
+
+  {% set points = points|merge([{
+    id: e.id,
+    title: e.title,
+    text: e.card.teaser,
+    lat: e.map.lat,
+    lng: e.map.lng,
+    category: cat.title ?? '',
+    color: cat.color.getHex() ?? '',
+    image: imgUrl,
+    url: e.url
+  }]) %}
+{% endfor %}
+
+{% patchsignals {locations: points} %}
+
+{% if not locations %}
+  {% patchelements %}
+    <div id="map-result">
+      <div class="text-2xl">
+        <p>🫣 No results found".</p>
+      </div>
+    </div>
+  {% endpatchelements %}
+{% else %}
+  <div id="map-result">
+    {% for entry in locations %}
+      {{ entry.render({ type: 'map' }) }}
+    {% endfor %}
+  </div>
+{% endif %}

@@ -24,6 +24,7 @@ and **developers** who want a production-ready foundation for new Craft projects
 - ⚡ **Vite** – fast bundling and instant reloads
 - 🧩 **DDEV** – reproducible local development environment
 - 🚀 **Datastar** – lightweight, reactive frontend for dynamic UIs
+- 🗺️ **Leaflet** – interactive, data-driven maps with clustering and live filtering
 - 🧱 **Vue 3 (Web Components)** – progressive enhancement with custom elements
 - 🔗 **GraphQL** – structured data fetching directly from Craft
 - 🎨 **Tailwind CSS v4** – utility-first styling with CSS variables
@@ -31,7 +32,7 @@ and **developers** who want a production-ready foundation for new Craft projects
 - 🗃️ **Craft eagerly() + render()** – optimized queries, automatic block templates, and smart caching
 - 🧾 **SEO-Ready JSON-LD Organization Schema** – structured data for Google Rich Results
 - 🔍 **SEO Meta, Open Graph & Sitemap** – via SEOMate
-- 🔌 **Plugins:** CKEditor, Datastar, Image Resizer, SEOMate, Vite
+- 🔌 **Plugins:** CKEditor, Datastar, Map, Image Resizer, SEOMate, Vite
 
 ---
 

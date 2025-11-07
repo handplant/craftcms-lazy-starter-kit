@@ -1,0 +1,32 @@
+columnSuffix: null
+handle: map
+instructions: null
+name: Map
+searchable: true
+settings:
+  boundary: '""'
+  boundaryRestrictionNELat: null
+  boundaryRestrictionNELng: null
+  boundaryRestrictionSWLat: null
+  boundaryRestrictionSWLng: null
+  country: null
+  countryRestriction: null
+  height: null
+  hideAddress: false
+  hideLatLng: null
+  hideMap: false
+  hideSearch: false
+  lat: 51.272154
+  lng: 0.514951
+  maxZoom: 18.0
+  minZoom: 3.0
+  showCurrentLocation: false
+  showLatLng: false
+  showW3WField: false
+  showW3WGrid: false
+  size: normal
+  typeRestriction: null
+  zoom: 15
+translationKeyFormat: null
+translationMethod: none
+type: ether\simplemap\fields\MapField

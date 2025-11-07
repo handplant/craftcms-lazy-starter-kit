@@ -9,3 +9,16 @@
 .gslide-image {
   @apply !shadow-none;
 }
+
+
+.leaflet-popup-content-wrapper {
+  @apply !p-0 !rounded-none !border-0;
+
+  .leaflet-popup-content {
+    @apply !m-0 ;
+  }
+}
+
+.leaflet-popup-close-button {
+  @apply !bg-white !text-black;
+}

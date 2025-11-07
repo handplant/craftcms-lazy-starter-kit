@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d2c146986f5cc9952368b9cdc488e8c",
+    "content-hash": "783f20256a736c44d65e1558ec6f5447",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -202,16 +202,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.5.8",
+            "version": "1.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "719026bb30813accb68271fee7e39552a58e9f65"
+                "reference": "1905981ee626e6f852448b7aaa978f8666c5bc54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/719026bb30813accb68271fee7e39552a58e9f65",
-                "reference": "719026bb30813accb68271fee7e39552a58e9f65",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/1905981ee626e6f852448b7aaa978f8666c5bc54",
+                "reference": "1905981ee626e6f852448b7aaa978f8666c5bc54",
                 "shasum": ""
             },
             "require": {
@@ -258,7 +258,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.5.8"
+                "source": "https://github.com/composer/ca-bundle/tree/1.5.9"
             },
             "funding": [
                 {
@@ -270,7 +270,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-20T18:49:47+00:00"
+            "time": "2025-11-06T11:46:17+00:00"
         },
         {
             "name": "composer/semver",
@@ -1174,6 +1174,52 @@
             "time": "2025-08-12T10:13:48+00:00"
         },
         {
+            "name": "ether/simplemap",
+            "version": "5.0.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ethercreative/simplemap/zipball/45da58e7fb472989efcdf2f2471ca41aa761e7df",
+                "reference": "45da58e7fb472989efcdf2f2471ca41aa761e7df",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0.0",
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "ext-zlib": "*",
+                "geoip2/geoip2": "~2.0",
+                "guzzlehttp/guzzle": "^6.3.3|^7.2.0",
+                "mapkit/jwt": "^1.1.2",
+                "php": "^8.2",
+                "what3words/w3w-php-wrapper": "3.*"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "simplemap",
+                "name": "Maps",
+                "developer": "Ether Creative",
+                "developerUrl": "https://ethercreative.co.uk",
+                "class": "ether\\simplemap\\SimpleMap",
+                "schemaVersion": "3.4.2"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ether\\simplemap\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "A beautifully simple Map field type for Craft CMS",
+            "support": {
+                "email": "help@ethercreative.co.uk",
+                "docs": "https://docs.ethercreative.co.uk/maps",
+                "source": "https://github.com/ethercreative/simplemap",
+                "issues": "https://github.com/ethercreative/simplemap/issues"
+            },
+            "time": "2024-11-11T12:11:23+00:00"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.19.0",
             "source": {
@@ -1233,6 +1279,48 @@
                 "source": "https://github.com/ezyang/htmlpurifier/tree/v4.19.0"
             },
             "time": "2025-10-17T16:34:55+00:00"
+        },
+        {
+            "name": "geoip2/geoip2",
+            "version": "v2.13.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/GeoIP2-php/zipball/6a41d8fbd6b90052bc34dff3b4252d0f88067b23",
+                "reference": "6a41d8fbd6b90052bc34dff3b4252d0f88067b23",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "maxmind-db/reader": "~1.8",
+                "maxmind/web-service-common": "~0.8",
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GeoIp2\\": "src"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "https://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind GeoIP2 PHP API",
+            "homepage": "https://github.com/maxmind/GeoIP2-php",
+            "keywords": [
+                "IP",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2022-08-05T20:32:58+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -2019,6 +2107,33 @@
             "time": "2024-12-08T08:18:47+00:00"
         },
         {
+            "name": "mapkit/jwt",
+            "version": "v1.1.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leanmotherfuckers/mapkit-jwt/zipball/19e502a991dbcb4becbcb51775b29aae624f551d",
+                "reference": "19e502a991dbcb4becbcb51775b29aae624f551d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mapkit\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Schoffelen",
+                    "email": "thomas@includable.com"
+                }
+            ],
+            "description": "Simple class to create MapKit and MusicKit JWT tokens.",
+            "time": "2019-06-10T05:32:35+00:00"
+        },
+        {
             "name": "masterminds/html5",
             "version": "2.10.0",
             "source": {
@@ -2084,6 +2199,104 @@
                 "source": "https://github.com/Masterminds/html5-php/tree/2.10.0"
             },
             "time": "2025-07-25T09:04:22+00:00"
+        },
+        {
+            "name": "maxmind-db/reader",
+            "version": "v1.12.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/MaxMind-DB-Reader-php.git",
+                "reference": "815939e006b7e68062b540ec9e86aaa8be2b6ce4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/815939e006b7e68062b540ec9e86aaa8be2b6ce4",
+                "reference": "815939e006b7e68062b540ec9e86aaa8be2b6ce4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "conflict": {
+                "ext-maxminddb": "<1.11.1 || >=2.0.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "3.*",
+                "phpstan/phpstan": "*",
+                "phpunit/phpunit": ">=8.0.0,<10.0.0",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "suggest": {
+                "ext-bcmath": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+                "ext-gmp": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+                "ext-maxminddb": "A C-based database decoder that provides significantly faster lookups"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MaxMind\\Db\\": "src/MaxMind/Db"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "https://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind DB Reader API",
+            "homepage": "https://github.com/maxmind/MaxMind-DB-Reader-php",
+            "keywords": [
+                "database",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "support": {
+                "issues": "https://github.com/maxmind/MaxMind-DB-Reader-php/issues",
+                "source": "https://github.com/maxmind/MaxMind-DB-Reader-php/tree/v1.12.1"
+            },
+            "time": "2025-05-05T20:56:32+00:00"
+        },
+        {
+            "name": "maxmind/web-service-common",
+            "version": "v0.10.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/web-service-common-php/zipball/d7c7c42fc31bff26e0ded73a6e187bcfb193f9c4",
+                "reference": "d7c7c42fc31bff26e0ded73a6e187bcfb193f9c4",
+                "shasum": ""
+            },
+            "require": {
+                "composer/ca-bundle": "^1.0.3",
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MaxMind\\Exception\\": "src/Exception",
+                    "MaxMind\\WebService\\": "src/WebService"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory Oschwald",
+                    "email": "goschwald@maxmind.com"
+                }
+            ],
+            "description": "Internal MaxMind Web Service API",
+            "homepage": "https://github.com/maxmind/web-service-common-php",
+            "time": "2024-11-14T23:14:52+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
@@ -3990,16 +4203,16 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v7.3.0",
+            "version": "v7.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "601a5ce9aaad7bf10797e3663faefce9e26c24e2"
+                "reference": "84321188c4754e64273b46b406081ad9b18e8614"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/601a5ce9aaad7bf10797e3663faefce9e26c24e2",
-                "reference": "601a5ce9aaad7bf10797e3663faefce9e26c24e2",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/84321188c4754e64273b46b406081ad9b18e8614",
+                "reference": "84321188c4754e64273b46b406081ad9b18e8614",
                 "shasum": ""
             },
             "require": {
@@ -4035,7 +4248,7 @@
             "description": "Converts CSS selectors to XPath expressions",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/css-selector/tree/v7.3.0"
+                "source": "https://github.com/symfony/css-selector/tree/v7.3.6"
             },
             "funding": [
                 {
@@ -4047,11 +4260,15 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-25T14:21:43+00:00"
+            "time": "2025-10-29T17:24:25+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -4423,16 +4640,16 @@
         },
         {
             "name": "symfony/http-client",
-            "version": "v7.3.4",
+            "version": "v7.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-client.git",
-                "reference": "4b62871a01c49457cf2a8e560af7ee8a94b87a62"
+                "reference": "3c0a55a2c8e21e30a37022801c11c7ab5a6cb2de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-client/zipball/4b62871a01c49457cf2a8e560af7ee8a94b87a62",
-                "reference": "4b62871a01c49457cf2a8e560af7ee8a94b87a62",
+                "url": "https://api.github.com/repos/symfony/http-client/zipball/3c0a55a2c8e21e30a37022801c11c7ab5a6cb2de",
+                "reference": "3c0a55a2c8e21e30a37022801c11c7ab5a6cb2de",
                 "shasum": ""
             },
             "require": {
@@ -4499,7 +4716,7 @@
                 "http"
             ],
             "support": {
-                "source": "https://github.com/symfony/http-client/tree/v7.3.4"
+                "source": "https://github.com/symfony/http-client/tree/v7.3.6"
             },
             "funding": [
                 {
@@ -4519,7 +4736,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-11T10:12:26+00:00"
+            "time": "2025-11-05T17:41:46+00:00"
         },
         {
             "name": "symfony/http-client-contracts",
@@ -7469,6 +7686,61 @@
                 "graphql"
             ],
             "time": "2023-07-05T14:23:37+00:00"
+        },
+        {
+            "name": "what3words/w3w-php-wrapper",
+            "version": "v3.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/what3words/w3w-php-wrapper.git",
+                "reference": "7948096be05503d02de8ff405c2a5024c8783977"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/what3words/w3w-php-wrapper/zipball/7948096be05503d02de8ff405c2a5024c8783977",
+                "reference": "7948096be05503d02de8ff405c2a5024c8783977",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.3"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": "Thanks from all of us at index.home.raft for using what3words"
+            },
+            "autoload": {
+                "psr-4": {
+                    "What3words\\Geocoder\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "what3words",
+                    "email": "support@what3words.com",
+                    "homepage": "http://developer.what3words.com"
+                }
+            ],
+            "description": "A PHP library to use the what3words RESTful API",
+            "homepage": "https://github.com/what3words/w3w-php-wrapper",
+            "keywords": [
+                "3 word address",
+                "geocoding",
+                "what3words"
+            ],
+            "support": {
+                "docs": "https://developer.what3words.com",
+                "email": "support@what3words.com",
+                "issues": "https://github.com/what3words/w3w-php-wrapper/issues",
+                "source": "https://github.com/what3words/w3w-php-wrapper"
+            },
+            "time": "2025-03-25T11:55:00+00:00"
         },
         {
             "name": "yiisoft/yii2",

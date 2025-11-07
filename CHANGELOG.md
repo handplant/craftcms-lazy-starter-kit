@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.0] – 2025-11-07
+
+### Added
+
+- map plugin integration
+- Leaflet setup for interactive maps
+- Datastar-driven map template with live updates and clustering
+- custom popup component (title, category, preview image, link)
+
 ## [1.2.0] – 2025-10-22
 
 - Added support for a second-level navigation using Datastar signals.

@@ -3,6 +3,10 @@
     @apply grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8;
   }
 
+  #map-result {
+    @apply hidden lg:grid xl:grid-cols-2 3xl:grid-cols-3 gap-8 p-5 pb-0 mt-3;
+  }
+
   /* BUTTON & LINKS */
   .ui-btn {
     @apply ui-bold ui-focus no-underline inline-flex items-center gap-3 border border-transparent bg-primary px-3 py-1 text-base text-white group-hover:bg-primary/80 hover:bg-primary/80 hover:no-underline hover:text-white focus:outline-0 focus:ring-4 focus:ring-primary/20 rounded-sm;
@@ -47,5 +51,16 @@
 
   .ui-picture-blur.is-loaded::before {
     @apply opacity-0;
+  }
+
+  /*MAP POPUP*/
+  .ui-popup {
+    .ui-popup__image {
+      @apply w-full;
+    }
+
+    .ui-popup__content {
+      @apply flex flex-col p-3 text-sm;
+    }
   }
 }

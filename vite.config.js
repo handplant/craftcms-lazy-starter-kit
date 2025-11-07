@@ -23,6 +23,7 @@ export default defineConfig(({ command }) => ({
     rollupOptions: {
       input: {
         app: 'src/js/app.js',
+        map: 'src/js/map.js',
         ...components,
       },
       output: {

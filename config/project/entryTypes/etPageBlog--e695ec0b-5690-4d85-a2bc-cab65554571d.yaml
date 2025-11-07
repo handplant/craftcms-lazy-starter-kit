@@ -123,6 +123,23 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2025-11-07T09:41:52+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: b176366b-d2cd-4172-bbb5-f64769af3719 # Map
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7f45d57a-6089-4476-9875-732dfa47a1a0
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-05-12T07:54:19+00:00'
             elementCondition: null
             type: craft\fieldlayoutelements\HorizontalRule

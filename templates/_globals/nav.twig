@@ -3,7 +3,7 @@
 {% set navItems = craft.entries.section("navigations").eagerly().level(1).all() ?? null %}
 
 <nav
-  class="fixed inset-x-0 top-0 z-30 h-16 bg-white/90 layout"
+  class="fixed inset-x-0 top-0 z-[1001] h-16 bg-white/90 layout"
   data-class="{ 'bg-stone-200/90': $navOpen, 'bg-white/90': !$navOpen }"
   data-on:keydown="if (event.key === 'Escape') $navOpen = false, $searchOpen = false"
   data-on:click__outside="$navOpen = false, $dropdownOpen = false"
