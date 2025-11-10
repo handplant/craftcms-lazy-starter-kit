@@ -32,4 +32,8 @@
     @apply ring-0;
   }
 
+  [data-animate-group] {
+    @apply overflow-hidden;
+  }
+
 }
