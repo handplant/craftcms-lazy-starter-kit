@@ -19,24 +19,12 @@
 {% set points = [] %}
 {% for e in locations %}
   {% set cat = e.relationCategories.one() %}
-  {% set img = e.card.image.one() %}
-  {% set imgUrl = img ? img.getUrl({
-    width: 200,
-    height: 100,
-    mode: 'crop',
-    format: 'webp'
-  }) : null %}
 
   {% set points = points|merge([{
     id: e.id,
-    title: e.title,
-    text: e.card.teaser,
     lat: e.map.lat,
     lng: e.map.lng,
-    category: cat.title ?? '',
-    color: cat.color.getHex() ?? '',
-    image: imgUrl,
-    url: e.url
+    color: cat.color.getHex() ?? ''
   }]) %}
 {% endfor %}
 

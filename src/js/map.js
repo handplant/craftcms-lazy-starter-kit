@@ -7,6 +7,7 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 let map
 window.clusterGroup = null
 window.mapMarkers = {}
+window.popupCache = {}
 
 function initMap () {
   map = L.map('map').setView([47.8, 7.6], 9)
@@ -30,7 +31,7 @@ function updateMarkers (locations = []) {
   window.mapMarkers = {}
 
   const markers = locations.map(loc => {
-    const color = loc.color || categoryColors['#000']
+    const color = loc.color || '#000'
 
     const icon = L.divIcon({
       className: 'custom-marker',
@@ -46,22 +47,69 @@ function updateMarkers (locations = []) {
       iconAnchor: [15, 15],
     })
 
-    const popupHtml = `
-      <div class="ui-popup__wrapper">
-        ${loc.image ? `
-          <div class="ui-popup__image">
-            <img src="${loc.image}" alt="${loc.title}" style="aspect-ratio:2/1;object-fit:cover;">
-          </div>` : ''}
-        <div class="ui-popup__content">
-          <span class="ui-bold">${loc.category}</span>
-          <strong>${loc.title}</strong>
-          ${loc.url ? `<a href="${loc.url}" class="ui-link">Read more →</a>` : ''}
-        </div>
-      </div>
-    `.trim()
+    const marker = L.marker([loc.lat, loc.lng], { icon }).bindPopup('')
 
-    const marker = L.marker([loc.lat, loc.lng], { icon })
-      .bindPopup(popupHtml, { className: 'ui-popup' })
+    marker.on('popupopen', async (e) => {
+      const popup = e.popup
+      popup.setContent(window.popupCache[loc.id] || '<div class="ui-popup"><div class="ui-popup__content">Loading...</div></div>')
+
+      if (!window.popupCache[loc.id]) {
+        const query = `
+          query BlogEntry($id: [QueryArgument]) {
+            entry(id: $id) {
+              id
+              title
+              url
+              ... on etPageBlog_Entry {
+                  card {
+                    image {
+                      url(transform: "thumbnail")
+                      width
+                      height
+                      alt
+                    }
+                  }
+                  relationCategories {
+                    title
+                  }
+                }
+            }
+          }
+        `
+        try {
+          const res = await fetch('/api', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query, variables: { id: loc.id } }),
+          })
+          const { data, errors } = await res.json()
+
+          if (errors) {
+            throw new Error(errors[0].message)
+          }
+          const e = data.entry
+
+          const html = `
+            <div class="ui-popup">
+              ${e.card?.image?.[0]?.url ? `
+                <div class="ui-popup__image">
+                  <img src="${e.card.image[0].url}" alt="${e.card.image[0].alt || ''}">
+                </div>` : ''
+          }
+              <div class="ui-popup__content">
+                <span class="ui-bold">${e.relationCategories?.[0]?.title || ''}</span>
+                <strong>${e.title}</strong>
+                <a href="${e.url}" class="ui-link">Read more →</a>
+              </div>
+            </div>
+          `
+          window.popupCache[loc.id] = html
+          marker.setPopupContent(html)
+        } catch (err) {
+          popup.setContent('<div class="ui-popup"><div class="ui-popup__content">⚠️ Error loading content.</div></div>')
+        }
+      }
+    })
 
     if (loc.id) {
       window.mapMarkers[loc.id] = marker

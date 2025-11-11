@@ -55,6 +55,8 @@
 
   /*MAP POPUP*/
   .ui-popup {
+    @apply min-w-3xs;
+
     .ui-popup__image {
       @apply w-full;
     }
