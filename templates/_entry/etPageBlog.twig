@@ -23,6 +23,22 @@
           }, withContext = false) }}
         </div>
       {% endif %}
+
+      {% if entry.externalUrl %}
+
+        <div class="prose md:prose-lg lg:prose-xl">
+          {{ entry.card.teaser }}
+
+          {% include '_components/button.twig' with {
+            label: "Read more"|t,
+            url: entry.externalUrl,
+            target: '_blank',
+            external: true,
+            class: 'not-prose'
+          } %}
+        </div>
+
+      {% endif %}
     </header>
 
     {{ entry.matrixBuilder.eagerly().render({ builder: true }) }}

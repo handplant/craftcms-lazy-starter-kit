@@ -140,6 +140,23 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2025-11-13T08:54:50+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: d1810b84-cc13-409f-a229-ed19ee97748e # Url
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'External Url'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 96a98d05-9c97-4424-b5b3-b60a09dafe54
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-05-12T07:54:19+00:00'
             elementCondition: null
             type: craft\fieldlayoutelements\HorizontalRule

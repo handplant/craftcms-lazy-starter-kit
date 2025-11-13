@@ -33,10 +33,19 @@
       </div>
     {% endif %}
     <div class="flex justify-between">
-      {% include '_components/button.twig' with {
-        label: "Read more"|t,
-        url: entry.url
-      } %}
+      {% if entry.externalUrl %}
+        {% include '_components/button.twig' with {
+          label: "Read more"|t,
+          url: entry.externalUrl,
+          target: '_blank',
+          external: true
+        } %}
+      {% else %}
+        {% include '_components/button.twig' with {
+          label: "Read more"|t,
+          url: entry.url
+        } %}
+      {% endif %}
       {% if type == 'map' %}
         <button class="ui-btn"
                 data-on:click="focusMarker({{ entry.id }})"
