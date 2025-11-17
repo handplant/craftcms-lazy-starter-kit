@@ -4,6 +4,8 @@ import ViteRestart from 'vite-plugin-restart'
 import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 
+const host = process.env.DDEV_HOSTNAME
+
 const components = Object.fromEntries(
   fg.sync('src/vue/webcomponents/*.ce.ts').map(file => {
     const name = file.split('/').pop().replace('.ce.ts', '')
@@ -53,20 +55,16 @@ export default defineConfig(({ command }) => ({
   publicDir: './src/public',
 
   server: {
-    // host: '0.0.0.0',
-    // port: 3000,
-    // origin: 'https://craftcms-lazy.ddev.site:3000',
-    // cors: true,
-    allowedHosts: true,
     cors: {
-      origin:
-        /https?:\/\/([A-Za-z0-9\-\.]+)?(localhost|\.local|\.test|\.site)(?::\d+)?$/,
+      origin: `https://${host}`,
+      credentials: true,
     },
+    hmr: {
+      host: host,
+    },
+    allowedHosts: [host],
     fs: {
       strict: false,
-    },
-    headers: {
-      'Access-Control-Allow-Private-Network': 'true',
     },
     host: '0.0.0.0',
     origin: 'http://localhost:3000',

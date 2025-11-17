@@ -1,0 +1,13 @@
+vendor/
+config/
+
+package-lock.json
+composer.json
+composer.lock
+
+storage/
+web/cpresources/
+web/dist/
+web/uploads/
+
+.ddev/
