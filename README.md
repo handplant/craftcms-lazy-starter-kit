@@ -29,6 +29,7 @@ and **developers** who want a production-ready foundation for new Craft projects
 - 🔗 **GraphQL** – structured data fetching directly from Craft
 - 🎨 **Tailwind CSS v4** – utility-first styling with CSS variables
 - 🎞️ **Anime.js** – smooth element animations and scroll-based transitions
+- 🛞 **Embla Carousel** – ultra-smooth, touch-friendly sliders with full customization
 - 🗃️ **Craft eagerly() + render()** – optimized queries, automatic block templates, and smart caching
 - 🧾 **SEO-Ready JSON-LD Organization Schema** – structured data for Google Rich Results
 - 🔍 **SEO Meta, Open Graph & Sitemap** – via SEOMate
