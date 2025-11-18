@@ -2,6 +2,7 @@ import '../css/app.css'
 import 'glightbox/dist/css/glightbox.css'
 import 'highlight.js/styles/github-dark.css'
 import { animate, stagger, onScroll } from 'animejs'
+import EmblaCarousel from 'embla-carousel'
 import GLightbox from 'glightbox'
 import hljs from 'highlight.js/lib/core'
 import twig from 'highlight.js/lib/languages/twig'
@@ -21,7 +22,56 @@ console.log(
   'font-size: 13px; font-weight: bold; color: #fff; background-color: #e5422b; padding: 10px 12px; margin: 5px 0;',
 )
 
-// Highlight all code blocks after page load
+//EMBLA SLIDER
+const rootNodes = document.querySelectorAll('.embla')
+const options = { loop: true, align: 'center' }
+
+function setupEmblaDots (embla, dotsRoot) {
+  const slidesCount = embla.slideNodes().length
+  const dots = []
+
+  // Create dots
+  for (let i = 0; i < slidesCount; i++) {
+    const btn = document.createElement('button')
+    btn.className = 'embla__dot'
+    btn.type = 'button'
+    btn.addEventListener('click', () => embla.scrollTo(i))
+    dotsRoot.appendChild(btn)
+    dots.push(btn)
+  }
+
+  const setSelectedDot = () => {
+    const selected = embla.selectedScrollSnap()
+    dots.forEach((dot, i) =>
+      dot.classList.toggle('is-selected', i === selected),
+    )
+  }
+
+  embla.on('select', setSelectedDot)
+  embla.on('init', setSelectedDot)
+}
+
+rootNodes.forEach((rootNode) => {
+  const viewportNode = rootNode.querySelector('.embla__viewport')
+  const prevButtonNode = rootNode.querySelector('.embla__prev')
+  const nextButtonNode = rootNode.querySelector('.embla__next')
+  const dotsRoot = rootNode.querySelector('.embla__dots')
+
+  if (!viewportNode) {
+    return
+  }
+
+  const embla = EmblaCarousel(viewportNode, options)
+  prevButtonNode?.addEventListener('click', () => embla.scrollPrev())
+  nextButtonNode?.addEventListener('click', () => embla.scrollNext())
+
+  // Dots
+  if (dotsRoot) {
+    setupEmblaDots(embla, dotsRoot)
+  }
+})
+
+// CODEBLOCK
 document.addEventListener('DOMContentLoaded', () => {
   hljs.highlightAll()
 })

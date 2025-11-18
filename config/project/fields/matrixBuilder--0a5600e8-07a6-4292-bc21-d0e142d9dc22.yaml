@@ -68,6 +68,14 @@ settings:
       __assoc__:
         -
           - uid
+          - c0130a82-4973-43d7-b764-89177f7725a5 # Slider
+        -
+          - group
+          - CTA
+    -
+      __assoc__:
+        -
+          - uid
           - 76206244-6c91-4de1-b3d0-68c5d6a77369 # CTA
         -
           - group

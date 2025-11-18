@@ -1,0 +1,39 @@
+.embla {
+  @apply m-auto max-w-[2000px];
+  --slide-spacing: 1rem;
+}
+
+.embla__viewport {
+  @apply overflow-hidden touch-pan-y touch-pinch-zoom;
+}
+
+.embla__container {
+  @apply flex;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.embla__slide {
+  @apply shrink-0 basis-3/4 md:basis-1/2 2xl:basis-1/4;
+  padding-left: var(--slide-spacing);
+}
+
+.embla__controls {
+  @apply flex justify-center md:justify-between items-center py-3;
+}
+
+.embla__buttons, .embla__dots {
+  @apply flex justify-center gap-2 mx-2;
+}
+
+.embla__dots {
+  @apply hidden md:flex;
+}
+
+.embla__dot {
+  @apply w-4 h-4 rounded-full bg-black/20;
+}
+
+.embla__dot.is-selected {
+  @apply bg-primary;
+}
+

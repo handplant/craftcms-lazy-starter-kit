@@ -1,4 +1,4 @@
-dateModified: 1763024090
+dateModified: 1763451502
 elementSources:
   craft\elements\Entry:
     -
@@ -152,6 +152,7 @@ meta:
     a359a358-f5ae-4b0b-a21a-9fdaadb38180: 'Navigation / Label' # Navigation / Label
     b049044a-c809-41e6-9e27-43e22b6c394b: Accordion # Accordion
     b176366b-d2cd-4172-bbb5-f64769af3719: Map # Map
+    c0130a82-4973-43d7-b764-89177f7725a5: Slider # Slider
     c05cf09b-1380-4613-8fd9-1e1a72af0e79: 'Text - Single' # Text - Single
     c07bd68f-efab-420f-ad23-7131c2b59410: Grid # Grid
     c2078d68-c6cf-42ee-ad68-931b8a4b5cdb: 'Link - Native' # Link - Native

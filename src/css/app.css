@@ -3,6 +3,7 @@
 @import './_utilities.css';
 @import './_components.css';
 @import './_layout.css';
+@import './_embla.css';
 @import './_vendor.css';
 
 @plugin "@tailwindcss/forms";

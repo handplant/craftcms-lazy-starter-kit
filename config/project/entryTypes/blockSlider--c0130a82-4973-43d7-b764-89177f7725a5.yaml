@@ -1,0 +1,40 @@
+color: violet
+description: null
+fieldLayouts:
+  83186cc1-0306-4eea-b83d-b5e332af5af1:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-18T07:38:02+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 87b770e6-4e90-42b9-bee3-ce94aba9b182 # Matrix - Cards
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: Cards
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8b94945a-203d-4e9d-b908-f8abe802863d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a8652c51-375d-47ad-8851-0d3a823b143e
+        userCondition: null
+handle: blockSlider
+hasTitleField: false
+icon: cards-blank
+name: Slider
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

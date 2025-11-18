@@ -1,35 +1,43 @@
 {% set image = entry.image.eagerly().one() ?? null %}
 {% set button = entry.button %}
+{% set slider = slider ?? false %}
 
-<div class="ui-card" data-animate="fade-up">
-  {% if image %}
-    <div class="aspect-video">
-      {{ include("_components/image.twig", {
-        image: image,
-        sizes: [480],
-        objectFit: true,
-        class: 'rounded-sm'
-      }, withContext = false) }}
-    </div>
+
+{% if slider %}
+<div class="embla__slide">
   {% endif %}
-  <div class="space-y-8 p-4">
-    <h2 class="ui-h4 ">
-      {{ entry.headline|nl2br }}
-    </h2>
-    {% if entry.teaser %}
-      <div class="prose prose-lg">
-        {{ entry.teaser }}
+  <div class="ui-card"{{ not slider ? ' data-animate="fade-up"' }}>
+    {% if image %}
+      <div class="aspect-video">
+        {{ include("_components/image.twig", {
+          image: image,
+          sizes: [480],
+          objectFit: true,
+          class: 'rounded-sm'
+        }, withContext = false) }}
       </div>
     {% endif %}
-    {% if button %}
-      {{ include("_components/button.twig", {
-        label: button.label ?? button.title,
-        url: button.url,
-        target: button.target ? '_blank' : null,
-        rel: button.target ? 'noopener noreferrer' : null,
-        ariaLabel: button.ariaLabel,
-        download: button.download,
-      }, withContext = false) }}
-    {% endif %}
+    <div class="space-y-8 p-4">
+      <h2 class="ui-h4 ">
+        {{ entry.headline|nl2br }}
+      </h2>
+      {% if entry.teaser %}
+        <div class="prose prose-lg">
+          {{ entry.teaser }}
+        </div>
+      {% endif %}
+      {% if button %}
+        {{ include("_components/button.twig", {
+          label: button.label ?? button.title,
+          url: button.url,
+          target: button.target ? '_blank' : null,
+          rel: button.target ? 'noopener noreferrer' : null,
+          ariaLabel: button.ariaLabel,
+          download: button.download,
+        }, withContext = false) }}
+      {% endif %}
+    </div>
   </div>
+  {% if slider %}
 </div>
+{% endif %}
