@@ -22,14 +22,14 @@
       </div>
     {% endif %}
     {% if button %}
-      {% include '_components/button.twig' with {
+      {{ include("_components/button.twig", {
         label: button.label ?? button.title,
         url: button.url,
         target: button.target ? '_blank' : null,
         rel: button.target ? 'noopener noreferrer' : null,
         ariaLabel: button.ariaLabel,
         download: button.download,
-      } %}
+      }, withContext = false) }}
     {% endif %}
   </div>
 </div>

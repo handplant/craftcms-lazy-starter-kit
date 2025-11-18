@@ -8,7 +8,7 @@
   {% if images %}
     {{ include('_components/label.twig', {
       label: "Block Gallery",
-    }) }}
+    }, withContext = false) }}
     <div class="grid grid-cols-2 md:grid-cols-3 grid-rows-3 md:grid-rows-2 w-full gap-3">
       {% for image in images %}
         {% set classes = '' %}

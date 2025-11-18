@@ -28,14 +28,13 @@
 
         <div class="prose md:prose-lg lg:prose-xl">
           {{ entry.card.teaser }}
-
-          {% include '_components/button.twig' with {
+          {{ include("_components/button.twig", {
             label: "Read more"|t,
             url: entry.externalUrl,
             target: '_blank',
             external: true,
             class: 'not-prose'
-          } %}
+          }, withContext = false) }}
         </div>
 
       {% endif %}

@@ -5,8 +5,8 @@
 
 {% block content %}
   {{ include('_components/label.twig', {
-    label: "Block Code",
-  }) }}
+    label: "Block Buttons",
+  }, withContext = false) }}
   {% if entry.title %}
     <p class="ui-bold text-sm mb-2 flex justify-between">
       <span>{{ entry.title }}</span>

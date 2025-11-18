@@ -6,7 +6,7 @@
 {% block content %}
   {{ include('_components/label.twig', {
     label: "Block Text",
-  }) }}
+  }, withContext = false) }}
   <div class="prose md:prose-lg lg:prose-xl" data-animate="fade-in">
     {{ entry.text }}
   </div>

@@ -2,12 +2,15 @@
 {% set category = entry.relationCategories.one() ?? null %}
 {% set date = entry.date|date('d.m.Y') %}
 {% set type = type ?? null %}
+{% set isExternal = entry.externalUrl is not empty %}
 
 <div class="ui-card relative">
   {% if category %}
     <span class="absolute py-1 px-2 shadow ui-bold -top-3 right-5 text-base text-white rounded-sm"
           style="background: {{ category.color.getHex() ?? '#000' }}"
-    >{{ category }}</span>
+    >
+      {{ category }}
+    </span>
   {% endif %}
   {% if image %}
     <div class="aspect-video">
@@ -33,19 +36,12 @@
       </div>
     {% endif %}
     <div class="flex justify-between">
-      {% if entry.externalUrl %}
-        {% include '_components/button.twig' with {
-          label: "Read more"|t,
-          url: entry.externalUrl,
-          target: '_blank',
-          external: true
-        } %}
-      {% else %}
-        {% include '_components/button.twig' with {
-          label: "Read more"|t,
-          url: entry.url
-        } %}
-      {% endif %}
+      {{ include("_components/button.twig", {
+        label: "Read more"|t,
+        url: isExternal ? entry.externalUrl : entry.url,
+        target: isExternal ? '_blank' : null,
+        external: isExternal
+      }, withContext = false) }}
       {% if type == 'map' %}
         <button class="ui-btn"
                 data-on:click="focusMarker({{ entry.id }})"

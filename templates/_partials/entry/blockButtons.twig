@@ -7,7 +7,7 @@
 
   {{ include('_components/label.twig', {
     label: "Block Buttons",
-  }) }}
+  }, withContext = false) }}
   <div class="flex items-end gap-3 sm:gap-6">
     {{ entry.matrixButtons.eagerly().render() }}
   </div>

@@ -14,8 +14,8 @@
 
 {% block content %}
   {{ include('_components/label.twig', {
-    label: "Block Call to action"
-  }) }}
+    label: "Block Buttons",
+  }, withContext = false) }}
   <div class="stack stack--end relative">
     {% if image %}
       <div
@@ -35,7 +35,7 @@
           {{ entry.headline|nl2br }}
         </p>
         {% if button %}
-          {% include '_components/button.twig' with {
+          {{ include("_components/button.twig", {
             label: button.label ?? button.title,
             url: button.url,
             size: 'lg',
@@ -43,7 +43,7 @@
             rel: button.target ? 'noopener noreferrer' : null,
             ariaLabel: button.ariaLabel,
             download: button.download,
-          } %}
+          }, withContext = false) }}
         {% endif %}
       </div>
     </div>

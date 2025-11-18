@@ -6,7 +6,7 @@
 {% block content %}
   {{ include('_components/label.twig', {
     label: "Block Accordion",
-  }) }}
+  }, withContext = false ) }}
   <div class="border border-stone-300 divide-stone-300 divide-y rounded-md" data-animate="fade-in">
     {{ entry.matrixAccordion.eagerly().render() }}
   </div>

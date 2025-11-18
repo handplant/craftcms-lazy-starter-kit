@@ -6,7 +6,7 @@
 {% block content %}
   {{ include('_components/label.twig', {
     label: "Block Media",
-  }) }}
+  }, withContext = false) }}
   {{ include("_components/media.twig", {
     asset: entry.assetMedia.eagerly().one() ?? null,
     showCaption: entry.mediaShowCaption
