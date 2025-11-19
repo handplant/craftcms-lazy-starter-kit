@@ -14,7 +14,7 @@
 {% paginate query.limit(6) as pageInfo, posts %}
 
 {% block main %}
-  {% cache using key 'entry__' ~ craft.app.request.pathInfo %}
+  {% cache using key 'entry__' ~ craft.app.request.pathInfo ~ '__' ~ filter %}
     <header class="blocks blocks--header">
       <div class="blocks__content">
         <h1 class="ui-h1">{{ entry.headline ? entry.headline|nl2br : entry.title }}</h1>
