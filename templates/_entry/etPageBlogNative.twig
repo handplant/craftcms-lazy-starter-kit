@@ -1,0 +1,68 @@
+{% extends '_layouts/base' %}
+
+{% set filter = craft.app.request.getQueryParam('filter') %}
+{% set categories = craft.entries.section('categories').all() ?? null %}
+{% set query = craft.entries().section('blog').orderBy('postDate desc').eagerly() %}
+
+{% if filter %}
+  {% set category = craft.entries().section('categories').slug(filter).one() %}
+  {% if category %}
+    {% set query = query.relatedTo(category) %}
+  {% endif %}
+{% endif %}
+
+{% paginate query.limit(6) as pageInfo, posts %}
+
+{% block main %}
+  {% cache using key 'entry__' ~ craft.app.request.pathInfo %}
+    <header class="blocks blocks--header">
+      <div class="blocks__content">
+        <h1 class="ui-h1">{{ entry.headline ? entry.headline|nl2br : entry.title }}</h1>
+      </div>
+    </header>
+    <section class="blocks blocks--text">
+      <div class="blocks__content prose md:prose-lg lg:prose-xl">
+        {{ entry.text }}
+      </div>
+    </section>
+    <section class="blocks blocks--blog">
+      <div class="blocks__popout">
+        {% if categories %}
+          {# FILTER #}
+          <div class="mb-6">
+            <select name="filter" class="ui-select" onchange="window.location='{{ entry.url }}' + (this.value ? '?filter=' + this.value : '')">
+              <option value="">Show all</option>
+              {% for cat in craft.entries.section('categories').all() %}
+                <option value="{{ cat.slug }}" {{ filter == cat.slug ? 'selected' }}>
+                  {{ cat.title }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+        {% endif %}
+
+        {# RESULT #}
+        {% if posts|length %}
+          <div id="result">
+            {% for entry in posts %}
+              {{ entry.render() }}
+            {% endfor %}
+          </div>
+          <nav class="flex items-center justify-center mt-10 space-x-4">
+            {% if pageInfo.prevUrl %}
+              <a class="ui-btn" href="{{ pageInfo.prevUrl }}">←</a>
+            {% endif %}
+            <span class="px-3 py-1">
+              Page {{ pageInfo.currentPage }} of {{ pageInfo.totalPages }}
+            </span>
+            {% if pageInfo.nextUrl %}
+              <a class="ui-btn" href="{{ pageInfo.nextUrl }}">→</a>
+            {% endif %}
+          </nav>
+        {% else %}
+          <p class="pt-4 pb-12 text-2xl">🫣 No results found.</p>
+        {% endif %}
+      </div>
+    </section>
+  {% endcache %}
+{% endblock %}

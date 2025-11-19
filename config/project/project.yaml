@@ -1,4 +1,4 @@
-dateModified: 1763451502
+dateModified: 1763538414
 elementSources:
   craft\elements\Entry:
     -
@@ -135,6 +135,7 @@ meta:
     177e5629-be0d-45a5-8751-ee4a081d01d0: 'Switch - Off' # Switch - Off
     521c2fd7-5f4f-42d2-8d89-e0818c2781ba: 'Navigation / Link' # Navigation / Link
     550d279b-74c8-4f54-beb2-b29d0d2592dd: Settings # Settings
+    567e521e-e0d2-45e7-9807-0f1338748a5b: 'Page / Blog Native' # Page / Blog Native
     767f97e3-a9dc-4be7-9c72-296ba3cfb077: Builder # Builder
     916e0660-c1f0-4d74-adbd-e0b797d79894: 'Page / Matrix Builder' # Page / Matrix Builder
     6243b5f2-9474-47a0-99f2-24d5a6cc5832: 'Rich Text - Rich' # Rich Text - Rich

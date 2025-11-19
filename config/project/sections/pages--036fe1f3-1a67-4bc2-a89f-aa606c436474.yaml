@@ -9,21 +9,16 @@ entryTypes:
     uid: 9800e5de-6b70-4e9a-a491-54ef32087d74 # Page / Blog Datastar
   -
     uid: d2c185ad-8cc0-4ff6-bae6-f4f27e1c256c # Page / Blog Vue
+  -
+    uid: 567e521e-e0d2-45e7-9807-0f1338748a5b # Page / Blog Native
 handle: pages
 maxAuthors: 1
 name: Pages
 previewTargets:
   -
-    __assoc__:
-      -
-        - label
-        - 'Primary entry page'
-      -
-        - urlFormat
-        - '{url}'
-      -
-        - refresh
-        - '1'
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
 propagationMethod: all
 siteSettings:
   6eab4b84-63fb-4382-bdd7-d2bee959aafb: # $SITE_NAME

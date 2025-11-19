@@ -1,0 +1,104 @@
+color: null
+description: null
+fieldLayouts:
+  c899a9db-b771-4105-a5be-e846049e5424:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-10-06T12:33:59+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: c9483b43-cbfc-4a1c-af7e-5f13a29e6d78
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-07T09:20:54+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5bf4ae8e-4fcb-4ed0-bb07-7dbbb4c59050 # Seo
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6103ca2e-f86b-49ae-8ebe-d94face07118
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-06T12:38:14+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 17c0c6a4-80a6-4cef-84f4-ebefe3af9d39 # Text - Multi
+            handle: headline
+            includeInCards: false
+            instructions: null
+            label: Headline
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b064b981-30de-47ef-8b9e-de935e9be2c7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-06T12:38:14+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 6243b5f2-9474-47a0-99f2-24d5a6cc5832 # Rich Text - Rich
+            handle: text
+            includeInCards: false
+            instructions: null
+            label: Text
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2234060c-81b7-4b0f-94c0-4a16f63158b3
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 23745864-c93c-4e6f-bbff-8461bcfc4976
+        userCondition: null
+handle: etPageBlogNative
+hasTitleField: true
+icon: page
+name: 'Page / Blog Native'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
