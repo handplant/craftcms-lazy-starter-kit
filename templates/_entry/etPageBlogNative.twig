@@ -2,7 +2,7 @@
 
 {% set filter = craft.app.request.getQueryParam('filter') %}
 {% set categories = craft.entries.section('categories').all() ?? null %}
-{% set query = craft.entries().section('blog').orderBy('postDate desc').eagerly() %}
+{% set query = craft.entries().section('blog').orderBy('date desc').eagerly() %}
 
 {% if filter %}
   {% set category = craft.entries().section('categories').slug(filter).one() %}
