@@ -271,7 +271,7 @@ settings:
                               - Street
                             6:
                               - required
-                              - true
+                              - false
                             7:
                               - providesThumbs
                               - false
@@ -303,7 +303,7 @@ settings:
                               - City
                             6:
                               - required
-                              - true
+                              - false
                             7:
                               - providesThumbs
                               - false
@@ -335,7 +335,7 @@ settings:
                               - 'Postal Code'
                             6:
                               - required
-                              - true
+                              - false
                             7:
                               - providesThumbs
                               - false
@@ -370,7 +370,7 @@ settings:
                               - 'Country (ISO code), e.g. DE, CH, AT.'
                             6:
                               - required
-                              - true
+                              - false
                             7:
                               - providesThumbs
                               - false
