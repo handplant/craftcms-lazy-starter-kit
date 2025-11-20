@@ -10,10 +10,14 @@
 
 # ASSETS
 /web/cpresources/*
+
+# Ignore generated image transforms
+/web/uploads/transforms/
+
 # /web/uploads would normally be ignored in production
 # but is included here for the demo setup.
 # Uncomment the following line in your own projects:
-# /web/uploads
+# /web/uploads/files
 
 # Compiled frontend assets – ignore in production.
 # These files are built during deployment (e.g. via Vite or Webpack)

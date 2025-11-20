@@ -14,7 +14,7 @@ Datastar- and Vue-based blog listings.
 This boilerplate demonstrates a **clean, scalable, and modern Craft CMS setup** — perfect for **agencies, freelancers**,
 and **developers** who want a production-ready foundation for new Craft projects.
 
-### Live Demo: [craftcms-lazy-starter-kit.webworker.me](https://craftcms-lazy-starter-kit.webworker.me)
+### Live Demo: [craft-kit.dev](https://craft-kit.dev)
 
 ---
 
