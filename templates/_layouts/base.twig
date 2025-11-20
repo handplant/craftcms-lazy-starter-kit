@@ -5,6 +5,9 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {% hook 'seomateMeta' %}
+  {% if entry is defined and entry.seo is defined and entry.seo.seoHide %}
+    <meta name="robots" content="noindex">
+  {% endif %}
   {% include "_globals/favicons" %}
   {% include "_globals/fonts" %}
   {% include "_globals/organization" %}

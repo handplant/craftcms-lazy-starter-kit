@@ -117,6 +117,41 @@ settings:
                             14:
                               - fieldUid
                               - e2850ac0-af58-4d32-9596-b15239d9567e # Image
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - seoHide
+                            2:
+                              - label
+                              - Hide
+                            3:
+                              - instructions
+                              - '<meta name="robots" content="noindex"/>'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-11-20T11:38:41+00:00'
+                            11:
+                              - uid
+                              - e3b0b587-97fc-47a0-a491-7e55f71b27ad
+                            14:
+                              - fieldUid
+                              - 177e5629-be0d-45a5-8751-ee4a081d01d0 # Switch - Off
             3:
               - cardThumbAlignment
               - end
