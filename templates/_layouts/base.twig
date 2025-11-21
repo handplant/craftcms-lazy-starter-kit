@@ -8,10 +8,10 @@
   {% if entry is defined and entry.seo is defined and entry.seo.seoHide %}
     <meta name="robots" content="noindex">
   {% endif %}
-  {% include "_globals/favicons" %}
-  {% include "_globals/fonts" %}
-  {% include "_globals/organization" %}
-  {% include "_globals/matomo" %}
+  {% include "_globals/favicons" only %}
+  {% include "_globals/fonts" only %}
+  {% include "_globals/organization" only %}
+  {% include "_globals/matomo" only %}
   {{ craft.vite.script("src/js/app.js", false) }}
 </head>
 <body
@@ -19,13 +19,13 @@
   data-effect="if ($searchOpen) { window.scrollTo({ top: 0, behavior: 'smooth' }); }"
 >
 {% cache globally using key 'nav__' ~ craft.app.request.pathInfo %}
-  {% include '_globals/nav' %}
+  {% include '_globals/nav' only %}
 {% endcache %}
-{% include '_globals/search' %}
+{% include '_globals/search' only %}
 <main id="content">
   {% block main %}{% endblock %}
 </main>
-{% include '_globals/footer' %}
+{% include '_globals/footer' only %}
 {% if entry is defined and canSave(entry) %}
   <a href="{{ cpUrl("preview/#{entry.id}") }}" title="Edit {{ entry.title }}" target="_blank" class="hidden lg:inline fixed bottom-0 left-0 p-4">✏️</a>
 {% endif %}

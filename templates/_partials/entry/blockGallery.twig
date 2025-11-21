@@ -6,9 +6,9 @@
 {% block content %}
   {% set images = entry.images.eagerly().all() ?? null %}
   {% if images %}
-    {{ include('_components/label.twig', {
-      label: "Block Gallery",
-    }, withContext = false) }}
+    {% include "_components/label.twig" with {
+      label: "Block Gallery"
+    } only %}
     <div class="grid grid-cols-2 md:grid-cols-3 grid-rows-3 md:grid-rows-2 w-full gap-3">
       {% for image in images %}
         {% set classes = '' %}
@@ -37,11 +37,11 @@
            data-gallery="gallery{{ entry.id }}"
            data-description="{{ parts|join(' ') }}"
            data-animate="fade-in">
-          {{ include("_components/image.twig", {
+          {% include "_components/image.twig" with {
             image: image,
             objectFit: true,
             class: 'rounded-md'
-          }, withContext = false) }}
+          } only %}
         </a>
       {% endfor %}
     </div>

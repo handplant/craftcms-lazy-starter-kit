@@ -18,9 +18,9 @@
       </div>
       {% if entry.card.image %}
         <div class="blocks__popout">
-          {{ include("_components/image.twig", {
+          {% include "_components/image.twig" with {
             image: entry.card.image.eagerly().one()
-          }, withContext = false) }}
+          } only %}
         </div>
       {% endif %}
 
@@ -28,13 +28,13 @@
 
         <div class="prose md:prose-lg lg:prose-xl">
           {{ entry.card.teaser }}
-          {{ include("_components/button.twig", {
+          {% include "_components/button.twig" with {
             label: "Read more"|t,
             url: entry.externalUrl,
             target: '_blank',
             external: true,
             class: 'not-prose'
-          }, withContext = false) }}
+          } only %}
         </div>
 
       {% endif %}

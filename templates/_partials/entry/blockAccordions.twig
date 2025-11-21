@@ -4,10 +4,12 @@
 {% set classContent = builder ? 'blocks__popout' : '' %}
 
 {% block content %}
-  {{ include('_components/label.twig', {
-    label: "Block Accordion",
-  }, withContext = false ) }}
+
+  {% include "_components/label.twig" with {
+    label: "Block Accordion"
+  } only %}
   <div class="border border-stone-300 divide-stone-300 divide-y rounded-md" data-animate="fade-in">
     {{ entry.matrixAccordion.eagerly().render() }}
   </div>
+
 {% endblock %}

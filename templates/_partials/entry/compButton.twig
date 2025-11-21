@@ -1,5 +1,5 @@
 {% set button = entry.button %}
-{{ include("_components/button.twig", {
+{% include "_components/button.twig" with {
   label: button.label ?? button.title,
   url: button.url,
   target: button.target ? '_blank' : null,
@@ -8,4 +8,4 @@
   download: button.download,
   size: entry.large ? 'lg' : null,
   dataAnimate: 'fade-in'
-}, withContext = false) }}
+} only %}

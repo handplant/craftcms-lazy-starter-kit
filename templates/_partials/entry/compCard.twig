@@ -9,12 +9,12 @@
   <div class="ui-card"{{ not slider ? ' data-animate="fade-up"' }}>
     {% if image %}
       <div class="aspect-video">
-        {{ include("_components/image.twig", {
+        {% include "_components/image.twig" with {
           image: image,
           sizes: [480],
           objectFit: true,
           class: 'rounded-sm'
-        }, withContext = false) }}
+        } only %}
       </div>
     {% endif %}
     <div class="space-y-8 p-4">
@@ -27,14 +27,14 @@
         </div>
       {% endif %}
       {% if button %}
-        {{ include("_components/button.twig", {
+        {% include "_components/button.twig" with {
           label: button.label ?? button.title,
           url: button.url,
           target: button.target ? '_blank' : null,
           rel: button.target ? 'noopener noreferrer' : null,
           ariaLabel: button.ariaLabel,
           download: button.download,
-        }, withContext = false) }}
+        } only %}
       {% endif %}
     </div>
   </div>

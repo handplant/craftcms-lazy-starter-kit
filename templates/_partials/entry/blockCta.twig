@@ -13,20 +13,20 @@
 {% endif %}
 
 {% block content %}
-  {{ include('_components/label.twig', {
-    label: "Block CTA",
-  }, withContext = false) }}
+  {% include "_components/label.twig" with {
+    label: "Block CTA"
+  } only %}
   <div class="stack stack--end relative">
     {% if image %}
       <div
         data-animate="fade-in"
         class="stack__image {{ (entry.switchInvert and entry.switchLayer) ? 'after:absolute after:inset-0 after:bg-black/50' : (entry.switchLayer ? ' after:absolute after:inset-0  after:bg-white/50' : '') }}">
-        {{ include("_components/image.twig", {
+        {% include "_components/image.twig" with {
           image: image,
           sizes: [1980, 1400, 800],
           objectFit: true,
-          class: 'w-full h-full md:max-h-[50vh]',
-        }, withContext = false) }}
+          class: 'w-full h-full md:max-h-[50vh]'
+        } only %}
       </div>
     {% endif %}
     <div class="stack__content layout" data-animate="zoom-in">
@@ -35,7 +35,7 @@
           {{ entry.headline|nl2br }}
         </p>
         {% if button %}
-          {{ include("_components/button.twig", {
+          {% include "_components/button.twig" with {
             label: button.label ?? button.title,
             url: button.url,
             size: 'lg',
@@ -43,7 +43,7 @@
             rel: button.target ? 'noopener noreferrer' : null,
             ariaLabel: button.ariaLabel,
             download: button.download,
-          }, withContext = false) }}
+          } only %}
         {% endif %}
       </div>
     </div>

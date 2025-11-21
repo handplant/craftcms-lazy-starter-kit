@@ -4,9 +4,10 @@
 {% set classContent = builder ? 'blocks__content' : '' %}
 
 {% block content %}
-  {{ include('_components/label.twig', {
-    label: "Block Code",
-  }, withContext = false) }}
+
+  {% include "_components/label.twig" with {
+    label: "Block Code"
+  } only %}
   {% if entry.title %}
     <p class="ui-bold text-sm mb-2 flex justify-between">
       <span>{{ entry.title }}</span>
@@ -14,4 +15,5 @@
     </p>
   {% endif %}
   <pre data-animate="fade-in"><code>{{ entry.code }}</code></pre>
+
 {% endblock %}

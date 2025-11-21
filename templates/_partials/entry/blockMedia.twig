@@ -4,13 +4,13 @@
 {% set classContent = builder ? 'blocks__popout' : '' %}
 
 {% block content %}
-  {{ include('_components/label.twig', {
-    label: "Block Media",
-  }, withContext = false) }}
-  {{ include("_components/media.twig", {
+  {% include "_components/label.twig" with {
+    label: "Block Media"
+  } only %}
+  {% include "_components/media.twig" with {
     asset: entry.assetMedia.eagerly().one() ?? null,
     showCaption: entry.mediaShowCaption
-  }, withContext = false) }}
+  } only %}
 {% endblock %}
 
 

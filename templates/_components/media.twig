@@ -23,10 +23,10 @@
     </audio>
   {%- case 'image' -%}
     <div data-animate="fade-in">
-      {{ include("_components/image.twig", {
+      {% include "_components/image.twig" with {
         image: asset,
         class: 'rounded-md'
-      }, withContext = false) }}
+      } only %}
     </div>
   {%- endswitch -%}
 

@@ -6,9 +6,9 @@
 
 {% block content %}
   <div class="embla">
-    {{ include('_components/label.twig', {
-      label: "Block Slider",
-    }, withContext = false) }}
+    {% include "_components/label.twig" with {
+      label: "Block Slider"
+    } only %}
     <div class="embla__viewport" data-animate="fade-in">
       <div class="embla__container">
         {{ entry.matrixCards.eagerly().render({ slider: true }) }}

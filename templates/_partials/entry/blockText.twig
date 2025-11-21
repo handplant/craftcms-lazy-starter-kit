@@ -4,10 +4,12 @@
 {% set classContent = builder ? 'blocks__content' : '' %}
 
 {% block content %}
-  {{ include('_components/label.twig', {
-    label: "Block Text",
-  }, withContext = false) }}
+
+  {% include "_components/label.twig" with {
+    label: "Block Text"
+  } only %}
   <div class="prose md:prose-lg lg:prose-xl" data-animate="fade-in">
     {{ entry.text }}
   </div>
+  
 {% endblock %}
