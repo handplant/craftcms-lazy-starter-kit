@@ -61,6 +61,29 @@ fieldLayouts:
         name: Content
         uid: fe059976-84c8-4bae-adf4-cae35fb260a4
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-21T09:46:28+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 3c6dd0d6-6cbf-415f-a6fe-3bc205817b94 # Anchor
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dbf4cacd-6b24-477e-95c2-7c0b8a3cd979
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: 9f8a27a5-1b8a-47ae-97bc-1d6b4b279d54
+        userCondition: null
 handle: blockCards
 hasTitleField: false
 icon: cards

@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: anchorTitle
+instructions: null
+name: 'Anchor Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 20
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: example-anchor
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

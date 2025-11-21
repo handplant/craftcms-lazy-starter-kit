@@ -1,0 +1,96 @@
+columnSuffix: null
+handle: anchor
+instructions: null
+name: Anchor
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 3f9f98dd-dacc-4250-8282-d5d2b1c785cd
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 86303398-b8a8-4ce3-99f2-f502c9e6a8a6
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-11-21T09:39:42+00:00'
+                            11:
+                              - uid
+                              - 2865337a-17be-4f7e-abb6-f993a4223470
+                            14:
+                              - fieldUid
+                              - 917884b5-8376-4c3d-b6c5-fbbcbf54318f # Anchor Title
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\Template
+                            1:
+                              - template
+                              - _cp/achorSlug.twig
+                            2:
+                              - templateMode
+                              - site
+                            3:
+                              - width
+                              - 50
+                            4:
+                              - dateAdded
+                              - '2025-11-21T09:39:42+00:00'
+                            5:
+                              - uid
+                              - c3c06766-5686-43b3-bdcc-8d542576e11b
+                            7:
+                              - elementCondition
+                              -
+                                __assoc__:
+                                  -
+                                    - elementType
+                                    - craft\elements\ContentBlock
+                                  -
+                                    - fieldContext
+                                    - global
+                                  -
+                                    - class
+                                    - craft\elements\conditions\ElementCondition
+                                  -
+                                    - conditionRules
+                                    -
+                                      - { __assoc__: [[class, craft\fields\conditions\TextFieldConditionRule], [uid, 003d241a-9501-468c-8992-a44478279ee0], [operator, notempty], [value, ''], [fieldUid, 917884b5-8376-4c3d-b6c5-fbbcbf54318f], [layoutElementUid, 2865337a-17be-4f7e-abb6-f993a4223470]] } # Anchor Title
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

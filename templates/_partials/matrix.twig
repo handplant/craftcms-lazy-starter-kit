@@ -1,4 +1,10 @@
-<section class="{{ classWrapper ?? '' }}" data-animate-group>
+{% set anchorId = entry.anchor.anchorTitle ?? null %}
+
+<section
+  {% if classWrapper %}class="{{ classWrapper }}"{% endif %}
+  {% if anchorId %}id="{{ anchorId|kebab }}"{% endif %}
+  data-animate-group
+>
   <div class="{{ classContent ?? '' }}">
     {% block content %}
     {% endblock %}

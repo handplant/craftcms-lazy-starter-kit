@@ -28,6 +28,8 @@
 }
 
 :root {
+  scroll-padding-top: 2rem;
+
   /* layout */
   --gap: clamp(0.5rem, 6vw, 3rem);
   --gap-blocks: clamp(0.5rem, 6vw, 2rem);

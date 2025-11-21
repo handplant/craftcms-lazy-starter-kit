@@ -1,4 +1,4 @@
-dateModified: 1763644595
+dateModified: 1763718479
 elementSources:
   craft\elements\Entry:
     -
@@ -109,6 +109,7 @@ meta:
     0b6dd59c-982a-43fa-908f-143e8ef509f2: Date # Date
     2cec4e62-8325-4329-b76c-d5c7ae7af576: Buttons # Buttons
     3a4f56a8-1fc9-4301-ad83-4379be0d602a: Lat/Long # Lat/Long
+    3c6dd0d6-6cbf-415f-a6fe-3bc205817b94: Anchor # Anchor
     3fc916d4-15ce-4a6b-b91c-c80649f001bd: 'Matrix - Accordion' # Matrix - Accordion
     04ac80ab-5fc1-41b5-bdbb-932462b5392d: 'Accordion Entry' # Accordion Entry
     04c7059c-00d6-416e-a590-757fea296201: Blog # Blog
@@ -143,6 +144,7 @@ meta:
     8088e42b-90d5-443c-a48e-1dac9ddeb72a: Settings # Settings
     8596f203-6a19-4f0b-a499-4d70fbe9584f: thumbnail # thumbnail
     9800e5de-6b70-4e9a-a491-54ef32087d74: 'Page / Blog Datastar' # Page / Blog Datastar
+    917884b5-8376-4c3d-b6c5-fbbcbf54318f: 'Anchor Title' # Anchor Title
     978112b6-b2ea-4430-bdc5-2144a4734cf5: Color # Color
     998295c3-03ea-4a83-b787-ba1d5a930248: 'Craft 5' # Craft 5
     76206244-6c91-4de1-b3d0-68c5d6a77369: CTA # CTA

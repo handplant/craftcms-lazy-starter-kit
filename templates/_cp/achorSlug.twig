@@ -1,0 +1,11 @@
+{% set anchorId = element.anchorTitle ?? null %}
+<div class="field">
+  <div class="heading">
+    <label>Anchor Slug</label>
+  </div>
+  {% if anchorId %}
+    #{{ anchorId|kebab }}
+  {% else %}
+    ---
+  {% endif %}
+</div>

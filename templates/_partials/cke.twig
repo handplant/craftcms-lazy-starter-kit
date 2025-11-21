@@ -1,4 +1,10 @@
-<div class="{{ classWrapper ?? '' }} not-prose" data-animate-group>
+{% set anchorId = entry.anchor.anchorTitle ?? null %}
+
+<div
+  {% if classWrapper %}class="{{ classWrapper }}"{% endif %}
+  {% if anchorId %}id="{{ anchorId|kebab }}"{% endif %}
+  data-animate-group
+>
   {% block content %}
   {% endblock %}
 </div>
