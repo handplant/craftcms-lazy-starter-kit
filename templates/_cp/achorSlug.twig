@@ -1,11 +1,40 @@
 {% set anchorId = element.anchorTitle ?? null %}
+{% set slug = anchorId ? anchorId|kebab : null %}
+
 <div class="field">
   <div class="heading">
-    <label>Anchor Slug</label>
+    <label for="anchor-slug-{{ slug }}">Anchor Slug</label>
   </div>
-  {% if anchorId %}
-    #{{ anchorId|kebab }}
-  {% else %}
-    ---
-  {% endif %}
+
+  <div class="input" style="position: relative;">
+    <input
+      readonly
+      id="anchor-slug-{{ slug }}"
+      type="text"
+      class="text fullwidth"
+      value="{{ slug ? '#' ~ slug : '---' }}"
+      style="padding-right: 55px; background-color: #f1f1f1"
+    >
+
+    {% if slug %}
+      <button
+        type="button"
+        class="btn small"
+        style="
+          position: absolute;
+          right: 8px;
+          top: 50%;
+          transform: translateY(-50%);
+          cursor: pointer;
+        "
+        title="Copy to clipboard"
+        onclick="navigator.clipboard.writeText('#{{ slug }}').then(() => {
+          this.innerText = 'Copied!';
+          setTimeout(() => this.innerText = 'Copy', 1200);
+          });"
+      >
+        Copy
+      </button>
+    {% endif %}
+  </div>
 </div>
