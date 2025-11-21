@@ -1,7 +1,7 @@
 {% set anchorId = entry.anchor.anchorTitle ?? null %}
 
 <div
-  {% if classWrapper %}class="{{ classWrapper }}"{% endif %}
+  {% if classWrapper %}class="{{ classWrapper }} not-prose"{% endif %}
   {% if anchorId %}id="{{ anchorId|kebab }}"{% endif %}
   data-animate-group
 >
