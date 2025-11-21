@@ -4,7 +4,7 @@
     "name": "_commonjsHelpers"
   },
   "src/js/app.js": {
-    "file": "assets/app-FM9sTLKP.js",
+    "file": "assets/app-DjUEjaBW.js",
     "name": "app",
     "src": "src/js/app.js",
     "isEntry": true,
@@ -12,7 +12,7 @@
       "__commonjsHelpers-CqkleIqs.js"
     ],
     "css": [
-      "assets/app-CZkoJDqS.css"
+      "assets/app-DsfkGD70.css"
     ]
   },
   "src/js/map.js": {

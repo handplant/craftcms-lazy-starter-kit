@@ -1,6 +1,6 @@
 {
-  "name": "CraftCMS Lazy — A simple Craft CMS Starter Kit",
-  "short_name": "CraftCMS Lazy",
+  "name": "Craft Kit — A simple Craft CMS Starter Kit",
+  "short_name": "Craft Kit",
   "icons": [
     {
       "src": "/dist/favicons/web-app-manifest-192x192.png",
