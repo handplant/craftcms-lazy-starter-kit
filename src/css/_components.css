@@ -9,7 +9,7 @@
 
   /* BUTTON & LINKS */
   .ui-btn {
-    @apply ui-bold ui-focus no-underline inline-flex items-center gap-3 border border-transparent bg-primary px-3 py-1 text-base text-white group-hover:bg-primary/80 hover:bg-primary/80 hover:no-underline hover:text-white focus:outline-0 focus:ring-4 focus:ring-primary/20 rounded-sm;
+    @apply ui-bold ui-focus no-underline whitespace-nowrap inline-flex items-center gap-3 border border-transparent bg-primary px-3 py-1 text-base text-white group-hover:bg-primary/80 hover:bg-primary/80 hover:no-underline hover:text-white focus:outline-0 focus:ring-4 focus:ring-primary/20 rounded-sm;
   }
 
   .ui-btn--lg {
