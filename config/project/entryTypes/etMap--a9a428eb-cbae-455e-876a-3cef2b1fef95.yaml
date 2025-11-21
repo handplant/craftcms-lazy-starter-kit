@@ -41,23 +41,6 @@ fieldLayouts:
             dateAdded: '2025-11-07T09:24:35+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 5bf4ae8e-4fcb-4ed0-bb07-7dbbb4c59050 # Seo
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: df98a1bb-b885-4c11-8809-fe2caf178e8c
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-11-07T09:24:35+00:00'
-            editCondition: null
-            elementCondition: null
             fieldUid: 7cdf6921-13c4-4984-95cd-9ac60231929d # Rich Text - Builder
             handle: builder
             includeInCards: false
@@ -73,6 +56,29 @@ fieldLayouts:
             width: 100
         name: Content
         uid: fe3e120a-7bdd-4df4-b08d-93509adef63a
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-07T09:24:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5bf4ae8e-4fcb-4ed0-bb07-7dbbb4c59050 # Seo
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df98a1bb-b885-4c11-8809-fe2caf178e8c
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: 54e6a6fe-f63e-4b37-b47f-b0db946e8569
         userCondition: null
 handle: etMap
 hasTitleField: true

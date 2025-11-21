@@ -38,23 +38,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-07T09:21:56+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 5bf4ae8e-4fcb-4ed0-bb07-7dbbb4c59050 # Seo
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: b393f0f5-888a-46a4-8cef-e79de7f19f81
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2024-11-14T11:40:09+00:00'
             editCondition: null
             elementCondition: null
@@ -90,6 +73,29 @@ fieldLayouts:
             width: 100
         name: Content
         uid: 96ef25c5-43c8-45c4-98db-c8705cb35a2e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-07T09:21:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5bf4ae8e-4fcb-4ed0-bb07-7dbbb4c59050 # Seo
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b393f0f5-888a-46a4-8cef-e79de7f19f81
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: f073ef3c-d8ce-4295-9b93-7bbdabe73918
         userCondition: null
 handle: etPageMatrix
 hasTitleField: true
