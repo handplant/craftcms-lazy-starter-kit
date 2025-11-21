@@ -7,7 +7,7 @@
 {% block content %}
 
   {{ include('_components/label.twig', {
-    label: "Block Buttons",
+    label: "Block Cards",
   }, withContext = false) }}
   <div class="grid {{ isCols2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 md:grid-cols-3' }}  gap-3 sm:gap-6">
     {{ entry.matrixCards.eagerly().render() }}
