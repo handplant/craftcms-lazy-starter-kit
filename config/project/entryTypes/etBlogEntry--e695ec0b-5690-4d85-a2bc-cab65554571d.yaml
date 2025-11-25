@@ -188,10 +188,10 @@ fieldLayouts:
         name: Settings
         uid: 3f68c259-b92d-4518-ba2a-902a2332a1cb
         userCondition: null
-handle: etPageBlog
+handle: etBlogEntry
 hasTitleField: true
 icon: page
-name: 'Page / Blog'
+name: 'Blog Entry'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

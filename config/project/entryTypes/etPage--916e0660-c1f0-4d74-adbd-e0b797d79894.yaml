@@ -1,7 +1,7 @@
 color: null
 description: null
 fieldLayouts:
-  5fe18ecd-919d-4295-bd74-1a05649cc570:
+  1524573c-4edb-429d-82ee-9d82c4273a52:
     cardThumbAlignment: end
     tabs:
       -
@@ -12,7 +12,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2025-10-06T12:33:59+00:00'
+            dateAdded: '2024-09-18T12:40:35+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -33,12 +33,12 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 45b0ae5f-50b4-4876-9aa6-655b32456bbf
+            uid: 37109913-e017-4312-a994-795cedebef7c
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-06T12:38:14+00:00'
+            dateAdded: '2024-11-14T11:40:09+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 17c0c6a4-80a6-4cef-84f4-ebefe3af9d39 # Text - Multi
@@ -50,35 +50,52 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: c67defbb-160e-48ab-9dc8-7a4dc6e8db58
+            uid: 872f39e9-c6e7-4db6-9915-33944177d829
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-06T12:38:14+00:00'
+            dateAdded: '2025-11-25T12:42:58+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 6243b5f2-9474-47a0-99f2-24d5a6cc5832 # Rich Text - Rich
-            handle: text
+            fieldUid: 7cdf6921-13c4-4984-95cd-9ac60231929d # Rich Text - Builder
+            handle: ckeBuilder
             includeInCards: false
             instructions: null
-            label: Text
+            label: 'CKEditor Editor'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: b999da82-f3cc-42df-bf8b-7302ef816953
+            uid: 981facbf-3e2f-4e4b-9f37-d1b8629dd72b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-09-18T12:40:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 0a5600e8-07a6-4292-bc21-d0e142d9dc22 # Matrix - Builder
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Matrix Builder'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c82356b3-dcb0-4cb1-b19f-4213e87e1719
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 4cd0345e-3357-44b2-93d3-082169bb6dc2
+        uid: 96ef25c5-43c8-45c4-98db-c8705cb35a2e
         userCondition: null
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-10-07T09:20:54+00:00'
+            dateAdded: '2025-10-07T09:21:56+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 5bf4ae8e-4fcb-4ed0-bb07-7dbbb4c59050 # Seo
@@ -90,17 +107,17 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 24b47791-7057-4a0e-93ba-a21799e438e1
+            uid: b393f0f5-888a-46a4-8cef-e79de7f19f81
             userCondition: null
             warning: null
             width: 100
         name: Settings
-        uid: d8de2eb9-2732-4291-8411-931d5d91ce1f
+        uid: f073ef3c-d8ce-4295-9b93-7bbdabe73918
         userCondition: null
-handle: etPageBlogDatastar
+handle: etPage
 hasTitleField: true
 icon: page
-name: 'Page / Blog Datastar'
+name: Page
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

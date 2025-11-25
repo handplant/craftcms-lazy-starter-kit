@@ -1,0 +1,12 @@
+{% set builder = builder ?? false %}
+{% extends builder ? "_partials/matrix.twig" : "_partials/cke.twig" %}
+{% set classWrapper = builder ? 'blocks blocks--blog' : 'inlines inlines--blog' %}
+{% set classContent = builder ? 'blocks__popout' : '' %}
+{% set blogType = entry.blogType ?? 'twig' %}
+{% block content %}
+  {% include "_components/label.twig" with {
+    label: "Block Blog " ~ entry.blogType
+  } only %}
+
+  {% include "_components/blog"~ entry.blogType|title ~".twig" only %}
+{% endblock %}

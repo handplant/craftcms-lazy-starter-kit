@@ -1,0 +1,21 @@
+{% extends '_layouts/base' %}
+
+{% block main %}
+  {% cache using key 'entry__' ~ craft.app.request.url %}
+    {% if entry.headline %}
+      <header class="blocks blocks--header">
+        <div class="blocks__content">
+          <h1 class="ui-h1">{{ entry.headline|nl2br }}</h1>
+        </div>
+      </header>
+    {% endif %}
+    {% if entry.ckeBuilder %}
+      <section class="blocks blocks--cke">
+        <div class="blocks__content prose md:prose-lg lg:prose-xl">
+          {{ entry.ckeBuilder }}
+        </div>
+      </section>
+    {% endif %}
+    {{ entry.matrixBuilder.eagerly().render({ builder: true }) }}
+  {% endcache %}
+{% endblock %}

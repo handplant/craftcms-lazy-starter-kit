@@ -36,14 +36,14 @@
   {% if children|length %}
     <ul
       id="dropdown-{{ entry.id }}"
-      class="hidden switch:flex switch:absolute switch:z-30 switch:min-w-56 bg-primary text-white text-base ui-bold p-3 flex-col gap-2 opacity-0 translate-y-4 pointer-events-none transition-all duration-300 ease-out"
+      class="hidden switch:flex switch:absolute switch:z-30 switch:min-w-56 rounded-sm bg-primary text-white text-base ui-bold p-3 flex-col gap-2 opacity-0 translate-y-4 pointer-events-none transition-all duration-300 ease-out"
       data-class="{
       'flex opacity-100 translate-y-2 pointer-events-auto': $dropdownOpen === {{ entry.id }},
       'hidden opacity-0 translate-y-4 pointer-events-none': $dropdownOpen !== {{ entry.id }}
     }"
     >
       {% for item in children %}
-        {{ item.render({ class: 'whitespace-nowrap', classActive: 'underline underline-offset-4 decoration-2' }) }}
+        {{ item.render({ class: 'whitespace-nowrap', classActive: 'italic' }) }}
       {% endfor %}
     </ul>
   {% endif %}

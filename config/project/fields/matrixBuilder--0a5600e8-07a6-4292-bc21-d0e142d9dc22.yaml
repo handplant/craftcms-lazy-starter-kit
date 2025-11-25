@@ -80,6 +80,14 @@ settings:
         -
           - group
           - CTA
+    -
+      __assoc__:
+        -
+          - uid
+          - a729e378-d66d-4b2d-8df8-cf2b93a99c1e # Blog
+        -
+          - group
+          - Apps
   includeTableView: false
   maxEntries: null
   minEntries: null
