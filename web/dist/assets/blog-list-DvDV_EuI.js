@@ -4,7 +4,7 @@ function Fs(e){const t=Object.create(null);for(const s of e.split(","))t[s]=1;re
         id
         title
         url
-        ... on etPageBlog_Entry {
+        ... on etBlogEntry_Entry {
           headline
           date
           card {

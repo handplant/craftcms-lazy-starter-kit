@@ -43,7 +43,7 @@ async function fetchEntries (reset = false) {
         id
         title
         url
-        ... on etPageBlog_Entry {
+        ... on etBlogEntry_Entry {
           headline
           date
           card {
