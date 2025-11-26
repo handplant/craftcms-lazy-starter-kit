@@ -1,4 +1,4 @@
-{% set search = signals.search ?? "" %}
+{% set search = signals.searchmap ?? "" %}
 {% set filter = signals.filter ?? "" %}
 {% set locations = craft.entries().section('blog').eagerly() %}
 
