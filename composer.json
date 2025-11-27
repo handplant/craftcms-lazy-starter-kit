@@ -41,6 +41,11 @@
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "modules\\craftkit\\": "modules/craftkit/src/"
+    }
+  },
   "config": {
     "allow-plugins": {
       "craftcms/plugin-installer": true,

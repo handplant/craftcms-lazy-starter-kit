@@ -23,5 +23,11 @@
 use craft\helpers\App;
 
 return [
-    'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS Lazy',
+    'id' => App::env('CRAFT_APP_ID') ?: 'Craft Kit',
+    'modules' => [
+        'craftkit' => [
+            'class' => \modules\craftkit\Craftkit::class,
+        ],
+    ],
+    'bootstrap' => ['craftkit'],
 ];
