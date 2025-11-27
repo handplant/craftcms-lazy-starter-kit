@@ -60,7 +60,7 @@ function updateMarkers (locations = []) {
               id
               title
               url
-              ... on etPageBlog_Entry {
+              ... on etBlogEntry_Entry {
                   card {
                     image {
                       url(transform: "thumbnail")

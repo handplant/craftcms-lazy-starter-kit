@@ -11,7 +11,7 @@ import{g as Yo}from"./_commonjsHelpers-CqkleIqs.js";var ie={exports:{}};var Xo=i
               id
               title
               url
-              ... on etPageBlog_Entry {
+              ... on etBlogEntry_Entry {
                   card {
                     image {
                       url(transform: "thumbnail")
