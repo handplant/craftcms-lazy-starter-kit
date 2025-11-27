@@ -1,6 +1,6 @@
 # 🚀 CraftCMS Lazy Starter Kit
 
-A modern, production-ready Craft CMS Starter Kit with Vite, Tailwind, Vue Web Components, Datastar, GraphQL and DDEV —
+A modern, production-ready Craft CMS Starter Kit with Vite, Tailwind, Vue Web Components, Datastar, GraphQL, and DDEV —
 perfect for agencies and freelancers who want to build clean and fast Craft sites.
 
 ---
@@ -15,6 +15,17 @@ This boilerplate demonstrates a **clean, scalable, and modern Craft CMS setup** 
 and **developers** who want a production-ready foundation for new Craft projects.
 
 ### Live Demo: [craft-kit.dev](https://craft-kit.dev)
+
+### ⚡ Datastar-Powered Examples
+
+Craft Kit includes multiple real-world Datastar demos that showcase server-synchronized state, reactive UI updates, and
+seamless Craft integration — all without a JavaScript build step. Explore how Datastar transforms Craft CMS into a
+reactive, declarative, and API-friendly platform:
+
+- 🔍 **Datastar Search** – https://craft-kit.dev/search
+- 📝 **Datastar Blog** – https://craft-kit.dev/blog-datastar
+- 🧪 **Rick & Morty API Demo** – https://craft-kit.dev/rick-and-morty-datastar
+- 🗺️ **Datastar Leaflet Map** – https://craft-kit.dev/map
 
 ---
 
