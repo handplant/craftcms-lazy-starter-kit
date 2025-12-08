@@ -51,7 +51,7 @@ fieldLayouts:
             handle: headline
             includeInCards: false
             instructions: null
-            label: Überschrift
+            label: Headline
             providesThumbs: false
             required: false
             tip: null

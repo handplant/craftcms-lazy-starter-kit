@@ -17,7 +17,7 @@ fieldLayouts:
             handle: headline
             includeInCards: true
             instructions: null
-            label: Überschrift
+            label: Headline
             providesThumbs: false
             required: false
             tip: null

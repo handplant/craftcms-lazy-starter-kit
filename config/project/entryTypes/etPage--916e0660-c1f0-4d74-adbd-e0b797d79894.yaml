@@ -68,7 +68,7 @@ fieldLayouts:
             handle: ckeBuilder
             includeInCards: false
             instructions: null
-            label: 'CKEditor Editor'
+            label: 'CKEditor Builder'
             providesThumbs: false
             required: false
             tip: null
