@@ -1,0 +1,109 @@
+<style>
+  .ft-group {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .ft-group-header {
+    padding: 10px 14px;
+    background: #f3f7fc;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ft-group-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+  }
+
+  .ft-group-body {
+    padding: 10px;
+    display: none;
+  }
+
+  .ft-group.open .ft-group-body {
+    display: block;
+  }
+
+  .caret {
+    transform: rotate(-90deg);
+    transition: transform .2s ease;
+
+    svg {
+      height: 14px;
+    }
+  }
+
+  .ft-group.open .caret {
+    transform: rotate(90deg);
+  }
+</style>
+
+{# {{ dump(grouped) }} #}
+
+{% for type, fields in grouped %}
+
+  <div class="ft-group">
+    <div class="ft-group-header" data-toggle>
+      <h3><span class="cp-icon small">{{ svg(fields.0.masterIcon.path, namespace = fields.0.masterIcon.namespace) }}</span> <span>{{ type }} ({{ fields|length }})</span></h3>
+      <span class="caret">{{ svg('@app/icons/chevron-right.svg', namespace='cp') }}</span>
+    </div>
+
+    <div class="ft-group-body">
+      <table class="data fullwidth">
+        <thead>
+        <tr>
+          <th style="width: 30%">Field</th>
+          <th style="width: 20%">Handle</th>
+          <th style="width: 50%">Instances</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for field in fields %}
+          <tr>
+            <td style="vertical-align: top">
+              <a href="{{ field.masterEditUrl }}" target="_blank">
+                {{ field.masterLabel }}
+              </a>
+            </td>
+            <td style="vertical-align: top"><code>{{ field.masterHandle }}</code></td>
+            <td style="vertical-align: top">
+              {% if field.instances %}
+                <ul>
+                  {% for inst in field.instances %}
+                    <li>
+                      <a href="{{ inst.entryTypeEditUrl }}" target="_blank">
+                        {{ inst.entryType }}
+                      </a>
+                      <code>({{ inst.instanceLabel }}/{{ inst.instanceHandle }})</code>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% else %}
+                <em>Not used</em>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endfor %}
+
+{% js %}
+document.querySelectorAll('[data-toggle]').forEach(header => {
+  header.addEventListener('click', () => {
+    header.parentElement.classList.toggle('open');
+  });
+});
+{% endjs %}
+
+

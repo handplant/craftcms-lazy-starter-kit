@@ -44,6 +44,7 @@ reactive, declarative, and API-friendly platform:
 - 🗃️ **Craft eagerly() + render()** – optimized queries, automatic block templates, and smart caching
 - 🧾 **SEO-Ready JSON-LD Organization Schema** – structured data for Google Rich Results
 - 🔍 **SEO Meta, Open Graph & Sitemap** – via SEOMate
+- 🧰 Field Usage Utility – overview of all fields + their Entry Type instances
 - 🔌 **Plugins:** CKEditor, Datastar, Map, Image Resizer, SEOMate, Vite
 
 ---
