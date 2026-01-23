@@ -4,7 +4,7 @@
     "name": "_commonjsHelpers"
   },
   "src/js/app.js": {
-    "file": "assets/app-CGYydgQK.js",
+    "file": "assets/app-CIJFoX1W.js",
     "name": "app",
     "src": "src/js/app.js",
     "isEntry": true,
@@ -28,7 +28,7 @@
     ]
   },
   "src/vue/webcomponents/blog-list.ce.ts": {
-    "file": "assets/blog-list-LIRGkiLY.js",
+    "file": "assets/blog-list-DZ-XOjLW.js",
     "name": "blog-list",
     "src": "src/vue/webcomponents/blog-list.ce.ts",
     "isEntry": true

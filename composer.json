@@ -26,12 +26,12 @@
   "homepage": "https://craftcms-lazy-starter-kit.webworker.me",
   "require": {
     "craftcms/ckeditor": "4.11.0",
-    "craftcms/cms": "5.8.21",
+    "craftcms/cms": "5.8.23",
     "craftcms/feed-me": "6.11.0",
     "ether/simplemap": "5.0.4",
     "nystudio107/craft-code-field": "5.0.1",
     "nystudio107/craft-vite": "5.0.1",
-    "putyourlightson/craft-datastar": "1.0.0-RC.9",
+    "putyourlightson/craft-datastar": "1.0.0-RC.11",
     "vaersaagod/seomate": "3.2.0",
     "verbb/image-resizer": "4.0.4",
     "vlucas/phpdotenv": "^5.4.0"

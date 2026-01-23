@@ -881,7 +881,7 @@ CREATE TABLE `imagetransformindex` (
   `uid` char(36) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `idx_jbeioznblvlzpxpmowxnecgddrlbrvcgayyq` (`assetId`,`transformString`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1293,7 +1293,7 @@ CREATE TABLE `sessions` (
   KEY `idx_tqvqxzvbbfyujoqcjlsxsslhixseyxdxfhoa` (`dateUpdated`),
   KEY `idx_oklrkjmkufdqzgyqhzqmhnrwktxaqosboaea` (`userId`),
   CONSTRAINT `fk_knobghzsbvqovvqqlgrtmnlimunnbyujwcsl` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1815,7 +1815,7 @@ CREATE TABLE `widgets` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-08 15:53:07
+-- Dump completed on 2026-01-23 10:57:37
 -- MySQL dump 10.13  Distrib 8.0.40, for Linux (aarch64)
 --
 -- Host: db    Database: db
@@ -2199,7 +2199,7 @@ commit;
 LOCK TABLES `gqltokens` WRITE;
 /*!40000 ALTER TABLE `gqltokens` DISABLE KEYS */;
 set autocommit=0;
-INSERT INTO `gqltokens` VALUES (1,'Public Token','__PUBLIC__',1,NULL,'2025-11-25 14:00:50',NULL,'2025-10-06 14:06:20','2025-11-25 14:00:50','4deadb9d-b283-49f8-9967-f6ad775bcce1');
+INSERT INTO `gqltokens` VALUES (1,'Public Token','__PUBLIC__',1,NULL,'2026-01-23 09:54:34',NULL,'2025-10-06 14:06:20','2026-01-23 09:54:34','4deadb9d-b283-49f8-9967-f6ad775bcce1');
 /*!40000 ALTER TABLE `gqltokens` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -2223,7 +2223,7 @@ commit;
 LOCK TABLES `info` WRITE;
 /*!40000 ALTER TABLE `info` DISABLE KEYS */;
 set autocommit=0;
-INSERT INTO `info` VALUES (1,'5.8.21','5.8.0.3',0,'evudkibsbpxz','3@kgawcebyyx','2025-10-01 13:05:16','2025-12-08 13:33:32','57e79d04-1455-41cb-87ac-7b9a70694f66');
+INSERT INTO `info` VALUES (1,'5.8.23','5.8.0.3',0,'evudkibsbpxz','3@kgawcebyyx','2025-10-01 13:05:16','2026-01-23 09:56:05','57e79d04-1455-41cb-87ac-7b9a70694f66');
 /*!40000 ALTER TABLE `info` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -2259,7 +2259,7 @@ commit;
 LOCK TABLES `plugins` WRITE;
 /*!40000 ALTER TABLE `plugins` DISABLE KEYS */;
 set autocommit=0;
-INSERT INTO `plugins` VALUES (1,'ckeditor','4.11.0','3.0.0.0','2025-10-01 13:05:16','2025-10-01 13:05:17','2025-11-21 08:44:23','e3ba88a0-10be-4c3f-9f81-f86425706a10'),(2,'datastar','1.0.0-RC.9','1.0.0','2025-10-01 13:05:17','2025-10-01 13:05:17','2025-11-03 14:49:38','9211dcde-a7f2-4a6f-bd52-43e18848cbe5'),(5,'image-resizer','4.0.4','2.0.0','2025-10-01 13:05:17','2025-10-01 13:05:17','2025-10-01 13:05:17','18887c52-cc2a-4833-b317-1ae25ab9a855'),(6,'seomate','3.2.0','1.0.0','2025-10-01 13:05:17','2025-10-01 13:05:17','2025-10-01 13:05:17','fa8c7aa4-7846-4f73-8700-d62c73dfe777'),(8,'vite','5.0.1','1.0.0','2025-10-01 13:05:17','2025-10-01 13:05:17','2025-10-01 13:05:17','b85d2133-ada5-4647-bda5-55f41a1d0eef'),(9,'codefield','5.0.1','1.0.0','2025-10-21 11:05:54','2025-10-21 11:05:54','2025-10-21 11:05:54','feb25af0-f930-4157-85df-d6c960ce581a'),(10,'simplemap','5.0.4','3.4.2','2025-11-07 09:21:03','2025-11-07 09:21:03','2025-11-07 09:21:03','aef61d09-827a-4532-92cc-37bf0180412a'),(11,'feed-me','6.11.0','5.14.0','2025-11-26 10:01:08','2025-11-26 10:01:08','2025-11-26 10:01:08','99ee9808-8c08-4a48-ba62-68ffe1fa96ab');
+INSERT INTO `plugins` VALUES (1,'ckeditor','4.11.0','3.0.0.0','2025-10-01 13:05:16','2025-10-01 13:05:17','2025-11-21 08:44:23','e3ba88a0-10be-4c3f-9f81-f86425706a10'),(2,'datastar','1.0.0-RC.11','1.0.0','2025-10-01 13:05:17','2025-10-01 13:05:17','2026-01-23 09:55:36','9211dcde-a7f2-4a6f-bd52-43e18848cbe5'),(5,'image-resizer','4.0.4','2.0.0','2025-10-01 13:05:17','2025-10-01 13:05:17','2025-10-01 13:05:17','18887c52-cc2a-4833-b317-1ae25ab9a855'),(6,'seomate','3.2.0','1.0.0','2025-10-01 13:05:17','2025-10-01 13:05:17','2025-10-01 13:05:17','fa8c7aa4-7846-4f73-8700-d62c73dfe777'),(8,'vite','5.0.1','1.0.0','2025-10-01 13:05:17','2025-10-01 13:05:17','2025-10-01 13:05:17','b85d2133-ada5-4647-bda5-55f41a1d0eef'),(9,'codefield','5.0.1','1.0.0','2025-10-21 11:05:54','2025-10-21 11:05:54','2025-10-21 11:05:54','feb25af0-f930-4157-85df-d6c960ce581a'),(10,'simplemap','5.0.4','3.4.2','2025-11-07 09:21:03','2025-11-07 09:21:03','2025-11-07 09:21:03','aef61d09-827a-4532-92cc-37bf0180412a'),(11,'feed-me','6.11.0','5.14.0','2025-11-26 10:01:08','2025-11-26 10:01:08','2025-11-26 10:01:08','99ee9808-8c08-4a48-ba62-68ffe1fa96ab');
 /*!40000 ALTER TABLE `plugins` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -2593,7 +2593,7 @@ commit;
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 set autocommit=0;
-INSERT INTO `users` VALUES (9,NULL,NULL,1,0,0,0,1,'admin',NULL,NULL,NULL,'webworker.ag@gmail.com','$2y$13$gk4LHI.YOnd.BXgXGPpzwer6tCyl.7cj7SKdFHC4HdHQRl30yv2G.','2025-12-08 10:41:00',NULL,NULL,NULL,'2025-11-07 09:19:08',NULL,1,NULL,NULL,NULL,0,'2025-10-01 13:05:18','2025-10-01 13:05:18','2025-12-08 10:41:00');
+INSERT INTO `users` VALUES (9,NULL,NULL,1,0,0,0,1,'admin',NULL,NULL,NULL,'webworker.ag@gmail.com','$2y$13$gk4LHI.YOnd.BXgXGPpzwer6tCyl.7cj7SKdFHC4HdHQRl30yv2G.','2026-01-23 09:50:18',NULL,NULL,NULL,'2025-11-07 09:19:08',NULL,1,NULL,NULL,NULL,0,'2025-10-01 13:05:18','2025-10-01 13:05:18','2026-01-23 09:50:18');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -2658,4 +2658,4 @@ commit;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-08 15:53:08
+-- Dump completed on 2026-01-23 10:57:37
