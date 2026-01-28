@@ -15,10 +15,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 17c0c6a4-80a6-4cef-84f4-ebefe3af9d39 # Text - Multi
             handle: headline
-            includeInCards: true
             instructions: null
             label: Headline
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -32,10 +30,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 6243b5f2-9474-47a0-99f2-24d5a6cc5832 # Rich Text - Rich
             handle: text
-            includeInCards: false
             instructions: null
             label: Text
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -55,10 +51,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 177e5629-be0d-45a5-8751-ee4a081d01d0 # Switch - Off
             handle: switchOpen
-            includeInCards: false
             instructions: null
             label: 'Open?'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

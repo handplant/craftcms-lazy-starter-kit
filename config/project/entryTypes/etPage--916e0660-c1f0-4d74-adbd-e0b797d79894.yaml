@@ -22,7 +22,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -31,7 +30,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -49,10 +47,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 17c0c6a4-80a6-4cef-84f4-ebefe3af9d39 # Text - Multi
             handle: headline
-            includeInCards: false
             instructions: null
             label: Headline
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -66,10 +62,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 7cdf6921-13c4-4984-95cd-9ac60231929d # Rich Text - Builder
             handle: ckeBuilder
-            includeInCards: false
             instructions: null
             label: 'CKEditor Builder'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -83,10 +77,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 0a5600e8-07a6-4292-bc21-d0e142d9dc22 # Matrix - Builder
             handle: null
-            includeInCards: false
             instructions: null
             label: 'Matrix Builder'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -106,10 +98,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5bf4ae8e-4fcb-4ed0-bb07-7dbbb4c59050 # Seo
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

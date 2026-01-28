@@ -16,10 +16,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: e2850ac0-af58-4d32-9596-b15239d9567e # Image
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: true
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -33,10 +31,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 17c0c6a4-80a6-4cef-84f4-ebefe3af9d39 # Text - Multi
             handle: headline
-            includeInCards: true
             instructions: null
             label: Headline
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -50,10 +46,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 048ca300-746f-47c7-88e8-03271c08c318 # Rich Text - Simple
             handle: teaser
-            includeInCards: true
             instructions: null
             label: Teaser
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -67,10 +61,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: c2078d68-c6cf-42ee-ad68-931b8a4b5cdb # Link - Native
             handle: button
-            includeInCards: false
             instructions: null
             label: Button
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -81,6 +73,7 @@ fieldLayouts:
         name: Content
         uid: f34d0118-b348-474b-bb80-326cd0d81798
         userCondition: null
+    thumbFieldKey: 'layoutElement:e07011df-84b0-4504-8c98-7af8c534248c'
 handle: compCard
 hasTitleField: false
 icon: card-heart

@@ -15,10 +15,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 17c0c6a4-80a6-4cef-84f4-ebefe3af9d39 # Text - Multi
             handle: headline
-            includeInCards: true
             instructions: null
             label: Headline
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -32,10 +30,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: e2850ac0-af58-4d32-9596-b15239d9567e # Image
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -49,10 +45,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: c2078d68-c6cf-42ee-ad68-931b8a4b5cdb # Link - Native
             handle: button
-            includeInCards: false
             instructions: null
             label: Button
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -72,10 +66,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 3c6dd0d6-6cbf-415f-a6fe-3bc205817b94 # Anchor
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -89,10 +81,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 177e5629-be0d-45a5-8751-ee4a081d01d0 # Switch - Off
             handle: switchFull
-            includeInCards: false
             instructions: null
             label: 'Full width'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -106,10 +96,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 177e5629-be0d-45a5-8751-ee4a081d01d0 # Switch - Off
             handle: switchLayer
-            includeInCards: false
             instructions: null
             label: 'Image Layer'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -123,10 +111,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 177e5629-be0d-45a5-8751-ee4a081d01d0 # Switch - Off
             handle: switchInvert
-            includeInCards: false
             instructions: null
             label: 'Invert text'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

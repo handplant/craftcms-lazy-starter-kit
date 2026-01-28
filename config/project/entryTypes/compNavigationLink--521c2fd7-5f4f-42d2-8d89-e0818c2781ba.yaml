@@ -15,10 +15,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: c2078d68-c6cf-42ee-ad68-931b8a4b5cdb # Link - Native
             handle: button
-            includeInCards: true
             instructions: null
             label: Button
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -32,10 +30,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 0447cefb-59e4-4cb5-8d80-93043e135445
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
