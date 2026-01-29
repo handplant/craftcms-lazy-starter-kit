@@ -1,13 +1,14 @@
 {% set search = craft.entries.section('search').one() %}
 
-<section class="blocks blocks--search" data-show="$searchOpen == true">
-  <div class="blocks__content">
-    <div class="bg-stone-200 rounded-md p-8">
-      <p class="ui-bold">{{ search.title }}</p>
-      {{ search.render({
-        type: 'modal',
-      }) }}
+<div class="hidden " data-class="{ 'block': $searchOpen, 'hidden': !$searchOpen }">
+  <div class="blocks blocks--search">
+    <div class="blocks__content">
+      <div class="bg-stone-200 rounded-md p-8">
+        <p class="ui-bold">{{ search.title }}</p>
+        {{ search.render({
+          type: 'modal',
+        }) }}
+      </div>
     </div>
   </div>
-</section>
-
+</div>
