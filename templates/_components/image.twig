@@ -89,6 +89,7 @@
              alt="{{ altText }}"
              sizes="{{ _sizesAttr }}"
              onload="this.parentElement.classList.add('is-loaded')"
+          {{ _fetchpriority ? ' fetchpriority="high"' }}
           {{ _lazy ? ' loading="lazy"' }}
           {% if _objectFit %} style="{{ style }}"{% endif %}/>
       </picture>
