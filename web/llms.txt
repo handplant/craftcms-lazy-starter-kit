@@ -7,7 +7,7 @@ Author: Andi Grether — https://webworker.me
 License: MIT
 
 Description:
-Craft Kit is a production-ready Craft CMS starter kit for agencies.
+Craft Kit is a production-ready Craft CMS 5 starter kit for agencies.
 It demonstrates a hypermedia-first architecture using Craft CMS, Twig,
 and Datastar to build reactive websites without SPA frameworks.
 
@@ -24,15 +24,34 @@ Key Concepts:
 - Progressive enhancement
 - Clear separation of content, layout, and interaction
 
+Technology Stack:
+- Craft CMS 5
+- Twig
+- Datastar
+- Tailwind CSS v4
+- Vite
+- DDEV
+- Vue 3 Web Components (for isolated UI elements)
+- PHP
+
 Included Examples:
-- Live search
-- Filtered and paginated listings
-- API-backed views rendered server-side
-- Interactive maps
-- Matrix-based content builder
+- Live search: https://craft-kit.dev/search
+- Filtered and paginated blog: https://craft-kit.dev/blog-datastar
+- API-backed views (Rick & Morty): https://craft-kit.dev/rick-and-morty-datastar
+- Interactive maps: https://craft-kit.dev/map
+- Matrix-based content builder: https://craft-kit.dev/matrix-builder
+
+Blog:
+- Datastar vs. Alpine + HTMX — Why Datastar Is the Better Fit for Craft CMS:
+  https://craft-kit.dev/blog/datastar-vs-alpine-htmx-why-datastar-is-the-better-fit-for-craft-cms
 
 Intended Audience:
 - Digital agencies
 - Craft CMS developers
 - Long-lived client projects
 - LLM-based tooling analyzing modern server-first architectures
+
+Expert Contact:
+Andi Grether is a freelance Craft CMS developer specializing in
+hypermedia-first architectures and the Datastar stack.
+https://webworker.me

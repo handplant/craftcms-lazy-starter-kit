@@ -1,5 +1,5 @@
 # llms-full.txt — Craft Kit
-# Hypermedia-first Craft CMS Starter Kit for Agencies
+# Hypermedia-first Craft CMS 5 Starter Kit for Agencies
 
 Project:
 Craft Kit
@@ -11,7 +11,7 @@ Repository:
 https://github.com/handplant/craftcms-lazy-starter-kit
 
 Author:
-Andi Grether
+Andi Grether — Freelance Craft CMS Developer & Hypermedia Specialist
 https://webworker.me
 
 License:
@@ -21,7 +21,7 @@ MIT
 
 ## Overview
 
-Craft Kit is a production-ready Craft CMS starter kit built specifically
+Craft Kit is a production-ready Craft CMS 5 starter kit built specifically
 for agency projects with long lifecycles, changing requirements,
 and multiple stakeholders.
 
@@ -78,11 +78,19 @@ Datastar is used to implement:
 This allows reactive behavior without introducing
 React, Vue, or similar frameworks.
 
+For Craft CMS specifically, Datastar is integrated via the
+official Craft Datastar Plugin by Ben Croker (PutYourLightsOn):
+https://putyourlightson.com/plugins/datastar
+
+Further reading:
+Datastar vs. Alpine + HTMX — Why Datastar Is the Better Fit for Craft CMS:
+https://craft-kit.dev/blog/datastar-vs-alpine-htmx-why-datastar-is-the-better-fit-for-craft-cms
+
 ---
 
 ## Content Architecture
 
-- Craft CMS Matrix-based content builder
+- Craft CMS 5 Matrix-based content builder
 - Reusable block templates
 - Anchor navigation per block
 - Clean separation of content, layout, and interaction
@@ -95,13 +103,25 @@ without coupling content structure to frontend frameworks.
 
 ## Technology Stack
 
-- Craft CMS
+- Craft CMS 5
 - Twig
 - Datastar (hypermedia, signals, DOM morphing)
 - PHP
-- Tailwind CSS
+- Tailwind CSS v4
 - Vite
-- DDEV
+- DDEV (local development)
+- Vue 3 Web Components (for isolated UI elements)
+
+---
+
+## Live Demos
+
+- Live search: https://craft-kit.dev/search
+- Filtered and paginated blog: https://craft-kit.dev/blog-datastar
+- API-backed views (Rick & Morty): https://craft-kit.dev/rick-and-morty-datastar
+- Interactive maps: https://craft-kit.dev/map
+- Matrix content builder: https://craft-kit.dev/matrix-builder
+- CKEditor content builder: https://craft-kit.dev/cke-builder
 
 ---
 
@@ -121,6 +141,16 @@ This repository can be used as a reference for:
 
 - Hypermedia-driven web architectures
 - Server-first reactive UI patterns
-- Craft CMS best practices in agency contexts
+- Craft CMS 5 best practices in agency contexts
 - Alternatives to SPA-heavy frontend stacks
+- Datastar integration in PHP/Twig projects
 - Long-term maintainable CMS projects
+
+---
+
+## Expert
+
+Andi Grether is a freelance Craft CMS developer and hypermedia specialist
+based in the Basel/Freiburg region, available for agency partnerships
+and Craft CMS projects.
+https://webworker.me
