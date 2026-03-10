@@ -26,6 +26,35 @@ settings:
                       -
                         -
                           __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - schemaType
+                            2:
+                              - label
+                              - 'Schema Type'
+                            3:
+                              - instructions
+                              - 'organization, person'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-03-10T07:20:57+00:00'
+                            9:
+                              - uid
+                              - 39296807-4e58-413f-93c2-96f2156cf16d
+                            12:
+                              - fieldUid
+                              - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
+                        -
+                          __assoc__:
                             -
                               - type
                               - craft\fieldlayoutelements\Heading
@@ -53,21 +82,41 @@ settings:
                               - required
                               - true
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 100
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:36:51+00:00'
-                            11:
+                            9:
                               - uid
                               - c30258f0-80db-4f56-a46c-20abbb382822
-                            14:
+                            12:
+                              - fieldUid
+                              - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaJobTitle
+                            2:
+                              - label
+                              - 'Job Title'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-03-10T07:20:57+00:00'
+                            9:
+                              - uid
+                              - c0e26d36-7cd0-41cb-995a-ce0f4a3bafb0
+                            12:
                               - fieldUid
                               - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
                         -
@@ -85,21 +134,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 100
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:47:01+00:00'
-                            11:
+                            9:
                               - uid
                               - 271df806-e3b8-4e3c-afab-24af38f444b2
-                            14:
+                            12:
                               - fieldUid
                               - e2850ac0-af58-4d32-9596-b15239d9567e # Image
                         -
@@ -117,21 +160,44 @@ settings:
                               - required
                               - true
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 100
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:36:51+00:00'
-                            11:
+                            9:
                               - uid
                               - 5d3da07e-e648-4676-bf10-9805389a009b
-                            14:
+                            12:
+                              - fieldUid
+                              - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - orgaKnowsAbout
+                            2:
+                              - label
+                              - 'Knows About'
+                            3:
+                              - instructions
+                              - 'Comma-separated list of topics'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-03-10T07:28:58+00:00'
+                            9:
+                              - uid
+                              - e6919c8f-449d-4d67-8534-e969d12125ae
+                            12:
                               - fieldUid
                               - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
                         -
@@ -166,21 +232,15 @@ settings:
                               - required
                               - true
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 100
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:47:01+00:00'
-                            11:
+                            9:
                               - uid
                               - 6fe48157-c613-405c-b893-51016e5ed895
-                            14:
+                            12:
                               - fieldUid
                               - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
                         -
@@ -195,21 +255,15 @@ settings:
                               - required
                               - true
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:36:51+00:00'
-                            11:
+                            9:
                               - uid
                               - 034dd95b-b0cf-4622-9004-907b70cee996
-                            14:
+                            12:
                               - fieldUid
                               - e56e581b-b43d-49b9-9807-65d135a12ecd # Email
                         -
@@ -227,21 +281,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:36:51+00:00'
-                            11:
+                            9:
                               - uid
                               - 73ac4d61-c081-4cd4-a7ef-650e6ea625ee
-                            14:
+                            12:
                               - fieldUid
                               - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
                         -
@@ -273,21 +321,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 25
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:36:51+00:00'
-                            11:
+                            9:
                               - uid
                               - 826d94bd-11da-4eb8-9679-3a092dcf0ed7
-                            14:
+                            12:
                               - fieldUid
                               - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
                         -
@@ -305,21 +347,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 25
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:36:51+00:00'
-                            11:
+                            9:
                               - uid
                               - 573949db-4cce-401b-a630-641b5ba73a38
-                            14:
+                            12:
                               - fieldUid
                               - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
                         -
@@ -337,21 +373,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 25
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:36:51+00:00'
-                            11:
+                            9:
                               - uid
                               - df989b7c-6150-43af-aa7c-d73f0ea46af7
-                            14:
+                            12:
                               - fieldUid
                               - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
                         -
@@ -372,21 +402,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 25
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:36:51+00:00'
-                            11:
+                            9:
                               - uid
                               - 8ab21210-ef69-4ec5-8613-633866478191
-                            14:
+                            12:
                               - fieldUid
                               - c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
                         -
@@ -418,21 +442,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 25
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:40:07+00:00'
-                            11:
+                            9:
                               - uid
                               - f4eaca3f-c178-4f3a-ad9f-af609574f83e
-                            14:
+                            12:
                               - fieldUid
                               - 3a4f56a8-1fc9-4301-ad83-4379be0d602a # Lat/Long
                         -
@@ -450,21 +468,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 25
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:40:07+00:00'
-                            11:
+                            9:
                               - uid
                               - de5a3830-005d-4dcf-91dc-382a14da7843
-                            14:
+                            12:
                               - fieldUid
                               - 3a4f56a8-1fc9-4301-ad83-4379be0d602a # Lat/Long
                         -
@@ -496,24 +508,18 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 100
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-04T11:48:57+00:00'
-                            11:
+                            9:
                               - uid
                               - 529465a4-6109-4134-bccf-d5755a065313
-                            14:
+                            12:
                               - fieldUid
                               - d69fb3a1-5af9-4749-8524-6a9c8115a827 # Table Links
-            3:
+            4:
               - cardThumbAlignment
               - end
   viewMode: pane

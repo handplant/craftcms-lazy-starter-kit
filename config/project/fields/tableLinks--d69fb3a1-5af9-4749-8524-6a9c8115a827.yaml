@@ -29,6 +29,9 @@ settings:
         -
           - col1
           - ''
+        -
+          - rowId
+          - 5f85debd-f3a2-44c8-a24e-1d74a0a7c3e1
   maxRows: null
   minRows: null
   staticRows: false

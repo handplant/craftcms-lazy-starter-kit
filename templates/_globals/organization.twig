@@ -2,6 +2,7 @@
   {% set schema = craft.schema %}
   {% set data = settings.jsonLd %}
   {% set logo = data.orgaLogo.one() ?? null %}
+  {% set isPerson = data.schemaType == 'person' %}
 
   {# Social Links sammeln #}
   {% set socials = [] %}
@@ -13,7 +14,7 @@
     {% endfor %}
   {% endif %}
 
-  {% set org = schema.organization %}
+  {% set org = isPerson ? schema.person : schema.organization %}
 
   {# Pflichtfelder #}
   {% do org.name(data.orgaName) %}
@@ -30,6 +31,17 @@
 
   {% if socials|length %}
     {% do org.sameAs(socials) %}
+  {% endif %}
+
+  {# Person-spezifisch #}
+  {% if isPerson %}
+    {% if data.orgaJobTitle %}
+      {% do org.jobTitle(data.orgaJobTitle) %}
+    {% endif %}
+    {% if data.orgaKnowsAbout %}
+      {% set knowsAbout = data.orgaKnowsAbout|split(',')|map(v => v|trim) %}
+      {% do org.knowsAbout(knowsAbout) %}
+    {% endif %}
   {% endif %}
 
   {# Address #}
