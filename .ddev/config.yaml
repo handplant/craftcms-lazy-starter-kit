@@ -15,6 +15,8 @@ nodejs_version: "22"
 mutagen_enabled: true
 web_environment: []
 corepack_enable: false
+upload_dirs:
+  - web/uploads
 
 # Key features of DDEV's config.yaml:
 
