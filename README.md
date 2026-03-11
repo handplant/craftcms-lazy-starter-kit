@@ -7,7 +7,8 @@ perfect for agencies and freelancers who want to build clean and fast Craft site
 
 ## 🧩 Overview
 
-This starter kit helps developers quickly spin up clean and maintainable Craft CMS projects.  
+This starter kit helps developers quickly spin up clean and maintainable Craft CMS projects.
+
 It includes ready-made examples for Matrix Blocks, CKEditor integration, a Datastar-powered Search page, and both
 Datastar- and Vue-based blog listings.
 
@@ -16,11 +17,11 @@ and **developers** who want a production-ready foundation for new Craft projects
 
 ### Live Demo: [craft-kit.dev](https://craft-kit.dev)
 
-### ⚡ Datastar-Powered Examples
+### ⚡ Datastar-Powered Hypermedia Examples
 
 Craft Kit includes multiple real-world Datastar demos that showcase server-synchronized state, reactive UI updates, and
-seamless Craft integration — all without a JavaScript build step. Explore how Datastar transforms Craft CMS into a
-reactive, declarative, and API-friendly platform:
+seamless Craft integration — all without a JavaScript build step. Explore how Datastar and a **Hypermedia-driven
+approach** transform Craft CMS into a reactive, declarative, and API-friendly platform:
 
 - 🔍 **Datastar Search** – https://craft-kit.dev/search
 - 📝 **Datastar Blog** – https://craft-kit.dev/blog-datastar
@@ -34,7 +35,7 @@ reactive, declarative, and API-friendly platform:
 - ⚙️ **Craft CMS 5** – latest version with flexible content modeling
 - ⚡ **Vite** – fast bundling and instant reloads
 - 🧩 **DDEV** – reproducible local development environment
-- 🚀 **Datastar** – lightweight, reactive frontend for dynamic UIs
+- 🚀 **Datastar** – lightweight, reactive frontend for **Hypermedia-driven** dynamic UIs
 - 🗺️ **Leaflet** – interactive, data-driven maps with clustering and live filtering
 - 🧱 **Vue 3 (Web Components)** – progressive enhancement with custom elements
 - 🔗 **GraphQL** – structured data fetching directly from Craft
@@ -54,7 +55,7 @@ reactive, declarative, and API-friendly platform:
 ### 🤝 Open Source
 
 This boilerplate is open for everyone — built by [Andi Grether](https://webworker.me) to help developers build faster,
-cleaner, and more maintainable Craft CMS sites.
+cleaner, and more maintainable Craft CMS sites using a **Hypermedia-first** approach.
 
 ## ⚙️ Quick Start
 
