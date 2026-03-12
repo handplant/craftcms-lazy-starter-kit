@@ -1,6 +1,6 @@
 # 🚀 CraftCMS Lazy Starter Kit
 
-A modern, production-ready Craft CMS Starter Kit with Vite, Tailwind, Vue Web Components, Datastar, GraphQL, and DDEV —
+A modern, production-ready Craft CMS Starter Kit with Vite, Tailwind, Datastar and DDEV —
 perfect for agencies and freelancers who want to build clean and fast Craft sites.
 
 ---
@@ -47,8 +47,6 @@ approach** transform Craft CMS into a reactive, declarative, and API-friendly pl
 - 🔌 **Plugins:** CKEditor, Datastar, Map, Image Resizer, SEOMate, Vite
 
 ---
-
-![Screenshot](web/assets/screenshot.png)
 
 ### 🤝 Open Source
 
