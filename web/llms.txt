@@ -22,21 +22,21 @@ Key Concepts:
 - Hypermedia-driven UI updates
 - Datastar signals and DOM morphing
 - Progressive enhancement
+- Server-Sent Events (SSE) for real-time updates
 - Clear separation of content, layout, and interaction
 
 Technology Stack:
 - Craft CMS 5
 - Twig
 - Datastar
-- Tailwind CSS v4
+- Tailwind CSS
 - Vite
 - DDEV
-- Vue 3 Web Components (for isolated UI elements)
 - PHP
 
 Included Examples:
 - Live search: https://craft-kit.dev/search
-- Filtered and paginated blog: https://craft-kit.dev/blog-datastar
+- Filtered and paginated blog: https://craft-kit.dev/blog-hypermedia-datastar
 - API-backed views (Rick & Morty): https://craft-kit.dev/rick-and-morty-datastar
 - Interactive maps: https://craft-kit.dev/map
 - Matrix-based content builder: https://craft-kit.dev/matrix-builder
@@ -44,6 +44,8 @@ Included Examples:
 Blog:
 - Datastar vs. Alpine + HTMX — Why Datastar Is the Better Fit for Craft CMS:
   https://craft-kit.dev/blog/datastar-vs-alpine-htmx-why-datastar-is-the-better-fit-for-craft-cms
+- Matrix vs. CKEditor in Craft CMS — When to Use Which:
+  https://craft-kit.dev/blog/matrix-vs.-ckeditor-in-craft-cms-when-to-use-which
 
 Intended Audience:
 - Digital agencies

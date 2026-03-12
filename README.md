@@ -9,8 +9,8 @@ perfect for agencies and freelancers who want to build clean and fast Craft site
 
 This starter kit helps developers quickly spin up clean and maintainable Craft CMS projects.
 
-It includes ready-made examples for Matrix Blocks, CKEditor integration, a Datastar-powered Search page, and both
-Datastar- and Vue-based blog listings.
+It includes ready-made examples for Matrix Blocks, CKEditor integration, and Datastar Hypermedia-driven
+Blog, Map, and Search demos — all server-rendered, reactive, and built without JavaScript frameworks.
 
 This boilerplate demonstrates a **clean, scalable, and modern Craft CMS setup** — perfect for **agencies, freelancers**,
 and **developers** who want a production-ready foundation for new Craft projects.
@@ -37,9 +37,7 @@ approach** transform Craft CMS into a reactive, declarative, and API-friendly pl
 - 🧩 **DDEV** – reproducible local development environment
 - 🚀 **Datastar** – lightweight, reactive frontend for **Hypermedia-driven** dynamic UIs
 - 🗺️ **Leaflet** – interactive, data-driven maps with clustering and live filtering
-- 🧱 **Vue 3 (Web Components)** – progressive enhancement with custom elements
-- 🔗 **GraphQL** – structured data fetching directly from Craft
-- 🎨 **Tailwind CSS v4** – utility-first styling with CSS variables
+- 🎨 **Tailwind CSS** – utility-first styling with CSS variables
 - 🎞️ **Anime.js** – smooth element animations and scroll-based transitions
 - 🛞 **Embla Carousel** – ultra-smooth, touch-friendly sliders with full customization
 - 🗃️ **Craft eagerly() + render()** – optimized queries, automatic block templates, and smart caching

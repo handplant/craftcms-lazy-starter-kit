@@ -1,7 +1,7 @@
 {
   "name": "craftcms-lazy-starter-kit",
   "version": "1.0.0",
-  "description": "A modern Craft CMS starter kit with Vite, Tailwind, Vue 3 Web Components, Datastar and GraphQL.",
+  "description": "A modern Craft CMS starter kit with Vite, Tailwind, Datastar",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,25 +14,17 @@
     "type": "git",
     "url": "https://github.com/andee-grether/craftcms-lazy-starter-kit.git"
   },
-  "homepage": "https://craftcms-lazy-starter-kit.webworker.me",
+  "homepage": "https://craft-kit.dev",
   "bugs": {
     "url": "https://github.com/andee-grether/craftcms-lazy-starter-kit/issues"
   },
   "devDependencies": {
-    "@orestbida/iframemanager": "^1.3.0",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/postcss": "^4.2.1",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.1",
-    "@vitejs/plugin-vue": "^6.0.4",
-    "@zackad/prettier-plugin-twig": "^0.16.3",
-    "fast-glob": "^3.3.3",
-    "prettier": "^3.8.1",
-    "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.2.1",
-    "vite": "^7.3.1",
-    "vite-plugin-restart": "^2.0.0",
-    "vue": "^3.5.29"
+    "vite": "^7.3.1"
   },
   "dependencies": {
     "animejs": "^4.3.6",
@@ -47,10 +39,9 @@
     "starter-kit",
     "vite",
     "tailwind",
-    "vue",
     "datastar",
-    "graphql",
     "boilerplate",
-    "frontend"
+    "frontend",
+    "hypermedia"
   ]
 }

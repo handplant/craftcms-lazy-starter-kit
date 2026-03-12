@@ -1,9 +1,6 @@
 isPublic: true
 name: 'Public Schema'
 scope:
-  - 'sites.6eab4b84-63fb-4382-bdd7-d2bee959aafb:read' # $SITE_NAME
-  - 'sections.04c7059c-00d6-416e-a590-757fea296201:read' # Blog
-  - 'sections.6686f777-cfa0-442a-964f-76aeefb81ba6:read' # Categories
   - 'volumes.d55b1175-f5cd-4977-8625-4333d431a8f6:read' # Files
   - 'directive:parseRefs'
   - 'directive:transform'

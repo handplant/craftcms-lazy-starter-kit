@@ -56,6 +56,7 @@ This project follows hypermedia principles:
 - No JSON APIs for UI state
 - No client-side routing
 - No hydration layer
+- Progressive Enhancement — works without JavaScript
 
 Datastar enables this by providing:
 - signal-based state management
@@ -83,8 +84,10 @@ official Craft Datastar Plugin by Ben Croker (PutYourLightsOn):
 https://putyourlightson.com/plugins/datastar
 
 Further reading:
-Datastar vs. Alpine + HTMX — Why Datastar Is the Better Fit for Craft CMS:
-https://craft-kit.dev/blog/datastar-vs-alpine-htmx-why-datastar-is-the-better-fit-for-craft-cms
+- Datastar vs. Alpine + HTMX — Why Datastar Is the Better Fit for Craft CMS:
+  https://craft-kit.dev/blog/datastar-vs-alpine-htmx-why-datastar-is-the-better-fit-for-craft-cms
+- Matrix vs. CKEditor in Craft CMS — When to Use Which:
+  https://craft-kit.dev/blog/matrix-vs.-ckeditor-in-craft-cms-when-to-use-which
 
 ---
 
@@ -107,17 +110,16 @@ without coupling content structure to frontend frameworks.
 - Twig
 - Datastar (hypermedia, signals, DOM morphing)
 - PHP
-- Tailwind CSS v4
+- Tailwind CSS
 - Vite
 - DDEV (local development)
-- Vue 3 Web Components (for isolated UI elements)
 
 ---
 
 ## Live Demos
 
 - Live search: https://craft-kit.dev/search
-- Filtered and paginated blog: https://craft-kit.dev/blog-datastar
+- Filtered and paginated blog: https://craft-kit.dev/blog-hypermedia-datastar
 - API-backed views (Rick & Morty): https://craft-kit.dev/rick-and-morty-datastar
 - Interactive maps: https://craft-kit.dev/map
 - Matrix content builder: https://craft-kit.dev/matrix-builder

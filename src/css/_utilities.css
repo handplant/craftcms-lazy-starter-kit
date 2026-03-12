@@ -1,5 +1,5 @@
 @utility ui-h1 {
-  @apply ui-bold text-[clamp(2rem,4vw,5rem)] leading-[1.2];
+  @apply ui-bold text-[clamp(2rem,4vw,4.5rem)] leading-[1.2];
 }
 
 @utility ui-h2 {

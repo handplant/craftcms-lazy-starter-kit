@@ -1,4 +1,4 @@
-dateModified: 1773127738
+dateModified: 1773300161
 elementSources:
   craft\elements\Entry:
     -
@@ -107,7 +107,6 @@ meta:
   __names__:
     0a5600e8-07a6-4292-bc21-d0e142d9dc22: 'Matrix - Builder' # Matrix - Builder
     0b6dd59c-982a-43fa-908f-143e8ef509f2: Date # Date
-    0e75ce8b-0599-4d29-8480-e505de363d81: 'Blog Type' # Blog Type
     2cec4e62-8325-4329-b76c-d5c7ae7af576: Buttons # Buttons
     3a4f56a8-1fc9-4301-ad83-4379be0d602a: Lat/Long # Lat/Long
     3c6dd0d6-6cbf-415f-a6fe-3bc205817b94: Anchor # Anchor

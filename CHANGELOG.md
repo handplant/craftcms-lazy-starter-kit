@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.0.0] – 2026-03-12
+
+### Changed
+
+- Removed Vue 3 Web Components — project focus is now purely Hypermedia-first
+- Removed Blog Native in favor of the Datastar Hypermedia Blog
+- Removed GraphQL integration
+- Removed unnecessary node modules
+
+### Notes
+
+- Leaner setup, less dependencies, clearer stack
+- This release intentionally removes complexity in favor of a clear, maintainable stack
+- The Datastar + Twig + SSE approach is now the single recommended pattern
+
 ## [1.4.0] – 2025-11-26
 
 ### Added

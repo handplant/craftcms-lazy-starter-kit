@@ -4,7 +4,7 @@
     "name": "_commonjsHelpers"
   },
   "src/js/app.js": {
-    "file": "assets/app-pG7Z5hD5.js",
+    "file": "assets/app-BvS13dWk.js",
     "name": "app",
     "src": "src/js/app.js",
     "isEntry": true,
@@ -12,7 +12,7 @@
       "__commonjsHelpers-CqkleIqs.js"
     ],
     "css": [
-      "assets/app-CpgCXJyM.css"
+      "assets/app-BeQpCreu.css"
     ]
   },
   "src/js/map.js": {
@@ -26,11 +26,5 @@
     "css": [
       "assets/map-9Hbp8J6b.css"
     ]
-  },
-  "src/vue/webcomponents/blog-list.ce.ts": {
-    "file": "assets/blog-list-BiQdC1R5.js",
-    "name": "blog-list",
-    "src": "src/vue/webcomponents/blog-list.ce.ts",
-    "isEntry": true
   }
 }

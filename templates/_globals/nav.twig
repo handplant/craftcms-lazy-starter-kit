@@ -1,7 +1,6 @@
 {% set home = craft.entries.section('home').one() %}
-{% set search = craft.entries.section('search').one() %}
 {% set navItems = craft.entries.section("navigations").eagerly().level(1).all() ?? null %}
-
+{% set isSearchPage = craft.app.request.pathInfo == 'search' %}
 <nav
   class="fixed inset-x-0 top-0 z-[1001] h-16 bg-white/90 layout"
   data-class="{ 'bg-stone-200/90': $navOpen, 'bg-white/90': !$navOpen }"
@@ -41,22 +40,20 @@
           {% endfor %}
         </ul>
       </div>
-      {% set isSearchPage = entry is defined and entry.id == search.id %}
-      <button
-        class="flex items-center cursor-pointer hover:text-primary {{ isSearchPage ? 'text-primary pointer-events-none' : '' }}"
-        {% if not isSearchPage %}
+      {% if not isSearchPage %}
+        <button
+          class="flex items-center cursor-pointer hover:text-primary"
           data-on:click="$searchOpen = !$searchOpen; $navOpen = false"
           data-attr="{ 'aria-label': $searchOpen ? 'Close search' : 'Open search' }"
-        {% endif %}
-        {{ isSearchPage ? 'aria-disabled="true"' }}
-        type="button"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-10">
-          <path data-show="!$searchOpen" stroke-linecap="round" stroke-linejoin="round"
-                d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.774 4.774ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-          <path data-show="$searchOpen" stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-        </svg>
-      </button>
+          type="button"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-10">
+            <path data-show="!$searchOpen" stroke-linecap="round" stroke-linejoin="round"
+                  d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.774 4.774ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            <path data-show="$searchOpen" stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      {% endif %}
     {% endif %}
   </div>
 </nav>
