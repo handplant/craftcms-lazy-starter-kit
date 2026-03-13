@@ -3,11 +3,11 @@
 }
 
 @utility ui-h2 {
-  @apply ui-bold text-[clamp(1.5rem,3vw,2.5rem)] leading-tight;
+  @apply ui-bold text-[clamp(1.5rem,3vw,2.5rem)] leading-[1.4];
 }
 
 @utility ui-h3 {
-  @apply ui-bold text-[clamp(1.25rem,2.5vw,2rem)] leading-snug;
+  @apply ui-bold text-[clamp(1.25rem,2.5vw,2rem)] leading-[1.4];
 }
 
 @utility ui-h4 {
@@ -19,7 +19,7 @@
 }
 
 @utility ui-teaser {
-  @apply ui-bold text-[clamp(1.25rem,2vw,2rem)] leading-snug;
+  @apply ui-h3;
 }
 
 @utility ui-bold {
