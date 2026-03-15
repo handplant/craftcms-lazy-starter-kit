@@ -1,0 +1,11 @@
+vendor/
+node_modules/
+storage/
+web/dist/
+web/uploads/
+web/cpresources/
+.git/
+.ddev/
+composer.lock
+package-lock.json
+demo.sql

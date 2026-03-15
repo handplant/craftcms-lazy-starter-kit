@@ -29,6 +29,9 @@
 /yarn-error.log
 /npm-debug.log
 
+#CLAUDE CODE
+.claude/settings.local.json
+
 # MISC FILES
 .cache
 .DS_Store

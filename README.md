@@ -44,7 +44,24 @@ approach** transform Craft CMS into a reactive, declarative, and API-friendly pl
 - 🧾 **SEO-Ready JSON-LD Organization Schema** – structured data for Google Rich Results
 - 🔍 **SEO Meta, Open Graph & Sitemap** – via SEOMate
 - 🧰 Field Usage Utility – overview of all fields + their Entry Type instances
-- 🔌 **Plugins:** CKEditor, Datastar, Map, Image Resizer, SEOMate, Vite
+- 🔌 **Plugins:** CKEditor, Datastar, Map, Image Resizer, SEOMate, Vite, Craft MCP
+
+---
+
+## 🤖 AI-Assisted Development
+
+Craft Kit ships with a ready-made **Claude Code** setup for AI-assisted development — no configuration needed.
+
+### Included
+
+- **`CLAUDE.md`** – project context for Claude Code: stack, architecture, conventions, folder structure
+- **`.claudeignore`** – keeps Claude Code focused on relevant files, ignores `vendor/`, `node_modules/`, `storage/` etc.
+- **`.mcp.json`** – connects Claude Code to the [Craft MCP Plugin](https://github.com/stimmtdigital/craft-mcp) for
+  direct access to your Craft installation
+- **`.claude/skills/datastar-craft/`** – Datastar + Craft CMS skill set:
+  - `SKILL.md` – SSE endpoints, Twig integration, signals, common patterns
+  - `REFERENCE.md` – complete `data-*` attribute reference
+  - `TAO.md` – Datastar philosophy and architecture principles
 
 ---
 
