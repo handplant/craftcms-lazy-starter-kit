@@ -13,13 +13,9 @@
 {% endif %}
 
 {% block content %}
-  {% include "_components/label.twig" with {
-    label: "Block CTA"
-  } only %}
   <div class="stack stack--end relative">
     {% if image %}
       <div
-        data-animate="fade-in"
         class="stack__image {{ (entry.switchInvert and entry.switchLayer) ? 'after:absolute after:inset-0 after:bg-black/50' : (entry.switchLayer ? ' after:absolute after:inset-0  after:bg-white/50' : '') }}">
         {% include "_components/image.twig" with {
           image: image,
@@ -29,7 +25,7 @@
         } only %}
       </div>
     {% endif %}
-    <div class="stack__content layout" data-animate="zoom-in">
+    <div class="stack__content layout">
       <div class="{{ entry.switchFull ? 'layout__feature' : 'layout__content' }}{{ image ? ' py-12' }} space-y-6">
         <p class="ui-h2{{ entry.switchInvert and image ? ' text-white' }}">
           {{ entry.headline|nl2br }}

@@ -22,7 +22,7 @@
       <source src="{{ asset.getUrl() }}" type="audio/{{ asset.extension }}" />
     </audio>
   {%- case 'image' -%}
-    <div data-animate="fade-in">
+    <div>
       {% include "_components/image.twig" with {
         image: asset,
         class: 'rounded-md'

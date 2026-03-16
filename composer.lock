@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "213630bb8ba12807b2a462eb26820c07",
+    "content-hash": "92d5d121990c09484913c18774e93e72",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -589,11 +589,11 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "5.1.0",
+            "version": "5.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/a86e7dc1703dcf33f6824cfe283f4f6af1b1c172",
-                "reference": "a86e7dc1703dcf33f6824cfe283f4f6af1b1c172",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/fdda34362b3ae21f465cadcfcb4c299d03497950",
+                "reference": "fdda34362b3ae21f465cadcfcb4c299d03497950",
                 "shasum": ""
             },
             "require": {
@@ -638,7 +638,7 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2026-03-05T16:29:16+00:00"
+            "time": "2026-03-12T16:53:06+00:00"
         },
         {
             "name": "craftcms/cms",
@@ -2543,20 +2543,20 @@
         },
         {
             "name": "league/uri",
-            "version": "7.8.0",
+            "version": "7.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/uri.git",
-                "reference": "4436c6ec8d458e4244448b069cc572d088230b76"
+                "reference": "08cf38e3924d4f56238125547b5720496fac8fd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/uri/zipball/4436c6ec8d458e4244448b069cc572d088230b76",
-                "reference": "4436c6ec8d458e4244448b069cc572d088230b76",
+                "url": "https://api.github.com/repos/thephpleague/uri/zipball/08cf38e3924d4f56238125547b5720496fac8fd4",
+                "reference": "08cf38e3924d4f56238125547b5720496fac8fd4",
                 "shasum": ""
             },
             "require": {
-                "league/uri-interfaces": "^7.8",
+                "league/uri-interfaces": "^7.8.1",
                 "php": "^8.1",
                 "psr/http-factory": "^1"
             },
@@ -2629,7 +2629,7 @@
                 "docs": "https://uri.thephpleague.com",
                 "forum": "https://thephpleague.slack.com",
                 "issues": "https://github.com/thephpleague/uri-src/issues",
-                "source": "https://github.com/thephpleague/uri/tree/7.8.0"
+                "source": "https://github.com/thephpleague/uri/tree/7.8.1"
             },
             "funding": [
                 {
@@ -2637,20 +2637,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-14T17:24:56+00:00"
+            "time": "2026-03-15T20:22:25+00:00"
         },
         {
             "name": "league/uri-interfaces",
-            "version": "7.8.0",
+            "version": "7.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/uri-interfaces.git",
-                "reference": "c5c5cd056110fc8afaba29fa6b72a43ced42acd4"
+                "reference": "85d5c77c5d6d3af6c54db4a78246364908f3c928"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/uri-interfaces/zipball/c5c5cd056110fc8afaba29fa6b72a43ced42acd4",
-                "reference": "c5c5cd056110fc8afaba29fa6b72a43ced42acd4",
+                "url": "https://api.github.com/repos/thephpleague/uri-interfaces/zipball/85d5c77c5d6d3af6c54db4a78246364908f3c928",
+                "reference": "85d5c77c5d6d3af6c54db4a78246364908f3c928",
                 "shasum": ""
             },
             "require": {
@@ -2713,7 +2713,7 @@
                 "docs": "https://uri.thephpleague.com",
                 "forum": "https://thephpleague.slack.com",
                 "issues": "https://github.com/thephpleague/uri-src/issues",
-                "source": "https://github.com/thephpleague/uri-interfaces/tree/7.8.0"
+                "source": "https://github.com/thephpleague/uri-interfaces/tree/7.8.1"
             },
             "funding": [
                 {
@@ -2721,7 +2721,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-15T06:54:53+00:00"
+            "time": "2026-03-08T20:05:35+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -8584,11 +8584,11 @@
         },
         {
             "name": "verbb/image-resizer",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/image-resizer/zipball/b113e0f159195b11abf6d4d7c547a9053a1de0aa",
-                "reference": "b113e0f159195b11abf6d4d7c547a9053a1de0aa",
+                "url": "https://api.github.com/repos/verbb/image-resizer/zipball/50eeb6610c93e77b763fb7a741eff04f5826c766",
+                "reference": "50eeb6610c93e77b763fb7a741eff04f5826c766",
                 "shasum": ""
             },
             "require": {
@@ -8634,7 +8634,7 @@
                 "docs": "https://github.com/verbb/image-resizer",
                 "rss": "https://github.com/verbb/image-resizer/commits/v2.atom"
             },
-            "time": "2025-07-18T14:04:35+00:00"
+            "time": "2026-03-15T03:19:57+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

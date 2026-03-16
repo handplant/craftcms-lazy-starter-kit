@@ -4,12 +4,7 @@
 {% set classContent = builder ? 'blocks__content' : '' %}
 
 {% block content %}
-
-  {% include "_components/label.twig" with {
-    label: "Block Buttons"
-  } only %}
   <div class="flex flex-wrap items-center gap-3 sm:gap-6">
     {{ entry.matrixButtons.eagerly().render() }}
   </div>
-
 {% endblock %}

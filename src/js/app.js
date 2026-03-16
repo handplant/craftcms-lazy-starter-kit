@@ -1,5 +1,4 @@
 import '../css/app.css'
-import { animate, stagger, onScroll } from 'animejs'
 import EmblaCarousel from 'embla-carousel'
 import GLightbox from 'glightbox'
 
@@ -66,40 +65,4 @@ const lightbox = GLightbox({
   loop: true,
   zoomable: false,
   openEffect: 'fade',
-})
-
-// ANIMEJS
-document.addEventListener('DOMContentLoaded', () => {
-  const groups = document.querySelectorAll('[data-animate-group]')
-
-  const effects = {
-    'fade-up': { opacity: [0, 1], translateY: [50, 0], duration: 800, easing: 'easeOutElastic(1, .5)' },
-    'fade-in': { opacity: [0, 1], duration: 800, easing: 'easeOutElastic(1, .5)' },
-    'slide-left': { opacity: [0, 1], translateX: [-60, 0], duration: 800, easing: 'easeOutExpo' },
-    'slide-right': { opacity: [0, 1], translateX: [60, 0], duration: 800, easing: 'easeOutExpo' },
-    'zoom-in': { opacity: [0, 1], scale: [0.9, 1], duration: 800, easing: 'easeOutElastic(1, .5)' },
-  }
-
-  groups.forEach((group) => {
-    const elements = group.querySelectorAll('[data-animate]')
-    if (!elements.length) {
-      return
-    }
-
-    elements.forEach((el, i) => {
-      const type = el.dataset.animate
-      const animation = effects[type] || effects['fade-in']
-
-      animate(el, {
-        ...animation,
-        delay: i * 150,
-        autoplay: onScroll({
-          target: group,
-          enter: '80% 0%',
-          once: true,
-          debug: false,
-        }),
-      })
-    })
-  })
 })

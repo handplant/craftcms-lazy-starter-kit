@@ -3,7 +3,6 @@
 <section
   {% if classWrapper %}class="{{ classWrapper }}"{% endif %}
   {% if anchorId %}id="{{ anchorId|kebab }}"{% endif %}
-  data-animate-group
 >
   <div class="{{ classContent ?? '' }}">
     {% block content %}

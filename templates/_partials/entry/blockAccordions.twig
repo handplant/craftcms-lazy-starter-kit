@@ -4,10 +4,7 @@
 {% set classContent = builder ? 'blocks__popout' : '' %}
 
 {% block content %}
-  {% include "_components/label.twig" with {
-    label: "Block Accordion"
-  } only %}
-  <div class="grid gap-6" data-animate="fade-in">
+  <div class="grid gap-6">
     {{ entry.matrixAccordion.eagerly().render() }}
   </div>
 {% endblock %}

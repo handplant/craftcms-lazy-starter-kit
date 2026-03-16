@@ -38,7 +38,6 @@ approach** transform Craft CMS into a reactive, declarative, and API-friendly pl
 - 🚀 **Datastar** – lightweight, reactive frontend for **Hypermedia-driven** dynamic UIs
 - 🗺️ **Leaflet** – interactive, data-driven maps with clustering and live filtering
 - 🎨 **Tailwind CSS** – utility-first styling with CSS variables
-- 🎞️ **Anime.js** – smooth element animations and scroll-based transitions
 - 🛞 **Embla Carousel** – ultra-smooth, touch-friendly sliders with full customization
 - 🗃️ **Craft eagerly() + render()** – optimized queries, automatic block templates, and smart caching
 - 🧾 **SEO-Ready JSON-LD Organization Schema** – structured data for Google Rich Results

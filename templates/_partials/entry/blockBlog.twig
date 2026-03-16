@@ -4,10 +4,6 @@
 {% set classContent = builder ? 'blocks__popout' : '' %}
 
 {% block content %}
-  {% include "_components/label.twig" with {
-    label: "Block Blog"
-  } only %}
-
   {% set categories = craft.entries.section('categories').all() ?? null %}
 
   {% if categories %}
