@@ -1,4 +1,4 @@
-{% set todoInput = signals.todoInput ?? '' %}
+{% set todoInput = signals.todo_input ?? '' %}
 {% set todoInput = todoInput | trim %}
 {% set todos = craft.app.session.get('todos', []) %}
 
@@ -14,11 +14,11 @@
   {% set todos = todos | merge([newTodo]) %}
   {% do craft.app.session.set('todos', todos) %}
 
-  {% patchsignals { todoInput: '', todoError: '' } %}
+  {% patchsignals { todo_input: '', todo_error: '' } %}
 {% elseif isDuplicate %}
-  {% patchsignals { todoError: '"' ~ todoInput ~ '" already exists.' } %}
+  {% patchsignals { todo_error: '"' ~ todoInput ~ '" already exists.' } %}
 {% elseif todos | length >= 50 %}
-  {% patchsignals { todoError: 'Maximum of 5 todos reached.' } %}
+  {% patchsignals { todo_error: 'Maximum of 5 todos reached.' } %}
 {% endif %}
 
 {% patchelements with {useViewTransition: true} %}

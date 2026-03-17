@@ -1,4 +1,4 @@
-{% set todoId = signals.todoId ?? '' %}
+{% set todoId = signals.todo_id ?? '' %}
 {% set todos = craft.app.session.get('todos', []) %}
 
 {% if todoId %}
@@ -9,7 +9,7 @@
     {% endif %}
   {% endfor %}
   {% do craft.app.session.set('todos', updatedTodos) %}
-  {% patchsignals { todoError: '' } %}
+  {% patchsignals { todo_error: '' } %}
 {% endif %}
 
 {% patchelements with {useViewTransition: true} %}

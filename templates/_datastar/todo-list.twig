@@ -8,7 +8,7 @@
       <li class="flex items-center gap-6 p-3 group bg-canvas" style="view-transition-name: todo-{{ todo.id }}">
         <button
           class="shrink-0 size-6 ui-neo border-2 border-ink flex items-center justify-center transition-colors {{ todo.completed ? 'bg-pop' : 'hover:bg-pop-dim' }}"
-          data-on:click="$todoId = '{{ todo.id }}'; {{ datastar.post('_datastar/todo-complete') }}"
+          data-on:click="$todo_id = '{{ todo.id }}'; {{ datastar.post('_datastar/todo-complete') }}"
           data-indicator:fetching
           aria-label="{{ todo.completed ? 'Mark as incomplete' : 'Mark as complete' }}"
         >
@@ -22,7 +22,7 @@
         </span>
         <button
           class="shrink-0 text-ink-dim hover:text-ink transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 px-1"
-          data-on:click="$todoId = '{{ todo.id }}'; {{ datastar.post('_datastar/todo-delete') }}"
+          data-on:click="$todo_id = '{{ todo.id }}'; {{ datastar.post('_datastar/todo-delete') }}"
           data-indicator:fetching
           aria-label="Delete {{ todo.title }}"
         >

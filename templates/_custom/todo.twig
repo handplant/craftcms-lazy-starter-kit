@@ -23,11 +23,10 @@
       </p>
     </div>
   </section>
-
   <section
     id="todo-app"
     class="blocks blocks--todo"
-    data-signals="{ todoInput: '', todoId: '', todoError: '' }"
+    data-signals="{ todo_input: '', todo_id: '', todo_error: '' }"
     data-indicator:fetching
   >
     <div class="blocks__content">
@@ -41,11 +40,10 @@
         <div class="relative flex-1">
           <input
             type="text"
-            name="totoInput"
+            name="todo_input"
             class="ui-input w-full"
             placeholder="What needs to be done?"
-            data-on:input="$todoInput = el.value"
-            data-effect="el.value = $todoInput"
+            data-bind:todo_input
             data-on:keydown="evt.key === 'Enter' && {{ datastar.post('_datastar/todo-add') }}"
             data-attr:disabled="$fetching"
             maxlength="200"
@@ -68,7 +66,7 @@
           Add
         </button>
       </div>
-      <p class="mb-3 text-sm ui-bold text-pop" data-show="$todoError" data-text="$todoError"></p>
+      <p class="mb-3 text-sm ui-bold text-pop" data-show="$todo_error" data-text="$todo_error"></p>
       <div class="relative ui-neo border-2 border-ink overflow-hidden">
         {% include '_datastar/todo-list' %}
       </div>

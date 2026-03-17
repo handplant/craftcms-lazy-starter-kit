@@ -35,6 +35,7 @@ return [
         'custom' => [
             '/rick-and-morty-datastar' => ['changefreq' => 'weekly', 'priority' => 1],
             '/flexible-grid-layout' => ['changefreq' => 'weekly', 'priority' => 1],
+            '/hypermedia-todolist-craft-cms-datastar' => ['changefreq' => 'weekly', 'priority' => 1],
         ],
     ],
 ];
