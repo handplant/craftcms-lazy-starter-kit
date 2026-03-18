@@ -1,9 +1,9 @@
 {% extends '_layouts/base' %}
 
-{% set category = entry.relationCategories.one() ?? null %}
-
 {% block main %}
   {% cache using key 'entry__' ~ craft.app.request.pathInfo %}
+    {% set category = entry.relationCategories.one() ?? null %}
+
     <header class="blocks blocks--header">
       <div class="blocks__content">
         <div class="flex justify-between mb-2">
@@ -18,14 +18,14 @@
       </div>
       {% if entry.card.image %}
         <div class="blocks__popout">
-          {% include "_components/image.twig" with {
-            image: entry.card.image.eagerly().one()
+          {% include "_components/media.twig" with {
+            asset: entry.card.image.eagerly().one() ?? null,
+            showCaption: true
           } only %}
         </div>
       {% endif %}
 
       {% if entry.externalUrl %}
-
         <div class="prose md:prose-lg lg:prose-xl">
           {{ entry.card.teaser }}
           {% include "_components/button.twig" with {
@@ -36,7 +36,6 @@
             class: 'not-prose'
           } only %}
         </div>
-
       {% endif %}
     </header>
 

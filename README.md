@@ -24,9 +24,10 @@ seamless Craft integration — all without a JavaScript build step. Explore how 
 approach** transform Craft CMS into a reactive, declarative, and API-friendly platform:
 
 - 🔍 **Datastar Search** – https://craft-kit.dev/search
-- 📝 **Datastar Blog** – https://craft-kit.dev/blog-datastar
+- 📝 **Datastar Blog** – https://craft-kit.dev/blog-hypermedia-datastar
 - 🧪 **Rick & Morty API Demo** – https://craft-kit.dev/rick-and-morty-datastar
 - 🗺️ **Datastar Leaflet Map** – https://craft-kit.dev/map
+- ✅ **Datastar Todo List** – https://craft-kit.dev/hypermedia-todolist-craft-cms-datastar
 
 ---
 
@@ -42,7 +43,7 @@ approach** transform Craft CMS into a reactive, declarative, and API-friendly pl
 - 🗃️ **Craft eagerly() + render()** – optimized queries, automatic block templates, and smart caching
 - 🧾 **SEO-Ready JSON-LD Organization Schema** – structured data for Google Rich Results
 - 🔍 **SEO Meta, Open Graph & Sitemap** – via SEOMate
-- 🧰 Field Usage Utility – overview of all fields + their Entry Type instances
+- 🧰 **Field Usage Utility** – overview of all fields + their Entry Type instances
 - 🔌 **Plugins:** CKEditor, Datastar, Map, Image Resizer, SEOMate, Vite, Craft MCP
 
 ---

@@ -13,9 +13,6 @@
 {%- set _showCaption = showCaption ?? false -%}
 {%- set _allowedExtensions = ['png', 'jpg', 'jpeg', 'webp', 'avif'] -%}
 {%- set _formats = formats ?? ['webp', 'jpeg'] -%}
-{%- set _lqip = lqip ?? false -%}
-{%- set _lqipWidth = lqipWidth ?? 20 -%}
-{%- set _lqipQuality = lqipQuality ?? 30 -%}
 
 {%- if image -%}
   {%- set url = image.url -%}
@@ -25,7 +22,6 @@
   {%- set style = _objectFit ? 'height: 100%; width: 100%; object-fit: cover; object-position: ' ~ focalPoint : '' -%}
   {%- set isTranformable = extension in _allowedExtensions -%}
   {%- set imageClass = _aspectRatio ~ ' ' ~ _class -%}
-  {%- set tinyPlaceholder = _lqip ? image.url({ width: _lqipWidth, quality: _lqipQuality, format: 'jpeg' }) : null -%}
 
   {%- if isTranformable -%}
     {%- set srcsets = { jpeg: [], webp: [], avif: [] } -%}
@@ -81,8 +77,7 @@
         {{ _lazy ? ' loading="lazy"' }}
         {% if _objectFit %} style="{{ style }}"{% endif %}/>
     {%- else -%}
-      <picture class="ui-picture {{- _lqip ? ' ui-picture-blur' : '' }} {{- _pictureClass -}}"
-        {% if _lqip %} style="--lqip: url('{{ tinyPlaceholder }}');"{% endif %}>
+      <picture class="{{- _pictureClass -}}">
         {%- if 'avif' in _formats and srcsetStrings.avif -%}
           <source type="image/avif" srcset="{{ srcsetStrings.avif }}" sizes="{{ _sizesAttr }}" />
         {%- endif -%}

@@ -4,6 +4,8 @@
   {% if classWrapper %}class="{{ classWrapper }} not-prose"{% endif %}
   {% if anchorId %}id="{{ anchorId|kebab }}"{% endif %}
 >
-  {% block content %}
-  {% endblock %}
+  <div class="{{ classContent ?? '' }}">
+    {% block content %}
+    {% endblock %}
+  </div>
 </div>

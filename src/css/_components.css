@@ -1,22 +1,10 @@
 @layer components {
-  #result {
-    @apply grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8;
-  }
-
-  #result-rick-and-morty {
-    @apply grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-8;
-  }
-
-  #map-result {
-    @apply hidden lg:grid xl:grid-cols-2 3xl:grid-cols-3 gap-8 p-5 mt-3;
-  }
-
   /* BUTTON & LINKS */
   .ui-btn {
     @apply
+    ui-neo
     no-underline
     inline-flex items-center gap-2
-    ui-neo
     bg-pop text-ink
     px-2 py-1 sm:px-4 sm:py-1.5
     text-sm sm:text-base
@@ -42,6 +30,11 @@
     focus:outline-none focus:ui-border-pop focus:ui-shadow-pop
     focus:ring-0
     placeholder-ink-dim;
+  }
+
+  /*NOTICE*/
+  .ui-notice {
+    @apply ui-neo bg-pop inline-block px-4 py-2 ui-bold;
   }
 
   /*CARDS*/
