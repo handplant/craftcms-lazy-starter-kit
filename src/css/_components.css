@@ -14,11 +14,12 @@
   /* BUTTON & LINKS */
   .ui-btn {
     @apply
-    no-underline whitespace-nowrap
+    no-underline
     inline-flex items-center gap-2
     ui-neo
     bg-pop text-ink
-    px-4 py-1.5 text-base
+    px-2 py-1 sm:px-4 sm:py-1.5
+    text-sm sm:text-base
     ui-bold uppercase tracking-wide
     transition duration-100
     hover:shadow-none hover:translate-x-[5px] hover:translate-y-[5px] hover:no-underline
@@ -27,7 +28,7 @@
   }
 
   .ui-btn--lg {
-    @apply px-6 py-3 text-xl;
+    @apply px-4 py-2 text-base md:px-6 md:py-3 md:text-xl;
   }
 
   .ui-btn--dark {

@@ -9,6 +9,8 @@
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 
+@custom-variant touch (@media (hover: none));
+
 @theme {
   --content: './templates/**/*.twig', './src/**/*.css', './src/**/*.js';
 

@@ -21,7 +21,7 @@
           {% endif %}
         </span>
         <button
-          class="shrink-0 text-ink-dim hover:text-ink transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 px-1"
+          class="shrink-0 text-ink-dim hover:text-ink transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 touch:opacity-100 px-1"
           data-on:click="$todo_id = '{{ todo.id }}'; {{ datastar.post('_datastar/todo-delete') }}"
           data-indicator:fetching
           aria-label="Delete {{ todo.title }}"
