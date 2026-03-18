@@ -3,14 +3,22 @@
 
 {% if todoId %}
   {% set updatedTodos = [] %}
+  {% set toggledTodo = null %}
   {% for todo in todos %}
     {% if todo.id == todoId %}
-      {% set updatedTodos = updatedTodos | merge([todo | merge({ completed: not todo.completed })]) %}
+      {% set toggled = todo | merge({ completed: not todo.completed }) %}
+      {% set updatedTodos = updatedTodos | merge([toggled]) %}
+      {% set toggledTodo = toggled %}
     {% else %}
       {% set updatedTodos = updatedTodos | merge([todo]) %}
     {% endif %}
   {% endfor %}
   {% do craft.app.session.set('todos', updatedTodos) %}
+  {% if toggledTodo %}
+    {% executescript %}
+      if (typeof _paq !== 'undefined') _paq.push(['trackEvent', 'Todo', '{{ toggledTodo.completed ? 'Complete' : 'Uncomplete' }}', '{{ toggledTodo.title|e('js') }}']);
+    {% endexecutescript %}
+  {% endif %}
 {% endif %}
 
 {% patchelements with {useViewTransition: true} %}

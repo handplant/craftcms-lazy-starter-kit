@@ -3,12 +3,20 @@
 
 {% if todoId %}
   {% set updatedTodos = [] %}
+  {% set deletedTodo = null %}
   {% for todo in todos %}
     {% if todo.id != todoId %}
       {% set updatedTodos = updatedTodos | merge([todo]) %}
+    {% else %}
+      {% set deletedTodo = todo %}
     {% endif %}
   {% endfor %}
   {% do craft.app.session.set('todos', updatedTodos) %}
+  {% if deletedTodo %}
+    {% executescript %}
+      if (typeof _paq !== 'undefined') _paq.push(['trackEvent', 'Todo', 'Delete', '{{ deletedTodo.title|e('js') }}']);
+    {% endexecutescript %}
+  {% endif %}
   {% patchsignals { todo_error: '' } %}
 {% endif %}
 

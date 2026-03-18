@@ -14,6 +14,10 @@
   {% set todos = todos | merge([newTodo]) %}
   {% do craft.app.session.set('todos', todos) %}
 
+  {% executescript %}
+    if (typeof _paq !== 'undefined') _paq.push(['trackEvent', 'Todo', 'Add', '{{ todoInput|e('js') }}']);
+  {% endexecutescript %}
+
   {% patchsignals { todo_input: '', todo_error: '' } %}
 {% elseif isDuplicate %}
   {% patchsignals { todo_error: '"' ~ todoInput ~ '" already exists.' } %}
