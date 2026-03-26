@@ -27,8 +27,8 @@
   },
   "homepage": "https://craftcms-lazy-starter-kit.webworker.me",
   "require": {
-    "craftcms/ckeditor": "^5.2.0",
-    "craftcms/cms": "^5.9.14",
+    "craftcms/ckeditor": "^5.3.1",
+    "craftcms/cms": "^5.9.17",
     "craftcms/feed-me": "6.11.0",
     "ether/simplemap": "5.0.4",
     "nystudio107/craft-code-field": "^5.0.2",
@@ -36,7 +36,7 @@
     "putyourlightson/craft-datastar": "1.0.0-RC.11",
     "stimmt/craft-mcp": "^v1.2.2",
     "vaersaagod/seomate": "3.2.0",
-    "verbb/image-resizer": "^4.0.5",
+    "verbb/image-resizer": "^4.0.6",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {
