@@ -8,8 +8,7 @@
     "hypermedia",
     "datastar",
     "vite",
-    "ddev",
-    "datastar"
+    "ddev"
   ],
   "license": "MIT",
   "type": "project",

@@ -1,3 +1,4 @@
+{% if not craft.app.config.general.devMode and getenv('MATOMO_SITE_ID') %}
 <script>
   var _paq = window._paq = window._paq || []
   _paq.push(['disableCookies'])
@@ -13,3 +14,4 @@
     s.parentNode.insertBefore(g, s)
   })()
 </script>
+{% endif %}

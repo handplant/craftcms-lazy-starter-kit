@@ -2,6 +2,8 @@
 
 {% block main %}
   {% cache using key 'entry__' ~ craft.app.request.pathInfo %}
+    {% set search = craft.entries.section('search').one() %}
+
     <section class="blocks blocks--cke">
       <div class="blocks__content prose md:prose-lg lg:prose-xl">
         {{ entry.builder }}

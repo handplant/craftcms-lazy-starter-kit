@@ -1,3 +1,4 @@
+{% cache globally using key 'search' %}
 {% set search = craft.entries.section('search').one() %}
 
 <div class="hidden " data-class="{ 'block': $searchOpen, 'hidden': !$searchOpen }">
@@ -12,3 +13,4 @@
     </div>
   </div>
 </div>
+{% endcache %}

@@ -22,12 +22,12 @@ function initMap () {
       return L.divIcon({
         className: 'custom-cluster',
         html: `<div style="
-          background:#ffffff;
-          color:#1c1917;
+          background:var(--color-canvas);
+          color:var(--color-ink);
           width:40px;
           height:40px;
-          border:2px solid #1c1917;
-          box-shadow:3px 3px 0 0 #1c1917;
+          border:2px solid var(--color-ink);
+          box-shadow:3px 3px 0 0 var(--color-ink);
           display:flex;
           align-items:center;
           justify-content:center;
@@ -63,8 +63,8 @@ function updateMarkers (locations = []) {
         background:${color};
         width:28px;
         height:28px;
-        border:2px solid #1c1917;
-        box-shadow:3px 3px 0 0 #1c1917;
+        border:2px solid var(--color-ink);
+        box-shadow:3px 3px 0 0 var(--color-ink);
       "></div>`,
         iconSize: [28, 28],
         iconAnchor: [14, 14],

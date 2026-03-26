@@ -33,21 +33,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-21T09:39:42+00:00'
-                            11:
+                            9:
                               - uid
                               - 2865337a-17be-4f7e-abb6-f993a4223470
-                            14:
+                            12:
                               - fieldUid
                               - 917884b5-8376-4c3d-b6c5-fbbcbf54318f # Anchor Title
                         -
@@ -57,7 +51,7 @@ settings:
                               - craft\fieldlayoutelements\Template
                             1:
                               - template
-                              - _cp/achorSlug.twig
+                              - _cp/anchorSlug.twig
                             2:
                               - templateMode
                               - site
@@ -87,7 +81,7 @@ settings:
                                     - conditionRules
                                     -
                                       - { __assoc__: [[class, craft\fields\conditions\TextFieldConditionRule], [uid, 003d241a-9501-468c-8992-a44478279ee0], [operator, notempty], [value, ''], [fieldUid, 917884b5-8376-4c3d-b6c5-fbbcbf54318f], [layoutElementUid, 2865337a-17be-4f7e-abb6-f993a4223470]] } # Anchor Title
-            3:
+            4:
               - cardThumbAlignment
               - end
   viewMode: grouped

@@ -1,13 +1,16 @@
+{% set fontRegular = craft.vite.asset('fonts/archivo-v25-latin-regular.woff2', true) %}
+{% set fontBold = craft.vite.asset('fonts/archivo-v25-latin-900.woff2', true) %}
+
 <link rel="preload"
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
-      href="/dist/fonts/archivo-v25-latin-regular.woff2">
+      href="{{ fontRegular }}">
 <link rel="preload"
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
-      href="/dist/fonts/archivo-v25-latin-900.woff2">
+      href="{{ fontBold }}">
 
 <style>
   @font-face {
@@ -15,7 +18,7 @@
     font-family: 'Archivo';
     font-style: normal;
     font-weight: 400;
-    src: url('/dist/fonts/archivo-v25-latin-regular.woff2') format('woff2');
+    src: url('{{ fontRegular }}') format('woff2');
   }
 
   @font-face {
@@ -23,7 +26,7 @@
     font-family: 'Archivo';
     font-style: normal;
     font-weight: 900;
-    src: url('/dist/fonts/archivo-v25-latin-900.woff2') format('woff2');
+    src: url('{{ fontBold }}') format('woff2');
   }
 
 </style>

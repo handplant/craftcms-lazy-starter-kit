@@ -10,11 +10,12 @@
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 
+@source '../../templates/**/*.twig';
+@source '../js/**/*.js';
+
 @custom-variant touch (@media (hover: none));
 
 @theme {
-  --content: './templates/**/*.twig', './src/**/*.css', './src/**/*.js';
-
   --font-sans: 'Archivo', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 

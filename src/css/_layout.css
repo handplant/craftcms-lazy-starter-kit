@@ -87,10 +87,6 @@
     }
   }
 
-  .blocks--invert {
-    @apply bg-gray-200;
-  }
-
   .blocks--spaceless > * {
     @apply py-0;
   }

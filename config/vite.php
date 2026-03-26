@@ -2,7 +2,7 @@
 
 use craft\helpers\App;
 
-$useDevServer = App::env('ENVIRONMENT') === 'dev' || App::env('CRAFT_ENVIRONMENT') === 'dev';
+$useDevServer = App::env('CRAFT_ENVIRONMENT') === 'dev';
 
 return [
     'useDevServer' => $useDevServer,

@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 
-const host = process.env.DDEV_HOSTNAME
+const ddevHost = process.env.DDEV_HOSTNAME
 
 export default defineConfig(({ command }) => ({
   base: command === 'serve' ? '' : '/dist/',
@@ -27,17 +27,16 @@ export default defineConfig(({ command }) => ({
   publicDir: './src/public',
 
   server: {
-    cors: {
-      origin: `https://${host}`,
-      credentials: true,
-    },
-    hmr: {
-      host: host,
-    },
-    allowedHosts: [host],
-    fs: {
-      strict: false,
-    },
+    ...(ddevHost ? {
+      cors: {
+        origin: `https://${ddevHost}`,
+        credentials: true,
+      },
+      hmr: {
+        host: ddevHost,
+      },
+      allowedHosts: [ddevHost],
+    } : {}),
     host: '0.0.0.0',
     origin: 'http://localhost:3000',
     port: 3000,

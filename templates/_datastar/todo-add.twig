@@ -22,7 +22,7 @@
 {% elseif isDuplicate %}
   {% patchsignals { todo_error: '"' ~ todoInput ~ '" already exists.' } %}
 {% elseif todos | length >= 50 %}
-  {% patchsignals { todo_error: 'Maximum of 5 todos reached.' } %}
+  {% patchsignals { todo_error: 'Maximum of 50 todos reached.' } %}
 {% endif %}
 
 {% patchelements with {useViewTransition: true} %}
