@@ -2,15 +2,23 @@
 
 {% block main %}
   {% cache using key 'entry__' ~ craft.app.request.pathInfo %}
-
     {% set categories = craft.entries.section('categories').all() ?? null %}
-    {% set initialLocations = craft.entries().section('blog').eagerly().all()|filter(e => e.map and e.map.lat is defined and e.map.lng is defined and e.map.lat is not empty and e.map.lng is not empty) %}
+    {% set initialLocations =
+      craft.entries().section('blog').eagerly().all()|filter(
+        e => e.map
+          and e.map.lat is defined
+          and e.map.lng is defined
+          and e.map.lat is not empty
+          and e.map.lng is not empty
+      )
+    %}
 
     <section class="blocks blocks--map">
       <div class="blocks__full pt-0">
-        <div class="flex flex-col lg:flex-row lg:h-full relative max-w-[2600px] mx-auto border-b-4 border-ink"
-             data-signals:_locations='[]'
-             data-effect="
+        <div
+          class="flex flex-col lg:flex-row lg:h-full relative max-w-[2600px] mx-auto border-b-4 border-ink"
+          data-signals:_locations='[]'
+          data-effect="
                   if ($_locations) {
                     updateMarkers($_locations);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -18,9 +26,18 @@
               "
         >
           <div data-show="$fetching" class="absolute right-3 top-3 z-[999]">
-            <svg class="size-6 animate-spin text-pop-on" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg
+              class="size-6 animate-spin text-pop-on"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
             </svg>
           </div>
           <div class="w-full lg:w-1/3 xl:w-1/2 lg:border-r-4 lg:border-l-4 border-ink">
@@ -37,9 +54,18 @@
                     data-indicator:fetching
                   />
                   <div data-show="$fetching" class="absolute right-3 top-1/2 -translate-y-1/2">
-                    <svg class="size-5 animate-spin text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg
+                      class="size-5 animate-spin text-black"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
                       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      <path
+                        class="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
                     </svg>
                   </div>
                 </div>
@@ -51,9 +77,13 @@
                   data-indicator:fetching
                   data-attr:disabled="$fetching"
                 >
-                  <option value="">{{ 'Show all'|t }}</option>
+                  <option value="">
+                    {{ 'Show all'|t }}
+                  </option>
                   {% for item in categories %}
-                    <option value="{{ item.slug }}" data-selected="$filter == {{ item.slug }}">{{ item.title }}</option>
+                    <option value="{{ item.slug }}" data-selected="$filter == {{ item.slug }}">
+                      {{ item.title }}
+                    </option>
                   {% endfor %}
                 </select>
               </div>
@@ -64,12 +94,16 @@
               {% endfor %}
             </div>
           </div>
-          <div class="w-full lg:w-2/3 xl:w-1/2 h-[60vh] lg:h-[calc(100vh-64px)] lg:sticky lg:top-16 lg:border-r-4 border-ink"
-               data-init="initMap(); {{ datastar.get('_datastar/map.twig') }}">
+          <div
+            class="w-full lg:w-2/3 xl:w-1/2 h-[60vh] lg:h-[calc(100vh-64px)] lg:sticky lg:top-16 lg:border-r-4 border-ink"
+            data-init="initMap(); {{ datastar.get('_datastar/map.twig') }}"
+          >
             <div id="map" class="lg:absolute lg:inset-0 h-full"></div>
             <noscript>
               <div class="absolute inset-0 flex items-center justify-center bg-canvas border-4 border-ink">
-                <p class="ui-notice">JavaScript is required to display the map.</p>
+                <p class="ui-notice">
+                  JavaScript is required to display the map.
+                </p>
               </div>
             </noscript>
           </div>

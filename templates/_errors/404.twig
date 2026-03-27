@@ -1,16 +1,20 @@
-{% extends "_layouts/base" %}
+{% extends '_layouts/base' %}
 
 {% block main %}
-
   <section class="blocks blocks--error">
     <div class="blocks__content space-y-8">
-      <p class="text-[clamp(8rem,20vw,18rem)] leading-none ui-bold text-pop select-none">404</p>
+      <p class="text-[clamp(8rem,20vw,18rem)] leading-none ui-bold text-pop select-none">
+        404
+      </p>
       <div class="border-t-4 border-ink pt-8 space-y-4">
-        <p class="ui-h2">{{ 'Page not found.'|t }}</p>
-        <p class="text-ink-on">{{ 'Sorry, the page you\'re looking for could not be found.'|t }}</p>
+        <p class="ui-h2">
+          {{ 'Page not found.'|t }}
+        </p>
+        <p class="text-ink-on">
+          {{ "Sorry, the page you're looking for could not be found."|t }}
+        </p>
       </div>
       <a href="/" class="ui-btn ui-btn--lg">{{ 'Home'|t }}</a>
     </div>
   </section>
-
 {% endblock %}

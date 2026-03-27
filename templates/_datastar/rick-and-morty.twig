@@ -1,5 +1,5 @@
 {% set page = signals.page ?? 1 %}
-{% set baseUrl = "https://rickandmortyapi.com/api/character?page=" ~ page %}
+{% set baseUrl = 'https://rickandmortyapi.com/api/character?page=' ~ page %}
 
 {% set query = [] %}
 {% if signals.search %}
@@ -15,12 +15,9 @@
   {% set query = query|merge({ gender: signals.gender }) %}
 {% endif %}
 
-{% set queryUrl = baseUrl ~ (query ? '&' ~ query|url_encode : '') %}
+{% set queryUrl = baseUrl ~ (query ? '&' ~ (query|url_encode) : '') %}
 
-{% set params = {
-  url: queryUrl,
-  type: 'json',
-} %}
+{% set params = { url: queryUrl, type: 'json' } %}
 {% set feed = craft.feedme.feed(params) %}
 {% set info = feed.info ?? null %}
 {% set results = feed.results ?? null %}
@@ -28,23 +25,33 @@
 {# {{ dump(results) }} #}
 
 {% if results %}
-  {% patchelements with {selector: '#result-rick-and-morty', mode: 'inner'} %}
+  {% patchelements with { selector: '#result-rick-and-morty', mode: 'inner' } %}
     {% for item in results %}
       <div class="ui-card">
         <div class="overflow-hidden mb-0">
-          <img src="{{ item.image }}" alt="{{ item.name }}">
+          <img src="{{ item.image }}" alt="{{ item.name }}" />
         </div>
         <div class="space-y-2 p-4">
-          <h2 class="ui-h5">
-            {{ item.name }}
-          </h2>
+          <h2 class="ui-h5">{{ item.name }}</h2>
           <div class="grid grid-cols-2 text-sm gap-2">
-            <div>Status</div>
-            <div>{{ item.status }}</div>
-            <div>Species</div>
-            <div>{{ item.species }}</div>
-            <div>Gender</div>
-            <div>{{ item.gender }}</div>
+            <div>
+              Status
+            </div>
+            <div>
+              {{ item.status }}
+            </div>
+            <div>
+              Species
+            </div>
+            <div>
+              {{ item.species }}
+            </div>
+            <div>
+              Gender
+            </div>
+            <div>
+              {{ item.gender }}
+            </div>
           </div>
         </div>
       </div>
@@ -54,27 +61,31 @@
   {# Pagination #}
   {% if info %}
     {% set prevParts = info.prev ? info.prev|split('page=') : [] %}
-    {% set prevPage = prevParts|length > 1 ? prevParts[1]|split('&')[0] : null %}
+    {% set prevPage = (prevParts|length) > 1 ? prevParts[1]|split('&')[0] : null %}
 
     {% set nextParts = info.next ? info.next|split('page=') : [] %}
-    {% set nextPage = nextParts|length > 1 ? nextParts[1]|split('&')[0] : null %}
+    {% set nextPage = (nextParts|length) > 1 ? nextParts[1]|split('&')[0] : null %}
 
-    {% patchelements with {selector: '#pagination-rick-and-morty', mode: 'inner'} %}
+    {% patchelements with { selector: '#pagination-rick-and-morty', mode: 'inner' } %}
       {% if prevPage or nextPage %}
         <nav class="flex items-center justify-center mt-10 space-x-4">
           {% if prevPage %}
-            <buttton class="ui-btn"
-                     data-on:click="$page = {{ prevPage }}; {{ datastar.get('_datastar/rick-and-morty') }}"
-                     data-indicator:fetching>←
+            <buttton
+              class="ui-btn"
+              data-on:click="$page = {{ prevPage }}; {{ datastar.get('_datastar/rick-and-morty') }}"
+              data-indicator:fetching
+            >
+              ←
             </buttton>
           {% endif %}
-          <span class="px-3 py-1">
-             Page {{ page }} of {{ info.pages }}
-          </span>
+          <span class="px-3 py-1">Page {{ page }} of {{ info.pages }}</span>
           {% if nextPage %}
-            <button class="ui-btn"
-                    data-on:click="$page = {{ nextPage }}; {{ datastar.get('_datastar/rick-and-morty') }}"
-                    data-indicator:fetching>→
+            <button
+              class="ui-btn"
+              data-on:click="$page = {{ nextPage }}; {{ datastar.get('_datastar/rick-and-morty') }}"
+              data-indicator:fetching
+            >
+              →
             </button>
           {% endif %}
         </nav>
@@ -84,7 +95,9 @@
 {% else %}
   {% patchelements %}
     <div id="result-rick-and-morty">
-      <p class="ui-bold">Zero matches. Somewhere in the multiverse this works — but not in this one. 🤷</p>
+      <p class="ui-bold">
+        Zero matches. Somewhere in the multiverse this works — but not in this one. 🤷
+      </p>
     </div>
     <div id="pagination-rick-and-morty"></div>
   {% endpatchelements %}

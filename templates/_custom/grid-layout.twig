@@ -3,8 +3,8 @@
 {% set seomate = {
   meta: {
     title: 'Grid Layout System – Responsive Design Framework for Craft CMS',
-    description: 'A flexible CSS Grid Layout built with Tailwind. Define custom content zones like full, feature, popout, and content areas for precise layout control.',
-  },
+    description: 'A flexible CSS Grid Layout built with Tailwind. Define custom content zones like full, feature, popout, and content areas for precise layout control.'
+  }
 } %}
 
 {% block main %}
@@ -17,11 +17,11 @@
     <section class="blocks blocks--text">
       <div class="blocks__content prose md:prose-lg lg:prose-xl">
         <p>
-          This layout system provides a <strong>clean and flexible structure</strong> for placing
-          Matrix Builder components on a page. It uses <strong>named CSS grid areas</strong> —
-          <code>content</code>, <code>popout</code>, <code>feature</code>, and <code>full</code> —
-          to define clear layout zones. Each block can be positioned simply by adding the right class,
-          with <strong>no custom layout code</strong> required.
+          This layout system provides a <strong>clean and flexible structure</strong> for placing Matrix Builder components
+          on a page. It uses <strong>named CSS grid areas</strong> —
+          <code>content</code>, <code>popout</code>, <code>feature</code>, and <code>full</code> — to define clear layout
+          zones. Each block can be positioned simply by adding the right class, with
+          <strong>no custom layout code</strong> required.
         </p>
 
         <ul>
@@ -32,8 +32,8 @@
         </ul>
 
         <p>
-          This approach lets editors and developers focus on <strong>content</strong>, not layout
-          headaches. Whether it’s a simple text block or a wide hero image, everything snaps into place.
+          This approach lets editors and developers focus on <strong>content</strong>, not layout headaches. Whether
+          it’s a simple text block or a wide hero image, everything snaps into place.
         </p>
 
         <h2>💡 Example zone classes</h2>
@@ -46,8 +46,7 @@
 
         <h2>🧭 Connecting zones</h2>
         <p>
-          In addition to single zones, you can also span <strong>multiple layout areas</strong> to create
-          more dynamic compositions:
+          In addition to single zones, you can also span <strong>multiple layout areas</strong> to create more dynamic compositions:
         </p>
         <ul>
           <li><code>.blocks__content-to-feature</code> → from <em>content-start</em> to <em>feature-end</em></li>
@@ -57,56 +56,79 @@
         </ul>
 
         <p>
-          These connecting zones make it easy to <strong>combine different content widths seamlessly</strong> —
-          perfect for hero sections, feature teasers, or split layouts without extra CSS.
+          These connecting zones make it easy to <strong>combine different content widths seamlessly</strong> — perfect for
+          hero sections, feature teasers, or split layouts without extra CSS.
         </p>
 
         <p>
-          🚀 The result: A layout system that’s lean, modular, and easy to extend — ideal for any
-          content-driven Craft CMS project.
+          🚀 The result: A layout system that’s lean, modular, and easy to extend — ideal for any content-driven Craft
+          CMS project.
         </p>
       </div>
     </section>
     <section class="blocks">
       <div class="blocks__content">
-        <div class="bg-green-300 h-64 flex items-center justify-center text-4xl ui-bold text-green-50 p-3">Content</div>
+        <div class="bg-green-300 h-64 flex items-center justify-center text-4xl ui-bold text-green-50 p-3">
+          Content
+        </div>
       </div>
     </section>
     <section class="blocks">
       <div class="blocks__popout">
-        <div class="bg-violet-300 h-64 flex items-center justify-center text-4xl ui-bold text-violet-50 p-3">Popout</div>
+        <div class="bg-violet-300 h-64 flex items-center justify-center text-4xl ui-bold text-violet-50 p-3">
+          Popout
+        </div>
       </div>
     </section>
     <section class="blocks">
       <div class="blocks__feature">
-        <div class="bg-red-300 h-64 flex items-center justify-center text-4xl ui-bold text-red-50 p-3">Feature</div>
+        <div class="bg-red-300 h-64 flex items-center justify-center text-4xl ui-bold text-red-50 p-3">
+          Feature
+        </div>
       </div>
     </section>
     <section class="blocks">
       <div class="blocks__content-to-feature">
-        <div class="bg-gradient-to-r from-green-300 to-red-300 h-64 flex items-center justify-center text-4xl ui-bold text-stone-50 p-3">Content Start to Feature End</div>
+        <div
+          class="bg-gradient-to-r from-green-300 to-red-300 h-64 flex items-center justify-center text-4xl ui-bold text-stone-50 p-3"
+        >
+          Content Start to Feature End
+        </div>
       </div>
     </section>
     <section class="blocks">
       <div class="blocks__feature-to-content">
-        <div class="bg-gradient-to-r to-green-300 from-red-300 h-64 flex items-center justify-center text-4xl ui-bold text-stone-50 p-3">Feature Start to Content End</div>
+        <div
+          class="bg-gradient-to-r to-green-300 from-red-300 h-64 flex items-center justify-center text-4xl ui-bold text-stone-50 p-3"
+        >
+          Feature Start to Content End
+        </div>
       </div>
     </section>
     <section class="blocks">
       <div class="blocks__full">
-        <div class="bg-orange-300 h-64 flex items-center justify-center text-4xl ui-bold text-orange-50 p-3">Full</div>
+        <div class="bg-orange-300 h-64 flex items-center justify-center text-4xl ui-bold text-orange-50 p-3">
+          Full
+        </div>
       </div>
     </section>
     <section class="blocks">
       <div class="blocks__content-to-full">
-        <div class="bg-gradient-to-r from-green-300 to-orange-300 h-64 flex items-center justify-center text-4xl ui-bold text-stone-50 p-3">Content Start to Full End</div>
+        <div
+          class="bg-gradient-to-r from-green-300 to-orange-300 h-64 flex items-center justify-center text-4xl ui-bold text-stone-50 p-3"
+        >
+          Content Start to Full End
+        </div>
       </div>
     </section>
     <section class="blocks">
       <div class="blocks__full-to-content">
-        <div class="bg-gradient-to-r to-green-300 from-orange-300 h-64 flex items-center justify-center text-4xl ui-bold text-stone-50 p-3">Full Start to Content End</div>
+        <div
+          class="bg-gradient-to-r to-green-300 from-orange-300 h-64 flex items-center justify-center text-4xl ui-bold text-stone-50 p-3"
+        >
+          Full Start to Content End
+        </div>
       </div>
     </section>
-
   {% endcache %}
 {% endblock %}

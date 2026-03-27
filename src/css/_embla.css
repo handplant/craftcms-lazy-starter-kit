@@ -23,7 +23,8 @@
   @apply flex justify-center md:justify-between items-center py-3;
 }
 
-.embla__buttons, .embla__dots {
+.embla__buttons,
+.embla__dots {
   @apply flex justify-center gap-2 mx-2;
 }
 
@@ -49,4 +50,3 @@
 .embla__button svg {
   @apply size-5 stroke-[2.5];
 }
-

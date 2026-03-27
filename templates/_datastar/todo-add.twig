@@ -1,30 +1,28 @@
 {% set todoInput = signals.todo_input ?? '' %}
-{% set todoInput = todoInput | trim %}
+{% set todoInput = todoInput|trim %}
 {% set todos = craft.app.session.get('todos', []) %}
 
-{% set isDuplicate = todos | filter(t => t.title | lower == todoInput | lower) | length > 0 %}
+{% set isDuplicate = (todos|filter(t => (t.title|lower) == (todoInput|lower))|length) > 0 %}
 
-{% if todoInput and not isDuplicate and todos | length < 50 %}
+{% if todoInput and not isDuplicate and (todos|length) < 50 %}
   {% set newTodo = {
     id: craft.app.security.generateRandomString(10),
     title: todoInput,
     completed: false,
-    createdAt: now | date('U')
+    createdAt: now|date('U')
   } %}
-  {% set todos = todos | merge([newTodo]) %}
+  {% set todos = todos|merge([newTodo]) %}
   {% do craft.app.session.set('todos', todos) %}
 
-  {% executescript %}
-    if (typeof _paq !== 'undefined') _paq.push(['trackEvent', 'Todo', 'Add']);
-  {% endexecutescript %}
+  {% executescript %}if (typeof _paq !== 'undefined') _paq.push(['trackEvent', 'Todo', 'Add']);{% endexecutescript %}
 
   {% patchsignals { todo_input: '', todo_error: '' } %}
 {% elseif isDuplicate %}
   {% patchsignals { todo_error: '"' ~ todoInput ~ '" already exists.' } %}
-{% elseif todos | length >= 50 %}
+{% elseif (todos|length) >= 50 %}
   {% patchsignals { todo_error: 'Maximum of 50 todos reached.' } %}
 {% endif %}
 
-{% patchelements with {useViewTransition: true} %}
+{% patchelements with { useViewTransition: true } %}
   {% include '_datastar/todo-list' %}
 {% endpatchelements %}

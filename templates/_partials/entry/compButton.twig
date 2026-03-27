@@ -1,5 +1,5 @@
 {% set button = entry.button %}
-{% include "_components/button.twig" with {
+{% include '_components/button.twig' with {
   label: button.label ?? button.title,
   url: button.url,
   target: button.target ? '_blank' : null,

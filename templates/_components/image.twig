@@ -1,6 +1,6 @@
 {%- set _fetchpriority = fetchpriority ?? false -%}
-{%- set _lazy = _fetchpriority ? false : (lazy ?? true) -%}
-{%- set _sizes = (_sizes ?? [768,1536])|sort -%}
+{%- set _lazy = _fetchpriority ? false : lazy ?? true -%}
+{%- set _sizes = (_sizes ?? [768, 1536])|sort -%}
 {%- set _sizesAttr = sizesAttr ?? '100vw' -%}
 {%- set _aspectRatio = aspectRatio ?? '' -%}
 {%- set _ratio = ratio ?? null -%}
@@ -29,22 +29,34 @@
     {%- for outputWidth in _sizes -%}
       {%- set transformOptions = { width: outputWidth, quality: _quality } -%}
       {%- if _splitRatio -%}
-        {%- set transformOptions = transformOptions|merge({ height: outputWidth * (_splitRatio|last) / (_splitRatio|first) }) -%}
+        {%- set transformOptions =
+          transformOptions|merge({ height: outputWidth * (_splitRatio|last) / (_splitRatio|first) })
+        -%}
       {%- endif -%}
 
       {# JPEG #}
       {%- if 'jpeg' in _formats -%}
-        {%- set srcsets = srcsets|merge({ jpeg: srcsets.jpeg|merge([image.url(transformOptions) ~ ' ' ~ outputWidth ~ 'w']) }) -%}
+        {%- set srcsets =
+          srcsets|merge({ jpeg: srcsets.jpeg|merge([image.url(transformOptions) ~ ' ' ~ outputWidth ~ 'w']) })
+        -%}
       {%- endif -%}
 
       {# WebP optional #}
       {%- if 'webp' in _formats and craft.app.images.supportsWebP() -%}
-        {%- set srcsets = srcsets|merge({ webp: srcsets.webp|merge([image.url(transformOptions|merge({ format: 'webp' })) ~ ' ' ~ outputWidth ~ 'w']) }) -%}
+        {%- set srcsets =
+          srcsets|merge({
+            webp: srcsets.webp|merge([image.url(transformOptions|merge({ format: 'webp' })) ~ ' ' ~ outputWidth ~ 'w'])
+          })
+        -%}
       {%- endif -%}
 
       {# AVIF optional #}
       {%- if 'avif' in _formats -%}
-        {%- set srcsets = srcsets|merge({ avif: srcsets.avif|merge([image.url(transformOptions|merge({ format: 'avif' })) ~ ' ' ~ outputWidth ~ 'w']) }) -%}
+        {%- set srcsets =
+          srcsets|merge({
+            avif: srcsets.avif|merge([image.url(transformOptions|merge({ format: 'avif' })) ~ ' ' ~ outputWidth ~ 'w'])
+          })
+        -%}
       {%- endif -%}
     {%- endfor -%}
 
@@ -58,24 +70,26 @@
     {%- set fallbackTransform = { width: fallbackWidth, quality: _quality } -%}
 
     {%- if _splitRatio -%}
-      {%- set fallbackTransform = fallbackTransform|merge({
-        height: fallbackWidth * (_splitRatio|last) / (_splitRatio|first)
-      }) -%}
+      {%- set fallbackTransform =
+        fallbackTransform|merge({ height: fallbackWidth * (_splitRatio|last) / (_splitRatio|first) })
+      -%}
     {%- endif -%}
 
     {%- set fallbackSrc = image.url(fallbackTransform) -%}
 
     {%- if _imgOnly -%}
-      <img src="{{ fallbackSrc }}"
-           srcset="{{ srcsetStrings.jpeg }}"
-           class="{{ imageClass }}"
-           width="{{ image.width }}"
-           height="{{ image.height }}"
-           alt="{{ altText }}"
-           sizes="{{ _sizesAttr }}"
-        {{ _fetchpriority ? ' fetchpriority="high" loading="eager" decoding="async"' }}
-        {{ _lazy ? ' loading="lazy"' }}
-        {% if _objectFit %} style="{{ style }}"{% endif %}/>
+      <img
+        src="{{ fallbackSrc }}"
+        srcset="{{ srcsetStrings.jpeg }}"
+        class="{{ imageClass }}"
+        width="{{ image.width }}"
+        height="{{ image.height }}"
+        alt="{{ altText }}"
+        sizes="{{ _sizesAttr }}"
+        {{ (_fetchpriority ? ' fetchpriority="high" loading="eager" decoding="async"')|raw }}
+        {{ (_lazy ? ' loading="lazy"')|raw }}
+        {{ (_objectFit ? 'style="' ~ style ~ '"')|raw }}
+      />
     {%- else -%}
       <picture class="{{- _pictureClass -}}">
         {%- if 'avif' in _formats and srcsetStrings.avif -%}
@@ -87,25 +101,28 @@
         {%- if 'jpeg' in _formats and srcsetStrings.jpeg -%}
           <source type="image/jpeg" srcset="{{ srcsetStrings.jpeg }}" sizes="{{ _sizesAttr }}" />
         {%- endif -%}
-        <img src="{{ fallbackSrc }}"
-             srcset="{{ srcsetStrings.jpeg }}"
-             class="{{ imageClass }}"
-             width="{{ image.width }}"
-             height="{{ image.height }}"
-             alt="{{ altText }}"
-             sizes="{{ _sizesAttr }}"
-          {{ _fetchpriority ? ' fetchpriority="high" loading="eager" decoding="async"' }}
-          {{ _lazy ? ' loading="lazy"' }}
-          {% if _objectFit %} style="{{ style }}"{% endif %}/>
+        <img
+          src="{{ fallbackSrc }}"
+          srcset="{{ srcsetStrings.jpeg }}"
+          class="{{ imageClass }}"
+          width="{{ image.width }}"
+          height="{{ image.height }}"
+          alt="{{ altText }}"
+          sizes="{{ _sizesAttr }}"
+          {{ (_fetchpriority ? ' fetchpriority="high" loading="eager" decoding="async"')|raw }}
+          {{ (_lazy ? ' loading="lazy"')|raw }}
+          {{ (_objectFit ? 'style="' ~ style ~ '"')|raw }}
+        />
       </picture>
     {%- endif -%}
   {%- else -%}
-    <img src="{{ url }}"
-         class="{{ imageClass }}"
-         alt="{{ altText }}"
-         sizes="{{ _sizesAttr }}"
-      {{ _fetchpriority ? ' fetchpriority="high" loading="eager" decoding="async"' }}
-      {{ _lazy ? ' loading="lazy"' }}
+    <img
+      src="{{ url }}"
+      class="{{ imageClass }}"
+      alt="{{ altText }}"
+      sizes="{{ _sizesAttr }}"
+      {{ (_fetchpriority ? ' fetchpriority="high" loading="eager" decoding="async"')|raw }}
+      {{ (_lazy ? ' loading="lazy"')|raw }}
     />
   {%- endif -%}
 {%- endif -%}

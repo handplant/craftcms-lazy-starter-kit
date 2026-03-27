@@ -14,7 +14,7 @@
       class="text fullwidth"
       value="{{ slug ? '#' ~ slug : '---' }}"
       style="padding-right: 55px; background-color: #f1f1f1"
-    >
+    />
 
     {% if slug %}
       <button
@@ -28,7 +28,9 @@
           cursor: pointer;
         "
         title="Copy to clipboard"
-        onclick="navigator.clipboard.writeText('#{{ slug }}').then(() => {
+        onclick="navigator.clipboard.writeText('#{{
+        slug
+        }}').then(() => {
           this.innerText = 'Copied!';
           setTimeout(() => this.innerText = 'Copy', 1200);
           });"

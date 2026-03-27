@@ -2,9 +2,9 @@
 
 {% set seomate = {
   meta: {
-    title: "Rick & Morty API Demo – Craft CMS + Datastar",
-    description: "Explore a live Datastar demo using the Rick & Morty API. Server-synced filtering, pagination and instant UI updates powered by Craft CMS and Datastar.",
-  },
+    title: 'Rick & Morty API Demo – Craft CMS + Datastar',
+    description: 'Explore a live Datastar demo using the Rick & Morty API. Server-synced filtering, pagination and instant UI updates powered by Craft CMS and Datastar.'
+  }
 } %}
 
 {% block main %}
@@ -16,25 +16,33 @@
   <section class="blocks blocks--text">
     <div class="blocks__content prose md:prose-lg lg:prose-xl">
       <p>
-        This demo showcases how Datastar can turn any external API into a fully reactive browsing experience. Characters from the <a href="https://rickandmortyapi.com/">Rick & Morty API</a>
-        are fetched on demand, filtered in real time, and rendered server-safely through Craft CMS. No client-side framework, no build step — just declarative signals, ultra-fast patch updates, and a
-        smooth search experience backed by simple Twig templates.
+        This demo showcases how Datastar can turn any external API into a fully reactive browsing experience. Characters
+        from the <a href="https://rickandmortyapi.com/">Rick & Morty API</a>
+        are fetched on demand, filtered in real time, and rendered server-safely through Craft CMS. No client-side framework,
+        no build step — just declarative signals, ultra-fast patch updates, and a smooth search experience backed by simple
+        Twig templates.
       </p>
     </div>
   </section>
   <noscript>
-    <style>#rick-morty-app { display: none; }</style>
+    <style>
+      #rick-morty-app { display: none; }
+    </style>
     <section class="blocks blocks--text">
       <div class="blocks__content">
-        <p class="ui-notice">This demo requires JavaScript.</p>
+        <p class="ui-notice">
+          This demo requires JavaScript.
+        </p>
       </div>
     </section>
   </noscript>
-  <section id="rick-morty-app" class="max-w-screen-2xl mx-auto px-6 flex flex-col md:flex-row gap-12 my-10"
-           data-signals="{ search: '', status: '', species: '', gender: '', page: 1 }"
-           data-init="{{ datastar.get('_datastar/rick-and-morty') }}"
-           data-indicator:fetching
-           data-on-signal-patch="
+  <section
+    id="rick-morty-app"
+    class="max-w-screen-2xl mx-auto px-6 flex flex-col md:flex-row gap-12 my-10"
+    data-signals="{ search: '', status: '', species: '', gender: '', page: 1 }"
+    data-init="{{ datastar.get('_datastar/rick-and-morty') }}"
+    data-indicator:fetching
+    data-on-signal-patch="
                 window.scrollTo({
                   top: 0,
                   behavior: 'smooth'
@@ -53,9 +61,18 @@
             data-indicator:fetching
           />
           <div data-show="$fetching" class="absolute right-3 top-1/2 -translate-y-1/2">
-            <svg class="size-4 animate-spin text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg
+              class="size-4 animate-spin text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
             </svg>
           </div>
         </div>
@@ -66,10 +83,18 @@
           data-indicator:fetching
           data-attr:disabled="$fetching"
         >
-          <option value="">{{ 'Status'|t }}</option>
-          <option value="Alive" data-selected="$status == 'Alive'">Alive</option>
-          <option value="Dead" data-selected="$status == 'Dead'">Dead</option>
-          <option value="unknown" data-selected="$status == 'unknown'">unknown</option>
+          <option value="">
+            {{ 'Status'|t }}
+          </option>
+          <option value="Alive" data-selected="$status == 'Alive'">
+            Alive
+          </option>
+          <option value="Dead" data-selected="$status == 'Dead'">
+            Dead
+          </option>
+          <option value="unknown" data-selected="$status == 'unknown'">
+            unknown
+          </option>
         </select>
         <select
           class="ui-select"
@@ -78,14 +103,30 @@
           data-indicator:fetching
           data-attr:disabled="$fetching"
         >
-          <option value="">{{ 'Species'|t }}</option>
-          <option value="Human" data-selected="$species == 'Human'">Human</option>
-          <option value="Alien" data-selected="$species == 'Alien'">Alien</option>
-          <option value="Humanoid" data-selected="$species == 'Humanoid'">Humanoid</option>
-          <option value="Robot" data-selected="$species == 'Robot'">Robot</option>
-          <option value="Mythological Creature" data-selected="$species == 'Mythological Creature'">Mythological Creature</option>
-          <option value="Disease" data-selected="$species == 'Disease'">Disease</option>
-          <option value="unknown" data-selected="$species == 'unknown'">unknown</option>
+          <option value="">
+            {{ 'Species'|t }}
+          </option>
+          <option value="Human" data-selected="$species == 'Human'">
+            Human
+          </option>
+          <option value="Alien" data-selected="$species == 'Alien'">
+            Alien
+          </option>
+          <option value="Humanoid" data-selected="$species == 'Humanoid'">
+            Humanoid
+          </option>
+          <option value="Robot" data-selected="$species == 'Robot'">
+            Robot
+          </option>
+          <option value="Mythological Creature" data-selected="$species == 'Mythological Creature'">
+            Mythological Creature
+          </option>
+          <option value="Disease" data-selected="$species == 'Disease'">
+            Disease
+          </option>
+          <option value="unknown" data-selected="$species == 'unknown'">
+            unknown
+          </option>
         </select>
         <select
           class="ui-select"
@@ -94,11 +135,21 @@
           data-indicator:fetching
           data-attr:disabled="$fetching"
         >
-          <option value="">{{ 'Gender'|t }}</option>
-          <option value="Female" data-selected="$gender == 'Female'">Female</option>
-          <option value="Male" data-selected="$gender == 'Male'">Male</option>
-          <option value="Genderless" data-selected="$gender == 'Genderless'">Genderless</option>
-          <option value="unknown" data-selected="$gender == 'unknown'">unknown</option>
+          <option value="">
+            {{ 'Gender'|t }}
+          </option>
+          <option value="Female" data-selected="$gender == 'Female'">
+            Female
+          </option>
+          <option value="Male" data-selected="$gender == 'Male'">
+            Male
+          </option>
+          <option value="Genderless" data-selected="$gender == 'Genderless'">
+            Genderless
+          </option>
+          <option value="unknown" data-selected="$gender == 'unknown'">
+            unknown
+          </option>
         </select>
         <button
           class="ui-link text-sm text-right"
@@ -109,17 +160,31 @@
             $species = '';
             $gender = '';
             $page = 1;
-            {{ datastar.post('_datastar/rick-and-morty') }}
+            {{
+          datastar.post(
+            '_datastar/rick-and-morty'
+          )
+          }}
           "
-        >reset
+        >
+          reset
         </button>
       </div>
     </div>
     <div class="relative">
-      <div class="absolute flex justify-center inset-0  bg-white/80" data-show="$fetching">
-        <svg class="size-8 animate-spin text-black mt-72" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <div class="absolute flex justify-center inset-0 bg-white/80" data-show="$fetching">
+        <svg
+          class="size-8 animate-spin text-black mt-72"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
         </svg>
       </div>
       <div id="result-rick-and-morty"></div>

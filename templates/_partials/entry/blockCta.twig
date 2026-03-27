@@ -2,7 +2,7 @@
 {% set image = entry.image.eagerly().one() ?? null %}
 {% set button = entry.button %}
 
-{% extends builder ? "_partials/matrix.twig" : "_partials/cke.twig" %}
+{% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
 {% set classWrapper = builder ? 'blocks blocks--cta' : 'inlines inlines--cta' %}
 {% set classContent = builder ? 'blocks__popout' : '' %}
 
@@ -17,7 +17,7 @@
       </div>
     {% endif %}
     {% if button %}
-      {% include "_components/button.twig" with {
+      {% include '_components/button.twig' with {
         label: button.label ?? button.title,
         url: button.url,
         size: 'lg',
@@ -25,7 +25,7 @@
         target: button.target ? '_blank' : null,
         rel: button.target ? 'noopener noreferrer' : null,
         ariaLabel: button.ariaLabel,
-        download: button.download,
+        download: button.download
       } only %}
     {% endif %}
   </div>

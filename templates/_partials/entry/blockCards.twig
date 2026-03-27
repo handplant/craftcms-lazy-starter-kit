@@ -1,14 +1,12 @@
 {% set builder = builder ?? false %}
-{% extends builder ? "_partials/matrix.twig" : "_partials/cke.twig" %}
+{% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
 {% set classWrapper = builder ? 'blocks blocks--cards' : 'inlines inlines--cards' %}
 {% set classContent = builder ? 'blocks__popout' : '' %}
 {% set isCols2 = entry.grid2cols %}
 
 {% block content %}
   {% if entry.headline %}
-    <h2 class="ui-h3 mb-6">
-      {{ entry.headline|nl2br }}
-    </h2>
+    <h2 class="ui-h3 mb-6">{{ entry.headline|nl2br }}</h2>
   {% endif %}
   <div class="grid {{ isCols2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 md:grid-cols-3' }} gap-6">
     {{ entry.matrixCards.eagerly().render() }}

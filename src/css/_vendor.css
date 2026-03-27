@@ -34,7 +34,6 @@
   @apply !text-ink-on;
 }
 
-
 .leaflet-tile-container img {
   filter: sepia(30%) brightness(105%) contrast(95%);
 }

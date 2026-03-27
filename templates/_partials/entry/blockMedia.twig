@@ -1,13 +1,11 @@
 {% set builder = builder ?? false %}
-{% extends builder ? "_partials/matrix.twig" : "_partials/cke.twig" %}
+{% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
 {% set classWrapper = builder ? 'blocks blocks--media' : 'inlines inlines--media' %}
 {% set classContent = builder ? 'blocks__popout' : '' %}
 
 {% block content %}
-  {% include "_components/media.twig" with {
+  {% include '_components/media.twig' with {
     asset: entry.assetMedia.eagerly().one() ?? null,
     showCaption: entry.mediaShowCaption
   } only %}
 {% endblock %}
-
-

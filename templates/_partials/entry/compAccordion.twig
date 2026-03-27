@@ -1,18 +1,19 @@
 {% set isOpen = entry.switchOpen ? 1 : 0 %}
 
-<details
-  {% if isOpen %}open{% endif %}
-  class="ui-neo group"
->
-  <summary class="flex items-center justify-between w-full gap-3 p-5 text-left bg-canvas ui-bold flex-nowrap hover:bg-pop-dim cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-    <span class="flex items-center">
-      {{ entry.headline|nl2br }}
-    </span>
-    <svg xmlns="http://www.w3.org/2000/svg"
-         aria-hidden="true"
-         fill="none" viewBox="0 0 24 24"
-         stroke-width="2.5" stroke="currentColor"
-         class="size-6 transition-transform duration-200 shrink-0 group-open:rotate-180">
+<details {{ isOpen ? 'open' }} class="ui-neo group">
+  <summary
+    class="flex items-center justify-between w-full gap-3 p-5 text-left bg-canvas ui-bold flex-nowrap hover:bg-pop-dim cursor-pointer list-none [&::-webkit-details-marker]:hidden"
+  >
+    <span class="flex items-center">{{ entry.headline|nl2br }}</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2.5"
+      stroke="currentColor"
+      class="size-6 transition-transform duration-200 shrink-0 group-open:rotate-180"
+    >
       <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
     </svg>
   </summary>

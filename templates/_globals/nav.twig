@@ -1,5 +1,5 @@
 {% set home = craft.entries.section('home').one() %}
-{% set navItems = craft.entries.section("navigations").eagerly().level(1).all() ?? null %}
+{% set navItems = craft.entries.section('navigations').eagerly().level(1).all() ?? null %}
 {% set isSearchPage = craft.app.request.pathInfo == 'search' %}
 <nav
   class="fixed inset-x-0 top-0 z-[1001] h-16 bg-canvas border-b-4 border-ink layout"
@@ -10,7 +10,11 @@
   <div class="flex items-center justify-between gap-3 w-full layout__popout">
     <div class="flex items-center shrink-0 mr-auto">
       <a class="flex items-center gap-3 text-2xl ui-bold group" href="{{ home.url }}" aria-label="Home">
-        <img class="w-10 h-10 shrink-0 ui-border ui-shadow-sm bg-canvas group-hover:bg-pop-dim transition  ui-lift" src="{{ craft.vite.asset('img/GM-1500.svg', true) }}" alt="">
+        <img
+          class="w-10 h-10 shrink-0 ui-border ui-shadow-sm bg-canvas group-hover:bg-pop-dim transition ui-lift"
+          src="{{ craft.vite.asset('img/GM-1500.svg', true) }}"
+          alt=""
+        />
         <span class="hidden xs:inline">{{ currentSite.name }}</span>
       </a>
     </div>
@@ -22,8 +26,20 @@
         class="block cursor-pointer switch:hidden hover:text-pop-on transition-colors"
         type="button"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-6">
-          <path data-show="!$navOpen" stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            data-show="!$navOpen"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
           <path data-show="$navOpen" stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
         </svg>
       </button>
@@ -35,7 +51,12 @@
         <ul class="items-center justify-end flex-1 h-full space-y-4 switch:flex switch:space-y-0 switch:space-x-3">
           {% for item in navItems %}
             <li class="h-full relative">
-              {{ item.render({ class: 'p-1 ui-bold inline-flex h-full items-center switch:px-3 text-ink hover:text-pop-on transition-colors', classActive: 'bg-pop-dim' }) }}
+              {{
+                item.render({
+                  class: 'p-1 ui-bold inline-flex h-full items-center switch:px-3 text-ink hover:text-pop-on transition-colors',
+                  classActive: 'bg-pop-dim'
+                })
+              }}
             </li>
           {% endfor %}
         </ul>
@@ -47,8 +68,20 @@
           data-attr="{ 'aria-label': $searchOpen ? 'Close search' : 'Open search' }"
           type="button"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-6">
-            <path data-show="!$searchOpen" stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              data-show="!$searchOpen"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+            />
             <path data-show="$searchOpen" stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </button>

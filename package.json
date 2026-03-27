@@ -23,6 +23,7 @@
     "@tailwindcss/postcss": "^4.2.2",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
+    "@zackad/prettier-plugin-twig": "^0.17.0",
     "tailwindcss": "^4.2.2",
     "vite": "^8.0.3"
   },

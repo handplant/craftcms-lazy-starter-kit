@@ -1,24 +1,24 @@
-import L from 'leaflet'
-import 'leaflet/dist/leaflet.css'
-import 'leaflet.markercluster'
-import 'leaflet.markercluster/dist/MarkerCluster.css'
-import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import 'leaflet.markercluster';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
-let map
-window.clusterGroup = null
-window.mapMarkers = {}
+let map;
+window.clusterGroup = null;
+window.mapMarkers = {};
 
-function initMap () {
-  map = L.map('map').setView([47.8, 7.6], 9)
+function initMap() {
+  map = L.map('map').setView([47.8, 7.6], 9);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
-  }).addTo(map)
+  }).addTo(map);
 
   clusterGroup = L.markerClusterGroup({
-    iconCreateFunction (cluster) {
-      const count = cluster.getChildCount()
+    iconCreateFunction(cluster) {
+      const count = cluster.getChildCount();
       return L.divIcon({
         className: 'custom-cluster',
         html: `<div style="
@@ -37,25 +37,25 @@ function initMap () {
         ">${count}</div>`,
         iconSize: [40, 40],
         iconAnchor: [20, 20],
-      })
+      });
     },
-  })
-  map.addLayer(clusterGroup)
-  window.clusterGroup = clusterGroup
+  });
+  map.addLayer(clusterGroup);
+  window.clusterGroup = clusterGroup;
 }
 
-function updateMarkers (locations = []) {
+function updateMarkers(locations = []) {
   if (!map || !clusterGroup) {
-    return
+    return;
   }
 
-  clusterGroup.clearLayers()
-  window.mapMarkers = {}
+  clusterGroup.clearLayers();
+  window.mapMarkers = {};
 
   const markers = locations
-    .filter(loc => loc.lat != null && loc.lng != null && !isNaN(loc.lat) && !isNaN(loc.lng))
-    .map(loc => {
-      const color = loc.color || '#000'
+    .filter((loc) => loc.lat != null && loc.lng != null && !isNaN(loc.lat) && !isNaN(loc.lng))
+    .map((loc) => {
+      const color = loc.color || '#000';
 
       const icon = L.divIcon({
         className: 'custom-marker',
@@ -68,41 +68,41 @@ function updateMarkers (locations = []) {
       "></div>`,
         iconSize: [28, 28],
         iconAnchor: [14, 14],
-      })
+      });
 
-      const marker = L.marker([loc.lat, loc.lng], { icon }).bindPopup(loc.popup || '')
+      const marker = L.marker([loc.lat, loc.lng], { icon }).bindPopup(loc.popup || '');
 
       if (loc.id) {
-        window.mapMarkers[loc.id] = marker
+        window.mapMarkers[loc.id] = marker;
       }
 
-      return marker
-    })
+      return marker;
+    });
 
-  clusterGroup.addLayers(markers)
+  clusterGroup.addLayers(markers);
 
   if (markers.length > 0) {
-    const bounds = clusterGroup.getBounds()
-    map.fitBounds(bounds.pad(0.27))
+    const bounds = clusterGroup.getBounds();
+    map.fitBounds(bounds.pad(0.27));
   } else {
-    map.setView([47.8, 7.6], 9)
+    map.setView([47.8, 7.6], 9);
   }
 }
 
-function focusMarker (id) {
-  const marker = window.mapMarkers[id]
-  const cluster = window.clusterGroup
+function focusMarker(id) {
+  const marker = window.mapMarkers[id];
+  const cluster = window.clusterGroup;
   if (!marker || !map || !cluster) {
-    return
+    return;
   }
 
   cluster.zoomToShowLayer(marker, () => {
-    const latlng = marker.getLatLng()
-    map.setView(latlng, 10, { animate: true })
-    marker.openPopup()
-  })
+    const latlng = marker.getLatLng();
+    map.setView(latlng, 10, { animate: true });
+    marker.openPopup();
+  });
 }
 
-window.initMap = initMap
-window.updateMarkers = updateMarkers
-window.focusMarker = focusMarker
+window.initMap = initMap;
+window.updateMarkers = updateMarkers;
+window.focusMarker = focusMarker;

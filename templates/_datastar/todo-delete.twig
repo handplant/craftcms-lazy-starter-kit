@@ -6,20 +6,19 @@
   {% set deletedTodo = null %}
   {% for todo in todos %}
     {% if todo.id != todoId %}
-      {% set updatedTodos = updatedTodos | merge([todo]) %}
+      {% set updatedTodos = updatedTodos|merge([todo]) %}
     {% else %}
       {% set deletedTodo = todo %}
     {% endif %}
   {% endfor %}
   {% do craft.app.session.set('todos', updatedTodos) %}
   {% if deletedTodo %}
-    {% executescript %}
-      if (typeof _paq !== 'undefined') _paq.push(['trackEvent', 'Todo', 'Delete']);
-    {% endexecutescript %}
+    {% executescript %}if (typeof _paq !== 'undefined') _paq.push(['trackEvent', 'Todo', 'Delete']);{% endexecutescript
+    %}
   {% endif %}
   {% patchsignals { todo_error: '' } %}
 {% endif %}
 
-{% patchelements with {useViewTransition: true} %}
+{% patchelements with { useViewTransition: true } %}
   {% include '_datastar/todo-list' %}
 {% endpatchelements %}

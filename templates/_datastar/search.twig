@@ -4,21 +4,27 @@
 {% set entries = search ? q.search(search).orderBy('score desc, postDate desc').limit(100).all : [] %}
 
 {% if search %}
-  {% executescript %}
-    console.log( '%c🚀 Lazy Search Scanner Initialized', 'background: linear-gradient(to right, #0af, #00e0ff); color: #000; font-weight: bold; padding: 6px 10px; border-radius: 5px; font-size: 12px;' );
-    console.log( '%c🔍 Search query detected:', 'color: #ff0; font-size: 13px; font-weight: bold; padding: 2px 0;');
-    console.log( '%c{{ search|e('js') }}', 'color: #fff; background: #1e1e1e; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size: 14px; box-shadow: 0 0 4px rgba(0,0,0,0.3);' );
-    if (typeof _paq !== 'undefined') _paq.push(['trackEvent', 'Search', 'Query']);
-  {% endexecutescript %}
+  {% executescript %}console.log( '%c🚀 Lazy Search Scanner Initialized', 'background: linear-gradient(to right, #0af,
+  #00e0ff); color: #000; font-weight: bold; padding: 6px 10px; border-radius: 5px; font-size: 12px;' ); console.log(
+  '%c🔍 Search query detected:', 'color: #ff0; font-size: 13px; font-weight: bold; padding: 2px 0;'); console.log( '%c{{
+    search|e('js')
+  }}', 'color: #fff; background: #1e1e1e; padding: 6px 12px; border-radius: 6px; font-family: monospace; font-size:
+  14px; box-shadow: 0 0 4px rgba(0,0,0,0.3);' ); if (typeof _paq !== 'undefined') _paq.push(['trackEvent', 'Search',
+  'Query']);{% endexecutescript %}
 {% endif %}
 
 {% if entries %}
   {% patchelements %}
     <div id="searchresult-{{ type }}">
-      <p class="mb-4 ui-bold">{{ entries|length }} results</p>
+      <p class="mb-4 ui-bold">
+        {{ entries|length }} results
+      </p>
       <div class="divide-y-2 divide-ink">
         {% for entry in entries %}
-          <a href="{{ entry.url }}" class="flex items-center justify-between gap-4 py-3 font-bold hover:bg-pop-dim px-2 -mx-2 transition-colors duration-100">
+          <a
+            href="{{ entry.url }}"
+            class="flex items-center justify-between gap-4 py-3 font-bold hover:bg-pop-dim px-2 -mx-2 transition-colors duration-100"
+          >
             <span>{{ entry.title }}</span>
             <span class="text-sm font-normal text-ink-dim shrink-0">{{ entry.section.handle }}</span>
           </a>
@@ -30,9 +36,13 @@
   {% patchelements %}
     <div id="searchresult-{{ type }}">
       {% if not search %}
-        <p>💡 Try entering a search term, e.g. "frontend"</p>
+        <p>
+          💡 Try entering a search term, e.g. "frontend"
+        </p>
       {% else %}
-        <p class="ui-notice">🫣 No results for "{{ search }}" — try a different keyword.</p>
+        <p class="ui-notice">
+          🫣 No results for "{{ search }}" — try a different keyword.
+        </p>
       {% endif %}
     </div>
   {% endpatchelements %}

@@ -35,5 +35,4 @@
   :focus:not(:focus-visible) {
     @apply ring-0;
   }
-
 }

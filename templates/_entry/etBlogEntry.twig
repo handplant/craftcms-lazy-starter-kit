@@ -8,7 +8,9 @@
       <div class="blocks__content">
         <div class="flex justify-between mb-2">
           {% if entry.date %}
-            <p class="text-pop-on ui-bold">{{ entry.date|date('d.m.Y') }}</p>
+            <p class="text-pop-on ui-bold">
+              {{ entry.date|date('d.m.Y') }}
+            </p>
           {% endif %}
           {% if category %}
             <span class="py-1 px-2 ui-bold text-base text-ink bg-pop ui-border ui-shadow-sm">{{ category }}</span>
@@ -18,7 +20,7 @@
       </div>
       {% if entry.card.image %}
         <div class="blocks__popout">
-          {% include "_components/media.twig" with {
+          {% include '_components/media.twig' with {
             asset: entry.card.image.eagerly().one() ?? null,
             showCaption: true
           } only %}
@@ -28,8 +30,8 @@
       {% if entry.externalUrl %}
         <div class="prose md:prose-lg lg:prose-xl">
           {{ entry.card.teaser }}
-          {% include "_components/button.twig" with {
-            label: "Read more"|t,
+          {% include '_components/button.twig' with {
+            label: 'Read more'|t,
             url: entry.externalUrl,
             target: '_blank',
             external: true,

@@ -1,11 +1,12 @@
 {% set anchorId = entry.anchor.anchorTitle ?? null %}
 
 <div
-  {% if classWrapper %}class="{{ classWrapper }} not-prose"{% endif %}
-  {% if anchorId %}id="{{ anchorId|kebab }}"{% endif %}
+  {{ (classWrapper ? 'class="' ~ classWrapper ~ ' not-prose"')|raw }}
+  {{ (anchorId ? 'id="' ~ (anchorId|kebab) ~ '"')|raw }}
 >
   <div class="{{ classContent ?? '' }}">
     {% block content %}
+
     {% endblock %}
   </div>
 </div>

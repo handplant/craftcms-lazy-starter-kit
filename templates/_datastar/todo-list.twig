@@ -1,23 +1,33 @@
 {% set todos = craft.app.session.get('todos', []) %}
-{% set todos = (todos | filter(t => not t.completed) | sort((a, b) => a.title <=> b.title))
-  | merge(todos | filter(t => t.completed) | sort((a, b) => a.title <=> b.title)) %}
+{% set todos =
+  todos
+    |filter(t => not t.completed)
+    |sort((a, b) => a.title <=> b.title)
+    |merge(todos|filter(t => t.completed)|sort((a, b) => a.title <=> b.title))
+%}
 
 <ul id="todo-list" class="divide-y-2 divide-ink">
-  {% if todos | length %}
+  {% if todos|length %}
     {% for todo in todos %}
       <li class="flex items-center gap-6 p-3 group bg-canvas" style="view-transition-name: todo-{{ todo.id }}">
         <button
-          class="shrink-0 size-6 ui-neo border-2 border-ink flex items-center justify-center transition-colors {{ todo.completed ? 'bg-pop' : 'hover:bg-pop-dim' }}"
+          class="shrink-0 size-6 ui-neo border-2 border-ink flex items-center justify-center transition-colors {{
+          todo.completed
+            ? 'bg-pop'
+            : 'hover:bg-pop-dim'
+          }}"
           data-on:click="$todo_id = '{{ todo.id }}'; {{ datastar.post('_datastar/todo-complete') }}"
           data-indicator:fetching
           aria-label="{{ todo.completed ? 'Mark as incomplete' : 'Mark as complete' }}"
         >
-          {% if todo.completed %}<span aria-hidden="true">✓</span>{% endif %}
+          {% if todo.completed %}
+            <span aria-hidden="true">✓</span>
+          {% endif %}
         </button>
         <span class="flex-1 text-base {{ todo.completed ? 'line-through text-ink-dim' : '' }}">
           {{ todo.title }}
           {% if todo.createdAt %}
-            <span class="block text-xs text-ink-dim font-normal mt-0.5">{{ todo.createdAt | date('d.m.Y, H:i') }}</span>
+            <span class="block text-xs text-ink-dim font-normal mt-0.5">{{ todo.createdAt|date('d.m.Y, H:i') }}</span>
           {% endif %}
         </span>
         <button
@@ -31,9 +41,6 @@
       </li>
     {% endfor %}
   {% else %}
-    <li class="p-8 text-center ui-bold">
-      No todos yet — add your first task above.
-    </li>
+    <li class="p-8 text-center ui-bold">No todos yet — add your first task above.</li>
   {% endif %}
 </ul>
-

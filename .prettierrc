@@ -1,0 +1,42 @@
+{
+  "plugins": ["@zackad/prettier-plugin-twig"],
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "printWidth": 120,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "overrides": [
+    {
+      "files": "*.twig",
+      "options": {
+        "parser": "twig",
+        "twigAlwaysBreakObjects": false,
+        "twigMultiTags": [
+          "cache,endcache",
+          "nav,endnav",
+          "switch,case,default,endswitch",
+          "css,endcss",
+          "js,endjs",
+          "html,endhtml",
+          "namespace,endnamespace",
+          "collect,endcollect",
+          "patchelements,endpatchelements"
+        ]
+      }
+    },
+    {
+      "files": "*.svg",
+      "options": {
+        "singleAttributePerLine": false
+      }
+    },
+    {
+      "files": "*.css",
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}

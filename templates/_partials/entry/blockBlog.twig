@@ -1,5 +1,5 @@
 {% set builder = builder ?? false %}
-{% extends builder ? "_partials/matrix.twig" : "_partials/cke.twig" %}
+{% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
 {% set classWrapper = builder ? 'blocks blocks--blog' : 'inlines inlines--blog' %}
 {% set classContent = builder ? 'blocks__popout' : '' %}
 
@@ -15,10 +15,15 @@
         data-on:input="{{ datastar.get('_datastar/blog.twig', { offset: 0 }) }}"
         data-indicator:fetching
         aria-label="Blog-Kategorie filtern"
-        class="ui-select ui-bold">
-        <option value="">{{ 'Show all'|t }}</option>
+        class="ui-select ui-bold"
+      >
+        <option value="">
+          {{ 'Show all'|t }}
+        </option>
         {% for item in categories %}
-          <option value="{{ item.slug }}" data-selected="$filter == {{ item.slug }}">{{ item.title }}</option>
+          <option value="{{ item.slug }}" data-selected="$filter == {{ item.slug }}">
+            {{ item.title }}
+          </option>
         {% endfor %}
       </select>
       <div data-show="$fetching">
@@ -26,7 +31,7 @@
       </div>
     </div>
   {% endif %}
-  
+
   {% set limit = 6 %}
   {% set initialEntries = craft.entries.section('blog').eagerly().limit(limit).orderBy('date DESC').all() %}
   {% set hasMore = craft.entries.section('blog').count() > (initialEntries|length) %}
@@ -40,7 +45,9 @@
   <div id="loadmore">
     {% if hasMore %}
       <div class="mt-12">
-        <button data-on:click="{{ datastar.get('_datastar/blog.twig', {offset: limit}) }}" class="ui-btn">{{ 'Load more'|t }}</button>
+        <button data-on:click="{{ datastar.get('_datastar/blog.twig', { offset: limit }) }}" class="ui-btn">
+          {{ 'Load more'|t }}
+        </button>
       </div>
     {% endif %}
   </div>

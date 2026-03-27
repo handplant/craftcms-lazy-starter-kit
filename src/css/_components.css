@@ -1,8 +1,7 @@
 @layer components {
   /* BUTTON & LINKS */
   .ui-btn {
-    @apply
-    ui-neo
+    @apply ui-neo
     no-underline
     inline-flex items-center gap-2
     bg-pop text-ink

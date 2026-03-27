@@ -7,29 +7,27 @@
 <div class="ui-card">
   {% if image %}
     <div class="aspect-video mb-0">
-      {% include "_components/image.twig" with {
-        image: image,
-        sizes: [480],
-        objectFit: true
-      } only %}
+      {% include '_components/image.twig' with { image: image, sizes: [480], objectFit: true } only %}
     </div>
   {% endif %}
   <div class="space-y-6 p-4">
     <div>
       <div class="flex items-center justify-between mb-2">
         {% if date %}
-          <p class="text-base text-pop-on ui-bold">{{ date }}</p>
+          <p class="text-base text-pop-on ui-bold">
+            {{ date }}
+          </p>
         {% endif %}
         {% if category %}
-          <span class="py-0.5 px-2 text-sm ui-bold text-ink ui-border ui-shadow-sm"
-                style="background: {{ category.color.getHex() ?? '#000' }}">
+          <span
+            class="py-0.5 px-2 text-sm ui-bold text-ink ui-border ui-shadow-sm"
+            style="background: {{ category.color.getHex() ?? '#000' }}"
+          >
             {{ category }}
           </span>
         {% endif %}
       </div>
-      <h2 class="ui-h5">
-        {{ entry.headline ? entry.headline|nl2br : entry.title }}
-      </h2>
+      <h2 class="ui-h5">{{ entry.headline ? entry.headline|nl2br : entry.title }}</h2>
     </div>
     {% if entry.card.teaser %}
       <div class="prose md:prose-lg">
@@ -37,19 +35,28 @@
       </div>
     {% endif %}
     <div class="flex justify-between">
-      {% include "_components/button.twig" with {
-        label: "Read more"|t,
+      {% include '_components/button.twig' with {
+        label: 'Read more'|t,
         url: isExternal ? entry.externalUrl : entry.url,
         target: isExternal ? '_blank' : null,
         external: isExternal
       } only %}
       {% if type == 'map' %}
-        <button class="ui-btn"
-                data-on:click="focusMarker({{ entry.id }})"
-                title="Show on map">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <button class="ui-btn" data-on:click="focusMarker({{ entry.id }})" title="Show on map">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+            />
           </svg>
         </button>
       {% endif %}

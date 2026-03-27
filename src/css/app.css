@@ -1,11 +1,11 @@
-@import 'tailwindcss';
-@import './_base.css';
-@import './_utilities.css';
-@import './_components.css';
-@import './_datastar.css';
-@import './_layout.css';
-@import './_embla.css';
-@import './_vendor.css';
+@import "tailwindcss";
+@import "./_base.css";
+@import "./_utilities.css";
+@import "./_components.css";
+@import "./_datastar.css";
+@import "./_layout.css";
+@import "./_embla.css";
+@import "./_vendor.css";
 
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
@@ -16,8 +16,8 @@
 @custom-variant touch (@media (hover: none));
 
 @theme {
-  --font-sans: 'Archivo', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --font-sans: "Archivo", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 
   --color-pop: var(--color-orange-400);
   --color-pop-on: var(--color-orange-600);
@@ -84,12 +84,13 @@
     @apply ui-bold;
   }
 
-  ul, ol {
+  ul,
+  ol {
     @apply mb-8;
   }
 
   pre {
-    @apply bg-ink text-pop-dim p-4 overflow-x-auto text-sm md:text-base  leading-relaxed ui-border rounded-none ui-bold ui-shadow-pop;
+    @apply bg-ink text-pop-dim p-4 overflow-x-auto text-sm md:text-base leading-relaxed ui-border rounded-none ui-bold ui-shadow-pop;
     tab-size: 2;
 
     code {
@@ -119,7 +120,7 @@
     }
   }
 
-  :not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  :not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     a {
       @apply ui-link;
     }
@@ -130,10 +131,3 @@
   @apply border-t-4 border-ink my-8;
   border-bottom: none;
 }
-
-
-
-
-
-
-

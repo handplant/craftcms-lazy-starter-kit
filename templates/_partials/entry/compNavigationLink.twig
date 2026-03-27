@@ -3,12 +3,12 @@
 {% set _element = entry.button.element ?? null %}
 
 {% if _element and _element.uri == craft.app.request.pathInfo %}
-  {% set _class = _class ~ " " ~ _classActive %}
+  {% set _class = _class ~ ' ' ~ _classActive %}
 {% endif %}
 
-{{ tag('a', {
-  text: entry.button.label,
-  href: entry.button.value,
-  target: entry.button.target ? '_blank' : null,
-  class: _class
-}) }}
+{{
+  tag(
+    'a',
+    { text: entry.button.label, href: entry.button.value, target: entry.button.target ? '_blank' : null, class: _class }
+  )
+}}

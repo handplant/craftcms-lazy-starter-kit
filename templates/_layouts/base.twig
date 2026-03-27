@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="{{ craft.app.language|slice(0, 2) }}">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  {% hook 'seomateMeta' %}
-  {% if entry is defined and entry.seo is defined and entry.seo.seoHide %}
-    <meta name="robots" content="noindex">
-  {% endif %}
-  {% include "_globals/favicons" only %}
-  {% include "_globals/fonts" only %}
-  {% include "_globals/organization" only %}
-  {% include "_globals/matomo" only %}
-  {{ craft.vite.script("src/js/app.js", false) }}
-</head>
-<body
-  data-signals="{ searchOpen: false, navOpen: false, dropdownOpen: false }"
-  data-effect="if ($searchOpen) { window.scrollTo({ top: 0, behavior: 'smooth' }); }"
->
-<a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] ui-btn">Skip to content</a>
-{% cache globally using key 'nav__' ~ craft.app.request.pathInfo %}
-  {% include '_globals/nav' only %}
-{% endcache %}
-{% include '_globals/search' only %}
-<main id="content">
-  {% block main %}{% endblock %}
-</main>
-{% cache globally using key 'footer' %}
-  {% include '_globals/footer' only %}
-{% endcache %}
-{% if entry is defined and canSave(entry) %}
-  <a href="{{ cpUrl("preview/#{entry.id}") }}" title="Edit {{ entry.title }}" target="_blank" class="hidden lg:inline fixed bottom-0 left-0 p-4">✏️</a>
-{% endif %}
-{% if currentUser and currentUser.admin %}
-  {#  <pre data-json-signals class="hidden xl:block fixed bottom-0 right-0 p-4 text-xs bg-black text-white"></pre> #}
-{% endif %}
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% hook 'seomateMeta' %}
+    {% if entry is defined and entry.seo is defined and entry.seo.seoHide %}
+      <meta name="robots" content="noindex" />
+    {% endif %}
+    {% include '_globals/favicons' only %}
+    {% include '_globals/fonts' only %}
+    {% include '_globals/organization' only %}
+    {% include '_globals/matomo' only %}
+    {{ craft.vite.script('src/js/app.js', false) }}
+  </head>
+  <body
+    data-signals="{ searchOpen: false, navOpen: false, dropdownOpen: false }"
+    data-effect="if ($searchOpen) { window.scrollTo({ top: 0, behavior: 'smooth' }); }"
+  >
+    <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-9999 ui-btn">
+      Skip to content
+    </a>
+    {% cache globally using key 'nav__' ~ craft.app.request.pathInfo %}
+      {% include '_globals/nav' only %}
+    {% endcache %}
+    {% include '_globals/search' only %}
+    <main id="content">
+      {% block main %}
+
+      {% endblock %}
+    </main>
+    {% cache globally using key 'footer' %}
+      {% include '_globals/footer' only %}
+    {% endcache %}
+    {% if entry is defined and canSave(entry) %}
+      <a
+        href="{{ cpUrl("preview/#{entry.id}") }}"
+        title="Edit {{ entry.title }}"
+        target="_blank"
+        class="hidden lg:inline fixed bottom-0 left-0 p-4"
+      >
+        ✏️
+      </a>
+    {% endif %}
+    {% if currentUser and currentUser.admin %}
+      {# <pre data-json-signals class="hidden xl:block fixed bottom-0 right-0 p-4 text-xs bg-black text-white"></pre> #}
+    {% endif %}
+  </body>
 </html>

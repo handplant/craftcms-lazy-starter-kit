@@ -9,24 +9,36 @@
 
 {%- if asset -%}
   {%- switch asset.kind -%}
-  {%- case 'video' -%}
-    <figure class="ui-neo overflow-hidden">
-      <video class="h-full w-full object-fill aspect-video" controls playsinline>
-        <source src="{{ asset.getUrl() }}" type="video/{{ asset.extension }}" />
-      </video>
-      {%- if hasCaption -%}<figcaption class="border-t-2 border-ink px-3 py-2 text-sm bg-canvas">{{ parts|join(' — ') }}</figcaption>{%- endif -%}
-    </figure>
-  {%- case 'audio' -%}
-    <figure class="ui-neo">
-      <audio class="w-full" controls>
-        <source src="{{ asset.getUrl() }}" type="audio/{{ asset.extension }}" />
-      </audio>
-      {%- if hasCaption -%}<figcaption class="border-t-2 border-ink px-3 py-2 text-sm bg-canvas">{{ parts|join(' — ') }}</figcaption>{%- endif -%}
-    </figure>
-  {%- case 'image' -%}
-    <figure class="ui-neo overflow-hidden">
-      {% include "_components/image.twig" with { image: asset } only %}
-      {%- if hasCaption -%}<figcaption class="border-t-2 border-ink px-3 py-2 text-sm bg-canvas">{{ parts|join(' — ') }}</figcaption>{%- endif -%}
-    </figure>
+    {%- case 'video' -%}
+      <figure class="ui-neo overflow-hidden">
+        <video class="h-full w-full object-fill aspect-video" controls playsinline>
+          <source src="{{ asset.getUrl() }}" type="video/{{ asset.extension }}" />
+        </video>
+        {%- if hasCaption -%}
+          <figcaption class="border-t-2 border-ink px-3 py-2 text-sm bg-canvas">
+            {{ parts|join(' — ') }}
+          </figcaption>
+        {%- endif -%}
+      </figure>
+    {%- case 'audio' -%}
+      <figure class="ui-neo">
+        <audio class="w-full" controls>
+          <source src="{{ asset.getUrl() }}" type="audio/{{ asset.extension }}" />
+        </audio>
+        {%- if hasCaption -%}
+          <figcaption class="border-t-2 border-ink px-3 py-2 text-sm bg-canvas">
+            {{ parts|join(' — ') }}
+          </figcaption>
+        {%- endif -%}
+      </figure>
+    {%- case 'image' -%}
+      <figure class="ui-neo overflow-hidden">
+        {% include '_components/image.twig' with { image: asset } only %}
+        {%- if hasCaption -%}
+          <figcaption class="border-t-2 border-ink px-3 py-2 text-sm bg-canvas">
+            {{ parts|join(' — ') }}
+          </figcaption>
+        {%- endif -%}
+      </figure>
   {%- endswitch -%}
 {%- endif -%}

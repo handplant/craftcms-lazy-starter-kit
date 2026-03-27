@@ -17,14 +17,18 @@
 {% if not entries %}
   {% patchelements %}
     <div id="result">
-      <p class="ui-notice">🫣 No results{% if filter %} for "{{ filter }}"{% endif %} — try a different filter.</p>
+      <p class="ui-notice">
+        🫣 No results{% if filter %}
+          for "{{ filter }}"
+        {% endif %}— try a different filter.
+      </p>
     </div>
   {% endpatchelements %}
   {% patchelements %}
     <div id="loadmore"></div>
   {% endpatchelements %}
 {% else %}
-  {% patchelements with {selector: '#result', mode: offset == 0 ? 'inner' : 'append'} %}
+  {% patchelements with { selector: '#result', mode: offset == 0 ? 'inner' : 'append' } %}
     {% for entry in entries %}
       {{ entry.render() }}
     {% endfor %}
@@ -33,7 +37,9 @@
   {% if hasMore %}
     {% patchelements %}
       <div id="loadmore" class="mt-12">
-        <button data-on:click="{{ datastar.get('_datastar/blog.twig', {offset: offset + limit}) }}" class="ui-btn">{{ 'Load more'|t }}</button>
+        <button data-on:click="{{ datastar.get('_datastar/blog.twig', { offset: offset + limit }) }}" class="ui-btn">
+          {{ 'Load more'|t }}
+        </button>
       </div>
     {% endpatchelements %}
   {% else %}

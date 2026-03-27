@@ -1,11 +1,12 @@
 {% set anchorId = entry.anchor.anchorTitle ?? null %}
 
 <section
-  {% if classWrapper %}class="{{ classWrapper }}"{% endif %}
-  {% if anchorId %}id="{{ anchorId|kebab }}"{% endif %}
+  {{ (classWrapper ? 'class="' ~ classWrapper ~ '"')|raw }}
+  {{ (anchorId ? 'id="' ~ (anchorId|kebab) ~ '"')|raw }}
 >
   <div class="{{ classContent ?? '' }}">
     {% block content %}
+
     {% endblock %}
   </div>
 </section>

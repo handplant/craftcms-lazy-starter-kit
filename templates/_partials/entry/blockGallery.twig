@@ -1,5 +1,5 @@
 {% set builder = builder ?? false %}
-{% extends builder ? "_partials/matrix.twig" : "_partials/cke.twig" %}
+{% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
 {% set classWrapper = builder ? 'blocks blocks--gallery' : 'inlines inlines--gallery' %}
 {% set classContent = builder ? 'blocks__feature' : '' %}
 
@@ -29,15 +29,13 @@
           {% set parts = parts|merge(['© ' ~ image.mediaCopyright]) %}
         {%- endif -%}
 
-        <a class="block ui-neo overflow-hidden ui-lift {{ classes }}"
-           href="{{ image.getUrl({ width: 1600, quality: 90 }) }}"
-           data-gallery="gallery{{ entry.id }}"
-           data-description="{{ parts|join(' ') }}">
-          {% include "_components/image.twig" with {
-            image: image,
-            objectFit: true,
-            class: ''
-          } only %}
+        <a
+          class="block ui-neo overflow-hidden ui-lift {{ classes }}"
+          href="{{ image.getUrl({ width: 1600, quality: 90 }) }}"
+          data-gallery="gallery{{ entry.id }}"
+          data-description="{{ parts|join(' ') }}"
+        >
+          {% include '_components/image.twig' with { image: image, objectFit: true, class: '' } only %}
         </a>
       {% endfor %}
     </div>

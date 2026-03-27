@@ -2,42 +2,38 @@
 {% set button = entry.button %}
 {% set slider = slider ?? false %}
 
-
-{% if slider %}
-<div class="embla__slide">
-  {% endif %}
+{% set cardContent %}
   <div class="ui-card">
     {% if image %}
       <div class="aspect-video mb-0">
-        {% include "_components/image.twig" with {
-          image: image,
-          sizes: [480],
-          objectFit: true,
-          class: ''
-        } only %}
+        {% include '_components/image.twig' with { image: image, sizes: [480], objectFit: true, class: '' } only %}
       </div>
     {% endif %}
     <div class="space-y-8 p-4 md:p-6">
-      <h2 class="ui-h4">
-        {{ entry.headline|nl2br }}
-      </h2>
+      <h2 class="ui-h4">{{ entry.headline|nl2br }}</h2>
       {% if entry.teaser %}
         <div class="prose md:prose-lg">
           {{ entry.teaser }}
         </div>
       {% endif %}
       {% if button %}
-        {% include "_components/button.twig" with {
+        {% include '_components/button.twig' with {
           label: button.label ?? button.title,
           url: button.url,
           target: button.target ? '_blank' : null,
           rel: button.target ? 'noopener noreferrer' : null,
-          ariaLabel: button.ariaLabel ?? ((button.label ?? button.title) ~ ': ' ~ entry.headline),
-          download: button.download,
+          ariaLabel: button.ariaLabel ?? (button.label ?? button.title ~ ': ' ~ entry.headline),
+          download: button.download
         } only %}
       {% endif %}
     </div>
   </div>
-  {% if slider %}
-</div>
+{% endset %}
+
+{% if slider %}
+  <div class="embla__slide">
+    {{ cardContent|raw }}
+  </div>
+{% else %}
+  {{ cardContent|raw }}
 {% endif %}

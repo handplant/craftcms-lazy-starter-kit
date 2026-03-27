@@ -1,10 +1,10 @@
 @layer components {
-
   .inlines {
     @apply py-[var(--gap-inlines)];
   }
 
-  .layout, .blocks {
+  .layout,
+  .blocks {
     @apply grid;
     grid-template-columns:
       [full-start] var(--full)

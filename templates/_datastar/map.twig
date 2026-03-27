@@ -1,5 +1,5 @@
-{% set search = signals.searchmap ?? "" %}
-{% set filter = signals.filter ?? "" %}
+{% set search = signals.searchmap ?? '' %}
+{% set filter = signals.filter ?? '' %}
 {% set locations = craft.entries().section('blog').eagerly() %}
 
 {% if filter %}
@@ -10,11 +10,11 @@
   {% set locations = locations.search(search) %}
 {% endif %}
 {% set locations = locations.all() %}
-{% set locations = locations|filter(e =>
-  e.map
-  and e.map.lat is defined and e.map.lng is defined
-  and e.map.lat is not empty and e.map.lng is not empty
-) %}
+{% set locations =
+  locations|filter(
+    e => e.map and e.map.lat is defined and e.map.lng is defined and e.map.lat is not empty and e.map.lng is not empty
+  )
+%}
 
 {% set points = [] %}
 {% for e in locations %}
@@ -23,30 +23,39 @@
 
   {% set popupHtml %}
     <div class="ui-popup overflow-hidden bg-canvas">
-      {% if image %}<img class="ui-popup__image" src="{{ image.getUrl('thumbnail') }}" alt="{{ image.alt|e }}">{% endif %}
-      <div class="ui-popup__content border-t-2 border-ink ">
-        {% if cat %}<span class="text-xs uppercase tracking-widest ui-bold text-pop-on">{{ cat.title|e }}</span>{% endif %}
+      {% if image %}
+        <img class="ui-popup__image" src="{{ image.getUrl('thumbnail') }}" alt="{{ image.alt|e }}" />
+      {% endif %}
+      <div class="ui-popup__content border-t-2 border-ink">
+        {% if cat %}
+          <span class="text-xs uppercase tracking-widest ui-bold text-pop-on">{{ cat.title|e }}</span>
+        {% endif %}
         <span class="ui-bold text-ink leading-tight mt-1">{{ e.title|e }}</span>
-        <a href="{{ e.url }}" class="text-sm mt-2 font-bold text-ink hover:text-pop-on transition-colors duration-100 no-underline">Read more →</a>
+        <a
+          href="{{ e.url }}"
+          class="text-sm mt-2 font-bold text-ink hover:text-pop-on transition-colors duration-100 no-underline"
+        >
+          Read more →
+        </a>
       </div>
     </div>
   {% endset %}
 
-  {% set points = points|merge([{
-    id: e.id,
-    lat: e.map.lat,
-    lng: e.map.lng,
-    color: cat ? cat.color.getHex() : '',
-    popup: popupHtml|trim
-  }]) %}
+  {% set points =
+    points|merge(
+      [{ id: e.id, lat: e.map.lat, lng: e.map.lng, color: cat ? cat.color.getHex() : '', popup: popupHtml|trim }]
+    )
+  %}
 {% endfor %}
 
-{% patchsignals {_locations: points} %}
+{% patchsignals { _locations: points } %}
 
 {% if not locations %}
   {% patchelements %}
     <div id="map-result">
-      <p class="ui-notice">🫣 No results — try a different keyword.</p>
+      <p class="ui-notice">
+        🫣 No results — try a different keyword.
+      </p>
     </div>
   {% endpatchelements %}
 {% else %}

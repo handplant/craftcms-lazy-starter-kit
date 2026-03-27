@@ -1,13 +1,11 @@
 {% set builder = builder ?? false %}
-{% extends builder ? "_partials/matrix.twig" : "_partials/cke.twig" %}
+{% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
 {% set classWrapper = builder ? 'blocks blocks--features' : 'inlines inlines--features' %}
 {% set classContent = builder ? 'blocks__content' : '' %}
 
 {% block content %}
   {% if entry.headline %}
-    <h2 class="ui-h3 mb-6">
-      {{ entry.headline|nl2br }}
-    </h2>
+    <h2 class="ui-h3 mb-6">{{ entry.headline|nl2br }}</h2>
   {% endif %}
   <ul class="grid sm:grid-cols-2 gap-4 md:gap-8">
     {{ entry.matrixFeatures.eagerly().render() }}
