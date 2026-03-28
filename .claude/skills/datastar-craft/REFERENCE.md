@@ -27,12 +27,17 @@ Handle DOM events with optional modifiers.
 
 **Modifiers:**
 
-- `.prevent` - preventDefault()
-- `.stop` - stopPropagation()
-- `.once` - Fire only once
-- `__debounce.Xms` - Debounce by X milliseconds
-- `__throttle.Xms` - Throttle by X milliseconds
-- `__window` - Listen on window instead of element
+- `__once` — Fire only once
+- `__passive` — No preventDefault (better scroll performance)
+- `__capture` — Capture phase
+- `__prevent` — Call preventDefault()
+- `__stop` — Call stopPropagation()
+- `__outside` — Trigger when event is outside element (e.g. click outside to close)
+- `__debounce.300ms` — Debounce (append `.leading` or `.notrailing`)
+- `__throttle.300ms` — Throttle (append `.noleading` or `.trailing`)
+- `__window` — Listen on window instead of element
+- `__delay.500ms` — Delay execution
+- `__viewtransition` — Wrap in View Transition API
 
 ### data-on-intersect
 
@@ -50,14 +55,18 @@ Trigger when element enters viewport.
 
 ### data-on-interval
 
-Trigger at regular intervals.
+Trigger at regular intervals (default: 1s).
 
 ```html
-
-<div data-on-interval="1000; {{ datastar.get('_datastar/status.twig') }}">
+<div data-on-interval="{{ datastar.get('_datastar/status.twig') }}">
   Status: <span id="status">Loading...</span>
 </div>
+
+<!-- Custom interval -->
+<div data-on-interval__duration.5s="{{ datastar.get('_datastar/poll.twig') }}">
 ```
+
+**Modifiers:** `__duration.Xms|Xs(.leading)`, `__viewtransition`
 
 ### data-on-signal-patch
 
@@ -124,14 +133,16 @@ Two-way binding between element attribute and signal.
 
 ### data-computed
 
-Derived/computed values from signals.
+Derived/computed values from signals. Read-only — use `data-effect` for side effects.
 
 ```html
+<!-- Key form (single) -->
+<div data-computed:total="price * quantity"></div>
 
-<div data-signals="{price: 100, quantity: 2}">
-  <span data-computed="total = price * quantity"></span>
-  Total: <span data-text="total"></span>
-</div>
+<!-- Multiple -->
+<div data-computed="{total: () => price * quantity, tax: () => total * 0.2}"></div>
+
+<span data-text="total"></span>
 ```
 
 ### data-init
@@ -276,6 +287,39 @@ Show element while request is in progress.
 - `data-replace-url` - Update URL without navigation
 - `data-scroll-into-view` - Scroll element into view
 - `data-view-transition` - View transition API helpers
+
+## Backend Actions
+
+`datastar.get()` / `datastar.post()` in Craft render to `@get()` / `@post()` etc. — the official Datastar action syntax. Actions send current signals as request body.
+
+### Options
+
+```html
+<!-- Send only specific signals -->
+<button data-on:click="@get('/search', {filterSignals: {include: /^search/}})">
+
+<!-- Form content-type instead of JSON -->
+<form data-on:submit.prevent="@post('/submit', {contentType: 'form'})">
+
+<!-- Custom headers -->
+<button data-on:click="@post('/api', {headers: {'X-CSRF-Token': csrfToken}})">
+
+<!-- Keep SSE connection alive when tab is hidden -->
+<div data-on-interval="@get('/live', {openWhenHidden: true})">
+```
+
+### Other Actions
+
+```html
+<!-- Set all matching signals at once -->
+<button data-on:click="@setAll(false, {include: /^is/})">Close all</button>
+
+<!-- Toggle all matching boolean signals -->
+<button data-on:click="@toggleAll({include: /^is/})">Toggle all</button>
+
+<!-- Access signal without triggering reactivity -->
+<div data-text="count + @peek(() => total)"></div>
+```
 
 ## Expression Syntax
 
