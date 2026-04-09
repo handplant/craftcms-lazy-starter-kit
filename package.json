@@ -25,7 +25,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "@zackad/prettier-plugin-twig": "^0.17.0",
     "tailwindcss": "^4.2.2",
-    "vite": "^8.0.3"
+    "vite": "^8.0.8"
   },
   "dependencies": {
     "embla-carousel": "^8.6.0",
