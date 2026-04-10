@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -9,6 +10,11 @@ fieldLayouts:
         name: 'Seo Hide Generated'
         template: '{{ object.seo.seoHide ? 1 : 0 }}'
         uid: d74fbbee-f4c8-448b-b8fc-d5723a6d0f07
+      -
+        handle: llms
+        name: llms
+        template: "{{ (object.seo.seoTitle ?? object.headline ?? object.title) ~ (object.seo.seoDescription ? ' — ' ~ object.seo.seoDescription) }}"
+        uid: 8ea3656a-4096-4563-af60-555454f92e16
     tabs:
       -
         elementCondition: null
@@ -45,6 +51,7 @@ fieldLayouts:
             dateAdded: '2024-11-14T11:42:35+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 17c0c6a4-80a6-4cef-84f4-ebefe3af9d39 # Text - Multi
             handle: headline
             instructions: null
@@ -60,6 +67,7 @@ fieldLayouts:
             dateAdded: '2024-11-14T11:14:14+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 0b6dd59c-982a-43fa-908f-143e8ef509f2 # Date
             handle: null
             instructions: null
@@ -75,6 +83,7 @@ fieldLayouts:
             dateAdded: '2024-11-14T11:14:14+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: dbbb65c3-5ee4-438d-8436-b6e57e74daf5 # Relation - Categories
             handle: null
             instructions: null
@@ -90,6 +99,7 @@ fieldLayouts:
             dateAdded: '2025-10-07T08:51:42+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 63c16184-84bf-4b0d-9617-96987ad1df39 # Card
             handle: null
             instructions: null
@@ -105,6 +115,7 @@ fieldLayouts:
             dateAdded: '2025-11-07T09:41:52+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: b176366b-d2cd-4172-bbb5-f64769af3719 # Map
             handle: null
             instructions: null
@@ -120,6 +131,7 @@ fieldLayouts:
             dateAdded: '2025-11-13T08:54:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: d1810b84-cc13-409f-a229-ed19ee97748e # Url
             handle: null
             instructions: null
@@ -141,6 +153,7 @@ fieldLayouts:
             dateAdded: '2025-05-12T07:53:54+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 0a5600e8-07a6-4292-bc21-d0e142d9dc22 # Matrix - Builder
             handle: null
             instructions: null
@@ -162,6 +175,7 @@ fieldLayouts:
             dateAdded: '2025-10-07T08:48:05+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 5bf4ae8e-4fcb-4ed0-bb07-7dbbb4c59050 # Seo
             handle: null
             instructions: null
@@ -176,6 +190,7 @@ fieldLayouts:
         name: Settings
         uid: 3f68c259-b92d-4518-ba2a-902a2332a1cb
         userCondition: null
+    thumbFieldKey: null
 handle: etBlogEntry
 hasTitleField: true
 icon: page
@@ -187,3 +202,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

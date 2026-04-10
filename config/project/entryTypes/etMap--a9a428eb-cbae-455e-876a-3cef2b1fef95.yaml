@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -9,6 +10,11 @@ fieldLayouts:
         name: 'Seo Hide Generated'
         template: '{{ object.seo.seoHide ? 1 : 0 }}'
         uid: 9c489dde-d3e4-48c2-835e-1cd576c86441
+      -
+        handle: llms
+        name: llms
+        template: "{{ (object.seo.seoTitle ?? object.title) ~ (object.seo.seoDescription ? ' — ' ~ object.seo.seoDescription) }}"
+        uid: 0c03aeb7-3181-4eb2-93bf-4bba1f224c26
     tabs:
       -
         elementCondition: null
@@ -45,6 +51,7 @@ fieldLayouts:
             dateAdded: '2025-11-07T09:24:35+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 7cdf6921-13c4-4984-95cd-9ac60231929d # Rich Text - Builder
             handle: builder
             instructions: null
@@ -66,6 +73,7 @@ fieldLayouts:
             dateAdded: '2025-11-07T09:24:35+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 5bf4ae8e-4fcb-4ed0-bb07-7dbbb4c59050 # Seo
             handle: null
             instructions: null
@@ -80,6 +88,7 @@ fieldLayouts:
         name: Settings
         uid: 54e6a6fe-f63e-4b37-b47f-b0db946e8569
         userCondition: null
+    thumbFieldKey: null
 handle: etMap
 hasTitleField: true
 icon: location-dot
@@ -91,3 +100,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

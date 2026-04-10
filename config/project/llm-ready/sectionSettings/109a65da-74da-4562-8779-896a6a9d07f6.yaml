@@ -1,0 +1,3 @@
+6eab4b84-63fb-4382-bdd7-d2bee959aafb: # $SITE_NAME
+  enabled: true
+  llmTemplate: null
