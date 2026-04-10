@@ -20,8 +20,9 @@ class Craftkit extends Module
     {
         parent::init();
 
+        Craft::setAlias('@modules', dirname(__DIR__, 2));
         Craft::setAlias('@craftkit', __DIR__);
-        $this->controllerNamespace = 'modules\\craftkit\\controllers';
+        $this->controllerNamespace = 'modules\\craftkit\\src\\controllers';
         Craft::info('Craftkit module loaded', __METHOD__);
 
         // Register template roots

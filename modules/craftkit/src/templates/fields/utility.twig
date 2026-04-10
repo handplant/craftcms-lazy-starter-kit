@@ -73,6 +73,9 @@
 {% endfor %}
 
 {% js %}
-  document.querySelectorAll('[data-toggle]').forEach(header => { header.addEventListener('click', ()
-  => { header.parentElement.classList.toggle('open'); }); });
+  document.querySelectorAll('[data-toggle]').forEach(function(header) {
+    header.addEventListener('click', function() {
+      header.parentElement.classList.toggle('open');
+    });
+  });
 {% endjs %}
