@@ -1,4 +1,4 @@
-dateModified: 1774527605
+dateModified: 1775806079
 elementSources:
   craft\elements\Entry:
     -
@@ -175,10 +175,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 5.0.0.1
-  codefield:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   datastar:
     edition: standard
     enabled: true

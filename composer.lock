@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e70267336cc2006001544222ee9932cb",
+    "content-hash": "1fc6d26b4dea4dc1b53c28d7d83df8e5",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -3619,55 +3619,6 @@
                 }
             ],
             "time": "2026-01-30T19:10:22+00:00"
-        },
-        {
-            "name": "nystudio107/craft-code-field",
-            "version": "5.0.2",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-code-field/zipball/6345222d121d8e5826620ded3b08f612f6e64abd",
-                "reference": "6345222d121d8e5826620ded3b08f612f6e64abd",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^5.3.0",
-                "nystudio107/craft-code-editor": "^1.0.29",
-                "php": "^8.2"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Code Field",
-                "handle": "codefield",
-                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-code-field/v5/CHANGELOG.md",
-                "class": "nystudio107\\codefield\\CodeField"
-            },
-            "autoload": {
-                "psr-4": {
-                    "nystudio107\\codefield\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "nystudio107",
-                    "homepage": "https://nystudio107.com"
-                }
-            ],
-            "description": "Provides a Code Field that has a full-featured code editor with syntax highlighting & autocomplete",
-            "keywords": [
-                "cms",
-                "code field",
-                "craft",
-                "craft-plugin",
-                "craftcms"
-            ],
-            "support": {
-                "docs": "https://github.com/nystudio107/craft-code-field/blob/v5/README.md",
-                "issues": "https://github.com/nystudio107/craft-code-field/issues"
-            },
-            "time": "2026-02-05T21:21:13+00:00"
         },
         {
             "name": "nystudio107/craft-plugin-vite",
