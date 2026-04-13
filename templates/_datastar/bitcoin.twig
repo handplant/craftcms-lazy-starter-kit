@@ -1,0 +1,26 @@
+{% set data =
+  craft.feedme.feed({ url: 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT', type: 'json', cache: false })
+%}
+
+{% if data %}
+  {% set up = data.priceChangePercent >= 0 %}
+  {% set prev = craft.app.cache.get('btc_prev') ?? data.lastPrice %}
+  {% set flash = data.lastPrice > prev ? 'flash-up' : data.lastPrice < prev ? 'flash-down' : '' %}
+  {% do craft.app.cache.set('btc_prev', data.lastPrice, 60) %}
+
+  {% executescript %}if (typeof _paq !== 'undefined') _paq.push(['trackEvent', 'Bitcoin', 'Api']);{% endexecutescript %}
+
+  {% patchelements with { selector: '#btc-panel', mode: 'inner' } %}
+    <div id="btc-{{ now|date('U') }}" class="flex items-baseline justify-end gap-4">
+      <p class="text-ink-dim">
+        BTC/USDT
+      </p>
+      <p class="font-mono font-bold {{ flash }}">
+        ${{ data.lastPrice|number_format(2) }}
+      </p>
+      <p class="font-mono {{ up ? 'text-green-700' : 'text-red-700' }}">
+        {{ up ? '+' : '' }}{{ data.priceChangePercent|number_format(2) }}%
+      </p>
+    </div>
+  {% endpatchelements %}
+{% endif %}

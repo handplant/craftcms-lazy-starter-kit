@@ -15,7 +15,7 @@
     {{ craft.vite.script('src/js/app.js', false) }}
   </head>
   <body
-    data-signals="{ searchOpen: false, navOpen: false, dropdownOpen: false }"
+    data-signals="{ searchOpen: false, navOpen: false, dropdownOpen: false, btcOpen: false }"
     data-effect="if ($searchOpen) { window.scrollTo({ top: 0, behavior: 'smooth' }); }"
   >
     <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-9999 ui-btn">
@@ -24,6 +24,7 @@
     {% cache globally using key 'nav__' ~ craft.app.request.pathInfo %}
       {% include '_globals/nav' only %}
     {% endcache %}
+    {% include '_globals/bitcoin' only %}
     {% include '_globals/search' only %}
     <main id="content">
       {% block main %}

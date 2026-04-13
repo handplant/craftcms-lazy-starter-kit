@@ -65,3 +65,23 @@
 @utility ui-lift {
   @apply transition duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:ui-shadow-lg;
 }
+
+@keyframes flash-up {
+  0%   { color: inherit; }
+  30%  { color: oklch(0.55 0.18 145); }
+  100% { color: inherit; }
+}
+
+@keyframes flash-down {
+  0%   { color: inherit; }
+  30%  { color: oklch(0.55 0.2 25); }
+  100% { color: inherit; }
+}
+
+@utility flash-up {
+  animation: flash-up 1s ease-out;
+}
+
+@utility flash-down {
+  animation: flash-down 1s ease-out;
+}

@@ -4,7 +4,7 @@
 <nav
   class="fixed inset-x-0 top-0 z-[1001] h-16 bg-canvas border-b-4 border-ink layout"
   data-class="{ 'bg-bg': $navOpen, 'bg-canvas': !$navOpen }"
-  data-on:keydown="if (event.key === 'Escape') $navOpen = false, $searchOpen = false, $dropdownOpen = false"
+  data-on:keydown="if (event.key === 'Escape') $navOpen = false, $searchOpen = false, $dropdownOpen = false, $btcOpen = false"
   data-on:click__outside="$navOpen = false, $dropdownOpen = false"
 >
   <div class="flex items-center justify-between gap-3 w-full layout__popout">
@@ -59,6 +59,21 @@
               }}
             </li>
           {% endfor %}
+          <li class="h-full relative mr-2">
+            <button
+              type="button"
+              class="p-1 ui-bold cursor-pointer hover:text-pop-on transition-colors"
+              data-class="{ 'text-pop-on': $btcOpen }"
+              data-on:click="$btcOpen = !$btcOpen; $navOpen = false; if ($btcOpen) { {{
+              datastar.get(
+                '_datastar/bitcoin'
+              )
+              }} }"
+              data-attr="{ 'aria-label': $btcOpen ? 'Close Bitcoin' : 'Open Bitcoin' }"
+            >
+              ₿
+            </button>
+          </li>
         </ul>
       </div>
       {% if not isSearchPage %}
