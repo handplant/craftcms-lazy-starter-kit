@@ -44,7 +44,15 @@ approach** transform Craft CMS into a reactive, declarative, and API-friendly pl
 - 🧾 **SEO-Ready JSON-LD Organization Schema** – structured data for Google Rich Results
 - 🔍 **SEO Meta, Open Graph & Sitemap** – via SEOMate
 - 🧰 **Field Usage Utility** – overview of all fields + their Entry Type instances
-- 🔌 **Plugins:** CKEditor, Datastar, Map, Image Resizer, SEOMate, Vite, Craft MCP
+- 🔌 **Plugins:** CKEditor, Datastar, Map, Image Resizer, SEOMate, Vite, Craft MCP, LLM Ready
+
+---
+
+## 🤖 LLM-Ready Content
+
+Craft Kit includes the [LLM Ready Plugin](https://github.com/johnfmorton/craft-llm-ready), which makes your site
+machine-readable for AI crawlers and LLMs. Append `.md` to any entry URL and get a clean Markdown version of the page
+— no extra templates required.
 
 ---
 

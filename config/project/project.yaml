@@ -1,4 +1,4 @@
-dateModified: 1775809779
+dateModified: 1776086322
 elementSources:
   craft\elements\Entry:
     -
@@ -194,7 +194,7 @@ plugins:
     settings:
       analyticsRetentionDays: 90
       autoInjectDiscoveryTag: true
-      cacheTtl: 0
+      cacheTtl: 86400
       contentSelector: 'main, #content'
       descriptionField: llms
       enableAnalytics: true
