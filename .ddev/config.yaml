@@ -1,4 +1,3 @@
-name: craftcms-lazy
 type: craftcms
 docroot: web
 php_version: "8.3"

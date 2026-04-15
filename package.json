@@ -1,23 +1,4 @@
 {
-  "name": "craftcms-lazy-starter-kit",
-  "version": "1.0.0",
-  "description": "A modern Craft CMS starter kit with Vite, Tailwind, Datastar",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "author": "Andi Grether",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/andee-grether/craftcms-lazy-starter-kit.git"
-  },
-  "homepage": "https://craft-kit.dev",
-  "bugs": {
-    "url": "https://github.com/andee-grether/craftcms-lazy-starter-kit/issues"
-  },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/postcss": "^4.2.2",
@@ -32,15 +13,5 @@
     "glightbox": "^3.3.1",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3"
-  },
-  "keywords": [
-    "craftcms",
-    "starter-kit",
-    "vite",
-    "tailwind",
-    "datastar",
-    "boilerplate",
-    "frontend",
-    "hypermedia"
-  ]
+  }
 }
