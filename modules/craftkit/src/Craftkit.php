@@ -10,10 +10,15 @@ use craft\web\UrlManager;
 use craft\events\RegisterUrlRulesEvent;
 use craft\web\View;
 use craft\services\Utilities;
+use yii\base\Application;
 use yii\base\Event;
 use yii\base\Module;
 use modules\craftkit\utilities\FieldUsageUtility;
+use modules\craftkit\services\MatomoBotTracking;
 
+/**
+ * @property MatomoBotTracking $matomoBotTracking
+ */
 class Craftkit extends Module
 {
     public function init(): void
@@ -24,6 +29,10 @@ class Craftkit extends Module
         Craft::setAlias('@craftkit', __DIR__);
         $this->controllerNamespace = 'modules\\craftkit\\src\\controllers';
         Craft::info('Craftkit module loaded', __METHOD__);
+
+        $this->setComponents([
+            'matomoBotTracking' => MatomoBotTracking::class,
+        ]);
 
         // Register template roots
         Event::on(
@@ -49,5 +58,18 @@ class Craftkit extends Module
                 $event->types[] = FieldUsageUtility::class;
             }
         );
+
+        Event::on(
+            Application::class,
+            Application::EVENT_AFTER_REQUEST,
+            function() {
+                $this->matomoBotTracking->trackAiBot();
+            }
+        );
+    }
+
+    public function getMatomoBotTracking(): MatomoBotTracking
+    {
+        return $this->get('matomoBotTracking');
     }
 }
