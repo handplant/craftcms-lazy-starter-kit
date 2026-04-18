@@ -1,5 +1,5 @@
 @layer components {
-  #result {
+  [id^="result-"]:not(#result-rick-and-morty) {
     @apply grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8;
   }
 

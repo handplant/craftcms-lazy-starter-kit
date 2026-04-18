@@ -11,11 +11,12 @@
   {% executescript %}if (typeof _paq !== 'undefined') _paq.push(['trackEvent', 'Bitcoin', 'Api']);{% endexecutescript %}
 
   {% patchelements with { selector: '#btc-panel', mode: 'inner' } %}
-    <div id="btc-{{ now|date('U') }}" class="flex items-baseline justify-end gap-4">
+    <div class="flex items-baseline justify-end gap-4">
       <p class="text-ink-dim">
         BTC/USDT
       </p>
-      <p class="font-mono font-bold {{ flash }}">
+      <p class="font-mono font-bold {{ flash }}"
+         data-on:animationend="evt.target.classList.remove('flash-up', 'flash-down')">
         ${{ data.lastPrice|number_format(2) }}
       </p>
       <p class="font-mono {{ up ? 'text-green-700' : 'text-red-700' }}">

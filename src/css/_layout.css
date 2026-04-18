@@ -1,6 +1,6 @@
 @layer components {
   .inlines {
-    @apply py-[var(--gap-inlines)];
+    @apply py-(--gap-inlines);
   }
 
   .layout,
@@ -20,64 +20,64 @@
   /* LAYOUT */
   .layout {
     > :not(.blocks) {
-      @apply [grid-column:content];
+      @apply col-[content];
     }
 
     > .layout__content {
-      @apply [grid-column:content];
+      @apply col-[content];
     }
 
     > .layout__popout {
-      @apply [grid-column:popout];
+      @apply col-[popout];
     }
 
     > .layout__feature {
-      @apply [grid-column:feature];
+      @apply col-[feature];
     }
 
     > .layout__full {
-      @apply [grid-column:full];
+      @apply col-[full];
     }
   }
 
   /* BLOCKS */
   .blocks {
-    @apply [grid-column:full];
+    @apply col-[full];
 
     > * {
-      @apply py-[var(--gap-blocks)] [grid-column:content];
+      @apply py-(--gap-blocks) col-[content];
     }
 
     > .blocks__content {
-      @apply [grid-column:content];
+      @apply col-[content];
     }
 
     > .blocks__popout {
-      @apply [grid-column:popout];
+      @apply col-[popout];
     }
 
     > .blocks__feature {
-      @apply [grid-column:feature];
+      @apply col-[feature];
     }
 
     > .blocks__full {
-      @apply [grid-column:full];
+      @apply col-[full];
     }
 
     > .blocks__content-to-feature {
-      @apply [grid-column:content-start/feature-end];
+      @apply col-[content-start/feature-end];
     }
 
     > .blocks__feature-to-content {
-      @apply [grid-column:feature-start/content-end];
+      @apply col-[feature-start/content-end];
     }
 
     > .blocks__content-to-full {
-      @apply [grid-column:content-start/full-end];
+      @apply col-[content-start/full-end];
     }
 
     > .blocks__full-to-content {
-      @apply [grid-column:full-start/content-end];
+      @apply col-[full-start/content-end];
     }
   }
 
@@ -93,7 +93,7 @@
 
   /* STACK */
   .stack {
-    @apply grid [grid-template-areas:_'stack'];
+    @apply grid [grid-template-areas:'stack'];
 
     > .stack__image {
       @apply h-full w-full [grid-area:stack];

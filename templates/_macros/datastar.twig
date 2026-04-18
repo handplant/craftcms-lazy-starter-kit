@@ -1,0 +1,75 @@
+{#
+urlSync(signals, fetchAction)
+
+Syncs Datastar signals with URL query params via history.replaceState.
+Place on any element that has no existing data-init / data-effect.
+
+On init:   reads URL params → sets signals if non-default → always fires fetchAction
+On effect: writes current signal values back to URL, omitting defaults
+
+@param signals      Array of signal definitions:
+                      name    — URL query param name
+                      signal  — Datastar signal reference (optional, defaults to name)
+                                Use for namespaced signals, e.g. 'app432.page'
+                      default — default value (omitted from URL when active)
+                      type    — 'string' | 'int'
+@param fetchAction  Datastar fetch expression from datastar.get() / datastar.post()
+
+Example:
+  {% set app = { id: entry.id, ns: 'app' ~ entry.id } %}
+  {% set fetchAction = datastar.get('_datastar/blog.twig', { entryId: entry.id }) %}
+
+  <div data-signals="{ {{ app.ns }}: { category: '', page: 1 } }"
+    {{ macros.urlSync([
+      {name: 'category', signal: app.ns ~ '.category', default: '', type: 'string'},
+      {name: 'page',     signal: app.ns ~ '.page',     default: 1,  type: 'int'}
+    ], fetchAction) }}>
+#}
+{% macro urlSync(signals, fetchAction) -%}
+
+  {%- set initVars     = [] -%}
+  {%- set initChecks   = [] -%}
+  {%- set initAssigns  = [] -%}
+  {%- set effectParts  = [] -%}
+  {%- set effectChecks = [] -%}
+
+  {%- for s in signals -%}
+    {%- set sig   = s.signal|default(s.name) -%}
+    {%- set isInt = s.type == 'int' -%}
+    {%- set def   = isInt ? s.default : "'" ~ s.default ~ "'" -%}
+
+    {%- set initVars = initVars|merge([
+      isInt
+      ? "var _" ~ s.name ~ " = p.has('" ~ s.name ~ "') ? parseInt(p.get('" ~ s.name ~ "')) : " ~ s.default ~ ";"
+      : "var _" ~ s.name ~ " = p.has('" ~ s.name ~ "') ? p.get('" ~ s.name ~ "') : '" ~ s.default ~ "';"
+    ]) -%}
+    {%- set initChecks   = initChecks|merge(  ["_" ~ s.name ~ " !== " ~ def]) -%}
+    {%- set initAssigns  = initAssigns|merge( ["$" ~ sig ~ " = _" ~ s.name ~ ";"]) -%}
+    {%- set effectChecks = effectChecks|merge(["$" ~ sig ~ " !== " ~ def]) -%}
+    {%- set effectParts  = effectParts|merge([
+      isInt
+      ? "$" ~ sig ~ " !== " ~ s.default ~ " ? '" ~ s.name ~ "=' + $" ~ sig ~ " : null"
+      : "$" ~ sig ~ " ? '" ~ s.name ~ "=' + encodeURIComponent($" ~ sig ~ ") : null"
+    ]) -%}
+
+  {%- endfor -%}
+
+  {%- set initJs =
+    "(function() {"
+    ~ " var p = new URLSearchParams(window.location.search);"
+    ~ " " ~ initVars|join(' ')
+    ~ " if (" ~ initChecks|join(' || ') ~ ") { " ~ initAssigns|join(' ') ~ " }"
+    ~ " " ~ fetchAction ~ ";"
+    ~ "})()" -%}
+
+  {%- set effectJs =
+    "window.history.replaceState({}, '', new URL("
+    ~ "window.location.pathname + ("
+    ~ "(" ~ effectChecks|join(' || ') ~ ")"
+    ~ " ? '?' + [" ~ effectParts|join(', ') ~ "].filter(Boolean).join('&')"
+    ~ " : ''"
+    ~ "), window.location.href).toString())" -%}
+
+  data-init="{{ initJs }}"
+  data-effect="{{ effectJs }}"
+{%- endmacro %}

@@ -1,5 +1,6 @@
-{% set search = signals.searchmap ?? '' %}
-{% set filter = signals.filter ?? '' %}
+{% set entryId = entryId ?? null %}
+{% set search = entryId ? (signals['app' ~ entryId].search ?? '') : '' %}
+{% set filter = entryId ? (signals['app' ~ entryId].filter ?? '') : '' %}
 {% set locations = craft.entries().section('blog').eagerly() %}
 
 {% if filter %}

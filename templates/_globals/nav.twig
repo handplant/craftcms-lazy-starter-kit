@@ -3,9 +3,9 @@
 {% set isSearchPage = craft.app.request.pathInfo == 'search' %}
 <nav
   class="fixed inset-x-0 top-0 z-[1001] h-16 bg-canvas border-b-4 border-ink layout"
-  data-class="{ 'bg-bg': $navOpen, 'bg-canvas': !$navOpen }"
-  data-on:keydown="if (event.key === 'Escape') $navOpen = false, $searchOpen = false, $dropdownOpen = false, $btcOpen = false"
-  data-on:click__outside="$navOpen = false, $dropdownOpen = false"
+  data-class="{ 'bg-bg': $ui.navOpen, 'bg-canvas': !$ui.navOpen }"
+  data-on:keydown="if (event.key === 'Escape') $ui.navOpen = false, $ui.searchOpen = false, $ui.dropdownOpen = false, $ui.btcOpen = false"
+  data-on:click__outside="$ui.navOpen = false, $ui.dropdownOpen = false"
 >
   <div class="flex items-center justify-between gap-3 w-full layout__popout">
     <div class="flex items-center shrink-0 mr-auto">
@@ -21,8 +21,8 @@
 
     {% if navItems %}
       <button
-        data-on:click="$navOpen = !$navOpen; $searchOpen = false"
-        data-attr="{ 'aria-label': $navOpen ? 'Close navigation' : 'Open navigation' }"
+        data-on:click="$ui.navOpen = !$ui.navOpen; $ui.searchOpen = false"
+        data-attr="{ 'aria-label': $ui.navOpen ? 'Close navigation' : 'Open navigation' }"
         class="block cursor-pointer switch:hidden hover:text-pop-on transition-colors"
         type="button"
       >
@@ -35,17 +35,17 @@
           class="size-6"
         >
           <path
-            data-show="!$navOpen"
+            data-show="!$ui.navOpen"
             stroke-linecap="round"
             stroke-linejoin="round"
             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
           />
-          <path data-show="$navOpen" stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          <path data-show="$ui.navOpen" stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
         </svg>
       </button>
       <div
         class="switch:static absolute top-full left-0 z-30 switch:flex switch:w-auto w-full grow switch:items-center bg-bg border-b-4 border-ink switch:border-0 switch:bg-transparent switch:p-0 py-4 ui-spacer"
-        data-class="{ 'block': $navOpen, 'hidden': !$navOpen }"
+        data-class="{ 'block': $ui.navOpen, 'hidden': !$ui.navOpen }"
         data-show="true"
       >
         <ul class="items-center justify-end flex-1 h-full space-y-4 switch:flex switch:space-y-0 switch:space-x-3">
@@ -63,13 +63,13 @@
             <button
               type="button"
               class="p-1 ui-bold cursor-pointer hover:text-pop-on transition-colors"
-              data-class="{ 'text-pop-on': $btcOpen }"
-              data-on:click="$btcOpen = !$btcOpen; $navOpen = false; if ($btcOpen) { {{
+              data-class="{ 'text-pop-on': $ui.btcOpen }"
+              data-on:click="$ui.btcOpen = !$ui.btcOpen; $ui.navOpen = false; if ($ui.btcOpen) { {{
               datastar.get(
                 '_datastar/bitcoin'
               )
               }} }"
-              data-attr="{ 'aria-label': $btcOpen ? 'Close Bitcoin' : 'Open Bitcoin' }"
+              data-attr="{ 'aria-label': $ui.btcOpen ? 'Close Bitcoin' : 'Open Bitcoin' }"
             >
               ₿
             </button>
@@ -79,8 +79,9 @@
       {% if not isSearchPage %}
         <button
           class="flex items-center cursor-pointer hover:text-pop-on transition-colors"
-          data-on:click="$searchOpen = !$searchOpen; $navOpen = false"
-          data-attr="{ 'aria-label': $searchOpen ? 'Close search' : 'Open search' }"
+          data-class="{'text-pop-on': $ui.searchOpen}"
+          data-on:click="$ui.searchOpen = !$ui.searchOpen; $ui.navOpen = false"
+          data-attr="{ 'aria-label': $ui.searchOpen ? 'Close search' : 'Open search' }"
           type="button"
         >
           <svg
@@ -91,13 +92,7 @@
             stroke="currentColor"
             class="size-6"
           >
-            <path
-              data-show="!$searchOpen"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-            />
-            <path data-show="$searchOpen" stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
           </svg>
         </button>
       {% endif %}

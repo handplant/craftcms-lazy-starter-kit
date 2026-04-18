@@ -1,37 +1,37 @@
 /* GLIGHTBOX */
 .goverlay {
-  @apply !bg-ink/90;
+  @apply bg-ink/90!;
 }
 
 .gbtn {
-  @apply !rounded-none !bg-pop !text-ink !ui-border;
+  @apply rounded-none! bg-pop! text-ink! ui-border!;
   box-shadow: 3px 3px 0 0 var(--color-ink) !important;
 
   &:hover {
-    @apply !bg-pop-on;
+    @apply bg-pop-on!;
     transform: translate(3px, 3px) !important;
     box-shadow: none !important;
   }
 }
 
 .gslide-image {
-  @apply !shadow-none;
+  @apply shadow-none!;
 
   img {
-    @apply !rounded-none !ui-border;
+    @apply rounded-none! ui-border!;
   }
 }
 
 .gdesc-inner {
-  @apply !bg-canvas !rounded-none !border-t-2 !border-ink !text-ink;
+  @apply bg-canvas! rounded-none! border-t-2! border-ink! text-ink!;
 }
 
 .gslide-title {
-  @apply !ui-bold !text-ink;
+  @apply ui-bold! text-ink!;
 }
 
 .gslide-desc {
-  @apply !text-ink-on;
+  @apply text-ink-on!;
 }
 
 .leaflet-tile-container img {
@@ -39,10 +39,10 @@
 }
 
 .leaflet-popup-content-wrapper {
-  @apply !p-0 !rounded-none !shadow-none !ui-border !border-2;
+  @apply p-0! rounded-none! shadow-none! ui-border! border-2!;
 
   .leaflet-popup-content {
-    @apply !m-0;
+    @apply m-0!;
   }
 }
 
@@ -51,7 +51,7 @@
 }
 
 .leaflet-popup-close-button {
-  @apply !bg-pop !text-ink !ui-bold;
+  @apply bg-pop! text-ink! ui-bold!;
   top: 2px !important;
   right: 2px !important;
 }

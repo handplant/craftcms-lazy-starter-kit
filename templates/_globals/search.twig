@@ -1,7 +1,7 @@
 {% cache globally using key 'search' %}
   {% set search = craft.entries.section('search').one() %}
 
-  <div class="hidden" data-class="{ 'block': $searchOpen, 'hidden': !$searchOpen }">
+  <div class="hidden" data-class="{ 'block': $ui.searchOpen, 'hidden': !$ui.searchOpen }">
     <div class="blocks blocks--search">
       <div class="blocks__content">
         <div class="ui-card p-8">

@@ -1,4 +1,4 @@
-{% set todoId = signals.todo_id ?? '' %}
+{% set todoId = signals.todo.id ?? '' %}
 {% set todos = craft.app.session.get('todos', []) %}
 
 {% if todoId %}

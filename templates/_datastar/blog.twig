@@ -1,6 +1,7 @@
 {% set offset = offset ?? 0 %}
 {% set limit = limit ?? 6 %}
-{% set filter = signals.filter ?? '' %}
+{% set entryId = entryId ?? null %}
+{% set filter = entryId ? (signals['app' ~ entryId].filter ?? '') : '' %}
 
 {% set entryAllCount = craft.entries.section('blog') %}
 {% set entryQuery = craft.entries.section('blog').eagerly().limit(limit).offset(offset).orderBy('date DESC') %}
@@ -16,7 +17,7 @@
 
 {% if not entries %}
   {% patchelements %}
-    <div id="result">
+    <div id="result-{{ entryId }}">
       <p class="ui-notice">
         🫣 No results{% if filter %}
           for "{{ filter }}"
@@ -25,10 +26,10 @@
     </div>
   {% endpatchelements %}
   {% patchelements %}
-    <div id="loadmore"></div>
+    <div id="loadmore-{{ entryId }}"></div>
   {% endpatchelements %}
 {% else %}
-  {% patchelements with { selector: '#result', mode: offset == 0 ? 'inner' : 'append' } %}
+  {% patchelements with { selector: '#result-' ~ entryId, mode: offset == 0 ? 'inner' : 'append' } %}
     {% for entry in entries %}
       {{ entry.render() }}
     {% endfor %}
@@ -36,15 +37,15 @@
 
   {% if hasMore %}
     {% patchelements %}
-      <div id="loadmore" class="mt-12">
-        <button data-on:click="{{ datastar.get('_datastar/blog.twig', { offset: offset + limit }) }}" class="ui-btn">
+      <div id="loadmore-{{ entryId }}" class="mt-12">
+        <button data-on:click="{{ datastar.get('_datastar/blog.twig', { offset: offset + limit, entryId: entryId }) }}" class="ui-btn">
           {{ 'Load more'|t }}
         </button>
       </div>
     {% endpatchelements %}
   {% else %}
     {% patchelements %}
-      <div id="loadmore"></div>
+      <div id="loadmore-{{ entryId }}"></div>
     {% endpatchelements %}
   {% endif %}
 {% endif %}

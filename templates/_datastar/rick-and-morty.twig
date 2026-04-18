@@ -1,28 +1,26 @@
-{% set page = signals.page ?? 1 %}
+{% set page = signals.rm.page ?? 1 %}
 {% set baseUrl = 'https://rickandmortyapi.com/api/character?page=' ~ page %}
 
 {% set query = [] %}
-{% if signals.search %}
-  {% set query = query|merge({ name: signals.search }) %}
+{% if signals.rm.search %}
+  {% set query = query|merge({ name: signals.rm.search }) %}
 {% endif %}
-{% if signals.status %}
-  {% set query = query|merge({ status: signals.status }) %}
+{% if signals.rm.status %}
+  {% set query = query|merge({ status: signals.rm.status }) %}
 {% endif %}
-{% if signals.species %}
-  {% set query = query|merge({ species: signals.species }) %}
+{% if signals.rm.species %}
+  {% set query = query|merge({ species: signals.rm.species }) %}
 {% endif %}
-{% if signals.gender %}
-  {% set query = query|merge({ gender: signals.gender }) %}
+{% if signals.rm.gender %}
+  {% set query = query|merge({ gender: signals.rm.gender }) %}
 {% endif %}
 
 {% set queryUrl = baseUrl ~ (query ? '&' ~ (query|url_encode) : '') %}
 
-{% set params = { url: queryUrl, type: 'json' } %}
+{% set params = { url: queryUrl, type: 'json', cache: 60 } %}
 {% set feed = craft.feedme.feed(params) %}
 {% set info = feed.info ?? null %}
 {% set results = feed.results ?? null %}
-
-{# {{ dump(results) }} #}
 
 {% if results %}
   {% patchelements with { selector: '#result-rick-and-morty', mode: 'inner' } %}
@@ -72,7 +70,7 @@
           {% if prevPage %}
             <buttton
               class="ui-btn"
-              data-on:click="$page = {{ prevPage }}; {{ datastar.get('_datastar/rick-and-morty') }}"
+              data-on:click="$rm.page = {{ prevPage }}; {{ datastar.get('_datastar/rick-and-morty') }}"
               data-indicator:fetching
             >
               ←
@@ -82,7 +80,7 @@
           {% if nextPage %}
             <button
               class="ui-btn"
-              data-on:click="$page = {{ nextPage }}; {{ datastar.get('_datastar/rick-and-morty') }}"
+              data-on:click="$rm.page = {{ nextPage }}; {{ datastar.get('_datastar/rick-and-morty') }}"
               data-indicator:fetching
             >
               →

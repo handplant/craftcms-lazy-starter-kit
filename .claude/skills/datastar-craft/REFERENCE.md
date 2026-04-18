@@ -91,14 +91,34 @@ Trigger when specific signals change.
 
 ### data-signals
 
-Define reactive signals (state).
+Define reactive signals (state). Signal names use camelCase.
 
 ```html
 <!-- Object syntax -->
 <div data-signals="{count: 0, name: '', items: []}">
 
-  <!-- Underscore prefix = local only (not sent to backend) -->
-  <div data-signals="{_menuOpen: false, searchQuery: ''}">
+<!-- Key suffix syntax (single signal) -->
+<div data-signals:count="0">
+
+<!-- Nested / scoped signals -->
+<div data-signals="{ui: {searchOpen: false, navOpen: false}}">
+<div data-signals:ui.searchOpen="false">
+
+<!-- Dynamic key (Twig) — scopes per entry instance -->
+<div data-signals="{{ {('app' ~ entry.id): {filter: ''}} | json_encode }}">
+
+<!-- Underscore prefix = local only (not sent to backend) -->
+<div data-signals="{_locations: [], ui: {search: ''}}">
+
+<!-- Only patch if signal doesn't exist yet -->
+<div data-signals:count__ifmissing="0">
+```
+
+Access nested signals with dot notation:
+```html
+<span data-text="$ui.searchOpen"></span>
+<input data-bind:ui.search>
+<button data-on:click="$ui.navOpen = false">
 ```
 
 ### data-json-signals
@@ -326,9 +346,8 @@ Show element while request is in progress.
 Expressions in attributes support JavaScript with access to:
 
 - All signals as variables
-- `$el` - Current element
+- `evt` - Event object in `data-on:*` handlers (use `evt.target` for the element)
 - `$refs` - Element references
-- `evt` - Event object (in event handlers)
 
 ```html
 

@@ -9,7 +9,7 @@
     text-sm sm:text-base
     ui-bold uppercase tracking-wide
     transition duration-100
-    hover:shadow-none hover:translate-x-[5px] hover:translate-y-[5px] hover:no-underline
+    hover:shadow-none hover:translate-x-1.25 hover:translate-y-1.25 hover:no-underline
     focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2
     disabled:opacity-50 disabled:pointer-events-none;
   }

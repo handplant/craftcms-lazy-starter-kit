@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.1.0] – 2026-04-18
+
+### Updated
+
+- Upgraded to **Datastar 1.0.0** stable
+- Refactored all signals to use scoped namespaces for cleaner state management and collision prevention
+- Consistent indicator naming convention across all components
+
+### Added
+
+- **`urlSync` Twig macro** — syncs Datastar signals with URL query params, enabling shareable URLs with progressive enhancement. Server reads params on initial render to avoid content flash.
+
+### Fixed
+
+- Various compatibility fixes for Datastar 1.0.0 breaking changes
+- Improved stability of external API integrations
+
 ## [3.0.0] – 2026-03-16
 
 ### Changed

@@ -15,8 +15,8 @@
     {{ craft.vite.script('src/js/app.js', false) }}
   </head>
   <body
-    data-signals="{ searchOpen: false, navOpen: false, dropdownOpen: false, btcOpen: false }"
-    data-effect="if ($searchOpen) { window.scrollTo({ top: 0, behavior: 'smooth' }); }"
+    data-signals="{ui: {searchOpen: false, navOpen: false, dropdownOpen: false, btcOpen: false}}"
+    data-effect="if ($ui.searchOpen) { window.scrollTo({ top: 0, behavior: 'smooth' }); }"
   >
     <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-9999 ui-btn">
       Skip to content
@@ -45,7 +45,7 @@
       </a>
     {% endif %}
     {% if currentUser and currentUser.admin %}
-      {# <pre data-json-signals class="hidden xl:block fixed bottom-0 right-0 p-4 text-xs bg-black text-white"></pre> #}
+      <pre data-json-signals class="hidden xl:block fixed bottom-0 right-0 p-4 text-xs bg-black text-white"></pre>
     {% endif %}
   </body>
 </html>

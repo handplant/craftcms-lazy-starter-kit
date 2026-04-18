@@ -16,7 +16,7 @@
             ? 'bg-pop'
             : 'hover:bg-pop-dim'
           }}"
-          data-on:click="$todo_id = '{{ todo.id }}'; {{ datastar.post('_datastar/todo-complete') }}"
+          data-on:click="$todo.id = '{{ todo.id }}'; {{ datastar.post('_datastar/todo-complete') }}"
           data-indicator:fetching
           aria-label="{{ todo.completed ? 'Mark as incomplete' : 'Mark as complete' }}"
         >
@@ -32,7 +32,7 @@
         </span>
         <button
           class="shrink-0 text-ink-dim hover:text-ink transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 touch:opacity-100 px-1"
-          data-on:click="$todo_id = '{{ todo.id }}'; {{ datastar.post('_datastar/todo-delete') }}"
+          data-on:click="$todo.id = '{{ todo.id }}'; {{ datastar.post('_datastar/todo-delete') }}"
           data-indicator:fetching
           aria-label="Delete {{ todo.title }}"
         >

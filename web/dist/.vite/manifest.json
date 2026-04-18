@@ -4,7 +4,7 @@
     "name": "chunk"
   },
   "src/js/app.js": {
-    "file": "assets/app-CU0bkF-8.js",
+    "file": "assets/app-Cu0ojndz.js",
     "name": "app",
     "src": "src/js/app.js",
     "isEntry": true,
@@ -12,11 +12,11 @@
       "_chunk-DzMEjpoC.js"
     ],
     "css": [
-      "assets/app-Bd6GrHC4.css"
+      "assets/app-BguBFFx6.css"
     ]
   },
   "src/js/map.js": {
-    "file": "assets/map-BFLHi9G8.js",
+    "file": "assets/map-Qv9QvFss.js",
     "name": "map",
     "src": "src/js/map.js",
     "isEntry": true,

@@ -1,6 +1,14 @@
 {% set type = type ?? 'page' %}
+{% import '_macros/datastar' as macros %}
+{% set fetchAction = datastar.get('_datastar/search.twig', { type: type }) %}
 
-<div class="space-y-4">
+<div class="space-y-4"
+  data-signals="{ui: {search: ''}}"
+  {% if type == 'page' %}
+    {{ macros.urlSync([
+      {name: 'q', signal: 'ui.search', default: '', type: 'string'}
+    ], fetchAction) }}
+  {% endif %}>
   <div class="relative">
     <input
       id="searchInput-{{ type }}"
@@ -8,8 +16,8 @@
       class="ui-input w-full"
       placeholder="Type to search..."
       aria-label="Search"
-      data-bind:search
-      data-on:input__debounce.300ms="{{ datastar.get('_datastar/search.twig', { type: type }) }}"
+      data-bind:ui.search
+      data-on:input__debounce.300ms="{{ fetchAction }}"
       data-indicator:fetching
     />
     <div data-show="$fetching" class="absolute right-3 top-1/2 -translate-y-1/2">

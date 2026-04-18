@@ -1,13 +1,13 @@
 <div
   class="hidden"
-  data-signals="{ btcCountdown: 10 }"
-  data-class="{ 'block': $btcOpen, 'hidden': !$btcOpen }"
-  data-on-interval__duration.1s="if ($btcOpen) { $btcCountdown <= 1 ? ($btcCountdown = 10, {{
+  data-signals="{ui: {btcCountdown: 10}}"
+  data-class="{ 'block': $ui.btcOpen, 'hidden': !$ui.btcOpen }"
+  data-on-interval__duration.1s="if ($ui.btcOpen) { $ui.btcCountdown <= 1 ? ($ui.btcCountdown = 10, {{
   datastar.get(
     '_datastar/bitcoin'
   )
-  }}) : $btcCountdown-- }"
-  data-indicator:bitfetching
+  }}) : $ui.btcCountdown-- }"
+  data-indicator:btc_fetching
 >
   <div class="blocks blocks--spaceless fixed z-50 w-full">
     <div class="blocks__popout h-8 flex justify-end items-center gap-4 text-sm py-1">
@@ -15,7 +15,7 @@
         loading...
       </div>
       <div class="text-ink-dim font-mono w-6">
-        <span data-class="{ 'hidden': !$bitfetching }">
+        <span data-class="{ 'hidden': !$btc_fetching }">
           <svg
             class="size-3 animate-spin"
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@
             ></path>
           </svg>
         </span>
-        <span data-class="{ 'hidden': $bitfetching }" data-text="$btcCountdown + 's'"></span>
+        <span data-class="{ 'hidden': $btc_fetching }" data-text="$ui.btcCountdown + 's'"></span>
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 .embla {
-  @apply m-auto max-w-[2000px];
+  @apply m-auto max-w-500;
   --slide-spacing: 1rem;
 }
 
@@ -43,7 +43,7 @@
 .embla__button {
   @apply ui-neo bg-canvas w-10 h-10 flex items-center justify-center
   transition duration-100
-  hover:shadow-none hover:translate-x-[5px] hover:translate-y-[5px]
+  hover:shadow-none hover:translate-x-1.25 hover:translate-y-1.25
   disabled:opacity-30 disabled:pointer-events-none;
 }
 

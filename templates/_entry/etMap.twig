@@ -2,44 +2,28 @@
 
 {% block main %}
   {% cache using key 'entry__' ~ craft.app.request.pathInfo %}
-    {% set categories = craft.entries.section('categories').all() ?? null %}
-    {% set initialLocations =
-      craft.entries().section('blog').eagerly().all()|filter(
-        e => e.map
-          and e.map.lat is defined
-          and e.map.lng is defined
-          and e.map.lat is not empty
-          and e.map.lng is not empty
-      )
-    %}
+    {% import '_macros/datastar' as macros %}
+    {% set appNs        = 'app' ~ entry.id %}
+    {% set fetchAction  = datastar.get('_datastar/map.twig', {entryId: entry.id}) %}
+    {% set categories   = craft.entries.section('categories').all() %}
+    {% set locations    = craft.entries().section('blog').eagerly().all()|filter(
+      e => e.map and e.map.lat is defined and e.map.lng is defined
+        and e.map.lat is not empty and e.map.lng is not empty
+    ) %}
 
     <section class="blocks blocks--map">
       <div class="blocks__full pt-0">
         <div
-          class="flex flex-col lg:flex-row lg:h-full relative max-w-[2600px] mx-auto border-b-4 border-ink"
-          data-signals:_locations='[]'
-          data-effect="
-                  if ($_locations) {
-                    updateMarkers($_locations);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }
-              "
-        >
-          <div data-show="$fetching" class="absolute right-3 top-3 z-[999]">
-            <svg
-              class="size-6 animate-spin text-pop-on"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path
-                class="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-              ></path>
-            </svg>
-          </div>
+          class="flex flex-col lg:flex-row lg:h-full relative max-w-650 mx-auto border-b-4 border-ink"
+          data-signals='{{ {_locations: [], (appNs): {filter: '', search: ''}} | json_encode }}'
+          {{ macros.urlSync([
+            {name: 'search', signal: appNs ~ '.search', default: '', type: 'string'},
+            {name: 'filter', signal: appNs ~ '.filter', default: '', type: 'string'}
+          ], fetchAction) }}>
+          <svg data-show="$fetching" class="size-6 animate-spin text-pop-on absolute right-3 top-3 z-999" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
           <div class="w-full lg:w-1/3 xl:w-1/2 lg:border-r-4 lg:border-l-4 border-ink">
             <div class="sticky top-16 z-20">
               <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 pt-3 px-5 mb-4 lg:mb-0">
@@ -49,61 +33,47 @@
                     class="ui-input w-full"
                     placeholder="Type to search..."
                     aria-label="Search"
-                    data-bind:searchmap
-                    data-on:input__debounce.300ms="{{ datastar.get('_datastar/map.twig') }}"
+                    data-bind:{{ appNs }}.search
+                    data-on:input__debounce.300ms="{{ fetchAction }}"
                     data-indicator:fetching
                   />
-                  <div data-show="$fetching" class="absolute right-3 top-1/2 -translate-y-1/2">
-                    <svg
-                      class="size-5 animate-spin text-black"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                      <path
-                        class="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      ></path>
-                    </svg>
-                  </div>
+                  <svg data-show="$fetching" class="size-5 animate-spin text-black absolute right-3 top-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
                 </div>
                 <select
                   class="ui-select"
                   aria-label="filter result"
-                  data-bind:filter
-                  data-on:change="{{ datastar.get('_datastar/map.twig') }}"
+                  data-bind:{{ appNs }}.filter
+                  data-on:change="{{ fetchAction }}"
                   data-indicator:fetching
                   data-attr:disabled="$fetching"
                 >
-                  <option value="">
-                    {{ 'Show all'|t }}
-                  </option>
+                  <option value="">{{ 'Show all'|t }}</option>
                   {% for item in categories %}
-                    <option value="{{ item.slug }}" data-selected="$filter == {{ item.slug }}">
+                    <option value="{{ item.slug }}" data-selected="${{ appNs }}.filter == '{{ item.slug }}'">
                       {{ item.title }}
                     </option>
                   {% endfor %}
                 </select>
               </div>
             </div>
-            <div id="map-result">
-              {% for entry in initialLocations %}
+            <div id="map-result"
+              data-effect="if ($_locations) { updateMarkers($_locations); window.scrollTo({ top: 0, behavior: 'smooth' }); }">
+              {% for entry in locations %}
                 {{ entry.render({ type: 'map' }) }}
               {% endfor %}
             </div>
           </div>
           <div
             class="w-full lg:w-2/3 xl:w-1/2 h-[60vh] lg:h-[calc(100vh-64px)] lg:sticky lg:top-16 lg:border-r-4 border-ink"
-            data-init="initMap(); {{ datastar.get('_datastar/map.twig') }}"
+            data-init="initMap()"
           >
             <div id="map" class="lg:absolute lg:inset-0 h-full"></div>
             <noscript>
               <div class="absolute inset-0 flex items-center justify-center bg-canvas border-4 border-ink">
-                <p class="ui-notice">
-                  JavaScript is required to display the map.
-                </p>
+                <p class="ui-notice">JavaScript is required to display the map.</p>
               </div>
             </noscript>
           </div>

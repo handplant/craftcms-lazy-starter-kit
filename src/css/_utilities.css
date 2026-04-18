@@ -31,7 +31,7 @@
 }
 
 @utility ui-spacer {
-  @apply px-[var(--gap)] py-0;
+  @apply px-(--gap) py-0;
 }
 
 @utility ui-shadow {
@@ -67,15 +67,27 @@
 }
 
 @keyframes flash-up {
-  0%   { color: inherit; }
-  30%  { color: oklch(0.55 0.18 145); }
-  100% { color: inherit; }
+  0% {
+    color: inherit;
+  }
+  30% {
+    color: oklch(0.55 0.18 145);
+  }
+  100% {
+    color: inherit;
+  }
 }
 
 @keyframes flash-down {
-  0%   { color: inherit; }
-  30%  { color: oklch(0.55 0.2 25); }
-  100% { color: inherit; }
+  0% {
+    color: inherit;
+  }
+  30% {
+    color: oklch(0.55 0.2 25);
+  }
+  100% {
+    color: inherit;
+  }
 }
 
 @utility flash-up {

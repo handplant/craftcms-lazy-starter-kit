@@ -29,8 +29,52 @@ Vue, no React, no JSON APIs for UI state.
 
 ## Signal Naming Convention
 
-- Regular signals: sent with every SSE request
+- Signal names: camelCase
 - `_`-prefixed signals: local only, NOT sent to backend
+- Indicator signals: snake_case, flat (e.g. `$fetching`, `$btc_fetching`) — snake_case keeps attribute name and expression reference identical since HTML doesn't convert underscores
+
+## Scoped Signals
+
+Group signals by feature to avoid name collisions across components.
+
+**Global UI state** → `ui.*` namespace (defined in `base.twig`):
+```html
+<body data-signals="{ui: {searchOpen: false, navOpen: false, dropdownOpen: false, btcOpen: false, search: ''}}">
+```
+
+**Custom page apps** → dedicated namespace:
+```html
+<section data-signals="{todo: {input: '', id: '', error: ''}}">
+<section data-signals="{rm: {search: '', status: '', page: 1}}">
+```
+
+**Reusable entry-based components** → `app{{entry.id}}.*` (prevents collision when same block appears multiple times):
+```twig
+<div data-signals="{{ {('app' ~ entry.id): {filter: ''}} | json_encode }}">
+  <select data-bind:app{{ entry.id }}.filter ...>
+  <option data-selected="$app{{ entry.id }}.filter == '{{ item.slug }}'">
+```
+
+Pass `entryId` to SSE endpoints and read with bracket notation in Twig:
+```twig
+{# In blockBlog.twig frontend #}
+data-on:change="{{ datastar.get('_datastar/blog.twig', {offset: 0, entryId: entry.id}) }}"
+
+{# In blog.twig SSE endpoint #}
+{% set entryId = entryId ?? null %}
+{% set filter = entryId ? (signals['app' ~ entryId].filter ?? '') : '' %}
+```
+
+Scope `id` attributes the same way to avoid patchelements collisions:
+```html
+<div id="result-{{ blockId }}">
+<div id="loadmore-{{ blockId }}">
+```
+
+**Private signals** (not sent to backend): top-level `_` prefix still works as before:
+```html
+data-signals='{{"{ _locations: [], app" ~ entry.id ~ ": {filter: ''} }"|json_encode}}'
+```
 
 ## SSE Endpoints
 
@@ -258,6 +302,35 @@ Use `data-init` or `data-on-intersect.once` to load data when a component mounts
 - Use `data-ignore` to skip elements during morph entirely
 - Use `data-ignore-morph` to preserve content but allow attribute updates (e.g. playing `<video>`)
 - Use `data-indicator` for loading states — never optimistic UI
+
+## URL Sync (without Datastar Pro)
+
+> If **Datastar Pro** is available, use `data-query-string` instead — it handles this natively.
+
+Without Pro, use the `urlSync` macro in `templates/_macros/datastar.twig`. It outputs `data-init` + `data-effect` and syncs signals with URL query params via `history.replaceState`.
+
+Place it on an element that has **no existing `data-init` or `data-effect`**. If the element already has one of those, move the conflicting logic to a different element.
+
+```twig
+{% import '_macros/datastar' as macros %}
+{% set fetchAction = datastar.get('_datastar/blog.twig', { entryId: blockId }) %}
+
+<div data-signals="{{ {('app' ~ blockId): {filter: '', page: 1}} | json_encode }}"
+  {{ macros.urlSync([
+    {name: 'filter', signal: 'app' ~ blockId ~ '.filter', default: '', type: 'string'},
+    {name: 'page',   signal: 'app' ~ blockId ~ '.page',   default: 1,  type: 'int'}
+  ], fetchAction) }}>
+```
+
+**Behaviour:**
+- On init: reads URL params → sets signals if non-default → always fires `fetchAction`
+- On effect: writes signal values to URL, omits defaults (keeps URL clean)
+
+**Params:**
+- `name` — URL query param name
+- `signal` — signal path, e.g. `'app432.filter'` (defaults to `name`)
+- `default` — omitted from URL when active
+- `type` — `'string'` or `'int'`
 
 ## Links
 
