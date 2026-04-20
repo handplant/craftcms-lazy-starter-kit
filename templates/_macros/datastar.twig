@@ -2,7 +2,7 @@
 urlSync(signals, fetchAction)
 
 Syncs Datastar signals with URL query params via history.replaceState.
-Place on any element that has no existing data-init / data-effect.
+Renders a self-contained <span hidden> — no conflict with parent element attributes.
 
 On init:   reads URL params → sets signals if non-default → always fires fetchAction
 On effect: writes current signal values back to URL, omitting defaults
@@ -19,11 +19,11 @@ Example:
   {% set app = { id: entry.id, ns: 'app' ~ entry.id } %}
   {% set fetchAction = datastar.get('_datastar/blog.twig', { entryId: entry.id }) %}
 
-  <div data-signals="{ {{ app.ns }}: { category: '', page: 1 } }"
+  <div data-signals="{ {{ app.ns }}: { category: '', page: 1 } }">
     {{ macros.urlSync([
       {name: 'category', signal: app.ns ~ '.category', default: '', type: 'string'},
       {name: 'page',     signal: app.ns ~ '.page',     default: 1,  type: 'int'}
-    ], fetchAction) }}>
+    ], fetchAction) }}
 #}
 {% macro urlSync(signals, fetchAction) -%}
 
@@ -70,6 +70,5 @@ Example:
     ~ " : ''"
     ~ "), window.location.href).toString())" -%}
 
-  data-init="{{ initJs }}"
-  data-effect="{{ effectJs }}"
+  <span hidden aria-hidden="true" data-init="{{ initJs }}" data-effect="{{ effectJs }}"></span>
 {%- endmacro %}

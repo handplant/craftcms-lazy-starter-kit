@@ -18,10 +18,10 @@
 
   {% if categories %}
     <div class="inline-flex items-center mb-8 space-x-4"
-      data-signals="{{ {('app' ~ blockId): {filter: filter}} | json_encode }}"
+      data-signals="{{ {('app' ~ blockId): {filter: filter}} | json_encode }}">
       {{ macros.urlSync([
         {name: 'filter', signal: 'app' ~ blockId ~ '.filter', default: '', type: 'string'}
-      ], fetchAction) }}>
+      ], fetchAction) }}
       <select
         data-bind:app{{ blockId }}.filter
         data-on:change="{{ fetchAction }}"

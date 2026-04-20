@@ -42,14 +42,14 @@
     class="max-w-screen-2xl mx-auto px-6 flex flex-col md:flex-row gap-12 my-10"
     data-signals="{rm: {search: '', status: '', species: '', gender: '', page: 1}}"
     data-indicator:fetching
-    data-on-signal-patch="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    data-on-signal-patch="window.scrollTo({ top: 0, behavior: 'smooth' })">
     {{ macros.urlSync([
       {name: 'search',  signal: 'rm.search',  default: '', type: 'string'},
       {name: 'status',  signal: 'rm.status',  default: '', type: 'string'},
       {name: 'species', signal: 'rm.species', default: '', type: 'string'},
       {name: 'gender',  signal: 'rm.gender',  default: '', type: 'string'},
       {name: 'page',    signal: 'rm.page',    default: 1,  type: 'int'}
-    ], fetchAction) }}>
+    ], fetchAction) }}
     <div class="relative">
       <div class="flex flex-col space-y-4 sticky top-20">
         <div class="relative w-full">

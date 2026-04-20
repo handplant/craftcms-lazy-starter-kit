@@ -3,12 +3,12 @@
 {% set fetchAction = datastar.get('_datastar/search.twig', { type: type }) %}
 
 <div class="space-y-4"
-  data-signals="{ui: {search: ''}}"
+  data-signals="{ui: {search: ''}}">
   {% if type == 'page' %}
     {{ macros.urlSync([
       {name: 'q', signal: 'ui.search', default: '', type: 'string'}
     ], fetchAction) }}
-  {% endif %}>
+  {% endif %}
   <div class="relative">
     <input
       id="searchInput-{{ type }}"
