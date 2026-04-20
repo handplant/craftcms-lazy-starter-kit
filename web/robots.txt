@@ -1,3 +1,9 @@
+# Content Signals (https://contentsignals.org) — declare AI content usage preferences
+# ai-train: allow/deny use for AI model training
+# search: allow/deny search engine indexing
+# ai-input: allow/deny use as input for AI applications (retrieval, agents)
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
 User-agent: *
 Disallow: /admin/
 Disallow: /cpresources/
