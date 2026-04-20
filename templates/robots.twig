@@ -1,3 +1,4 @@
+{% do craft.app.response.headers.set('Content-Type', 'text/plain') %}
 # Content Signals (https://contentsignals.org) — declare AI content usage preferences
 # ai-train: allow/deny use for AI model training
 # search: allow/deny search engine indexing
@@ -16,4 +17,4 @@ Disallow: /templates/
 
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: {{ siteUrl }}sitemap.xml
