@@ -13,6 +13,7 @@ use craft\services\Utilities;
 use yii\base\Application;
 use yii\base\Event;
 use yii\base\Module;
+use yii\web\Response;
 use modules\craftkit\utilities\FieldUsageUtility;
 use modules\craftkit\services\MatomoBotTracking;
 
@@ -34,7 +35,7 @@ class Craftkit extends Module
             'matomoBotTracking' => MatomoBotTracking::class,
         ]);
 
-        // Register template roots
+        // Makes module templates available in the CP under the module ID prefix
         Event::on(
             View::class,
             View::EVENT_REGISTER_CP_TEMPLATE_ROOTS,
@@ -43,14 +44,26 @@ class Craftkit extends Module
             }
         );
 
+        // Registers site routes handled by module controllers
         Event::on(
             UrlManager::class,
             UrlManager::EVENT_REGISTER_SITE_URL_RULES,
             function(RegisterUrlRulesEvent $event) {
                 $event->rules['craftkit/ping'] = 'craftkit/ping/index';
+                $event->rules['.well-known/api-catalog'] = 'craftkit/well-known/api-catalog';
             }
         );
 
+        // Adds RFC 8288 Link header on every response for agent discoverability
+        Event::on(
+            Response::class,
+            Response::EVENT_BEFORE_SEND,
+            function() {
+                Craft::$app->response->headers->add('Link', '</.well-known/api-catalog>; rel="api-catalog"');
+            }
+        );
+
+        // Registers the Field Usage utility in the CP
         Event::on(
             Utilities::class,
             Utilities::EVENT_REGISTER_UTILITIES,
@@ -59,6 +72,7 @@ class Craftkit extends Module
             }
         );
 
+        // Tracks known AI bots via Matomo after each request
         Event::on(
             Application::class,
             Application::EVENT_AFTER_REQUEST,
