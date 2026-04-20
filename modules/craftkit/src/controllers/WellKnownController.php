@@ -11,8 +11,8 @@ class WellKnownController extends Controller
 
     public function actionApiCatalog(): Response
     {
-        return $this->asJson([
-            'title' => 'craft-kit.dev API Catalog',
-        ]);
+        $response = $this->asJson(['linkset' => []]);
+        $response->headers->set('Content-Type', 'application/linkset+json');
+        return $response;
     }
 }
