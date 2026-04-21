@@ -21,7 +21,7 @@
       data-signals="{{ {('app' ~ blockId): {filter: filter}} | json_encode }}">
       {{ macros.urlSync([
         {name: 'filter', signal: 'app' ~ blockId ~ '.filter', default: '', type: 'string'}
-      ], fetchAction) }}
+      ]) }}
       <select
         data-bind:app{{ blockId }}.filter
         data-on:change="{{ fetchAction }}"

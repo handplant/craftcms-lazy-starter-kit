@@ -4,7 +4,7 @@ urlSync(signals, fetchAction)
 Syncs Datastar signals with URL query params via history.replaceState.
 Renders a self-contained <span hidden> — no conflict with parent element attributes.
 
-On init:   reads URL params → sets signals if non-default → always fires fetchAction
+On init:   reads URL params → sets signals if non-default → fires fetchAction (if provided)
 On effect: writes current signal values back to URL, omitting defaults
 
 @param signals      Array of signal definitions:
@@ -14,6 +14,7 @@ On effect: writes current signal values back to URL, omitting defaults
                       default — default value (omitted from URL when active)
                       type    — 'string' | 'int'
 @param fetchAction  Datastar fetch expression from datastar.get() / datastar.post()
+                    Optional — omit if you trigger the fetch manually (e.g. via data-on:input)
 
 Example:
   {% set app = { id: entry.id, ns: 'app' ~ entry.id } %}
@@ -25,7 +26,7 @@ Example:
       {name: 'page',     signal: app.ns ~ '.page',     default: 1,  type: 'int'}
     ], fetchAction) }}
 #}
-{% macro urlSync(signals, fetchAction) -%}
+{% macro urlSync(signals, fetchAction = null) -%}
 
   {%- set initVars     = [] -%}
   {%- set initChecks   = [] -%}
@@ -59,7 +60,7 @@ Example:
     ~ " var p = new URLSearchParams(window.location.search);"
     ~ " " ~ initVars|join(' ')
     ~ " if (" ~ initChecks|join(' || ') ~ ") { " ~ initAssigns|join(' ') ~ " }"
-    ~ " " ~ fetchAction ~ ";"
+    ~ (fetchAction ? " " ~ fetchAction ~ ";" : "")
     ~ "})()" -%}
 
   {%- set effectJs =
