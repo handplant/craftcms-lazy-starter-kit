@@ -15,8 +15,7 @@
       <div class="blocks__full pt-0">
         <div
           class="flex flex-col lg:flex-row lg:h-full relative max-w-650 mx-auto border-b-4 border-ink"
-          data-signals='{{ {_locations: [], (appNs): {filter: '', search: ''}} | json_encode }}'
-          data-effect="if ($_locations) { updateMarkers($_locations); window.scrollTo({ top: 0, behavior: 'smooth' }); }">
+          data-signals='{{ {(appNs): {filter: '', search: ''}} | json_encode }}'>
           {{ macros.urlSync([
             {name: 'search', signal: appNs ~ '.search', default: '', type: 'string'},
             {name: 'filter', signal: appNs ~ '.filter', default: '', type: 'string'}
@@ -60,6 +59,7 @@
                 </select>
               </div>
             </div>
+            <div id="map-markers" hidden></div>
             <div id="map-result">
               {% for entry in locations %}
                 {{ entry.render({ type: 'map' }) }}

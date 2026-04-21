@@ -49,16 +49,20 @@
   %}
 {% endfor %}
 
-{% patchsignals { _locations: points } %}
+<div id="map-markers" hidden>
+  {% for p in points %}
+    <span data-id="{{ p.id }}" data-lat="{{ p.lat }}" data-lng="{{ p.lng }}" data-color="{{ p.color }}">
+      <template>{{ p.popup|trim|raw }}</template>
+    </span>
+  {% endfor %}
+</div>
 
 {% if not locations %}
-  {% patchelements %}
-    <div id="map-result">
-      <p class="ui-notice">
-        🫣 No results — try a different keyword.
-      </p>
-    </div>
-  {% endpatchelements %}
+  <div id="map-result">
+    <p class="ui-notice">
+      🫣 No results — try a different keyword.
+    </p>
+  </div>
 {% else %}
   <div id="map-result">
     {% for entry in locations %}
