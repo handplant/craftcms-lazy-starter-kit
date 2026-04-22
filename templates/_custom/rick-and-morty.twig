@@ -1,9 +1,9 @@
 {% extends '_layouts/base' %}
 {% import '_macros/datastar' as macros %}
 
-{% set fetchAction  = datastar.post('_datastar/rick-and-morty') %}
+{% set fetchAction = datastar.post('_datastar/rick-and-morty') %}
 {% set resetAndFetch = "$rm.search=''; $rm.status=''; $rm.species=''; $rm.gender=''; $rm.page=1; " ~ fetchAction %}
-{% set filterAction  = "$rm.page = 1; " ~ fetchAction %}
+{% set filterAction = '$rm.page = 1; ' ~ fetchAction %}
 
 {% set seomate = {
   meta: {
@@ -30,10 +30,14 @@
     </div>
   </section>
   <noscript>
-    <style>#rick-morty-app { display: none; }</style>
+    <style>
+      #rick-morty-app { display: none; }
+    </style>
     <section class="blocks blocks--text">
       <div class="blocks__content">
-        <p class="ui-notice">This demo requires JavaScript.</p>
+        <p class="ui-notice">
+          This demo requires JavaScript.
+        </p>
       </div>
     </section>
   </noscript>
@@ -42,14 +46,20 @@
     class="max-w-screen-2xl mx-auto px-6 flex flex-col md:flex-row gap-12 my-10"
     data-signals="{rm: {search: '', status: '', species: '', gender: '', page: 1}}"
     data-indicator:fetching
-    data-on-signal-patch="window.scrollTo({ top: 0, behavior: 'smooth' })">
-    {{ macros.urlSync([
-      {name: 'search',  signal: 'rm.search',  default: '', type: 'string'},
-      {name: 'status',  signal: 'rm.status',  default: '', type: 'string'},
-      {name: 'species', signal: 'rm.species', default: '', type: 'string'},
-      {name: 'gender',  signal: 'rm.gender',  default: '', type: 'string'},
-      {name: 'page',    signal: 'rm.page',    default: 1,  type: 'int'}
-    ], fetchAction) }}
+    data-on-signal-patch="window.scrollTo({ top: 0, behavior: 'smooth' })"
+  >
+    {{
+      macros.urlSync(
+        [
+          { name: 'search', signal: 'rm.search', default: '', type: 'string' },
+          { name: 'status', signal: 'rm.status', default: '', type: 'string' },
+          { name: 'species', signal: 'rm.species', default: '', type: 'string' },
+          { name: 'gender', signal: 'rm.gender', default: '', type: 'string' },
+          { name: 'page', signal: 'rm.page', default: 1, type: 'int' }
+        ],
+        fetchAction
+      )
+    }}
     <div class="relative">
       <div class="flex flex-col space-y-4 sticky top-20">
         <div class="relative w-full">
@@ -61,33 +71,85 @@
             data-on:input__debounce.300ms="{{ filterAction }}"
             data-indicator:fetching
           />
-          <svg data-show="$fetching" class="size-4 animate-spin text-black absolute right-3 top-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
+          {% include '_components/spinner.twig' with {
+            size: 'size-4',
+            class: 'absolute right-3 top-1/2 -translate-y-1/2'
+          } only %}
         </div>
-        <select class="ui-select" data-bind:rm.status  data-on:change="{{ filterAction }}" data-indicator:fetching data-attr:disabled="$fetching">
-          <option value="">{{ 'Status'|t }}</option>
-          <option value="Alive"   data-selected="$rm.status == 'Alive'">Alive</option>
-          <option value="Dead"    data-selected="$rm.status == 'Dead'">Dead</option>
-          <option value="unknown" data-selected="$rm.status == 'unknown'">unknown</option>
+        <select
+          class="ui-select"
+          data-bind:rm.status
+          data-on:change="{{ filterAction }}"
+          data-indicator:fetching
+          data-attr:disabled="$fetching"
+        >
+          <option value="">
+            {{ 'Status'|t }}
+          </option>
+          <option value="Alive" data-selected="$rm.status == 'Alive'">
+            Alive
+          </option>
+          <option value="Dead" data-selected="$rm.status == 'Dead'">
+            Dead
+          </option>
+          <option value="unknown" data-selected="$rm.status == 'unknown'">
+            unknown
+          </option>
         </select>
-        <select class="ui-select" data-bind:rm.species data-on:change="{{ filterAction }}" data-indicator:fetching data-attr:disabled="$fetching">
-          <option value="">{{ 'Species'|t }}</option>
-          <option value="Human" data-selected="$rm.species == 'Human'">Human</option>
-          <option value="Alien" data-selected="$rm.species == 'Alien'">Alien</option>
-          <option value="Humanoid" data-selected="$rm.species == 'Humanoid'">Humanoid</option>
-          <option value="Robot" data-selected="$rm.species == 'Robot'">Robot</option>
-          <option value="Mythological Creature" data-selected="$rm.species == 'Mythological Creature'">Mythological Creature</option>
-          <option value="Disease" data-selected="$rm.species == 'Disease'">Disease</option>
-          <option value="unknown" data-selected="$rm.species == 'unknown'">unknown</option>
+        <select
+          class="ui-select"
+          data-bind:rm.species
+          data-on:change="{{ filterAction }}"
+          data-indicator:fetching
+          data-attr:disabled="$fetching"
+        >
+          <option value="">
+            {{ 'Species'|t }}
+          </option>
+          <option value="Human" data-selected="$rm.species == 'Human'">
+            Human
+          </option>
+          <option value="Alien" data-selected="$rm.species == 'Alien'">
+            Alien
+          </option>
+          <option value="Humanoid" data-selected="$rm.species == 'Humanoid'">
+            Humanoid
+          </option>
+          <option value="Robot" data-selected="$rm.species == 'Robot'">
+            Robot
+          </option>
+          <option value="Mythological Creature" data-selected="$rm.species == 'Mythological Creature'">
+            Mythological Creature
+          </option>
+          <option value="Disease" data-selected="$rm.species == 'Disease'">
+            Disease
+          </option>
+          <option value="unknown" data-selected="$rm.species == 'unknown'">
+            unknown
+          </option>
         </select>
-        <select class="ui-select" data-bind:rm.gender  data-on:change="{{ filterAction }}" data-indicator:fetching data-attr:disabled="$fetching">
-          <option value="">{{ 'Gender'|t }}</option>
-          <option value="Female" data-selected="$rm.gender == 'Female'">Female</option>
-          <option value="Male" data-selected="$rm.gender == 'Male'">Male</option>
-          <option value="Genderless" data-selected="$rm.gender == 'Genderless'">Genderless</option>
-          <option value="unknown" data-selected="$rm.gender == 'unknown'">unknown</option>
+        <select
+          class="ui-select"
+          data-bind:rm.gender
+          data-on:change="{{ filterAction }}"
+          data-indicator:fetching
+          data-attr:disabled="$fetching"
+        >
+          <option value="">
+            {{ 'Gender'|t }}
+          </option>
+          <option value="Female" data-selected="$rm.gender == 'Female'">
+            Female
+          </option>
+          <option value="Male" data-selected="$rm.gender == 'Male'">
+            Male
+          </option>
+          <option value="Genderless" data-selected="$rm.gender == 'Genderless'">
+            Genderless
+          </option>
+          <option value="unknown" data-selected="$rm.gender == 'unknown'">
+            unknown
+          </option>
         </select>
         <button
           class="ui-link text-sm text-right"
@@ -99,10 +161,10 @@
       </div>
     </div>
     <div class="relative">
-      <svg data-show="$fetching" class="size-8 animate-spin text-black absolute top-72 left-1/2 -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-      </svg>
+      {% include '_components/spinner.twig' with {
+        size: 'size-8',
+        class: 'absolute top-72 left-1/2 -translate-x-1/2'
+      } only %}
       <div id="result-rick-and-morty"></div>
       <div id="pagination-rick-and-morty"></div>
     </div>

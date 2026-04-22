@@ -2,12 +2,9 @@
 {% import '_macros/datastar' as macros %}
 {% set fetchAction = datastar.get('_datastar/search.twig', { type: type }) %}
 
-<div class="space-y-4"
-  data-signals="{ui: {search: ''}}">
+<div class="space-y-4" data-signals="{ui: {search: ''}}">
   {% if type == 'page' %}
-    {{ macros.urlSync([
-      {name: 'q', signal: 'ui.search', default: '', type: 'string'}
-    ], fetchAction) }}
+    {{ macros.urlSync([{ name: 'q', signal: 'ui.search', default: '', type: 'string' }], fetchAction) }}
   {% endif %}
   <div class="relative">
     <input
@@ -20,16 +17,10 @@
       data-on:input__debounce.300ms="{{ fetchAction }}"
       data-indicator:fetching
     />
-    <div data-show="$fetching" class="absolute right-3 top-1/2 -translate-y-1/2">
-      <svg class="size-5 animate-spin text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-        <path
-          class="opacity-75"
-          fill="currentColor"
-          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-        ></path>
-      </svg>
-    </div>
+    {% include '_components/spinner.twig' with {
+      size: 'size-5',
+      class: 'absolute right-3 top-1/2 -translate-y-1/2'
+    } only %}
   </div>
   <div id="searchresult-{{ type }}">
     <p>
