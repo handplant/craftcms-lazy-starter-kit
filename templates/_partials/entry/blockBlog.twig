@@ -13,8 +13,9 @@
   {% set filterEntry  = filter ? craft.entries.section('categories').slug(filter).one() : null %}
   {% set baseQuery    = craft.entries.section('blog').eagerly().orderBy('date DESC') %}
   {% set query        = filterEntry ? baseQuery.relatedTo(filterEntry) : baseQuery %}
-  {% set entries      = query.limit(limit).all() %}
-  {% set hasMore      = query.limit(null).count() > entries|length %}
+  {% set fetchedEntries = query.limit(limit + 1).all() %}
+  {% set hasMore        = fetchedEntries|length > limit %}
+  {% set entries        = hasMore ? fetchedEntries|slice(0, limit) : fetchedEntries %}
 
   {% if categories %}
     <div class="inline-flex items-center mb-8 space-x-4"
@@ -25,8 +26,8 @@
       <select
         data-bind:app{{ blockId }}.filter
         data-on:change="{{ fetchAction }}"
-        data-attr:disabled="$fetching"
-        data-indicator:fetching
+        data-attr:disabled="$blog_fetching"
+        data-indicator:blog_fetching
         name="filter"
         aria-label="Blog-Kategorie filtern"
         class="ui-select ui-bold"
@@ -38,10 +39,11 @@
           </option>
         {% endfor %}
       </select>
-      <svg data-show="$fetching" class="size-6 animate-spin ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-      </svg>
+      {% include '_components/spinner.twig' with {
+        indicator: 'blog_fetching',
+        size: 'size-6',
+        class: 'ml-2'
+      } only %}
     </div>
   {% endif %}
 
@@ -54,7 +56,16 @@
   <div id="loadmore-{{ blockId }}">
     {% if hasMore %}
       <div class="mt-12">
-        <button data-on:click="{{ datastar.get('_datastar/blog.twig', { offset: limit, entryId: blockId }) }}" class="ui-btn">
+        <button
+          data-on:click="{{ datastar.get('_datastar/blog.twig', { offset: limit, entryId: blockId }) }}"
+          data-indicator:blog_fetching
+          data-attr:disabled="$blog_fetching"
+          class="ui-btn inline-flex items-center gap-2"
+        >
+          {% include '_components/spinner.twig' with {
+            indicator: 'blog_fetching',
+            size: 'size-4'
+          } only %}
           {{ 'Load more'|t }}
         </button>
       </div>

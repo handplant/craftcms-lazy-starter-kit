@@ -3,17 +3,16 @@
 {% set entryId = entryId ?? null %}
 {% set filter = entryId ? (signals['app' ~ entryId].filter ?? '') : '' %}
 
-{% set entryAllCount = craft.entries.section('blog') %}
-{% set entryQuery = craft.entries.section('blog').eagerly().limit(limit).offset(offset).orderBy('date DESC') %}
+{% set entryQuery = craft.entries.section('blog').eagerly().limit(limit + 1).offset(offset).orderBy('date DESC') %}
 
 {% if filter %}
   {% set filterEntry = craft.entries.section('categories').slug(filter).one() %}
-  {% do entryAllCount.andRelatedTo(filterEntry) %}
   {% do entryQuery.andRelatedTo(filterEntry) %}
 {% endif %}
 
-{% set entries = entryQuery.all() %}
-{% set hasMore = entryAllCount.count() > offset + (entries|length) %}
+{% set fetchedEntries = entryQuery.all() %}
+{% set hasMore = fetchedEntries|length > limit %}
+{% set entries = hasMore ? fetchedEntries|slice(0, limit) : fetchedEntries %}
 
 {% if not entries %}
   {% patchelements %}
@@ -38,7 +37,16 @@
   {% if hasMore %}
     {% patchelements %}
       <div id="loadmore-{{ entryId }}" class="mt-12">
-        <button data-on:click="{{ datastar.get('_datastar/blog.twig', { offset: offset + limit, entryId: entryId }) }}" class="ui-btn">
+        <button
+          data-on:click="{{ datastar.get('_datastar/blog.twig', { offset: offset + limit, entryId: entryId }) }}"
+          data-indicator:blog_fetching
+          data-attr:disabled="$blog_fetching"
+          class="ui-btn inline-flex items-center gap-2"
+        >
+          {% include '_components/spinner.twig' with {
+            indicator: 'blog_fetching',
+            size: 'size-4'
+          } only %}
           {{ 'Load more'|t }}
         </button>
       </div>
