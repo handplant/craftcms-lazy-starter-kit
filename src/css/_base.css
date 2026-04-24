@@ -4,7 +4,10 @@
   }
 
   body {
-    @apply overflow-x-hidden bg-bg text-ink font-sans md:text-lg lg:text-xl antialiased pt-16;
+    @apply overflow-x-hidden bg-bg bg-fixed bg-size-[60px_60px] text-ink font-sans md:text-lg lg:text-xl antialiased pt-16;
+    background-image:
+      linear-gradient(color-mix(in srgb, var(--color-ink) 5%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--color-ink) 5%, transparent) 1px, transparent 1px);
   }
 
   img {
