@@ -1,0 +1,14 @@
+{% set builder = builder ?? false %}
+{% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
+{% set classWrapper = builder ? 'blocks blocks--stats' : 'inlines inlines--stats' %}
+{% set classContent = builder ? 'blocks__popout' : '' %}
+{% set isCols2 = entry.grid2cols %}
+
+{% block content %}
+  {% if entry.headline %}
+    <h2 class="ui-h3 mb-6">{{ entry.headline|nl2br }}</h2>
+  {% endif %}
+  <div class="grid xs:grid-cols-2 md:grid-cols-4 gap-6">
+    {{ entry.matrixStats.eagerly().render() }}
+  </div>
+{% endblock %}

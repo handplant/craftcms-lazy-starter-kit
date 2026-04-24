@@ -36,6 +36,14 @@ settings:
       __assoc__:
         -
           - uid
+          - a4fbfa7d-75c6-4cc3-b35b-41736830eec7 # Stats
+        -
+          - group
+          - Text
+    -
+      __assoc__:
+        -
+          - uid
           - 82e2a38f-ac8e-4b00-8b0c-d9ab4dc9ad7d # Media
         -
           - group

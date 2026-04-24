@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4a80a3bd30e690d15a913774f4853ae",
+    "content-hash": "5470925d568761e822c0a2ad13136273",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -46,16 +46,16 @@
         },
         {
             "name": "brick/math",
-            "version": "0.17.0",
+            "version": "0.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "a62af7ab2e3cee9f9bf4cf77a5d1e6ba408a44ee"
+                "reference": "6aef71a9fbbd1ee7be0e313cd627f8e6f7125a5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/a62af7ab2e3cee9f9bf4cf77a5d1e6ba408a44ee",
-                "reference": "a62af7ab2e3cee9f9bf4cf77a5d1e6ba408a44ee",
+                "url": "https://api.github.com/repos/brick/math/zipball/6aef71a9fbbd1ee7be0e313cd627f8e6f7125a5b",
+                "reference": "6aef71a9fbbd1ee7be0e313cd627f8e6f7125a5b",
                 "shasum": ""
             },
             "require": {
@@ -93,7 +93,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brick/math/issues",
-                "source": "https://github.com/brick/math/tree/0.17.0"
+                "source": "https://github.com/brick/math/tree/0.17.1"
             },
             "funding": [
                 {
@@ -101,7 +101,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-03-17T12:54:54+00:00"
+            "time": "2026-04-19T20:55:20+00:00"
         },
         {
             "name": "cakephp/core",
@@ -641,11 +641,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.9.20",
+            "version": "5.9.21",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/315646752b96630d840231b4b0b2f76e8d2d5f64",
-                "reference": "315646752b96630d840231b4b0b2f76e8d2d5f64",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/887cc875cf041f6d0ecc55c7a0a687c41b402a24",
+                "reference": "887cc875cf041f6d0ecc55c7a0a687c41b402a24",
                 "shasum": ""
             },
             "require": {
@@ -744,7 +744,7 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2026-04-14T15:47:56+00:00"
+            "time": "2026-04-23T17:28:24+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -4318,16 +4318,16 @@
         },
         {
             "name": "phpoffice/phpspreadsheet",
-            "version": "5.6.0",
+            "version": "5.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
-                "reference": "9b90dee03deb0d28761479c4a3a06fba5f7e012e"
+                "reference": "9f55d3b9b7bcb1084fda8340e4b7ce4ed10cd0c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/9b90dee03deb0d28761479c4a3a06fba5f7e012e",
-                "reference": "9b90dee03deb0d28761479c4a3a06fba5f7e012e",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/9f55d3b9b7bcb1084fda8340e4b7ce4ed10cd0c8",
+                "reference": "9f55d3b9b7bcb1084fda8340e4b7ce4ed10cd0c8",
                 "shasum": ""
             },
             "require": {
@@ -4421,9 +4421,9 @@
             ],
             "support": {
                 "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
-                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/5.6.0"
+                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/5.7.0"
             },
-            "time": "2026-04-10T03:00:03+00:00"
+            "time": "2026-04-20T02:42:17+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -5245,17 +5245,17 @@
         },
         {
             "name": "putyourlightson/craft-datastar",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-datastar/zipball/489fa9cb574fce9265de558b35bedddcd16a75ac",
-                "reference": "489fa9cb574fce9265de558b35bedddcd16a75ac",
+                "url": "https://api.github.com/repos/putyourlightson/craft-datastar/zipball/9f7fac2cee49bcc1e6b3e948d1147add1dc9c3f7",
+                "reference": "9f7fac2cee49bcc1e6b3e948d1147add1dc9c3f7",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^5.4",
                 "php": "^8.2",
-                "putyourlightson/craft-datastar-module": "1.0.0"
+                "putyourlightson/craft-datastar-module": "1.0.1"
             },
             "type": "craft-plugin",
             "extra": {
@@ -5276,20 +5276,20 @@
                 "mit"
             ],
             "description": "A reactive hypermedia framework for Craft.",
-            "time": "2026-04-16T18:28:55+00:00"
+            "time": "2026-04-20T14:52:49+00:00"
         },
         {
             "name": "putyourlightson/craft-datastar-module",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-datastar-module.git",
-                "reference": "ba8dc717056474426b2c593fbc377fc4f7792726"
+                "reference": "b2b9eaad4a5db4555c4eb168adeab8854d036c8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-datastar-module/zipball/ba8dc717056474426b2c593fbc377fc4f7792726",
-                "reference": "ba8dc717056474426b2c593fbc377fc4f7792726",
+                "url": "https://api.github.com/repos/putyourlightson/craft-datastar-module/zipball/b2b9eaad4a5db4555c4eb168adeab8854d036c8a",
+                "reference": "b2b9eaad4a5db4555c4eb168adeab8854d036c8a",
                 "shasum": ""
             },
             "require": {
@@ -5325,7 +5325,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-16T18:27:03+00:00"
+            "time": "2026-04-20T14:57:42+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

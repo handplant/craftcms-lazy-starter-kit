@@ -1,12 +1,12 @@
 {
   "require": {
     "craftcms/ckeditor": "^5.4.0",
-    "craftcms/cms": "^5.9.20",
+    "craftcms/cms": "^5.9.21",
     "craftcms/feed-me": "6.11.0",
     "ether/simplemap": "5.0.4",
     "johnfmorton/craft-llm-ready": "^1.3.2",
     "nystudio107/craft-vite": "5.0.1",
-    "putyourlightson/craft-datastar": "^1.0.0",
+    "putyourlightson/craft-datastar": "^1.0.1",
     "stimmt/craft-mcp": "^v1.2.2",
     "vaersaagod/seomate": "^3.3.0",
     "verbb/image-resizer": "^4.0.6",

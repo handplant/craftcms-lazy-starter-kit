@@ -1,4 +1,4 @@
-dateModified: 1776086322
+dateModified: 1777018311
 elementSources:
   craft\elements\Entry:
     -
@@ -108,6 +108,7 @@ meta:
     0a5600e8-07a6-4292-bc21-d0e142d9dc22: 'Matrix - Builder' # Matrix - Builder
     0b6dd59c-982a-43fa-908f-143e8ef509f2: Date # Date
     1bcb307b-3c91-4cc3-9051-c0586ac5791a: 'Matrix - Features' # Matrix - Features
+    1c87df91-e724-49c3-832a-d3598008f48b: Stat # Stat
     2cec4e62-8325-4329-b76c-d5c7ae7af576: Buttons # Buttons
     3a4f56a8-1fc9-4301-ad83-4379be0d602a: Lat/Long # Lat/Long
     3c6dd0d6-6cbf-415f-a6fe-3bc205817b94: Anchor # Anchor
@@ -144,11 +145,13 @@ meta:
     76206244-6c91-4de1-b3d0-68c5d6a77369: CTA # CTA
     a0e826d1-b07d-436b-a836-517709848314: Text # Text
     a3f63eae-3ce5-48bf-8d1f-7f98792227d6: Category # Category
+    a4fbfa7d-75c6-4cc3-b35b-41736830eec7: Stats # Stats
     a9a428eb-cbae-455e-876a-3cef2b1fef95: Map # Map
     a359a358-f5ae-4b0b-a21a-9fdaadb38180: 'Navigation / Label' # Navigation / Label
     a729e378-d66d-4b2d-8df8-cf2b93a99c1e: Blog # Blog
     b049044a-c809-41e6-9e27-43e22b6c394b: Accordion # Accordion
     b176366b-d2cd-4172-bbb5-f64769af3719: Map # Map
+    bd94f74d-c41c-43b9-bcde-d775a1a11e96: 'Matrix - Stats' # Matrix - Stats
     c0130a82-4973-43d7-b764-89177f7725a5: Slider # Slider
     c05cf09b-1380-4613-8fd9-1e1a72af0e79: 'Text - Single' # Text - Single
     c07bd68f-efab-420f-ad23-7131c2b59410: Grid # Grid

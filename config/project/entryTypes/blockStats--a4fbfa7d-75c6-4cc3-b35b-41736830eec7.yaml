@@ -1,0 +1,80 @@
+allowLineBreaksInTitles: false
+color: green
+description: null
+fieldLayouts:
+  66e46d6d-b934-43a7-9dc6-2c767ddf2bf0:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-04-24T07:59:11+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 17c0c6a4-80a6-4cef-84f4-ebefe3af9d39 # Text - Multi
+            handle: headline
+            instructions: null
+            label: Headline
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b9f533b6-e068-4a04-b306-aa4b4be09fcc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-04-24T08:09:56+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: bd94f74d-c41c-43b9-bcde-d775a1a11e96 # Matrix - Stats
+            handle: null
+            instructions: null
+            label: Stats
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 763977d7-d326-46c6-a865-c8d3015dbf35
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 55b1477f-74e7-4358-a28e-2c85b2d8239f
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-04-24T08:00:44+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 3c6dd0d6-6cbf-415f-a6fe-3bc205817b94 # Anchor
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: abfd88ab-2cc6-4058-a3d7-978a2f936a73
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: c1e78153-f27b-45e2-a27b-efd1e9c8cb64
+        userCondition: null
+    thumbFieldKey: null
+handle: blockStats
+hasTitleField: false
+icon: trophy
+name: Stats
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

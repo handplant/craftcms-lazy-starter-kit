@@ -111,7 +111,7 @@
   }
 
   blockquote {
-    @apply not-italic ui-neo bg-pop px-6 py-5 ui-bold text-ink;
+    @apply italic border-l-[6px] border-ink bg-white pl-6 pr-5 py-2 ui-bold text-ink;
     quotes: none;
 
     p:first-of-type::before,
@@ -131,4 +131,3 @@
   @apply border-t-4 border-ink my-8;
   border-bottom: none;
 }
-
