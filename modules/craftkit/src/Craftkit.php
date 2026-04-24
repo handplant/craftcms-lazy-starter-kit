@@ -55,11 +55,17 @@ class Craftkit extends Module
         );
 
         // Adds RFC 8288 Link header on every response for agent discoverability
+        // Sets Content-Signal header (https://contentsignals.org) from env vars
         Event::on(
             Response::class,
             Response::EVENT_BEFORE_SEND,
             function() {
                 Craft::$app->response->headers->add('Link', '</.well-known/api-catalog>; rel="api-catalog"');
+
+                $aiTrain = \craft\helpers\App::env('CONTENT_SIGNAL_AI_TRAIN') ?? 'no';
+                $search  = \craft\helpers\App::env('CONTENT_SIGNAL_SEARCH')   ?? 'yes';
+                $aiInput = \craft\helpers\App::env('CONTENT_SIGNAL_AI_INPUT') ?? 'no';
+                Craft::$app->response->headers->set('Content-Signal', "ai-train={$aiTrain}, search={$search}, ai-input={$aiInput}");
             }
         );
 

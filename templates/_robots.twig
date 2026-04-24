@@ -1,0 +1,14 @@
+{% do craft.app.response.headers.set('Content-Type', 'text/plain') %}
+User-agent: *
+Disallow: /admin/
+Disallow: /cpresources/
+Disallow: /actions/
+Disallow: /vendor/
+Disallow: /node_modules/
+Disallow: /config/
+Disallow: /storage/
+Disallow: /templates/
+
+Allow: /
+
+Sitemap: {{ siteUrl }}sitemap.xml
