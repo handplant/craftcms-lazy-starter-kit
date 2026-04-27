@@ -23,6 +23,7 @@ function setupEmblaDots(embla, dotsRoot) {
     const btn = document.createElement('button');
     btn.className = 'embla__dot';
     btn.type = 'button';
+    btn.setAttribute('aria-label', `Gehe zu Folie ${i + 1}`);
     btn.addEventListener('click', () => embla.scrollTo(i));
     dotsRoot.appendChild(btn);
     dots.push(btn);
@@ -30,7 +31,16 @@ function setupEmblaDots(embla, dotsRoot) {
 
   const setSelectedDot = () => {
     const selected = embla.selectedScrollSnap();
-    dots.forEach((dot, i) => dot.classList.toggle('is-selected', i === selected));
+    dots.forEach((dot, i) => {
+      const isSelected = i === selected;
+      dot.classList.toggle('is-selected', isSelected);
+
+      if (isSelected) {
+        dot.setAttribute('aria-current', 'true');
+      } else {
+        dot.removeAttribute('aria-current');
+      }
+    });
   };
 
   embla.on('select', setSelectedDot);
