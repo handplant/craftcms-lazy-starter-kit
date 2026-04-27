@@ -68,10 +68,22 @@ rootNodes.forEach((rootNode) => {
 });
 
 // GLIGHTBOX
+let lastGalleryTrigger = null;
+
+document.querySelectorAll('[data-gallery]').forEach((trigger) => {
+  trigger.addEventListener('click', () => {
+    lastGalleryTrigger = trigger;
+    trigger.blur();
+  });
+});
+
 const lightbox = GLightbox({
   selector: '[data-gallery]',
   touchNavigation: true,
   loop: true,
   zoomable: false,
   openEffect: 'fade',
+  onClose: () => {
+    lastGalleryTrigger?.focus();
+  },
 });

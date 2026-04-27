@@ -28,12 +28,16 @@
         {%- if image.mediaCopyright -%}
           {% set parts = parts|merge(['© ' ~ image.mediaCopyright]) %}
         {%- endif -%}
+        {%- set accessibleLabel =
+          [image.alt ?? null, image.mediaCaption ?? null, 'Open image ' ~ loop.index ~ ' in gallery']|filter|first
+        -%}
 
         <a
           class="block ui-neo overflow-hidden ui-lift {{ classes }}"
           href="{{ image.getUrl({ width: 1600, quality: 90 }) }}"
           data-gallery="gallery{{ entry.id }}"
           data-description="{{ parts|join(' ') }}"
+          aria-label="{{ accessibleLabel|e }}"
         >
           {% include '_components/image.twig' with { image: image, objectFit: true, class: '' } only %}
         </a>
