@@ -42,7 +42,13 @@
         external: isExternal
       } only %}
       {% if type == 'map' %}
-        <button class="ui-btn" data-on:click="focusMarker({{ entry.id }})" title="Show on map">
+        <button
+          class="ui-btn"
+          data-on:click="focusMarker({{ entry.id }})"
+          type="button"
+          aria-label="Show on map: {{ entry.title|e }}"
+          title="Show on map"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -50,6 +56,7 @@
             stroke-width="1.5"
             stroke="currentColor"
             class="size-6"
+            aria-hidden="true"
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             <path

@@ -44,14 +44,20 @@
 
   {% set points =
     points|merge(
-      [{ id: e.id, lat: e.map.lat, lng: e.map.lng, color: cat ? cat.color.getHex() : '', popup: popupHtml|trim }]
+      [{ id: e.id, title: e.title, lat: e.map.lat, lng: e.map.lng, color: cat ? cat.color.getHex() : '', popup: popupHtml|trim }]
     )
   %}
 {% endfor %}
 
 <div id="map-markers" hidden>
   {% for p in points %}
-    <span data-id="{{ p.id }}" data-lat="{{ p.lat }}" data-lng="{{ p.lng }}" data-color="{{ p.color }}">
+    <span
+      data-id="{{ p.id }}"
+      data-title="{{ p.title|e }}"
+      data-lat="{{ p.lat }}"
+      data-lng="{{ p.lng }}"
+      data-color="{{ p.color }}"
+    >
       <template>{{ p.popup|trim|raw }}</template>
     </span>
   {% endfor %}

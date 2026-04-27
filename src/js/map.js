@@ -56,6 +56,7 @@ function updateMarkers(scroll = false) {
 
   const locations = [...document.querySelectorAll('#map-markers [data-lat]')].map((el) => ({
     id: el.dataset.id,
+    title: el.dataset.title || '',
     lat: parseFloat(el.dataset.lat),
     lng: parseFloat(el.dataset.lng),
     color: el.dataset.color || '#000',
@@ -68,6 +69,7 @@ function updateMarkers(scroll = false) {
   const markers = locations
     .filter((loc) => !isNaN(loc.lat) && !isNaN(loc.lng))
     .map((loc) => {
+      const markerLabel = loc.title ? `Show location for ${loc.title}` : 'Show location';
       const icon = L.divIcon({
         className: 'custom-marker',
         html: `<div style="
@@ -81,7 +83,20 @@ function updateMarkers(scroll = false) {
         iconAnchor: [14, 14],
       });
 
-      const marker = L.marker([loc.lat, loc.lng], { icon }).bindPopup(loc.popup);
+      const marker = L.marker([loc.lat, loc.lng], {
+        icon,
+        title: markerLabel,
+      }).bindPopup(loc.popup);
+
+      marker.on('add', () => {
+        const el = marker.getElement();
+
+        if (!el) {
+          return;
+        }
+
+        el.setAttribute('aria-label', markerLabel);
+      });
 
       if (loc.id) {
         window.mapMarkers[loc.id] = marker;
