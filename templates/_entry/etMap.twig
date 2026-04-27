@@ -12,7 +12,7 @@
     ) %}
 
     <section class="blocks blocks--map">
-      <div class="blocks__full pt-0">
+      <div class="blocks__full pt-0 pb-0">
         <div
           class="flex flex-col lg:flex-row lg:h-full relative max-w-650 mx-auto border-b-4 border-ink"
           data-signals='{{ {(appNs): {filter: '', search: ''}} | json_encode }}'>
@@ -25,7 +25,7 @@
             class: 'text-pop-on absolute right-3 top-3 z-999'
           } only %}
           <div class="w-full lg:w-1/3 xl:w-1/2 lg:border-r-4 lg:border-l-4 border-ink">
-            <div class="sticky top-16 z-20">
+            <div class="lg:sticky lg:top-16 z-20">
               <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 pt-3 px-5 mb-4 lg:mb-0">
                 <div class="relative w-full">
                   <input
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div
-            class="w-full lg:w-2/3 xl:w-1/2 h-[60vh] lg:h-[calc(100vh-64px)] lg:sticky lg:top-16 lg:border-r-4 border-ink"
+            class="w-full lg:w-2/3 xl:w-1/2 h-[calc(100dvh-64px-120px)] lg:h-[calc(100vh-64px)] lg:sticky lg:top-16 lg:border-r-4 border-ink"
             data-init="initMap()"
           >
             <div id="map" class="lg:absolute lg:inset-0 h-full"></div>
