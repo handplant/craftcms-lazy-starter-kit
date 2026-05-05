@@ -1,27 +1,27 @@
 {
-  "_chunk-DzMEjpoC.js": {
-    "file": "assets/chunk-DzMEjpoC.js",
+  "_chunk-I-YvfV4L.js": {
+    "file": "assets/chunk-I-YvfV4L.js",
     "name": "chunk"
   },
   "src/js/app.js": {
-    "file": "assets/app-Bs4lTDgQ.js",
+    "file": "assets/app-SRfm8fpA.js",
     "name": "app",
     "src": "src/js/app.js",
     "isEntry": true,
     "imports": [
-      "_chunk-DzMEjpoC.js"
+      "_chunk-I-YvfV4L.js"
     ],
     "css": [
-      "assets/app-BOo-7FvT.css"
+      "assets/app-LBUPSfo1.css"
     ]
   },
   "src/js/map.js": {
-    "file": "assets/map-Dy5RtF-F.js",
+    "file": "assets/map-DVUfcxRS.js",
     "name": "map",
     "src": "src/js/map.js",
     "isEntry": true,
     "imports": [
-      "_chunk-DzMEjpoC.js"
+      "_chunk-I-YvfV4L.js"
     ],
     "css": [
       "assets/map-BcsP_QXj.css"

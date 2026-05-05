@@ -2,7 +2,7 @@
 
 <details {{ isOpen ? 'open' }} class="ui-neo group">
   <summary
-    class="flex items-center justify-between w-full gap-3 p-5 text-left bg-canvas ui-bold flex-nowrap hover:bg-pop-dim cursor-pointer list-none [&::-webkit-details-marker]:hidden"
+    class="flex items-center justify-between w-full gap-3 ui-space text-left bg-canvas ui-bold flex-nowrap hover:bg-pop-dim cursor-pointer list-none [&::-webkit-details-marker]:hidden"
   >
     <span class="flex items-center">{{ entry.headline|nl2br }}</span>
     <svg
@@ -17,7 +17,7 @@
       <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
     </svg>
   </summary>
-  <div class="p-5 prose md:prose-lg lg:prose-xl bg-canvas border-t-2 border-ink">
+  <div class="ui-space prose md:prose-lg lg:prose-xl bg-canvas border-t-2 border-ink">
     {{ entry.text }}
   </div>
 </details>

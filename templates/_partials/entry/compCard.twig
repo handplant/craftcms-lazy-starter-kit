@@ -9,7 +9,7 @@
         {% include '_components/image.twig' with { image: image, sizes: [480], objectFit: true, class: '' } only %}
       </div>
     {% endif %}
-    <div class="space-y-8 p-4 md:p-6">
+    <div class="space-y-8 ui-space">
       <h2 class="ui-h4">{{ entry.headline|nl2br }}</h2>
       {% if entry.teaser %}
         <div class="prose md:prose-lg">

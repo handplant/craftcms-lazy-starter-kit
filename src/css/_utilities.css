@@ -30,24 +30,28 @@
   @apply font-bold underline decoration-2 underline-offset-2 decoration-pop-on hover:decoration-pop-on hover:text-pop-on transition-colors duration-100;
 }
 
-@utility ui-spacer {
-  @apply px-(--gap) py-0;
+@utility ui-gap-x {
+  @apply px-(--gap-x) py-0;
 }
 
-@utility ui-shadow {
-  @apply shadow-[5px_5px_0_0_var(--color-ink)];
+@utility ui-space {
+  padding: var(--space);
 }
 
 @utility ui-shadow-sm {
-  @apply shadow-[3px_3px_0_0_var(--color-ink)];
+  box-shadow: 3px 3px 0 0 var(--shadow-color);
+}
+
+@utility ui-shadow {
+  box-shadow: 5px 5px 0 0 var(--shadow-color);
 }
 
 @utility ui-shadow-lg {
-  @apply shadow-[7px_7px_0_0_var(--color-ink)];
+  box-shadow: 7px 7px 0 0 var(--shadow-color);
 }
 
 @utility ui-shadow-pop {
-  @apply shadow-[5px_5px_0_0_var(--color-pop-on)];
+  box-shadow: 5px 5px 0 0 var(--color-pop-on);
 }
 
 @utility ui-border {

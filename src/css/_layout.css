@@ -1,6 +1,6 @@
 @layer components {
   .inlines {
-    @apply py-(--gap-inlines);
+    @apply py-(--gap-y-sm);
   }
 
   .layout,
@@ -45,7 +45,7 @@
     @apply col-[full];
 
     > * {
-      @apply py-(--gap-blocks) col-[content];
+      @apply py-(--gap-y) col-[content];
     }
 
     > .blocks__content {
@@ -83,7 +83,7 @@
 
   .blocks--header {
     > * {
-      @apply pb-0 pt-[calc(var(--gap-blocks)*1.25)];
+      @apply pb-0 pt-[calc(var(--gap-y)*1.25)];
     }
   }
 

@@ -1,10 +1,13 @@
 @layer components {
   /* BUTTON & LINKS */
   .ui-btn {
+    --_bg: var(--color-pop);
+    --_text: var(--color-ink);
+    background-color: var(--_bg);
+    color: var(--_text);
     @apply ui-neo
     no-underline
     inline-flex items-center gap-2
-    bg-pop text-ink
     px-2 py-1 sm:px-4 sm:py-1.5
     text-sm sm:text-base
     ui-bold uppercase tracking-wide
@@ -19,7 +22,9 @@
   }
 
   .ui-btn--dark {
-    @apply bg-ink text-pop ui-shadow-pop border-ink hover:shadow-none;
+    --_bg: var(--color-ink);
+    --_text: var(--color-pop);
+    --shadow-color: var(--color-pop-on);
   }
 
   /*FORMS*/

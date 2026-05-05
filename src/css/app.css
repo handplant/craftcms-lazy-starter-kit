@@ -44,14 +44,20 @@
 :root {
   scroll-padding-top: 2rem;
 
+  /* shadow */
+  --shadow-color: var(--color-ink);
+
+  /* component spacing */
+  --space: clamp(1rem, 2.5vw, 1.5rem);
+
   /* layout */
-  --gap: clamp(0.5rem, 6vw, 3rem);
-  --gap-blocks: clamp(0.5rem, 6vw, 3rem);
-  --gap-inlines: clamp(0.5rem, 6vw, 2rem);
-  --full: minmax(var(--gap), 1fr);
+  --gap-x: clamp(0.5rem, 6vw, 3rem);
+  --gap-y: clamp(0.5rem, 6vw, 3rem);
+  --gap-y-sm: clamp(0.5rem, 6vw, 2rem);
+  --full: minmax(var(--gap-x), 1fr);
   --feature: minmax(0, 200px);
   --popout: minmax(0, 100px);
-  --content: min(var(--breakpoint-lg), 100% - var(--gap) * 2);
+  --content: min(var(--breakpoint-lg), 100% - var(--gap-x) * 2);
 }
 
 @utility prose {
