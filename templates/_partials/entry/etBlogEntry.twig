@@ -4,7 +4,7 @@
 {% set type = type ?? null %}
 {% set isExternal = entry.externalUrl is not empty %}
 
-<div class="ui-card">
+<article class="ui-card">
   {% if image %}
     <div class="aspect-video mb-0">
       {% include '_components/image.twig' with { image: image, sizes: [480], objectFit: true } only %}
@@ -69,4 +69,4 @@
       {% endif %}
     </div>
   </div>
-</div>
+</article>

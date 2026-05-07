@@ -3,7 +3,7 @@
 {% set slider = slider ?? false %}
 
 {% set cardContent %}
-  <div class="ui-card">
+  <article class="ui-card">
     {% if image %}
       <div class="aspect-video mb-0">
         {% include '_components/image.twig' with { image: image, sizes: [480], objectFit: true, class: '' } only %}
@@ -27,7 +27,7 @@
         } only %}
       {% endif %}
     </div>
-  </div>
+  </article>
 {% endset %}
 
 {% if slider %}

@@ -8,9 +8,9 @@
 
 {% block content %}
   <div class="ui-neo bg-pop-dim p-6 md:p-16 flex flex-col items-start gap-6 ui-lift">
-    <p class="ui-h1 text-ink">
+    <h2 class="ui-h1 text-ink">
       {{ entry.headline|nl2br }}
-    </p>
+    </h2>
     {% if entry.text %}
       <div class="prose md:prose-lg text-ink">
         {{ entry.text }}

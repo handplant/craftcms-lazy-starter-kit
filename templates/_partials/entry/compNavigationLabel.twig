@@ -19,7 +19,7 @@
     aria-haspopup="true"
     aria-controls="dropdown-{{ entry.id }}"
     data-on:click="$ui.dropdownOpen = $ui.dropdownOpen === {{ entry.id }} ? false : {{ entry.id }}"
-    data-attr="{ 'aria-expanded': $ui.dropdownOpen === '{{ entry.id }}' ? 'true' : 'false' }"
+    data-attr="{ 'aria-expanded': $ui.dropdownOpen === {{ entry.id }} ? 'true' : 'false' }"
   >
     <span>{{ entry.title }}</span>
     {% if children|length %}

@@ -22,7 +22,7 @@
     {% if navItems %}
       <button
         data-on:click="$ui.navOpen = !$ui.navOpen; $ui.searchOpen = false"
-        data-attr="{ 'aria-label': $ui.navOpen ? 'Close navigation' : 'Open navigation' }"
+        data-attr="{ 'aria-label': $ui.navOpen ? 'Close navigation' : 'Open navigation', 'aria-expanded': $ui.navOpen ? 'true' : 'false' }"
         class="block cursor-pointer switch:hidden hover:text-pop-on transition-colors"
         type="button"
       >
@@ -70,7 +70,7 @@
           '_datastar/bitcoin'
         )
         }} }"
-        data-attr="{ 'aria-label': $ui.btcOpen ? 'Close Bitcoin' : 'Open Bitcoin' }"
+        data-attr="{ 'aria-label': $ui.btcOpen ? 'Close Bitcoin' : 'Open Bitcoin', 'aria-expanded': $ui.btcOpen ? 'true' : 'false' }"
       >
         ₿
       </button>
@@ -79,7 +79,7 @@
           class="flex items-center cursor-pointer hover:text-pop-on transition-colors"
           data-class="{'text-pop-on': $ui.searchOpen}"
           data-on:click="$ui.searchOpen = !$ui.searchOpen; $ui.navOpen = false"
-          data-attr="{ 'aria-label': $ui.searchOpen ? 'Close search' : 'Open search' }"
+          data-attr="{ 'aria-label': $ui.searchOpen ? 'Close search' : 'Open search', 'aria-expanded': $ui.searchOpen ? 'true' : 'false' }"
           type="button"
         >
           <svg
