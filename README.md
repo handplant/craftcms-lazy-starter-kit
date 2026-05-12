@@ -1,138 +1,246 @@
-# 🚀 CraftCMS Lazy Starter Kit
+# CraftCMS Lazy Starter Kit
 
-A modern, production-ready Craft CMS Starter Kit with Vite, Tailwind, Datastar and DDEV —
-perfect for agencies and freelancers who want to build clean and fast Craft sites.
+CraftCMS Lazy is a Craft CMS 5 starter kit for building fast, maintainable, server-rendered websites with Vite,
+Tailwind CSS, Datastar, and DDEV.
 
----
+It is designed for agencies, freelancers, and developers who believe Craft's entry model is the architecture: sections,
+entry types, fields, relations, and templates should be clear before a frontend framework enters the conversation.
 
-## 🧩 Overview
+The project gives you a practical Craft baseline with real examples for Matrix blocks, CKEditor content,
+Datastar-powered interactions, maps, search, SEO, and AI-readable content.
 
-This starter kit helps developers quickly spin up clean and maintainable Craft CMS projects.
-
-It includes ready-made examples for Matrix Blocks, CKEditor integration, and Datastar Hypermedia-driven
-Blog, Map, and Search demos — all server-rendered, reactive, and built without JavaScript frameworks.
-
-This boilerplate demonstrates a **clean, scalable, and modern Craft CMS setup** — perfect for **agencies, freelancers**,
-and **developers** who want a production-ready foundation for new Craft projects.
-
-### Live Demo: [craft-kit.dev](https://craft-kit.dev)
-
-### ⚡ Datastar-Powered Hypermedia Examples
-
-Craft Kit includes multiple real-world Datastar demos that showcase server-synchronized state, reactive UI updates, and
-seamless Craft integration — all without a JavaScript build step. Explore how Datastar and a **Hypermedia-driven
-approach** transform Craft CMS into a reactive, declarative, and API-friendly platform:
-
-- 🔍 **Datastar Search** – https://craft-kit.dev/search
-- 📝 **Datastar Blog** – https://craft-kit.dev/blog-hypermedia-datastar
-- 🧪 **Rick & Morty API Demo** – https://craft-kit.dev/rick-and-morty-datastar
-- 🗺️ **Datastar Leaflet Map** – https://craft-kit.dev/map
-- ✅ **Datastar Todo List** – https://craft-kit.dev/hypermedia-todolist-craft-cms-datastar
+[Live Demo: craft-kit.dev](https://craft-kit.dev)
 
 ---
 
-## 🧠 Built with Modern Tools
+## Stack
 
-- ⚙️ **Craft CMS 5** – latest version with flexible content modeling
-- ⚡ **Vite** – fast bundling and instant reloads
-- 🧩 **DDEV** – reproducible local development environment
-- 🚀 **Datastar** – lightweight, reactive frontend for **Hypermedia-driven** dynamic UIs
-- 🗺️ **Leaflet** – interactive, data-driven maps with clustering and live filtering
-- 🎨 **Tailwind CSS** – utility-first styling with CSS variables
-- 🛞 **Embla Carousel** – ultra-smooth, touch-friendly sliders with full customization
-- 🗃️ **Craft eagerly() + render()** – optimized queries, automatic block templates, and smart caching
-- 🧾 **SEO-Ready JSON-LD Organization Schema** – structured data for Google Rich Results
-- 🔍 **SEO Meta, Open Graph & Sitemap** – via SEOMate
-- 🧰 **Field Usage Utility** – overview of all fields + their Entry Type instances
-- 🔌 **Plugins:** CKEditor, Datastar, Map, Image Resizer, SEOMate, Vite, Craft MCP, LLM Ready
+Craft CMS + Twig + Datastar + Vite + Tailwind CSS + DDEV
+
+First-class Craft plugins when needed: Formie, Blitz, SeoMatic, and others. This starter includes SEOMate and keeps the
+architecture open for project-specific plugin choices.
 
 ---
 
-## 🤖 LLM-Ready Content
+## Principles
 
-Craft Kit includes the [LLM Ready Plugin](https://github.com/johnfmorton/craft-llm-ready), which makes your site
-machine-readable for AI crawlers and LLMs. Append `.md` to any entry URL and get a clean Markdown version of the page
-— no extra templates required.
+### Structure first
+
+Structure is the architecture. In Craft, that structure is built from sections, entry types, fields, and relations. Get
+those decisions right and the project stays understandable. Get them wrong and no frontend framework will save the site.
+
+### Everything is an entry
+
+A page is an entry. A blog post is an entry. A card, CTA, accordion item, navigation item, or reusable content block can
+also be an entry when that makes the system clearer. Some entries have URLs and sections. Some exist only as related
+content. They still share the same modeling, querying, and rendering approach.
+
+CraftCMS Lazy leans into that model: atoms, molecules, organisms, and pages are represented through entries where it
+makes sense. Matrix blocks, block components, and entry type templates resolve through Craft's `entry.render()` pattern
+from `templates/_partials/entry/`, and relations are loaded with `eagerly()` so developers know where content lives and
+how it reaches the page.
+
+### No frontend framework required
+
+Craft and Twig render the HTML. Datastar handles reactivity through HTML attributes and server-sent events. Embla,
+Leaflet, and other small libraries are used where they solve a specific browser problem, but Vue, React, hydration, and
+JSON APIs are not required for normal UI state.
+
+### Hypermedia over client-side state
+
+The server renders state, the browser displays it, and Datastar morphs the DOM when the server sends new HTML. This
+keeps
+dynamic interfaces close to Craft's content model instead of moving the application into a separate client-side runtime.
+
+### Local dev, no drama
+
+DDEV and Vite provide a repeatable local environment with hot reload and predictable commands. You can start a project
+without writing Docker config from scratch.
+
+### AI-ready by default
+
+The repo includes agent instructions, Claude Code context, MCP configuration, Datastar guidance, and design notes.
+The LLM Ready plugin can expose `llms.txt` and entry pages as clean Markdown by appending `.md` to URLs.
+
+### SEO, accessibility, and performance
+
+The starter kit includes SEOMate configuration, server-rendered HTML, progressive enhancement, and a structure that keeps
+performance and accessibility concerns close to the templates.
 
 ---
 
-## 🤖 AI-Assisted Development
+## What Is Included
 
-Craft Kit ships with a ready-made **Claude Code** setup for AI-assisted development — no configuration needed.
+- A Craft CMS 5 project structure built around entries, relations, and `render()`
+- Datastar examples for server-rendered reactive UI
+- Tailwind CSS v4 and Vite asset workflow
+- DDEV local development setup
+- SEO, LLM, and AI-assistant tooling
+- Demo content for pages, blog, search, maps, and UI blocks
 
-### Included
-
-- **`CLAUDE.md`** – project context for Claude Code: stack, architecture, conventions, folder structure
-- **`.claudeignore`** – keeps Claude Code focused on relevant files, ignores `vendor/`, `node_modules/`, `storage/` etc.
-- **`.mcp.json`** – connects Claude Code to the [Craft MCP Plugin](https://github.com/stimmtdigital/craft-mcp) for
-  direct access to your Craft installation
-- **`.claude/skills/datastar-craft/`** – Datastar + Craft CMS skill set:
-  - `SKILL.md` – SSE endpoints, Twig integration, signals, common patterns
-  - `REFERENCE.md` – complete `data-*` attribute reference
-  - `TAO.md` – Datastar philosophy and architecture principles
+Formie, Blitz, and other first-class Craft plugins can be added when a project needs forms, static caching, or more
+specialized production behavior.
 
 ---
 
-### 🤝 Open Source
+## Datastar Examples
 
-This boilerplate is open for everyone — built by [Andi Grether](https://webworker.me) to help developers build faster,
-cleaner, and more maintainable Craft CMS sites using a **Hypermedia-first** approach.
+The demo site includes practical Datastar examples that keep state on the server and update the page with HTML over SSE.
+The interactions are progressively enhanced and do not require a client-side application framework.
 
-## ⚙️ Quick Start
+- [Datastar Search](https://craft-kit.dev/search)
+- [Datastar Blog](https://craft-kit.dev/blog-hypermedia-datastar)
+- [Rick & Morty API Demo](https://craft-kit.dev/rick-and-morty-datastar)
+- [Datastar Leaflet Map](https://craft-kit.dev/map)
+- [Datastar Todo List](https://craft-kit.dev/hypermedia-todolist-craft-cms-datastar)
 
-Get up and running with **CraftCMS Lazy** in just a few steps.
+---
+
+## Requirements
+
+- Docker
+- DDEV
+- Git
+
+Composer, PHP, Node, and npm commands are run through DDEV.
+
+---
+
+## Quick Start
+
+Clone the repository and start the local environment:
 
 ```bash
-# Clone the repository
 git clone https://github.com/handplant/craftcms-lazy-starter-kit
 cd craftcms-lazy-starter-kit
-
-# Copy the environment file
 cp .env.example .env
 
-# Start DDEV and install dependencies
 ddev start
 ddev composer install
 ddev npm install
+```
 
-# Import the included demo database
+Import the included demo database:
+
+```bash
 ddev import-db --file=demo.sql
+```
 
-# Admin Login
-User: admin  
+Open the site:
+
+```text
+https://craftcms-lazy.ddev.site
+```
+
+Craft Control Panel:
+
+```text
+https://craftcms-lazy.ddev.site/admin
+User: admin
 Password: superuser
 ```
 
-Then open your site at: 👉 https://craftcms-lazy.ddev.site
+If you want a clean Craft installation instead of the demo content, skip the database import and run:
 
----
-
-💡 If you don’t import the demo database, you’ll start with a clean _Craft CMS Lazy_ installation.
-
-```
+```bash
 ddev craft install
 ```
 
-### 🧰 Development
+---
 
-Start the local dev server with Vite:
+## Development
+
+Start the Vite dev server:
 
 ```bash
 ddev node run dev
 ```
 
-### 🏗️ Production Build
-
-When you’re ready to build the production assets:
+Build production assets:
 
 ```bash
 ddev node run build
 ```
 
-This will generate the optimized files in the web/dist/ directory and update the manifest.json for Craft’s Vite
-integration.
+The production build writes optimized assets to `web/dist/` and updates the Vite manifest used by Craft.
 
-### 🖼️ Demo Assets
+Run Craft migrations and apply project config when needed:
 
-This repo includes `/uploads` in version control so the starter kit works out of the box.  
-In production, these should be added to `.gitignore`.
+```bash
+ddev craft migrate/all
+ddev craft project-config/apply
+```
+
+---
+
+## Project Structure
+
+```text
+templates/_components/       Dumb UI components, included with `with {} only`
+templates/_partials/         Twig partials and entry rendering templates
+templates/_partials/entry/   Matrix blocks, block components, and entry type templates
+templates/_layouts/          Base layouts
+templates/_globals/          Navigation, footer, fonts, favicons
+templates/_datastar/         Datastar SSE endpoints and partials
+templates/_entry/            Entry route templates
+templates/_macros/           Twig macros
+templates/_cp/               Control Panel templates
+templates/_custom/           Demo pages without section or entry routes
+templates/_errors/           Error pages
+src/css/                     Tailwind CSS source
+src/js/                      JavaScript source
+config/                      Craft, Vite, Datastar, and plugin config
+modules/craftkit/            Example Craft module
+```
+
+---
+
+## Hypermedia-First Architecture
+
+CraftCMS Lazy follows a server-rendered, hypermedia-first approach:
+
+- Craft and Twig render HTML.
+- Datastar adds reactivity with `data-*` attributes and SSE.
+- UI state is represented in the document and on the server.
+- Pages should continue to work without JavaScript where possible.
+- Vue, React, and JSON APIs are not required for normal UI state.
+
+Common Datastar attributes used in the project include `data-signals`, `data-on`, `data-bind`, and `data-class`.
+
+---
+
+## LLM-Ready Content
+
+CraftCMS Lazy includes the [LLM Ready Plugin](https://github.com/johnfmorton/craft-llm-ready). It can expose `llms.txt`
+for site-level context, and you can append `.md` to entry URLs to get Markdown versions of pages without writing
+additional templates.
+
+---
+
+## AI-Assisted Development
+
+The project includes context files for AI-assisted development:
+
+- `AGENTS.md` contains stack, architecture, commands, project conventions, and repo-specific guidance for Codex-style
+  coding agents.
+- `CLAUDE.md` contains project context for Claude Code.
+- `DESIGN.md` documents design direction and interface conventions.
+- `.claudeignore` keeps generated and dependency folders out of Claude Code context.
+- `.mcp.json` connects Claude Code to the [Craft MCP Plugin](https://github.com/stimmtdigital/craft-mcp).
+- `.claude/skills/datastar-craft/` contains Datastar + Craft CMS guidance, patterns, and attribute references.
+
+---
+
+## Demo Assets
+
+This repository includes `/uploads` so the demo works immediately after importing the demo database.
+
+For production projects, move uploaded files to your normal asset storage workflow and add runtime uploads to
+`.gitignore`.
+
+---
+
+## Open Source
+
+CraftCMS Lazy is built by [Andi Grether](https://webworker.me) as an open source starter kit for building cleaner,
+faster, and more maintainable Craft CMS sites with a hypermedia-first approach.

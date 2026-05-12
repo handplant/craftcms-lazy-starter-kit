@@ -1,4 +1,4 @@
-dateModified: 1777018311
+dateModified: 1778578566
 elementSources:
   craft\elements\Entry:
     -
@@ -132,11 +132,9 @@ meta:
     163e2603-df59-49f9-a112-13791fe431d2: 'Public Schema' # Public Schema
     177e5629-be0d-45a5-8751-ee4a081d01d0: 'Switch - Off' # Switch - Off
     521c2fd7-5f4f-42d2-8d89-e0818c2781ba: 'Navigation / Link' # Navigation / Link
-    550d279b-74c8-4f54-beb2-b29d0d2592dd: Settings # Settings
     916e0660-c1f0-4d74-adbd-e0b797d79894: Page # Page
     6243b5f2-9474-47a0-99f2-24d5a6cc5832: 'Rich Text - Rich' # Rich Text - Rich
     6686f777-cfa0-442a-964f-76aeefb81ba6: Categories # Categories
-    8088e42b-90d5-443c-a48e-1dac9ddeb72a: Settings # Settings
     8596f203-6a19-4f0b-a499-4d70fbe9584f: thumbnail # thumbnail
     917884b5-8376-4c3d-b6c5-fbbcbf54318f: 'Anchor Title' # Anchor Title
     978112b6-b2ea-4430-bdc5-2144a4734cf5: Color # Color
@@ -158,7 +156,6 @@ meta:
     c2078d68-c6cf-42ee-ad68-931b8a4b5cdb: 'Link - Native' # Link - Native
     ca8ca091-579e-4b7b-8367-c496ca94f94a: Search # Search
     ceb614ca-f066-47cb-8d5e-647c282b69db: Button # Button
-    d1ed338f-b444-4944-a816-0690f2ec7948: 'JSON-LD Schema' # JSON-LD Schema
     d6ccb54a-08e3-4b74-b2d0-b0b7d04be82b: Home # Home
     d55a22f5-2f99-4c7c-822f-eb8623035eeb: Navigation # Navigation
     d55b1175-f5cd-4977-8625-4333d431a8f6: Files # Files
