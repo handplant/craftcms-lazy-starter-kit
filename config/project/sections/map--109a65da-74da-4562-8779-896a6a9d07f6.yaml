@@ -5,6 +5,7 @@ entryTypes:
     uid: a9a428eb-cbae-455e-876a-3cef2b1fef95 # Map
 handle: map
 maxAuthors: 1
+minAuthors: 1
 name: Map
 previewTargets:
   -

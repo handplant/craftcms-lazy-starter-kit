@@ -1,4 +1,4 @@
-dateModified: 1778578566
+dateModified: 1779265066
 elementSources:
   craft\elements\Entry:
     -
@@ -224,5 +224,5 @@ system:
   live: true
   name: $SITE_NAME
   retryDuration: null
-  schemaVersion: 5.9.0.8
+  schemaVersion: 5.10.0.0
   timeZone: Europe/Berlin

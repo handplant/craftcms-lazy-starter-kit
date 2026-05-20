@@ -3,16 +3,9 @@ enableVersioning: true
 entryTypes:
   -
     uid: 916e0660-c1f0-4d74-adbd-e0b797d79894 # Page
-  -
-    uid: 81a8d92c-0706-448f-bd2b-8506e012dccb
-  -
-    uid: 9800e5de-6b70-4e9a-a491-54ef32087d74
-  -
-    uid: d2c185ad-8cc0-4ff6-bae6-f4f27e1c256c
-  -
-    uid: 567e521e-e0d2-45e7-9807-0f1338748a5b
 handle: pages
 maxAuthors: 1
+minAuthors: 1
 name: Pages
 previewTargets:
   -

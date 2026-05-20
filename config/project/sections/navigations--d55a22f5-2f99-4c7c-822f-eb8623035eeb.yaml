@@ -7,6 +7,7 @@ entryTypes:
     uid: 521c2fd7-5f4f-42d2-8d89-e0818c2781ba # Navigation / Link
 handle: navigations
 maxAuthors: 1
+minAuthors: 1
 name: Navigation
 propagationMethod: all
 siteSettings:

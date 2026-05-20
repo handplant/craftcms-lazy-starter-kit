@@ -5,6 +5,7 @@ entryTypes:
     uid: 07c61af5-375b-4586-bb91-7fed5cbf160d # Search
 handle: search
 maxAuthors: 1
+minAuthors: 1
 name: Search
 previewTargets:
   -

@@ -5,6 +5,7 @@ entryTypes:
     uid: e695ec0b-5690-4d85-a2bc-cab65554571d # Blog Entry
 handle: blog
 maxAuthors: 1
+minAuthors: 1
 name: Blog
 previewTargets:
   -
