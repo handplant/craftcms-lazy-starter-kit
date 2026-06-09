@@ -1,4 +1,4 @@
-dateModified: 1779265066
+dateModified: 1780994725
 elementSources:
   craft\elements\Entry:
     -
@@ -174,7 +174,7 @@ plugins:
   ckeditor:
     edition: standard
     enabled: true
-    schemaVersion: 5.0.0.1
+    schemaVersion: 5.6.0.0
   datastar:
     edition: standard
     enabled: true
@@ -193,16 +193,20 @@ plugins:
     schemaVersion: 1.2.0
     settings:
       analyticsRetentionDays: 90
+      authorOverride: webworker
       autoInjectDiscoveryTag: true
-      cacheTtl: 86400
+      autoInjectLinkHeader: true
+      cacheTtl: 0
       contentSelector: 'main, #content'
-      descriptionField: llms
+      descriptionField: seo.seoDescription
       enableAnalytics: true
       enableContentNegotiation: true
       enableUserAgentDetection: true
       enabled: true
+      excludeSelector: ''
       llmsTxtIntro: "Production-ready Craft CMS 5 starter kit for agencies. \r\nDemonstrates a hypermedia-first architecture using Craft CMS, \r\nTwig, and Datastar — reactive websites without SPA frameworks."
       noindexHeader: true
+      titleField: seo.seoTitle
   mcp:
     edition: standard
     enabled: true

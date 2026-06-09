@@ -10,11 +10,6 @@ fieldLayouts:
         name: 'Seo Hide Generated'
         template: '{{ object.seo.seoHide ? 1 : 0 }}'
         uid: 1a9a9160-4064-4d41-b55f-e820ab14f99c
-      -
-        handle: llms
-        name: llms
-        template: "{{ (object.seo.seoTitle ?? object.headline ?? object.title) ~ (object.seo.seoDescription ? ' — ' ~ object.seo.seoDescription) }}"
-        uid: c0b7cbea-b2bc-4f4c-88f4-8117f3000cb9
     tabs:
       -
         elementCondition: null
