@@ -1,27 +1,27 @@
 {
-  "_chunk-I-YvfV4L.js": {
-    "file": "assets/chunk-I-YvfV4L.js",
-    "name": "chunk"
+  "_rolldown-runtime-Bh1tDfsg.js": {
+    "file": "assets/rolldown-runtime-Bh1tDfsg.js",
+    "name": "rolldown-runtime"
   },
   "src/js/app.js": {
-    "file": "assets/app-CIqy4ehq.js",
+    "file": "assets/app-Cp3KYJUv.js",
     "name": "app",
     "src": "src/js/app.js",
     "isEntry": true,
     "imports": [
-      "_chunk-I-YvfV4L.js"
+      "_rolldown-runtime-Bh1tDfsg.js"
     ],
     "css": [
-      "assets/app-Dn7KlRR2.css"
+      "assets/app-DHFypG_L.css"
     ]
   },
   "src/js/map.js": {
-    "file": "assets/map-DVUfcxRS.js",
+    "file": "assets/map-B_Nrp62l.js",
     "name": "map",
     "src": "src/js/map.js",
     "isEntry": true,
     "imports": [
-      "_chunk-I-YvfV4L.js"
+      "_rolldown-runtime-Bh1tDfsg.js"
     ],
     "css": [
       "assets/map-BcsP_QXj.css"
