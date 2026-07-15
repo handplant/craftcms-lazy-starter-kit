@@ -1,0 +1,7 @@
+[mcp_servers.craft-cms]
+command = "ddev"
+args = [
+    "exec",
+    "php",
+    "vendor/stimmt/craft-mcp/bin/mcp-server",
+]
