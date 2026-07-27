@@ -1891,7 +1891,7 @@ CREATE TABLE `widgets` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-15  9:18:55
+-- Dump completed on 2026-07-27 13:40:23
 -- MySQL dump 10.13  Distrib 8.0.40, for Linux (aarch64)
 --
 -- Host: db    Database: db
@@ -2310,7 +2310,7 @@ commit;
 LOCK TABLES `info` WRITE;
 /*!40000 ALTER TABLE `info` DISABLE KEYS */;
 set autocommit=0;
-INSERT INTO `info` VALUES (1,'5.10.10','5.10.0.0',0,'jyoerbyxnofo','3@bpwzxahtlr','2025-10-01 13:05:16','2026-07-15 07:17:24','57e79d04-1455-41cb-87ac-7b9a70694f66');
+INSERT INTO `info` VALUES (1,'5.10.12','5.10.0.0',0,'jyoerbyxnofo','3@bpwzxahtlr','2025-10-01 13:05:16','2026-07-27 11:39:47','57e79d04-1455-41cb-87ac-7b9a70694f66');
 /*!40000 ALTER TABLE `info` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -2769,4 +2769,4 @@ commit;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-15  9:18:56
+-- Dump completed on 2026-07-27 13:40:24
