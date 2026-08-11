@@ -57,6 +57,7 @@
     {% if hasMore %}
       <div class="mt-12">
         <button
+          type="button"
           data-on:click="{{ datastar.get('_datastar/blog.twig', { offset: limit, entryId: blockId }) }}"
           data-indicator:blog_fetching
           data-attr:disabled="$blog_fetching"

@@ -68,13 +68,13 @@
       {% if prevPage or nextPage %}
         <nav class="flex items-center justify-center mt-10 space-x-4">
           {% if prevPage %}
-            <buttton
+            <button
               class="ui-btn"
               data-on:click="$rm.page = {{ prevPage }}; {{ datastar.get('_datastar/rick-and-morty') }}"
               data-indicator:fetching
             >
               ←
-            </buttton>
+            </button>
           {% endif %}
           <span class="px-3 py-1">Page {{ page }} of {{ info.pages }}</span>
           {% if nextPage %}

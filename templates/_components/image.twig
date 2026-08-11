@@ -1,6 +1,6 @@
 {%- set _fetchpriority = fetchpriority ?? false -%}
 {%- set _lazy = _fetchpriority ? false : lazy ?? true -%}
-{%- set _sizes = (_sizes ?? [768, 1536])|sort -%}
+{%- set _sizes = (sizes ?? [768, 1536])|sort -%}
 {%- set _sizesAttr = sizesAttr ?? '100vw' -%}
 {%- set _aspectRatio = aspectRatio ?? '' -%}
 {%- set _ratio = ratio ?? null -%}
@@ -119,6 +119,8 @@
     <img
       src="{{ url }}"
       class="{{ imageClass }}"
+      width="{{ image.width }}"
+      height="{{ image.height }}"
       alt="{{ altText }}"
       sizes="{{ _sizesAttr }}"
       {{ (_fetchpriority ? ' fetchpriority="high" loading="eager" decoding="async"')|raw }}

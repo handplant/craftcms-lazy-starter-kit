@@ -1,13 +1,12 @@
 {%- set asset = asset ?? null -%}
 {%- set showCaption = showCaption ?? false -%}
-{%- set parts = [] -%}
-
-{%- if asset.mediaCaption -%}{% set parts = parts|merge([asset.mediaCaption]) %}{%- endif -%}
-{%- if asset.mediaCopyright -%}{% set parts = parts|merge(['© ' ~ asset.mediaCopyright]) %}{%- endif -%}
-
-{%- set hasCaption = showCaption and parts -%}
 
 {%- if asset -%}
+  {%- set parts = [] -%}
+  {%- if asset.mediaCaption -%}{% set parts = parts|merge([asset.mediaCaption]) %}{%- endif -%}
+  {%- if asset.mediaCopyright -%}{% set parts = parts|merge(['© ' ~ asset.mediaCopyright]) %}{%- endif -%}
+  {%- set hasCaption = showCaption and parts -%}
+
   {%- switch asset.kind -%}
     {%- case 'video' -%}
       <figure class="ui-neo overflow-hidden">
