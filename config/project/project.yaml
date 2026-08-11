@@ -1,4 +1,4 @@
-dateModified: 1780994725
+dateModified: 1786454150
 elementSources:
   craft\elements\Entry:
     -
@@ -190,7 +190,7 @@ plugins:
   llm-ready:
     edition: standard
     enabled: true
-    schemaVersion: 1.2.0
+    schemaVersion: 1.3.0
     settings:
       analyticsRetentionDays: 90
       authorOverride: webworker
