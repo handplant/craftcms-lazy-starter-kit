@@ -29,9 +29,16 @@
 /yarn-error.log
 /npm-debug.log
 
-#CLAUDE CODE
-.claude/settings.local.json
-CLAUDE.local.md
+# LOCAL AI TOOLING
+/AGENTS.md
+/AGENTS.override.md
+/.agents/
+/.codex/
+/CLAUDE.md
+/CLAUDE.local.md
+/.claude/
+/.claudeignore
+/.mcp.json
 
 # MISC FILES
 .cache

@@ -7,7 +7,7 @@ It is designed for agencies, freelancers, and developers who believe Craft's ent
 entry types, fields, relations, and templates should be clear before a frontend framework enters the conversation.
 
 The project gives you a practical Craft baseline with real examples for Matrix blocks, CKEditor content,
-Datastar-powered interactions, maps, search, SEO, and AI-readable content.
+Datastar-powered interactions, maps, search, SEO, and LLM-readable content.
 
 [Live Demo: craft-kit.dev](https://craft-kit.dev)
 
@@ -57,9 +57,8 @@ dynamic interfaces close to Craft's content model instead of moving the applicat
 DDEV and Vite provide a repeatable local environment with hot reload and predictable commands. You can start a project
 without writing Docker config from scratch.
 
-### AI-ready by default
+### LLM-readable content
 
-The repo includes agent instructions, Claude Code context, MCP configuration, Datastar guidance, and design notes.
 The LLM Ready plugin can expose `llms.txt` and entry pages as clean Markdown by appending `.md` to URLs.
 
 ### SEO, accessibility, and performance
@@ -75,7 +74,7 @@ performance and accessibility concerns close to the templates.
 - Datastar examples for server-rendered reactive UI
 - Tailwind CSS v4 and Vite asset workflow
 - DDEV local development setup
-- SEO, LLM, and AI-assistant tooling
+- SEO and LLM-readable content
 - Demo content for pages, blog, search, maps, and UI blocks
 
 Formie, Blitz, and other first-class Craft plugins can be added when a project needs forms, static caching, or more
@@ -176,7 +175,7 @@ ddev craft project-config/apply
 ## Project Structure
 
 ```text
-templates/_components/       Dumb UI components, included with `with {} only`
+templates/_components/       Presentational UI components, included with `with {} only`
 templates/_partials/         Twig partials and entry rendering templates
 templates/_partials/entry/   Matrix blocks, block components, and entry type templates
 templates/_layouts/          Base layouts
@@ -214,20 +213,6 @@ Common Datastar attributes used in the project include `data-signals`, `data-on`
 CraftCMS Lazy includes the [LLM Ready Plugin](https://github.com/johnfmorton/craft-llm-ready). It can expose `llms.txt`
 for site-level context, and you can append `.md` to entry URLs to get Markdown versions of pages without writing
 additional templates.
-
----
-
-## AI-Assisted Development
-
-The project includes context files for AI-assisted development:
-
-- `AGENTS.md` contains stack, architecture, commands, project conventions, and repo-specific guidance for Codex-style
-  coding agents.
-- `CLAUDE.md` contains project context for Claude Code.
-- `DESIGN.md` documents design direction and interface conventions.
-- `.claudeignore` keeps generated and dependency folders out of Claude Code context.
-- `.mcp.json` connects Claude Code to the [Craft MCP Plugin](https://github.com/stimmtdigital/craft-mcp).
-- `.claude/skills/datastar-craft/` contains Datastar + Craft CMS guidance, patterns, and attribute references.
 
 ---
 
