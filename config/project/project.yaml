@@ -1,4 +1,4 @@
-dateModified: 1786454150
+dateModified: 1788261937
 elementSources:
   craft\elements\Entry:
     -
@@ -210,7 +210,7 @@ plugins:
   mcp:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion: 1.4.0
   seomate:
     edition: standard
     enabled: true
