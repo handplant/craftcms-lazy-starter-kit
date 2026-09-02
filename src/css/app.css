@@ -2,6 +2,7 @@
 @import "./_base.css";
 @import "./_utilities.css";
 @import "./_components.css";
+@import "./_prose.css";
 @import "./_datastar.css";
 @import "./_layout.css";
 @import "./_embla.css";
@@ -60,80 +61,3 @@
   --content: min(var(--breakpoint-lg), 100% - var(--gap-x) * 2);
 }
 
-@utility prose {
-  @apply max-w-full;
-  --tw-prose-body: var(--color-ink);
-  --tw-prose-headings: var(--color-ink);
-  --tw-prose-counters: var(--color-pop-on);
-  --tw-prose-bullets: var(--color-pop-on);
-  --tw-prose-hr: var(--color-ink);
-
-  h1:not(.not-prose h1, .not-prose *) {
-    @apply ui-h1;
-  }
-
-  h2:not(.not-prose h2, .not-prose *) {
-    @apply ui-h2;
-  }
-
-  h3:not(.not-prose h3, .not-prose *) {
-    @apply ui-h3;
-  }
-
-  h4:not(.not-prose h4, .not-prose *) {
-    @apply ui-h4;
-  }
-
-  h5,
-  h6,
-  strong {
-    @apply ui-bold;
-  }
-
-  ul,
-  ol {
-    @apply mb-8;
-  }
-
-  pre {
-    @apply bg-ink text-pop-dim p-4 overflow-x-auto text-sm md:text-base leading-relaxed ui-border rounded-none ui-bold ui-shadow-pop;
-    tab-size: 2;
-
-    code {
-      @apply bg-transparent p-0 text-inherit font-mono;
-
-      &::before,
-      &::after {
-        content: none;
-      }
-    }
-  }
-
-  code {
-    &::before,
-    &::after {
-      content: none;
-    }
-  }
-
-  blockquote {
-    @apply italic border-l-[6px] border-ink bg-white pl-6 pr-5 py-2 ui-bold text-ink;
-    quotes: none;
-
-    p:first-of-type::before,
-    p:last-of-type::after {
-      content: none;
-    }
-  }
-
-  :not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    a {
-      @apply ui-link;
-    }
-  }
-}
-
-.prose hr {
-  @apply border-t-4 border-ink my-8;
-  border-bottom: none;
-}
