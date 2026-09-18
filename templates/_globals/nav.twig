@@ -2,7 +2,7 @@
 {% set navItems = craft.entries.section('navigations').eagerly().level(1).all() ?? null %}
 {% set isSearchPage = craft.app.request.pathInfo == 'search' %}
 <nav
-  class="fixed inset-x-0 top-0 z-[1001] h-16 bg-canvas border-b-4 border-ink layout"
+  class="fixed inset-x-0 top-0 z-1001 h-16 bg-canvas border-b-4 border-ink layout"
   data-class="{ 'bg-bg': $ui.navOpen, 'bg-canvas': !$ui.navOpen }"
   data-on:keydown="if (event.key === 'Escape') $ui.navOpen = false, $ui.searchOpen = false, $ui.dropdownOpen = false, $ui.btcOpen = false"
   data-on:click__outside="$ui.navOpen = false, $ui.dropdownOpen = false"

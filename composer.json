@@ -1,16 +1,16 @@
 {
   "require": {
     "craftcms/ckeditor": "^5.7.0",
-    "craftcms/cms": "^5.10.14",
-    "craftcms/feed-me": "^6.15.1",
+    "craftcms/cms": "^5.11.2",
+    "craftcms/feed-me": "^6.15.2",
     "ether/simplemap": "5.0.4",
-    "johnfmorton/craft-llm-ready": "^1.6.1",
+    "johnfmorton/craft-llm-ready": "^1.9.0",
     "nystudio107/craft-vite": "^5.0.2",
     "putyourlightson/craft-datastar": "^1.0.3",
     "stimmt/craft-mcp": "^v1.4.0",
     "vaersaagod/seomate": "^3.3.1",
-    "verbb/image-resizer": "^4.0.7",
-    "vlucas/phpdotenv": "^5.6.4"
+    "verbb/image-resizer": "^4.0.10",
+    "vlucas/phpdotenv": "^5.7.0"
   },
   "require-dev": {
     "yiisoft/yii2-shell": "^2.0.6"

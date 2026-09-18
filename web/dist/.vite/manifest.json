@@ -4,7 +4,7 @@
     "name": "rolldown-runtime"
   },
   "src/js/app.js": {
-    "file": "assets/app-DOgyY5QL.js",
+    "file": "assets/app-JLAyOPxf.js",
     "name": "app",
     "src": "src/js/app.js",
     "isEntry": true,
@@ -12,11 +12,11 @@
       "_rolldown-runtime-CbXtAM7H.js"
     ],
     "css": [
-      "assets/app-CY47fPEc.css"
+      "assets/app-D7oaYeo-.css"
     ]
   },
   "src/js/map.js": {
-    "file": "assets/map-C8M-escW.js",
+    "file": "assets/map-WkRpD-Ux.js",
     "name": "map",
     "src": "src/js/map.js",
     "isEntry": true,
