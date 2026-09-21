@@ -1,3 +1,5 @@
+
+
 # CraftCMS Lazy Starter Kit
 
 CraftCMS Lazy is a Craft CMS 5 starter kit for building fast, maintainable, server-rendered websites with Vite,
@@ -152,13 +154,13 @@ ddev craft install
 Start the Vite dev server:
 
 ```bash
-ddev node run dev
+ddev npm run dev
 ```
 
 Build production assets:
 
 ```bash
-ddev node run build
+ddev npm run build
 ```
 
 The production build writes optimized assets to `web/dist/` and updates the Vite manifest used by Craft.
