@@ -1,4 +1,4 @@
-dateModified: 1789729736
+dateModified: 1794573029
 elementSources:
   craft\elements\Entry:
     -
@@ -190,7 +190,7 @@ plugins:
   llm-ready:
     edition: standard
     enabled: true
-    schemaVersion: 1.4.0
+    schemaVersion: 1.5.0
     settings:
       analyticsRetentionDays: 90
       authorOverride: webworker
@@ -207,10 +207,6 @@ plugins:
       llmsTxtIntro: "Production-ready Craft CMS 5 starter kit for agencies. \r\nDemonstrates a hypermedia-first architecture using Craft CMS, \r\nTwig, and Datastar — reactive websites without SPA frameworks."
       noindexHeader: true
       titleField: seo.seoTitle
-  mcp:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.4.0
   seomate:
     edition: standard
     enabled: true
@@ -228,5 +224,5 @@ system:
   live: true
   name: $SITE_NAME
   retryDuration: null
-  schemaVersion: 5.11.0.2
+  schemaVersion: 5.12.0.2
   timeZone: Europe/Berlin
