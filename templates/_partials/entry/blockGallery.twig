@@ -1,7 +1,7 @@
 {% set builder = builder ?? false %}
 {% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
-{% set classWrapper = builder ? 'blocks blocks--gallery' : 'inlines inlines--gallery' %}
-{% set classContent = builder ? 'blocks__feature' : '' %}
+{% set classWrapper = (builder ? 'ui-block' : 'ui-inline') ~ ' ui-block-gallery' %}
+{% set classContent = builder ? 'ui-container' : '' %}
 
 {% block content %}
   {% set images = entry.images.eagerly().all() ?? null %}

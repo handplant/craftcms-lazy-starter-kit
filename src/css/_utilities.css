@@ -30,6 +30,12 @@
   @apply font-bold underline decoration-2 underline-offset-2 decoration-pop-on hover:decoration-pop-on hover:text-pop-on transition-colors duration-100;
 }
 
+@utility ui-container {
+  width: min(100%, calc(var(--container-content) + var(--gap-x) * 2));
+  margin-inline: auto;
+  padding-inline: var(--gap-x);
+}
+
 @utility ui-gap-x {
   @apply px-(--gap-x) py-0;
 }

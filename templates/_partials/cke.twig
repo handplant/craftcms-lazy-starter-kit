@@ -1,10 +1,7 @@
 {% set anchorId = entry.anchor.anchorTitle ?? null %}
 
-<div
-  {{ (classWrapper ? 'class="' ~ classWrapper ~ ' not-prose"')|raw }}
-  {{ (anchorId ? 'id="' ~ (anchorId|kebab) ~ '"')|raw }}
->
-  <div class="{{ classContent ?? '' }}">
+<div {{ attr({ class: [classWrapper|default(''), 'not-prose'], id: anchorId ? anchorId|kebab : null }) }}>
+  <div {{ attr({ class: classContent|default(null) }) }}>
     {% block content %}
 
     {% endblock %}

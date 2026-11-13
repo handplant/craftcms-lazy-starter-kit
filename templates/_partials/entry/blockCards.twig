@@ -1,7 +1,7 @@
 {% set builder = builder ?? false %}
 {% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
-{% set classWrapper = builder ? 'blocks blocks--cards' : 'inlines inlines--cards' %}
-{% set classContent = builder ? 'blocks__popout' : '' %}
+{% set classWrapper = (builder ? 'ui-block' : 'ui-inline') ~ ' ui-block-cards' %}
+{% set classContent = builder ? 'ui-container' : '' %}
 {% set isCols2 = entry.grid2cols %}
 
 {% block content %}

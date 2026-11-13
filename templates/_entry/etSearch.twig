@@ -4,13 +4,13 @@
   {% cache using key 'entry__' ~ craft.app.request.pathInfo %}
     {% set search = craft.entries.section('search').one() %}
 
-    <section class="blocks blocks--cke">
-      <div class="blocks__content prose md:prose-lg lg:prose-xl">
+    <section class="ui-block ui-block-cke">
+      <div class="ui-container prose md:prose-lg lg:prose-xl">
         {{ entry.builder }}
       </div>
     </section>
-    <section class="blocks blocks--search">
-      <div class="blocks__content">
+    <section class="ui-block ui-block-search">
+      <div class="ui-container">
         {{ search.render({ type: 'page' }) }}
       </div>
     </section>

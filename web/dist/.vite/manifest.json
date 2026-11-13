@@ -4,7 +4,7 @@
     "name": "rolldown-runtime"
   },
   "src/js/app.js": {
-    "file": "assets/app-ByKva1iH.js",
+    "file": "assets/app-BkqFueSO.js",
     "name": "app",
     "src": "src/js/app.js",
     "isEntry": true,
@@ -12,7 +12,7 @@
       "_rolldown-runtime-WkwZ5CU-.js"
     ],
     "css": [
-      "assets/app-CTtUFj6w.css"
+      "assets/app-DLUSDphb.css"
     ]
   },
   "src/js/map.js": {

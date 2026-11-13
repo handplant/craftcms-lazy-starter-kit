@@ -1,10 +1,7 @@
 {% set anchorId = entry.anchor.anchorTitle ?? null %}
 
-<section
-  {{ (classWrapper ? 'class="' ~ classWrapper ~ '"')|raw }}
-  {{ (anchorId ? 'id="' ~ (anchorId|kebab) ~ '"')|raw }}
->
-  <div class="{{ classContent ?? '' }}">
+<section {{ attr({ class: classWrapper|default(null), id: anchorId ? anchorId|kebab : null }) }}>
+  <div {{ attr({ class: classContent|default(null) }) }}>
     {% block content %}
 
     {% endblock %}

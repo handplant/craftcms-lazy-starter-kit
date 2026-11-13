@@ -3,15 +3,15 @@
 {% block main %}
   {% cache using key 'entry__' ~ craft.app.request.url %}
     {% if entry.headline %}
-      <header class="blocks blocks--header">
-        <div class="blocks__content">
+      <header class="ui-block ui-block-header">
+        <div class="ui-container">
           <h1 class="ui-h1">{{ entry.headline|nl2br }}</h1>
         </div>
       </header>
     {% endif %}
     {% if entry.ckeBuilder %}
-      <section class="blocks blocks--cke">
-        <div class="blocks__content prose md:prose-lg lg:prose-xl">
+      <section class="ui-block ui-block-cke">
+        <div class="ui-container prose md:prose-lg lg:prose-xl">
           {{ entry.ckeBuilder }}
         </div>
       </section>

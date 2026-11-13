@@ -2,8 +2,8 @@
 {% set privacy = craft.entries.slug('privacy-policy').one() %}
 {% set search = craft.entries.slug('search').one() %}
 
-<footer class="blocks blocks--footer bg-canvas border-t-4 border-ink mt-12">
-  <div class="blocks__content text-center space-y-6">
+<footer class="bg-canvas border-t-4 border-ink mt-12">
+  <div class="ui-container py-(--gap-y) text-center space-y-6">
     <h2 class="ui-h2 text-ink">Clean. Modular.<br />Ready for real-world use.</h2>
 
     <p class="text-ink md:text-lg max-w-2xl mx-auto">
@@ -51,9 +51,9 @@
     </div>
   </div>
 
-  <div class="blocks__feature border-t-2 border-ink mt-6 pt-0">
-    <div class="grid grid-cols-2 items-center gap-4 pt-2">
-      <p class="ui-bold text-ink text-lg whitespace-nowrap">
+  <div class="ui-container pb-(--gap-y) mt-6">
+    <div class="grid sm:grid-cols-2 items-center gap-4 border-t-2 border-ink pt-2">
+      <p class="ui-bold text-ink text-lg">
         Craft CMS Lazy Starter Kit
       </p>
       <p class="flex items-center gap-3 justify-end">

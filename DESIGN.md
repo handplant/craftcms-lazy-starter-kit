@@ -131,16 +131,20 @@ Text selection uses `pop` background with `ink` text.
 
 ## Layout
 
-The grid is built on a CSS custom property system with fluid gaps. All layout spacing is defined as `clamp()` — it scales continuously between a minimum and maximum based on viewport width, so there are no hard breakpoint jumps.
+Page layout uses a single centered content container with full-width block wrappers. Layout spacing is defined as `clamp()` — it scales continuously between a minimum and maximum based on viewport width, so there are no hard breakpoint jumps.
 
 **Layout spacing vars (defined in `:root`):**
-- `--gap-x`: `clamp(0.5rem, 6vw, 3rem)` — horizontal page gutters, used in `ui-gap-x` and the grid column definition
+- `--gap-x`: `clamp(0.5rem, 6vw, 3rem)` — horizontal page gutters, used in `ui-container` and `ui-gap-x`
 - `--gap-y`: `clamp(0.5rem, 6vw, 3rem)` — vertical rhythm between Matrix content blocks
-- `--gap-y-sm`: `clamp(0.5rem, 6vw, 2rem)` — tighter vertical rhythm for `.inlines` sections. Desktop max: 32px.
+- `--gap-y-sm`: `clamp(0.5rem, 6vw, 2rem)` — tighter vertical rhythm for embedded `.ui-inline` blocks. Desktop max: 32px.
 
 **Component spacing** uses `--space: clamp(1rem, 2.5vw, 1.5rem)` — fluid from 16px (mobile) to 24px (desktop), applied via the `ui-space` utility. Use `ui-space` for card and feature content padding. The `space` token (24px) represents the desktop maximum.
 
-The content column is bounded at `1024px` (lg breakpoint) with `--gap-x` padding on each side.
+`ui-container` centers a single content column bounded at `64rem` (`--container-content`, 1024px), plus `--gap-x` padding on each side. The page uses normal document flow, not a named-column layout grid.
+
+Matrix blocks use an outer `<section class="ui-block ui-block-text">` for full-width backgrounds and vertical padding, with an inner `ui-container` for width and gutters. The type class changes per block (`ui-block-cards`, `ui-block-media`, etc.). `classWrapper` and `classContent` remain the customization points in each block template.
+
+CKEditor blocks retain their separate base partial and rendering behavior: an outer `<div class="ui-inline ui-block-text not-prose">` with smaller vertical padding and an inner content element without another page container. Internal card, gallery, and other component grids are independent of the page container.
 
 The main layout breakpoint is `switch` at `1280px` — this controls nav switching between mobile and desktop.
 

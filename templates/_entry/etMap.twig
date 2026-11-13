@@ -11,10 +11,10 @@
         and e.map.lat is not empty and e.map.lng is not empty
     ) %}
 
-    <section class="blocks blocks--map">
-      <div class="blocks__full pt-0 pb-0">
+    <section class="ui-block ui-block-map py-0">
+      <div class="w-full">
         <div
-          class="flex flex-col lg:flex-row lg:h-full relative max-w-650 mx-auto border-b-4 border-ink"
+          class="flex flex-col lg:flex-row lg:h-full relative border-b-4 border-ink"
           data-signals='{{ {(appNs): {filter: '', search: ''}} | json_encode }}'>
           {{ macros.urlSync([
             {name: 'search', signal: appNs ~ '.search', default: '', type: 'string'},
@@ -80,8 +80,8 @@
         </div>
       </div>
     </section>
-    <section class="blocks blocks--text">
-      <div class="blocks__content prose md:prose-lg lg:prose-xl">
+    <section class="ui-block ui-block-text">
+      <div class="ui-container prose md:prose-lg lg:prose-xl">
         {{ entry.builder }}
       </div>
     </section>

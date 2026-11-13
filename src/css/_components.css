@@ -1,4 +1,37 @@
 @layer components {
+  /* LAYOUT */
+  .ui-block {
+    @apply py-(--gap-y);
+  }
+
+  .ui-inline {
+    @apply py-(--gap-y-sm);
+  }
+
+  .ui-block-header {
+    @apply pb-0 pt-[calc(var(--gap-y)*1.25)];
+  }
+
+  .stack {
+    @apply grid [grid-template-areas:'stack'];
+
+    > .stack__image {
+      @apply h-full w-full [grid-area:stack];
+    }
+
+    > .stack__content {
+      @apply relative w-full [grid-area:stack];
+    }
+  }
+
+  .stack--center {
+    @apply place-items-center;
+  }
+
+  .stack--end {
+    @apply place-items-end;
+  }
+
   /* BUTTON & LINKS */
   .ui-btn {
     --_bg: var(--color-pop);
@@ -44,6 +77,15 @@
   /*CARDS*/
   .ui-card {
     @apply h-full bg-canvas ui-neo space-y-3 ui-lift;
+  }
+
+  /* DATASTAR RESULTS */
+  [id^="result-"] {
+    @apply grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8;
+  }
+
+  #map-result {
+    @apply hidden lg:grid xl:grid-cols-2 3xl:grid-cols-3 gap-8 p-5 mt-3;
   }
 
   /*MAP POPUP*/

@@ -1,7 +1,7 @@
 {% set builder = builder ?? false %}
 {% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
-{% set classWrapper = builder ? 'blocks blocks--blog' : 'inlines inlines--blog' %}
-{% set classContent = builder ? 'blocks__popout' : '' %}
+{% set classWrapper = (builder ? 'ui-block' : 'ui-inline') ~ ' ui-block-blog' %}
+{% set classContent = builder ? 'ui-container' : '' %}
 {% import '_macros/datastar' as macros %}
 
 {% block content %}

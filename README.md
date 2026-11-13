@@ -89,9 +89,11 @@ The interactions are progressively enhanced and do not require a client-side app
 
 - [Datastar Search](https://craft-kit.dev/search)
 - [Datastar Blog](https://craft-kit.dev/blog-hypermedia-datastar)
-- [Rick & Morty API Demo](https://craft-kit.dev/rick-and-morty-datastar)
 - [Datastar Leaflet Map](https://craft-kit.dev/map)
 - [Datastar Todo List](https://craft-kit.dev/hypermedia-todolist-craft-cms-datastar)
+
+The Bitcoin ticker in the header and GitHub statistics in the footer are additional Datastar examples using Feed Me
+for external API data.
 
 ---
 
@@ -152,13 +154,13 @@ ddev craft install
 Start the Vite dev server:
 
 ```bash
-ddev node run dev
+ddev npm run dev
 ```
 
 Build production assets:
 
 ```bash
-ddev node run build
+ddev npm run build
 ```
 
 The production build writes optimized assets to `web/dist/` and updates the Vite manifest used by Craft.
@@ -191,6 +193,23 @@ src/js/                      JavaScript source
 config/                      Craft, Vite, Datastar, and plugin config
 modules/craftkit/            Example Craft module
 ```
+
+---
+
+## Layout and Blocks
+
+Page layout uses one centered `ui-container` with a maximum content width of 1024px and responsive side padding.
+Matrix blocks keep full-width backgrounds and vertical spacing on the outer `ui-block` wrapper, with the container inside.
+The map demo intentionally remains full width.
+
+Block types have readable classes such as `ui-block-text`, `ui-block-cards`, and `ui-block-media`.
+Each block retains `classWrapper` and `classContent` for styling the two layers.
+
+Matrix and CKEditor use separate base partials. Embedded CKEditor blocks use `ui-inline` and `not-prose`, with their own
+spacing and no additional page container. Internal card and gallery grids remain independent of the page layout.
+
+Shared layout, UI components, and Datastar result styles live in `src/css/_components.css`. Base styles, utilities,
+rich-text typography, Embla, and vendor overrides remain in separate CSS files.
 
 ---
 

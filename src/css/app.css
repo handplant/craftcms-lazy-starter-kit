@@ -3,8 +3,6 @@
 @import "./_utilities.css";
 @import "./_components.css";
 @import "./_prose.css";
-@import "./_datastar.css";
-@import "./_layout.css";
 @import "./_embla.css";
 @import "./_vendor.css";
 
@@ -40,6 +38,8 @@
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1840px;
   --breakpoint-switch: 1280px;
+
+  --container-content: 64rem;
 }
 
 :root {
@@ -55,9 +55,5 @@
   --gap-x: clamp(0.5rem, 6vw, 3rem);
   --gap-y: clamp(0.5rem, 6vw, 3rem);
   --gap-y-sm: clamp(0.5rem, 6vw, 2rem);
-  --full: minmax(var(--gap-x), 1fr);
-  --feature: minmax(0, 200px);
-  --popout: minmax(0, 100px);
-  --content: min(var(--breakpoint-lg), 100% - var(--gap-x) * 2);
 }
 

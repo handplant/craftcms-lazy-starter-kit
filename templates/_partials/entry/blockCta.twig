@@ -3,8 +3,8 @@
 {% set button = entry.button %}
 
 {% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
-{% set classWrapper = builder ? 'blocks blocks--cta' : 'inlines inlines--cta' %}
-{% set classContent = builder ? 'blocks__popout' : '' %}
+{% set classWrapper = (builder ? 'ui-block' : 'ui-inline') ~ ' ui-block-cta' %}
+{% set classContent = builder ? 'ui-container' : '' %}
 
 {% block content %}
   <div class="ui-neo bg-pop-dim p-6 md:p-16 flex flex-col items-start gap-6 ui-lift">

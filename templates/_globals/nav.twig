@@ -2,12 +2,12 @@
 {% set navItems = craft.entries.section('navigations').eagerly().level(1).all() ?? null %}
 {% set isSearchPage = craft.app.request.pathInfo == 'search' %}
 <nav
-  class="fixed inset-x-0 top-0 z-1001 h-16 bg-canvas border-b-4 border-ink layout"
+  class="fixed inset-x-0 top-0 z-1001 h-16 bg-canvas border-b-4 border-ink"
   data-class="{ 'bg-bg': $ui.navOpen, 'bg-canvas': !$ui.navOpen }"
   data-on:keydown="if (event.key === 'Escape') $ui.navOpen = false, $ui.searchOpen = false, $ui.dropdownOpen = false, $ui.btcOpen = false"
   data-on:click__outside="$ui.navOpen = false, $ui.dropdownOpen = false"
 >
-  <div class="flex items-center justify-between gap-3 w-full layout__popout">
+  <div class="ui-container flex h-full items-center justify-between gap-3">
     <div class="flex items-center shrink-0 mr-auto">
       <a class="flex items-center gap-3 text-2xl ui-bold group" href="{{ home.url }}" aria-label="Home">
         <img

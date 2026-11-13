@@ -2,8 +2,8 @@
   {% set search = craft.entries.section('search').one() %}
 
   <div class="hidden" data-class="{ 'block': $ui.searchOpen, 'hidden': !$ui.searchOpen }">
-    <div class="blocks blocks--search">
-      <div class="blocks__content">
+    <div class="ui-block ui-block-search">
+      <div class="ui-container">
         <div class="ui-card p-8">
           <p class="ui-bold">
             {{ search.title }}

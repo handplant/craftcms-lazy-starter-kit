@@ -1,7 +1,7 @@
 {% set builder = builder ?? false %}
 {% extends builder ? '_partials/matrix.twig' : '_partials/cke.twig' %}
-{% set classWrapper = builder ? 'blocks blocks--buttons' : 'inlines inlines--buttons' %}
-{% set classContent = builder ? 'blocks__content' : '' %}
+{% set classWrapper = (builder ? 'ui-block' : 'ui-inline') ~ ' ui-block-buttons' %}
+{% set classContent = builder ? 'ui-container' : '' %}
 
 {% block content %}
   <div class="flex flex-wrap items-center gap-3 sm:gap-6">

@@ -15,7 +15,7 @@
 }
 
 .embla__slide {
-  @apply shrink-0 basis-3/4 md:basis-1/2 2xl:basis-1/4;
+  @apply shrink-0 basis-3/4 md:basis-1/2;
   padding-left: var(--slide-spacing);
 }
 

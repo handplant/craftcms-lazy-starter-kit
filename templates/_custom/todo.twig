@@ -8,14 +8,14 @@
 } %}
 
 {% block main %}
-  <header class="blocks blocks--header">
-    <div class="blocks__content">
+  <header class="ui-block ui-block-header">
+    <div class="ui-container">
       <h1 class="ui-h1">Hypermedia TodoList</h1>
     </div>
   </header>
 
-  <section class="blocks blocks--text">
-    <div class="blocks__content prose md:prose-lg lg:prose-xl">
+  <section class="ui-block ui-block-text">
+    <div class="ui-container prose md:prose-lg lg:prose-xl">
       <p>
         A hypermedia TodoList built with <strong>Craft CMS</strong> and <strong>Datastar</strong> — no JavaScript framework,
         no database. All interactions are handled by SSE endpoints that stream HTML fragments back to the browser. A practical
@@ -25,11 +25,11 @@
   </section>
   <section
     id="todo-app"
-    class="blocks blocks--todo"
+    class="ui-block ui-block-todo"
     data-signals="{todo: {input: '', id: '', error: ''}}"
     data-indicator:fetching
   >
-    <div class="blocks__content">
+    <div class="ui-container">
       <noscript>
         <style>
           .todo-form { display: none; }

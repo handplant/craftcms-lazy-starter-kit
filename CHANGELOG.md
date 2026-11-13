@@ -1,5 +1,31 @@
 # Changelog
 
+## [3.2.0] – 2026-11-13
+
+### Changed
+
+- Replaced the named-column page layout grid with a single `ui-container`; the map demo remains full width.
+- Introduced readable block classes: `ui-block` for Matrix, `ui-inline` for CKEditor, and shared type classes such as `ui-block-text`.
+- Preserved separate Matrix and CKEditor rendering contexts, including `classWrapper` and `classContent` customization.
+- Consolidated layout and Datastar result styles into `_components.css`.
+- Removed Embla's four-column breakpoint at 1536px; slides remain half-width from the medium breakpoint upward.
+- Updated Craft CMS to 5.12.1, Craft plugins, Tailwind CSS to 4.3.5, Vite to 8.3.8, and frontend tooling.
+- Refreshed the demo database and production assets.
+
+### Fixed
+
+- Corrected image transform formats and MIME types, with support checks for WebP and AVIF.
+- Fixed responsive image width descriptors and duplicate candidates when upscaling is disabled.
+- Matched intrinsic image dimensions to ratio-based crops and retained a valid `imgOnly` fallback without JPEG sources.
+- Applied object-fit styling to untransformed images and safely escaped image attributes.
+- Corrected the documented Vite development and build commands to use `ddev npm run`.
+
+### Removed
+
+- Legacy layout width classes and grid configuration, plus the grid demo, route, and sitemap entry.
+- Rick & Morty page and Datastar endpoint, including its route, sitemap entry, README link, and CSS rules.
+- Craft MCP plugin and its obsolete configuration; Feed Me remains for the Bitcoin and GitHub Datastar examples.
+
 ## [3.1.0] – 2026-04-18
 
 ### Updated
