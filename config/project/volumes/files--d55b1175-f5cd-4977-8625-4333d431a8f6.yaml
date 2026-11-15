@@ -60,13 +60,32 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 177e5629-be0d-45a5-8751-ee4a081d01d0 # Switch - Off
+            handle: aiGenerated
+            instructions: 'Show an AI badge on images created with an image-generation model.'
+            label: 'AI Generated'
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5ab4cacf-3877-4008-802e-aa67b2627478
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-10-01T14:41:32+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
             handle: mediaCaption
             instructions: null
             label: Caption
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -78,10 +97,12 @@ fieldLayouts:
             dateAdded: '2025-10-01T14:41:32+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: c05cf09b-1380-4613-8fd9-1e1a72af0e79 # Text - Single
             handle: mediaCopyright
             instructions: null
             label: Copyright
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -92,6 +113,7 @@ fieldLayouts:
         name: Content
         uid: d496da4b-1ba4-4d69-9089-f5f10eff2045
         userCondition: null
+    thumbFieldKey: null
 fs: files
 handle: files
 name: Files

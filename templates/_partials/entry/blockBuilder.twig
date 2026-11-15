@@ -1,0 +1,10 @@
+{% extends '_partials/matrix.twig' %}
+{% set classWrapper = 'ui-block ui-block-builder' %}
+{% set classContent = 'ui-container' %}
+
+{% block content %}
+  {% set builder = false %}
+  <div class="prose md:prose-lg lg:prose-xl">
+    {{ entry.ckeBuilder }}
+  </div>
+{% endblock %}

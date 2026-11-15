@@ -96,6 +96,14 @@ settings:
         -
           - group
           - Apps
+    -
+      __assoc__:
+        -
+          - uid
+          - db27bf66-0467-4e1c-a7fc-8e60729ad1d4 # Builder
+        -
+          - group
+          - Text
   includeTableView: false
   maxEntries: null
   minEntries: null

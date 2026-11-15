@@ -5,6 +5,14 @@
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
     RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
+    # --- Renamed demo pages ---
+    RewriteRule ^craft-cms-starter-kit-agencies/?$ /why-craft-kit [R=301,L]
+    RewriteRule ^blog-hypermedia-datastar/?$ /blog [R=301,L]
+    RewriteRule ^blog-hypermedia-datastar/(.+)$ /blog/$1 [R=301,L]
+    RewriteRule ^(?:matrix-builder|flexible-grid-layout)/?$ /builder#matrix [R=301,L,NE]
+    RewriteRule ^(?:cke-builder|richtext)/?$ /builder#ckeditor [R=301,L,NE]
+    RewriteRule ^rick-and-morty-datastar/?$ /blog [R=301,L]
+
     # --- Craft routing ---
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d

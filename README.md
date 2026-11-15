@@ -40,17 +40,17 @@ makes sense. Matrix blocks, block components, and entry type templates resolve t
 from `templates/_partials/entry/`, and relations are loaded with `eagerly()` so developers know where content lives and
 how it reaches the page.
 
-### No frontend framework required
+### One reactive UI model
 
-Craft and Twig render the HTML. Datastar handles reactivity through HTML attributes and server-sent events. Embla,
-Leaflet, and other small libraries are used where they solve a specific browser problem, but Vue, React, hydration, and
-JSON APIs are not required for normal UI state.
+Craft and Twig render the HTML. Datastar handles navigation dropdowns, mobile navigation, the search panel, filters,
+and server-driven updates through HTML attributes, signals, and server-sent events. There is no Alpine, Vue, or React
+layer for ordinary UI state. Embla, Leaflet, and GLightbox handle the specialist slider, map, and gallery behavior.
 
 ### Hypermedia over client-side state
 
-The server renders state, the browser displays it, and Datastar morphs the DOM when the server sends new HTML. This
-keeps
-dynamic interfaces close to Craft's content model instead of moving the application into a separate client-side runtime.
+Craft owns authoritative data, validation, and permissions. Datastar signals hold transient browser state, and DOM
+morphing applies server-rendered HTML updates. This keeps dynamic interfaces close to Craft's content model instead
+of requiring a separate frontend application.
 
 ### Local dev, no drama
 
@@ -84,11 +84,11 @@ specialized production behavior.
 
 ## Datastar Examples
 
-The demo site includes practical Datastar examples that keep state on the server and update the page with HTML over SSE.
-The interactions are progressively enhanced and do not require a client-side application framework.
+The demo site uses Datastar for local UI interactions and server-rendered HTML updates over SSE. It does not require
+a separate frontend application. The Todo List is a JavaScript-dependent, session-backed demonstration.
 
 - [Datastar Search](https://craft-kit.dev/search)
-- [Datastar Blog](https://craft-kit.dev/blog-hypermedia-datastar)
+- [Datastar Blog](https://craft-kit.dev/blog)
 - [Datastar Leaflet Map](https://craft-kit.dev/map)
 - [Datastar Todo List](https://craft-kit.dev/hypermedia-todolist-craft-cms-datastar)
 
@@ -206,7 +206,12 @@ Block types have readable classes such as `ui-block-text`, `ui-block-cards`, and
 Each block retains `classWrapper` and `classContent` for styling the two layers.
 
 Matrix and CKEditor use separate base partials. Embedded CKEditor blocks use `ui-inline` and `not-prose`, with their own
-spacing and no additional page container. Internal card and gallery grids remain independent of the page layout.
+spacing and no additional page container. The [Builder demo](https://craft-kit.dev/builder) combines both contexts on a
+normal page: `blockBuilder` places the CKEditor example inside Matrix. Internal card and gallery grids remain independent
+of the page layout. The `ui-cards` grid fills incomplete rows automatically; `ui-cards-2` keeps the two-column variant.
+
+Original illustrations are stored as Craft assets. The `aiGenerated` asset switch enables the shared badge in
+`templates/_components/image.twig`; real editor screenshots remain unmarked.
 
 Shared layout, UI components, and Datastar result styles live in `src/css/_components.css`. Base styles, utilities,
 rich-text typography, Embla, and vendor overrides remain in separate CSS files.

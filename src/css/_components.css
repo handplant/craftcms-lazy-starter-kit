@@ -75,8 +75,51 @@
   }
 
   /*CARDS*/
+  .ui-cards {
+    @apply grid gap-6 sm:grid-cols-2;
+
+    @variant sm {
+      > :last-child:nth-child(odd) {
+        @apply col-span-2;
+      }
+    }
+
+    @variant md {
+      &:not(.ui-cards-2) {
+        @apply grid-cols-6;
+
+        > * {
+          @apply col-span-2;
+        }
+
+        > :last-child:nth-child(3n + 1) {
+          @apply col-span-6;
+        }
+
+        > :nth-last-child(2):nth-child(3n + 1),
+        > :last-child:nth-child(3n + 2) {
+          @apply col-span-3;
+        }
+      }
+    }
+  }
+
   .ui-card {
-    @apply h-full bg-canvas ui-neo space-y-3 ui-lift;
+    @apply flex flex-col h-full bg-canvas ui-neo space-y-3 ui-lift;
+  }
+
+  /* AI IMAGE MARK */
+  .ui-ai-image {
+    @apply relative block h-full;
+
+    &::after {
+      content: attr(data-ai-label);
+      @apply pointer-events-none absolute bottom-3 right-3 z-1 border border-canvas/40 bg-ink text-canvas py-1 pr-2 pl-7 text-xs ui-bold leading-none tracking-wide whitespace-nowrap;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fffef9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z'/%3E%3Cpath d='M20 2v4M22 4h-4'/%3E%3Ccircle cx='4' cy='20' r='2'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: 0.375rem center;
+      background-size: 1rem;
+    }
   }
 
   /* DATASTAR RESULTS */

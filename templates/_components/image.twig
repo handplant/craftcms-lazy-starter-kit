@@ -18,6 +18,7 @@
   {%- set isTransformable = extension in ['png', 'jpg', 'jpeg', 'webp', 'avif']
     and extension in craft.app.images.supportedImageFormats
   -%}
+  {%- set hasAiMark = showAiMark ?? true and _image.aiGenerated ?? false -%}
   {%- set focalPoint = _image.getFocalPoint(true) ?? '50% 50%' -%}
   {%- set imageAttributes = {
     src: _image.url,
@@ -78,13 +79,29 @@
   {%- endif -%}
 
   {%- if isTransformable and not _imgOnly -%}
-    <picture {{ attr({ class: _pictureClass ? : null }) }}>
+    <picture
+      {{
+      attr({
+        class: [_pictureClass, hasAiMark ? 'ui-ai-image' : null]|filter|join(' ') ? : null,
+        'data-ai-label': hasAiMark ? 'AI'|t : null,
+        title: hasAiMark ? 'Generated with AI'|t : null
+      })
+      }}
+    >
       {%- for format, mimeType in outputFormats -%}
         <source type="{{ mimeType }}" srcset="{{ srcsets[format] }}" sizes="{{ _sizesAttr }}" />
       {%- endfor -%}
       {{- tag('img', imageAttributes) -}}
     </picture>
-  {%- else -%}
+    {%- if hasAiMark -%}
+      <span class="sr-only">{{ 'Generated with AI'|t }}</span>
+    {%- endif -%}
+  {%- elseif hasAiMark -%}
+    <span class="ui-ai-image" data-ai-label="{{ 'AI'|t }}" title="{{ 'Generated with AI'|t }}">
+      {{- tag('img', imageAttributes) -}}
+      <span class="sr-only">{{ 'Generated with AI'|t }}</span>
+    </span>
+  {% else %}
     {{- tag('img', imageAttributes) -}}
   {%- endif -%}
 {%- endif -%}

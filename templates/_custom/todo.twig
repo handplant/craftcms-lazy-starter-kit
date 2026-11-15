@@ -3,7 +3,7 @@
 {% set seomate = {
   meta: {
     title: 'Hypermedia Todo List – Craft CMS & Datastar Demo',
-    description: 'A hypermedia TodoList built with Craft CMS and Datastar. No JavaScript framework, no database — reactive CRUD via SSE endpoints and HTML over the wire.'
+    description: 'A session-backed Todo List built with Craft CMS and Datastar. Add, complete and delete tasks through Twig endpoints and server-rendered HTML updates.'
   }
 } %}
 
@@ -17,9 +17,10 @@
   <section class="ui-block ui-block-text">
     <div class="ui-container prose md:prose-lg lg:prose-xl">
       <p>
-        A hypermedia TodoList built with <strong>Craft CMS</strong> and <strong>Datastar</strong> — no JavaScript framework,
-        no database. All interactions are handled by SSE endpoints that stream HTML fragments back to the browser. A practical
-        example of the <strong>hypermedia</strong> approach: server-rendered state, HTML over the wire, progressive enhancement.
+        A Todo List built with <strong>Craft CMS</strong> and <strong>Datastar</strong>. Add, complete and delete tasks
+        through Twig endpoints that return server-rendered HTML updates. Tasks stay in your server-side session; there
+        is no separate frontend application or permanent task account. This interactive demo requires JavaScript. Please
+        use example data, not sensitive information.
       </p>
     </div>
   </section>
