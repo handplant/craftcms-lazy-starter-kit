@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "craft": {
+      "command": "ddev",
+      "args": ["exec", "php", "craft", "mcp/serve", "--user=admin"],
+      "cwd": "."
+    }
+  }
+}
