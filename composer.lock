@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf6c0d49e2345d735394188a5fc79dac",
+    "content-hash": "845678e1b5d3761b57a091088495514e",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2584,11 +2584,11 @@
         },
         {
             "name": "johnfmorton/craft-llm-ready",
-            "version": "1.14.1",
+            "version": "1.15.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnfmorton/craft-llm-ready/zipball/65310f419351ebf318de533aa95e0e30420308db",
-                "reference": "65310f419351ebf318de533aa95e0e30420308db",
+                "url": "https://api.github.com/repos/johnfmorton/craft-llm-ready/zipball/fcc84cfa5e19bbf5622f8987a4a6b94baac17da0",
+                "reference": "fcc84cfa5e19bbf5622f8987a4a6b94baac17da0",
                 "shasum": ""
             },
             "require": {
@@ -2627,7 +2627,7 @@
                 "issues": "https://github.com/johnfmorton/craft-llm-ready/issues?state=open",
                 "source": "https://github.com/johnfmorton/craft-llm-ready"
             },
-            "time": "2026-11-12T20:32:44+00:00"
+            "time": "2026-11-18T20:34:21+00:00"
         },
         {
             "name": "lcobucci/jwt",

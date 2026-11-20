@@ -4,7 +4,7 @@
     "craftcms/cms": "^5.12.1",
     "craftcms/feed-me": "^6.17.0",
     "ether/simplemap": "5.0.4",
-    "johnfmorton/craft-llm-ready": "^1.14.1",
+    "johnfmorton/craft-llm-ready": "^1.15.0",
     "nystudio107/craft-vite": "^5.0.2",
     "putyourlightson/craft-datastar": "^1.0.5",
     "vaersaagod/seomate": "^3.3.2",
